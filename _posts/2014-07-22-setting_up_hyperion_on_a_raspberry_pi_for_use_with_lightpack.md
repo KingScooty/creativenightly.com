@@ -18,7 +18,7 @@ author:
 
 ##Installing Hyperion
 
-Install the following prerequisites first.
+Install the following prerequisites first using apt-get.
 
 {% highlight sh %}
 apt-get update 

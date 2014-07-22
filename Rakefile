@@ -47,7 +47,7 @@ namespace :site do
   task :publish => [:generate] do
     Dir.mktmpdir do |tmp|
       system "git branch -D master"
-      system "git push origin :master"
+      system "git push origin :master -f"
       system "git checkout -b master"
       puts "Regenerated master branch."
       puts "Forcing subdir _site to be root dir..."
