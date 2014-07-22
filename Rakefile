@@ -49,6 +49,8 @@ namespace :site do
       system "git branch -D master"
       system "git checkout -b master"
       puts "Regenerated master branch."
+      puts "Forcing subdir _site to be root dir..."
+      system "git filter-branch --subdirectory-filter _site/ -f"
       puts "Adding _site to master..."
       system "git add ."
       message = "Site updated at #{Time.now.utc}"
