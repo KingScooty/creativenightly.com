@@ -59,7 +59,7 @@ namespace :site do
       system "git commit -m #{message.inspect}"
       puts = "Successfully commited to local repo."
       puts = "Pushing to remote #{GITHUB_REPONAME}..."
-      system "git push -u origin master"
+      system "git push --all origin"
       puts = "le BOOM! :)"
     end
   end
