@@ -1,0 +1,23 @@
+/* CONFIGURATION */
+
+/* Bodytext font */
+$font: "ff-meta-web-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+/* Font for headings */
+$fontheadings: "ff-meta-web-pro", "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+/* Text colors */
+$text: #21272d;
+$textmuted: #848484;
+$accent: #2077b2;
+
+// @import "normalize";
+
+/* IMPORT CSS FILES */
+@import "bootstrap";
+@import "base";
+@import "nav";
+@import "article";
+@import "icons";
+@import "syntax";
+@import "responsive";
