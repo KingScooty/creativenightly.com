@@ -50,17 +50,26 @@ namespace :site do
       system "git push origin :master -f"
       system "git checkout -b master"
       puts "Regenerated master branch."
+      
       puts "Adding _site to master..."
       system "git add ."
+      
       message = "Site updated at #{Time.now.utc}"
       puts = "Successfully added at #{Time.now.utc}."
+      
       system "git commit -m #{message.inspect}"
       puts = "Successfully commited to local repo."
+      
       puts "Forcing subdir _site to be root dir..."
       system "git filter-branch --subdirectory-filter _site/ -f"
+
+      puts "Removing .sass-cache"
+      system "rm -r .sass-cache"
+      
       puts = "Pushing to remote #{GITHUB_REPONAME}..."
       system "git push origin master -f"
       system "git push origin source"
+      
       puts = "le BOOM! :)"
     end
   end
