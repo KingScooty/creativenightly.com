@@ -48,12 +48,16 @@ namespace :site do
     Dir.mktmpdir do |tmp|
       system "git branch -D master"
       system "git checkout -b master"
-      puts "Regenerated master branch"
-      puts "Adding _site to master"
+      puts "Regenerated master branch."
+      puts "Adding _site to master..."
       system "git add ."
       message = "Site updated at #{Time.now.utc}"
-      puts = "Successfully added at #{Time.now.utc}"
+      puts = "Successfully added at #{Time.now.utc}."
       system "git commit -m #{message.inspect}"
+      puts = "Successfully commited to local repo."
+      puts = "Pushing to remote #{GITHUB_REPONAME}..."
+      system "git push -u origin master"
+      puts = "le BOOM! :)"
     end
   end
 end
