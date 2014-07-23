@@ -1,0 +1,915 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title></title>
+    <link>http://creativenightly.com</link>
+    <atom:link href="http://creativenightly.com/feed.xml" rel="self" type="application/rss+xml" />
+    <description></description>
+    <language>en-us</language>
+    <pubDate>Wed, 23 Jul 2014 12:03:00 +0000</pubDate>
+    <lastBuildDate>Wed, 23 Jul 2014 12:03:00 +0000</lastBuildDate>
+
+    
+    
+    <item>
+      <title>Setting up Hyperion on a Raspberry Pi for use with Lightpack</title>
+      <link>http://creativenightly.com/2014/07/setting_up_hyperion_on_a_raspberry_pi_for_use_with_lightpack</link>
+      <pubDate>Tue, 22 Jul 2014 00:00:00 +0000</pubDate>
+      <author></author>
+      <guid>http://creativenightly.com/2014/07/setting_up_hyperion_on_a_raspberry_pi_for_use_with_lightpack</guid>
+      <description>&lt;h2 id=&quot;installing-hyperion&quot;&gt;Installing Hyperion&lt;/h2&gt;
+
+&lt;p&gt;Install the following prerequisites first using apt-get.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;apt-get update 
+apt-get install libqtcore4 libqtgui4 libqt4-network libusb-1.0-0 libprotobuf7 ca-certificates&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Next grab the install hyperion script from the hyprion github repo.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;wget -N https://raw.github.com/tvdzwan/hyperion/master/bin/install_hyperion.sh&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Installing hyperion is as simple as running the following command.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;sh ./install_hyperion.sh&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;To get it working with Lightpack, you’ll want to edit the default hyperion config file located at &lt;code&gt;/etc/hyperion.config.json&lt;/code&gt; and change the &lt;strong&gt;type&lt;/strong&gt; to “Lightpack”.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;nano /etc/hyperion.config.json
+
+ &lt;span class=&quot;s2&quot;&gt;&amp;quot;type&amp;quot;&lt;/span&gt;       : &lt;span class=&quot;s2&quot;&gt;&amp;quot;lightpack&amp;quot;&lt;/span&gt;,
+ &lt;span class=&quot;s2&quot;&gt;&amp;quot;output&amp;quot;&lt;/span&gt;     : “&lt;span class=&quot;err&quot;&gt;&amp;quot;&lt;/span&gt;,&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Next restart the server with the following command. If all goes well, you should see your Lightpack light up with rainbow colours, before mimicking the colours of your screen.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;service hyperion restart&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>Setting up and securing an Ubuntu VPS on Digital Ocean</title>
+      <link>http://creativenightly.com/2013/11/setting_up_and_securing_an_ubuntu_vps_on_digital_ocean</link>
+      <pubDate>Sun, 03 Nov 2013 00:00:00 +0000</pubDate>
+      <author></author>
+      <guid>http://creativenightly.com/2013/11/setting_up_and_securing_an_ubuntu_vps_on_digital_ocean</guid>
+      <description>&lt;p&gt;&lt;strong&gt;&lt;em&gt;This is a work in progress post, as i’m short on time to dabble with security. I’ll add to it as i get time to set up my VPS&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;basic-security&quot;&gt;Basic Security&lt;/h2&gt;
+
+&lt;p&gt;This part is extensive, and for good reason. Security is the most important part of configuring a web server. Below are several measures to make sure you’ve got a good foundation in place to safeguard your server.&lt;/p&gt;
+
+&lt;h3 id=&quot;change-root-password&quot;&gt;Change root password&lt;/h3&gt;
+
+&lt;p&gt;Currently your root password is the default one that was sent to you when you registered your VPS. The first thing to do is change it to one of your choice.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;passwd&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;create-a-new-user&quot;&gt;Create a new user&lt;/h3&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;adduser &amp;lt;your username&amp;gt;
+visudo&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Add the following line and save:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&amp;lt;your username&amp;gt; &lt;span class=&quot;nv&quot;&gt;ALL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=(&lt;/span&gt;ALL:ALL&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; ALL&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;configure-ssh&quot;&gt;Configure SSH&lt;/h3&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;nano /etc/ssh/sshd_config&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Edit the following lines and save:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;Port &amp;lt;your port number&amp;gt;
+Protocol 2
+PermitRootLogin no
+PermitEmptyPasswords no
+UseDNS no
+AllowUsers yourusername&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;You should choose a port number that is less than 1024, and not 22. Here’s why.&lt;/p&gt;
+
+&lt;p&gt;reload ssh&lt;/p&gt;
+
+&lt;p&gt;Exit and login as new user:&lt;/p&gt;
+
+&lt;p&gt;exit
+ssh -p &lt;your port=&quot;&quot; number=&quot;&quot;&gt; &lt;your username=&quot;&quot;&gt;@&lt;yourdomain.com&gt;&lt;/yourdomain.com&gt;&lt;/your&gt;&lt;/your&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;update-ubuntu&quot;&gt;Update Ubuntu:&lt;/h3&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;sudo apt-get update &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo apt-get upgrade --show-upgraded&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;enable-automatic-security-updates&quot;&gt;Enable automatic security updates:&lt;/h3&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;sudo apt-get install unattended-upgrades
+sudo nano /etc/apt/apt.conf.d/10periodic&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;harden-security-of-git-user&quot;&gt;Harden security of git user&lt;/h3&gt;
+
+&lt;p&gt;Switch to git-shell for git user.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;sudo chsh -s /usr/bin/git-shell git&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;sudo mkdir /home/git/git-shell-commands
+sudo cp /usr/share/doc/git/contrib/git-shell-commands/list /home/git/git-shell-commands/
+sudo cp /usr/share/doc/git/contrib/git-shell-commands/help /home/git/git-shell-commands/
+sudo chown -R gituser /home/git/git-shell-commands
+sudo chmod -R u+x /home/git/git-shell-commands&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;install-nmap&quot;&gt;Install nmap&lt;/h3&gt;
+
+&lt;p&gt;Nmap is a utility for network exploration or security auditing. It supports ping scanning (determine which hosts are up), many port scanning techniques, version detection (determine service protocols and application versions listening behind ports), and TCP/IP fingerprinting (remote host OS or device identification).&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;sudo apt-get install nmap
+nmap -v -sT localhost&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>How to fix Homebrew on Mac OS X Mavericks</title>
+      <link>http://creativenightly.com/2013/10/How-to-fix-Homebrew-on-Mac-OSX-Mavericks</link>
+      <pubDate>Fri, 25 Oct 2013 00:00:00 +0000</pubDate>
+      <author></author>
+      <guid>http://creativenightly.com/2013/10/How-to-fix-Homebrew-on-Mac-OSX-Mavericks</guid>
+      <description>&lt;p&gt;I’ve had lots of problems with homebrew since upgrading to Mavericks. The same problems also existed when trying to rbenv install and really anything else that compiles. The root cause of the issue ended up being a conflict Mountain Lion Command Line Tools and the ones provided by Maverick.&lt;/p&gt;
+
+&lt;p&gt;There’s a chance you might be having various issues with homebrew after upgrading to OS X Mavericks. The root cause of the issue is a conflict with Mountain Lion Command Line Tools and the ones provided by Mavericks.&lt;/p&gt;
+
+&lt;p&gt;There is an simple solution to this. By running &lt;code&gt;xcode-select&lt;/code&gt; (a tool that changes the path of the current active developer directory) it will fix the issue.&lt;/p&gt;
+
+&lt;p&gt;Open up the terminal and run:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;xcode-select --install&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This will bring up a dialog to install the Command Line Tools (which you will have to type in your password) and your Homebrew issues shall be fixed!&lt;/p&gt;
+</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>How to install Ruby 2.0.0 with RVM on OSX 10.8 Mountain Lion</title>
+      <link>http://creativenightly.com/2013/03/How-to-install-ruby-2-0-0-on-OSX-Mountain-Lion</link>
+      <pubDate>Mon, 11 Mar 2013 00:00:00 +0000</pubDate>
+      <author></author>
+      <guid>http://creativenightly.com/2013/03/How-to-install-ruby-2-0-0-on-OSX-Mountain-Lion</guid>
+      <description>&lt;p&gt;If you’ve come across the any of the following errors while trying to install Ruby 2.0.0, you’ve come to the right place!&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;apple-gcc42 is not available in PATH
+
+Error running &lt;span class=&quot;s1&quot;&gt;&amp;#39;env GEM_PATH=/Users/KingScooty/.rvm/gems/ruby-2.0.0-p0:/Users/KingScooty/.rvm/gems/ruby-2.0.0-p0@global:/Users/KingScooty/.rvm/gems/ruby-2.0.0-p0:/Users/KingScooty/.rvm/gems/ruby-2.0.0-p0@global GEM_HOME=/Users/KingScooty/.rvm/gems/ruby-2.0.0-p0 /Users/KingScooty/.rvm/rubies/ruby-2.0.0-p0/bin/ruby /Users/KingScooty/.rvm/src/rubygems-2.0.2/setup.rb&amp;#39;&lt;/span&gt;, please &lt;span class=&quot;nb&quot;&gt;read&lt;/span&gt; /Users/KingScooty/.rvm/log/ruby-2.0.0-p0/rubygems.install.log
+
+ ERROR:  Could not find a valid gem &lt;span class=&quot;s1&quot;&gt;&amp;#39;sass&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&amp;gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 0&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;, here is why:
+      Unable to download data from https://rubygems.org/ - SSL_connect &lt;span class=&quot;nv&quot;&gt;returned&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;errno&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;      &lt;span class=&quot;nv&quot;&gt;state&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;SSLv3 &lt;span class=&quot;nb&quot;&gt;read &lt;/span&gt;server key exchange B: bad ecpoint &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;https://rubygems.org/latest_specs.4.8.gz&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The following should get you up and running with Ruby 2.0.0 in less than 5minutes!&lt;/p&gt;
+
+&lt;p&gt;You &lt;em&gt;must&lt;/em&gt; install &lt;strong&gt;libyaml&lt;/strong&gt; because Ruby 2.0.0 deprecated syck in favor of psych. I found that i also needed a variety of other packages during the install, so grab them too.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;rvm get stable
+
+brew update
+
+brew install libyaml
+brew install pkg-config 
+brew install libxml2 
+brew install libxslt
+
+brew install openssl
+brew link openssl --force
+
+brew install sqlite
+
+brew install apple-gcc42
+
+rvm install 2.0.0 --with-gcc&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;gcc-4.2&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;boom-&quot;&gt;boom! :)&lt;/h1&gt;
+</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>Visual tweaks and enhancements to improve workflow in Sublime Text</title>
+      <link>http://creativenightly.com/2012/09/Visual-tweaks-to-improve-Sublime-Text-2-workflow</link>
+      <pubDate>Tue, 18 Sep 2012 00:00:00 +0000</pubDate>
+      <author></author>
+      <guid>http://creativenightly.com/2012/09/Visual-tweaks-to-improve-Sublime-Text-2-workflow</guid>
+      <description>&lt;p&gt;Sublime Text is my editor of choice for an abundance of reasons, but one key one is it’s customisability. I’m constantly tweaking settings to tailor Sublime Text to suit my personal taste. The following settings are my favourite ones.&lt;/p&gt;
+
+&lt;h3 id=&quot;improved-sidebar-with-sidebar-enhancements&quot;&gt;1. Improved sidebar with Sidebar Enhancements&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/titoBouzout/SideBarEnhancements/&quot;&gt;Sidebar Enhancements&lt;/a&gt; enables various enhancements and right click options in the Sublime Text sidebar. Most notably, ‘&lt;strong&gt;move to trash&lt;/strong&gt;’, ‘&lt;strong&gt;move&lt;/strong&gt;’, ‘&lt;strong&gt;reveal&lt;/strong&gt;’, ‘open with’.&lt;/p&gt;
+
+&lt;p&gt;Download the package &lt;a href=&quot;https://github.com/titoBouzout/SideBarEnhancements/&quot;&gt;here&lt;/a&gt; and install it.&lt;/p&gt;
+
+&lt;h3 id=&quot;see-git-diff-in-sublime-text-gutter-with-gitgutter&quot;&gt;2. See git diff in Sublime Text gutter with GitGutter&lt;/h3&gt;
+
+&lt;p&gt;I only recently came across this plugin. Originally, i had to resort to &lt;strong&gt;git difftool&lt;/strong&gt; everytime i wanted to inspect any changes to staged files – a rather cumbersome process.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.github.com/jisaacks/GitGutter/master/screenshot.png&quot; alt=&quot;screenshot&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;With &lt;a href=&quot;https://github.com/jisaacks/GitGutter&quot;&gt;GitGutter&lt;/a&gt;, new lines, modified lines, and deleted lines all show up in the gutter of Sublime Text.&lt;/p&gt;
+
+&lt;h3 id=&quot;change-the-caret-cursor-style&quot;&gt;3. Change the caret (cursor) style&lt;/h3&gt;
+
+&lt;p&gt;There’s a few hidden settings for altering the caret style in Sublime Text 2. The default is &lt;strong&gt;blink&lt;/strong&gt;, but we can make it gently fade in and out by entering the following into your config file (CMD + ,):&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+&quot;caret_style&quot;: &quot;phase&quot;
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;There’s also a setting for making the caret wider, this is quite a useful feature when taking screenshots.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+&quot;caret_style&quot;: &quot;wide&quot;
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;highlight-current-line&quot;&gt;4. Highlight current line&lt;/h3&gt;
+
+&lt;p&gt;I’m a little surprised Sublime Text doesn’t enable this one by default – as i’m always losing my current position in a file when switching files – but nevertheless, to highlight the current line, enter the following into your config file:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+&quot;highlight_line&quot;: true
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;show-folding-arrows&quot;&gt;5. Show folding arrows&lt;/h3&gt;
+
+&lt;p&gt;Code folding is great, but half the time i forget the feature is even there! Not to mention i hate the time wasted waiting for the arrows to show up when i hover over the gutter.&lt;/p&gt;
+
+&lt;p&gt;To have the gutter arrows permanently visible, enter the following into your config file:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+&quot;fade_fold_buttons&quot;: false
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;bold-folder-labels&quot;&gt;6. Bold folder labels&lt;/h3&gt;
+
+&lt;p&gt;This is another visual cue that should be enabled by default. I find navigating the sidebar &lt;strong&gt;much&lt;/strong&gt; easier when the folders are bold.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+&quot;bold_folder_labels&quot;: true
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Sound off in the comments if you know of any other tricks to improving user workflow in Sublime Text 2 :)&lt;/p&gt;
+</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>Shopify for Designers - A Workshop by Keir Whitaker</title>
+      <link>http://creativenightly.com/2012/07/Shopify-for-Designers-a-Workshop-by-Keir-Whitaker</link>
+      <pubDate>Mon, 30 Jul 2012 00:00:00 +0000</pubDate>
+      <author></author>
+      <guid>http://creativenightly.com/2012/07/Shopify-for-Designers-a-Workshop-by-Keir-Whitaker</guid>
+      <description>&lt;p&gt;These are the notes i took from the &lt;strong&gt;Shopify for Designers&lt;/strong&gt; workshop by &lt;a href=&quot;http://twitter.com/keir&quot;&gt;Keir Whitaker&lt;/a&gt; in &lt;strong&gt;Birmingham on the 30th July 2012&lt;/strong&gt;. &lt;em&gt;Apologies if they’re a bit of an incoherent mess, i was trying to type fast and listen simultaenously :)&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Keir was aproached to do some outreach for Shopify in the UK. &lt;em&gt;This workshop was free&lt;/em&gt;, which was quite a nice touch, and also good advertising for the platform.&lt;/p&gt;
+
+&lt;p&gt;The following notes cover Shopify’s main features, what Shopify is good for, and what it’s bad for, Shopify’s file structure, the Liquid templating engine and some examples / helpful code snippets for various scenarios.&lt;/p&gt;
+
+&lt;h4 id=&quot;shopify-site-examples&quot;&gt;Shopify Site Examples:&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://abookapart.com&quot;&gt;A Book Apart&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://unitedpixelworkers.com&quot;&gt;United Pixel Workers&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Great custom checkout styles to override the ‘not so great’ Shopify default styles.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://hardgraft.com&quot;&gt;Hard Graft&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Custom JavaScript interactive browsing experience.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://dodocase.com&quot;&gt;Dodo Case&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Slug&lt;/strong&gt; term in Wordpress === &lt;strong&gt;Handle&lt;/strong&gt; term in Shopify&lt;/p&gt;
+
+&lt;p&gt;Handles can allow for customised templates to be used to alter the experience on different pages.&lt;/p&gt;
+
+&lt;h4 id=&quot;reserves-words&quot;&gt;Reserves words:&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Products&lt;/li&gt;
+  &lt;li&gt;Collections&lt;/li&gt;
+  &lt;li&gt;Carts&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Image handling: Max size is 1024x1024.&lt;/p&gt;
+
+&lt;h4 id=&quot;shopify-restrictions&quot;&gt;Shopify Restrictions&lt;/h4&gt;
+
+&lt;p&gt;The only restriction is the &lt;strong&gt;Add to cart&lt;/strong&gt; form location.&lt;/p&gt;
+
+&lt;h4 id=&quot;product-variant-options&quot;&gt;Product Variant Options&lt;/h4&gt;
+
+&lt;p&gt;Options for variants of the same product. e.g. T-shirts.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Colour&lt;/li&gt;
+  &lt;li&gt;Sizes&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;shopify-as-a-blogging-tool&quot;&gt;Shopify as a Blogging Tool&lt;/h4&gt;
+
+&lt;p&gt;Shopify is not that great for blogging - it offers &lt;em&gt;basic&lt;/em&gt; functionality for blogging. Best example of its use is for a Press page - small snippets of text explaining what’s new.&lt;/p&gt;
+
+&lt;h4 id=&quot;javascript-customisation&quot;&gt;JavaScript Customisation&lt;/h4&gt;
+
+&lt;p&gt;Powerful API tools to allow for customisating the browser experience e.g. Variant options, Collection sorting etc.&lt;/p&gt;
+
+&lt;h4 id=&quot;collections&quot;&gt;Collections&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Smart Collections - price, in stock, sold out (but a shipment is coming in)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;partners-test-section&quot;&gt;Partners Test Section&lt;/h4&gt;
+
+&lt;p&gt;Throws in all the functionality one would ever need from a shop. Allows users to start fiddling about with the platform without having to pay for a license. &lt;/p&gt;
+
+&lt;h4 id=&quot;product-features--fields&quot;&gt;Product features / fields&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Title&lt;/li&gt;
+  &lt;li&gt;URL &amp;amp; Handle - &lt;em&gt;Similar to the permalink field in Wordpress&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;WYSIWYG Editor&lt;/li&gt;
+  &lt;li&gt;Product properties / options
+    &lt;ul&gt;
+      &lt;li&gt;Product Type&lt;/li&gt;
+      &lt;li&gt;Vendor&lt;/li&gt;
+      &lt;li&gt;Size&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Tags
+    &lt;ul&gt;
+      &lt;li&gt;Custom Collections
+        &lt;ul&gt;
+          &lt;li&gt;Year for Music (1999)&lt;/li&gt;
+          &lt;li&gt;Logical groupings for T-shirts
+Collections&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Front page collection to throw a product on the homepage.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Inventory 
+    &lt;ul&gt;
+      &lt;li&gt;SKUS&lt;/li&gt;
+      &lt;li&gt;Weight&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;collections-1&quot;&gt;Collections&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Title&lt;/li&gt;
+  &lt;li&gt;Description&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;0-Many relationship - Products can be in as many or as little as 0 collections.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;smart-collections&quot;&gt;Smart Collections&lt;/h4&gt;
+
+&lt;p&gt;Filters to determine what’s in the selection - everything on sale in 1999 (product == sale in 1999).&lt;/p&gt;
+
+&lt;h4 id=&quot;page&quot;&gt;Page&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Template - page.FAQ, page.contact etc.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;navigation&quot;&gt;Navigation&lt;/h4&gt;
+
+&lt;p&gt;Custom nav lists equivalent to menus in Wordpress.&lt;/p&gt;
+
+&lt;h4 id=&quot;bundles&quot;&gt;Bundles&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Shopify Textmate Bundle - Allows you to edit and sync template files.&lt;/li&gt;
+  &lt;li&gt;Shopify Theme Tool - &lt;em&gt;In Beta so not available yet.&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;theme-structures&quot;&gt;Theme Structures&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;assets - &lt;em&gt;Basic dumping folder for stuff - &lt;strong&gt;No nesting folders acceptable&lt;/strong&gt;.&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;config - &lt;em&gt;Used to offer more control to client in admin section.&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;layout
+    &lt;ul&gt;
+      &lt;li&gt;theme.liquid - &lt;em&gt;layout file - outerskin of the site e.g. base.html etc.&lt;/em&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;snippets - &lt;em&gt;include useful code snippets.&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;templates
+    &lt;ul&gt;
+      &lt;li&gt;404.liquid&lt;/li&gt;
+      &lt;li&gt;article.liquid - &lt;em&gt;blog detail page&lt;/em&gt;&lt;/li&gt;
+      &lt;li&gt;blog.liquid&lt;/li&gt;
+      &lt;li&gt;cart.liquid&lt;/li&gt;
+      &lt;li&gt;collection.liquid&lt;/li&gt;
+      &lt;li&gt;index.liquid - &lt;em&gt;shop homepage&lt;/em&gt;&lt;/li&gt;
+      &lt;li&gt;page.liquid&lt;/li&gt;
+      &lt;li&gt;product.liquid&lt;/li&gt;
+      &lt;li&gt;search.liquid&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;layouts&quot;&gt;Layouts&lt;/h4&gt;
+
+&lt;p&gt;Useful for injecting content into a base template that contains default elements used site-wide like, header and footer.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;important hook for header.
+&lt;/code&gt; injects content into base layout.&lt;/p&gt;
+
+&lt;h2 id=&quot;liquid-templating-engine&quot;&gt;Liquid Templating Engine&lt;/h2&gt;
+
+&lt;h4 id=&quot;output&quot;&gt;Output&lt;/h4&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-django&quot; data-lang=&quot;django&quot;&gt;&lt;span class=&quot;cp&quot;&gt;{{&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;product.title&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;}}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;{{&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;product.price&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;}}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;filters&quot;&gt;Filters&lt;/h4&gt;
+
+&lt;p&gt;&lt;em&gt;What goes in at the beginning, comes out altered at the end.&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-django&quot; data-lang=&quot;django&quot;&gt;&lt;span class=&quot;cp&quot;&gt;{{&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;product.title&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;upcase&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;}}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;
+&lt;span class=&quot;x&quot;&gt;//Comes out as a string, turned into uppercase.&lt;/span&gt;
+
+&lt;span class=&quot;cp&quot;&gt;{{&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;logo.png&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;asset_url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;img_tag&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Site Logo&amp;#39;&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;}}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;{{&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;style.css&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;asset_url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;stylesheet_tag&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;}}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;logic&quot;&gt;Logic&lt;/h4&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-django&quot; data-lang=&quot;django&quot;&gt;&lt;span class=&quot;cp&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;product.available&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;x&quot;&gt;Show Add to cart button here&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;x&quot;&gt;Display message about when the product will be next available&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;endif&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+
+&lt;span class=&quot;cp&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;cycle&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;one&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;two&amp;#39;&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;cycle&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;one&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;two&amp;#39;&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;cycle&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;one&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;two&amp;#39;&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+
+&lt;span class=&quot;x&quot;&gt;// one&lt;/span&gt;
+&lt;span class=&quot;x&quot;&gt;// two&lt;/span&gt;
+&lt;span class=&quot;x&quot;&gt;// one&lt;/span&gt;
+
+&lt;span class=&quot;x&quot;&gt;// Operators == != &amp;gt; &amp;lt; &amp;gt;= &amp;lt;= or and&lt;/span&gt;
+
+&lt;span class=&quot;cp&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;handle&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;when&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;cake&amp;#39;&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;x&quot;&gt;This is a cake&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;x&quot;&gt;This is not a cake&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;endcase&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;loops&quot;&gt;Loops&lt;/h4&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-django&quot; data-lang=&quot;django&quot;&gt;&lt;span class=&quot;cp&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;image&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;product.images&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+
+&lt;span class=&quot;cp&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;forloop&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;.first&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+
+&lt;span class=&quot;x&quot;&gt;//Large first image.&lt;/span&gt;
+
+&lt;span class=&quot;cp&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+
+&lt;span class=&quot;x&quot;&gt;//Small images for remaining items.&lt;/span&gt;
+
+&lt;span class=&quot;cp&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;endif&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;endfor&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;templates&quot;&gt;Templates&lt;/h2&gt;
+
+&lt;h4 id=&quot;variables&quot;&gt;Variables&lt;/h4&gt;
+
+&lt;p&gt;List of variables here on the &lt;a href=&quot;http://wiki.shopify.com/Product.variables&quot;&gt;wiki page&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;collection-pagination&quot;&gt;Collection pagination&lt;/h4&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-django&quot; data-lang=&quot;django&quot;&gt;&lt;span class=&quot;cp&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;paginate&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;collection.products&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;12&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+
+&lt;span class=&quot;cp&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;collection.products.size&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+
+&lt;span class=&quot;x&quot;&gt;	&amp;lt;h1&amp;gt;No products, baby!&amp;lt;/h1&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;cp&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+
+&lt;span class=&quot;x&quot;&gt;//Show products&lt;/span&gt;
+
+&lt;span class=&quot;cp&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;paginate.pages&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+
+&lt;span class=&quot;x&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;{{&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;paginate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;default_pagination&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;}}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+
+&lt;span class=&quot;cp&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;endif&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;feature-collections&quot;&gt;Feature Collections&lt;/h4&gt;
+
+&lt;p&gt;Show products on homepage:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-django&quot; data-lang=&quot;django&quot;&gt;&lt;span class=&quot;cp&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;product&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;collections.frontpage.products&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;limit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;x&quot;&gt;	//Show some products&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;endfor&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Special offers:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-django&quot; data-lang=&quot;django&quot;&gt;&lt;span class=&quot;cp&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;assign&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;pages.frontpage&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; //Assign variable by grabbing data from a page&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;article.content&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;#39;&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;x&quot;&gt;	//Show some front page articles by injecting page data&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;endif&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;theme-settings&quot;&gt;Theme Settings&lt;/h4&gt;
+
+&lt;p&gt;Done by assiging variables to to name parameter on markup.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;name=&quot;text_color&quot;&lt;/code&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;cssliquid---dynamic-css&quot;&gt;CSS.liquid - Dynamic CSS&lt;/h4&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-django&quot; data-lang=&quot;django&quot;&gt;&lt;span class=&quot;x&quot;&gt;body {&lt;/span&gt;
+&lt;span class=&quot;x&quot;&gt;	color: &lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;{{&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;settings.text_color&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;}}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;x&quot;&gt;	background-color: &lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;{{&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;settings.bg_color&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;}}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;x&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;alternate-layouts&quot;&gt;Alternate Layouts&lt;/h4&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-django&quot; data-lang=&quot;django&quot;&gt;&lt;span class=&quot;cp&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;layout&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;bacon.liquid&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;cartjs---cart-json-for-sweet-js-customisation&quot;&gt;Cart.js - cart JSON for sweet JS customisation&lt;/h4&gt;
+
+&lt;p&gt;Going to &lt;code&gt;/cart.js&lt;/code&gt; on a Shopify front end will give you access to a JSON file of the clients cart - nice for JavaScript dev customisation.&lt;/p&gt;
+
+&lt;h4 id=&quot;alternate-add-to-cart-methods&quot;&gt;Alternate “Add to Cart” methods&lt;/h4&gt;
+
+&lt;p&gt;Cart Permalinks - use URLS to add items to a cart.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-shopify-cheat-sheet&quot;&gt;The Shopify cheat sheet&lt;/h2&gt;
+
+&lt;p&gt;The shopify cheat sheet is a fantastic little resource to have open when using Shopify’s liquid templating engine.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://cheat.markdunkley.com&quot;&gt;Shopify Cheat Sheet&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>Sublime Text 2 Theme Package Management</title>
+      <link>http://creativenightly.com/2012/07/Sublime-Text-2-Theme-Package-Management</link>
+      <pubDate>Thu, 12 Jul 2012 00:00:00 +0000</pubDate>
+      <author></author>
+      <guid>http://creativenightly.com/2012/07/Sublime-Text-2-Theme-Package-Management</guid>
+      <description>&lt;p&gt;Most devs are familiar with installing software packages on their systems via package managers, but did you know, if you’re using &lt;a href=&quot;http://www.sublimetext.com/2&quot;&gt;Sublime Text 2&lt;/a&gt;, you can do the same with your text editor too?&lt;/p&gt;
+
+&lt;h2 id=&quot;sublime-package-control&quot;&gt;Sublime Package Control&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://twitter.com/wbond&quot;&gt;Will Bond&lt;/a&gt; has created a delightful tool for managing packages; packages can include syntax highlighters for preprocessors such as LESS.&lt;/p&gt;
+
+&lt;h3 id=&quot;installation&quot;&gt;Installation&lt;/h3&gt;
+
+&lt;p&gt;Installation of the Sublime Text 2 Package Manager is done through the Sublime Text console. This is accessed via the &lt;strong&gt;ctrl+`&lt;/strong&gt; shortcut. Once open, paste the following command into the console:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;import urllib2,os&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;pf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Package Control.sublime-package&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;ipp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;sublime.installed_packages_path&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; os.makedirs&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ipp&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; not os.path.exists&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ipp&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; None&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; urllib2.install_opener&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;urllib2.build_opener&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;urllib2.ProxyHandler&lt;span class=&quot;o&quot;&gt;()))&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; open&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;os.path.join&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ipp,pf&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;,&lt;span class=&quot;s1&quot;&gt;&amp;#39;wb&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;.write&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;urllib2.urlopen&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;http://sublime.wbond.net/&amp;#39;&lt;/span&gt;+pf.replace&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39; &amp;#39;&lt;/span&gt;,&lt;span class=&quot;s1&quot;&gt;&amp;#39;%20&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;.read&lt;span class=&quot;o&quot;&gt;())&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; print &lt;span class=&quot;s1&quot;&gt;&amp;#39;Please restart Sublime Text to finish installation&amp;#39;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;installing-a-package&quot;&gt;Installing a package&lt;/h2&gt;
+
+&lt;p&gt;Let’s go ahead and install a package or two to demonstrate just how easy it is.&lt;/p&gt;
+
+&lt;h3 id=&quot;less-syntax-highlighter&quot;&gt;LESS syntax highlighter&lt;/h3&gt;
+
+&lt;p&gt;After you have installed Package Control, restart Sublime Text 2 and bring up the Command Palette (&lt;code&gt;Command+Shift+p&lt;/code&gt; on OS X, &lt;code&gt;Control+Shift+p&lt;/code&gt; on Linux/Windows). Select Package Control: Install Package; wait while Package Control fetches the latest package list; type in LESS when the list appears, then hit enter to install.&lt;/p&gt;
+
+&lt;h3 id=&quot;sublime-text-themes--colour-schemes&quot;&gt;Sublime Text Themes / Colour Schemes&lt;/h3&gt;
+
+&lt;p&gt;Bring up the Command Palette again (&lt;code&gt;Command+Shift+p&lt;/code&gt; &lt;em&gt;or&lt;/em&gt; &lt;code&gt;Control+Shift+p&lt;/code&gt;) and goto Install Package. Search for &lt;strong&gt;Dayle Rees Color Schemes&lt;/strong&gt; and hit enter to install.&lt;/p&gt;
+
+&lt;p&gt;Goto &lt;strong&gt;Preferences -&amp;gt; Color Scheme&lt;/strong&gt; to select your new colour scheme.&lt;/p&gt;
+
+&lt;p&gt;Simples!&lt;/p&gt;
+
+</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>Setting up a Mac on OS X 10.8 as a dev machine from scratch</title>
+      <link>http://creativenightly.com/2012/06/Setting-up-a-mac-as-a-dev-machine</link>
+      <pubDate>Fri, 29 Jun 2012 00:00:00 +0000</pubDate>
+      <author></author>
+      <guid>http://creativenightly.com/2012/06/Setting-up-a-mac-as-a-dev-machine</guid>
+      <description>&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;Last updated on the &lt;strong&gt;16th February 2013&lt;/strong&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Originally, these were the notes I took down when setting up the development environment on my new MacBook Air in June 2012, but it’s now become a step by step guide to setting up a full development stack on Mac OS X 10.8 Mountain Lion. I’ll aim to keep this post up to date with the latest dev environments / workflows as new tools are released in order to setup the leanest / efficient development machine possible.&lt;/p&gt;
+
+&lt;p&gt;The only prerequisite is an &lt;strong&gt;up-to-date install of OS X 10.8 Mountain Lion&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;#1&quot;&gt;Install Homebrew&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2&quot;&gt;Install Git&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#3&quot;&gt;Install RVM&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#3.2&quot;&gt;Install Ruby&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#3.3&quot;&gt;Install Sass&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#3.3&quot;&gt;Install Compass&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#4&quot;&gt;Install Node&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#4.1&quot;&gt;Install Yeoman&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#5&quot;&gt;Install MySQL&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#6&quot;&gt;Install CouchDB&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#7&quot;&gt;Configure Apache&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#7.2&quot;&gt;Setup Virtual Hosts&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h5 id=&quot;using-sublime-text-2-from-the-command-line&quot;&gt;Using Sublime Text 2 from the Command Line&lt;/h5&gt;
+&lt;p&gt;Before we begin, i’d recommend enabling Sublime Text 2 Command Line support as, for some reason, this isn’t available out of the box.&lt;/p&gt;
+
+&lt;p&gt;To setup the command line functionality, type the following into the terminal.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo ln -s &lt;span class=&quot;s2&quot;&gt;&amp;quot;/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl&amp;quot;&lt;/span&gt; /usr/bin/subl&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;a-id1a-1-homebrew&quot;&gt;&lt;a id=&quot;1&quot;&gt;&lt;/a&gt; 1. Homebrew:&lt;/h2&gt;
+
+&lt;h3 id=&quot;requirements&quot;&gt;1.1 Requirements:&lt;/h3&gt;
+
+&lt;p&gt;Homebrew has two dependencies: &lt;strong&gt;XQuartz&lt;/strong&gt;, and &lt;strong&gt;Xcode&lt;/strong&gt;*. &lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;It’s a common delusion that the entire 2.8gb install of Xcode is required, however, the only part of Xcode Homebrew requires, is the &lt;strong&gt;Command Line Tools&lt;/strong&gt;.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;xquartz&quot;&gt;XQuartz&lt;/h4&gt;
+
+&lt;p&gt;As of the 26th July 2012, Apple has dropped X11 from its OS. OS X Mountain Lion does not come bundled with X11, and instead, Apple recommend developers install the more up to date open source XQuartz project, which it will continue to support.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://xquartz.macosforge.org/landing/&quot;&gt;Download XQuartz here&lt;/a&gt; then install it, log out, then log back in.&lt;/p&gt;
+
+&lt;h4 id=&quot;command-line-tools&quot;&gt;Command Line Tools&lt;/h4&gt;
+
+&lt;p&gt;Homebrew requires Xcode to be installed in order to work, but Xcode is massively bloated for what is actually required by homebrew to build apps.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/kennethreitz/osx-gcc-installer/&quot;&gt;OSX-GCC-Installer&lt;/a&gt; by &lt;a href=&quot;http://kennethreitz.com/&quot;&gt;Kenneth Reitz&lt;/a&gt; was a way round this bloat, but lacked the 10.6/7 SDKs due to licensing restrictions. Apple, however, took interest in this project and were keen to ship something official. &lt;/p&gt;
+
+&lt;p&gt;Thus, Apple announced the &lt;strong&gt;Command Line Tools for Xcode&lt;/strong&gt;. It’s a 171 MB download that includes all of the tools Homebrew should ever need. Plus, Homebrew officially supports this package.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;http://developer.apple.com/downloads&quot;&gt;Download the Command Line Tools for Xcode here&lt;/a&gt; and install it.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;installing-homebrew&quot;&gt;1.2 Installing Homebrew:&lt;/h3&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;ruby -e &lt;span class=&quot;s2&quot;&gt;&amp;quot;$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The script installs Homebrew to &lt;code&gt;/usr/local&lt;/code&gt; so that you don’t need sudo when you brew install.&lt;/p&gt;
+
+&lt;p&gt;It’s bad practice to install packages using sudo.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Packages can run arbitrary scripts, which makes sudoing a package manager command as safe as a chainsaw haircut. Sure, it’s fast and definitely going to cut through any obstacles, but you might actually want that obstacle to stay there. &lt;a href=&quot;http://howtonode.org/introduction-to-npm&quot;&gt;— Isaac Z. Schlueter&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;changing-ownership-of-usrlocal&quot;&gt;1.3 Changing ownership of usr/local:&lt;/h3&gt;
+
+&lt;p&gt;This step isn’t required for brew, but since we’re on the subject of sudo, i recommend changing ownership of &lt;code&gt;/usr/local&lt;/code&gt; from &lt;code&gt;root&lt;/code&gt; to &lt;code&gt;$user&lt;/code&gt;. This will benefit you when using node’s package manager, and will mean you won’t have to use sudo when installing into &lt;code&gt;/usr/local&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo chown -R &lt;span class=&quot;nv&quot;&gt;$USER&lt;/span&gt; /usr/local&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;There is a massive debate about chown-ing &lt;code&gt;/usr/local&lt;/code&gt;, and i agree with &lt;a href=&quot;https://gist.github.com/579814#gistcomment-28563&quot;&gt;Isaacs comments here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;a-id2a-20-git&quot;&gt;&lt;a id=&quot;2&quot;&gt;&lt;/a&gt; 2.0 Git:&lt;/h2&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;brew install git&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Next, to setup git. Run the following commands in the Terminal.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;git config --global user.name &lt;span class=&quot;s2&quot;&gt;&amp;quot;Your Full Name&amp;quot;&lt;/span&gt;
+git config --global user.email &lt;span class=&quot;s2&quot;&gt;&amp;quot;Your Email Address&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Make sure you use the same email address for Git, GitHub, and Heroku.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;a-id3a-30-rvm&quot;&gt;&lt;a id=&quot;3&quot;&gt;&lt;/a&gt; 3.0 RVM:&lt;/h2&gt;
+
+&lt;p&gt;RVM stands for Ruby Version Manager. It’s a command line tool which allows you to easily install, manage, and work with multiple ruby environments from interpreters to sets of gems. It also installs gems to your &lt;code&gt;~/&lt;/code&gt; &lt;strong&gt;home&lt;/strong&gt; directory, instead of using the global root of your machine.&lt;/p&gt;
+
+&lt;h4 id=&quot;rvm-helps-improve-security&quot;&gt;RVM helps improve security&lt;/h4&gt;
+
+&lt;p&gt;RVM helps ensure that all aspects of Ruby are completely contained within user space, strongly encouraging safer, non-root use. Use of RVM rubies thus provides a higher level of system security, and therefore reduces risk and cuts overall system downtime. Additionally, since all processes run at the user level, a compromised ruby process cannot compromise the entire system.&lt;/p&gt;
+
+&lt;h4 id=&quot;say-goodbye-to-sudo-gem-installs&quot;&gt;Say goodbye to sudo gem installs&lt;/h4&gt;
+
+&lt;p&gt;Yep, that’s right! By using RVM, you won’t have to &lt;code&gt;sudo&lt;/code&gt; to install gems on your machine.&lt;/p&gt;
+
+&lt;h3 id=&quot;install-the-stable-release-version&quot;&gt;3.1 Install the stable release version:&lt;/h3&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;curl -L https://get.rvm.io &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; bash -s stable&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Finish the installation by either running the following command, or closing all shell windows.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; /Users/USERNAME/.rvm/scripts/rvm&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;Replace &lt;strong&gt;username&lt;/strong&gt; with your Mac username.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Before installing the latest version of ruby with rvm, we need to install &lt;code&gt;libksba&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;brew install libksba&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;a-id32a-32-then-install-ruby-193-with&quot;&gt;&lt;a id=&quot;3.2&quot;&gt;&lt;/a&gt; 3.2 Then install Ruby 1.9.3 with:&lt;/h3&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;rvm install 1.9.3&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;a-id33a-now-install-sass-and-compass&quot;&gt;&lt;a id=&quot;3.3&quot;&gt;&lt;/a&gt; Now install &lt;strong&gt;Sass&lt;/strong&gt; and &lt;strong&gt;Compass&lt;/strong&gt;.&lt;/h3&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;gem install sass
+gem install compass&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;a-id4a-40-node&quot;&gt;&lt;a id=&quot;4&quot;&gt;&lt;/a&gt; 4.0 Node:&lt;/h2&gt;
+
+&lt;p&gt;According to the node docs, Brew installs of node are known to be buggy, the node package manager is not included in the install etiher, so the node devs themselves reccommend using the Macintosh package installer:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://nodejs.org/#download&quot;&gt;Download the Node Macintosh package installer&lt;/a&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;note-8th-feb-2013&quot;&gt;Note (8th Feb 2013):&lt;/h5&gt;
+
+&lt;p&gt;Node devs recently made some changes so that Node no longer installs on OS X via homebrew if Xcode is &lt;strong&gt;not&lt;/strong&gt; installed. We haven’t installed Node via homebrew, however this issue &lt;em&gt;still&lt;/em&gt; affects us. &lt;/p&gt;
+
+&lt;p&gt;Next time you run &lt;strong&gt;npm install&lt;/strong&gt; you may come across the following error:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;xcode-select: Error: No Xcode is selected. Use xcode-select -switch &amp;lt;path-to-xcode&amp;gt;, or see the xcode-select manpage &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;man xcode-select&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; further information.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;To fix this, all you need to do is:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo xcode-select --switch /usr/bin&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;a-id41a-41-yeoman&quot;&gt;&lt;a id=&quot;4.1&quot;&gt;&lt;/a&gt; 4.1 Yeoman&lt;/h3&gt;
+
+&lt;p&gt;Yeoman is a robust and opinionated set of tools, libraries, and a workflow that can help developers quickly build beautiful, compelling web apps. Tools included are, &lt;strong&gt;Yo&lt;/strong&gt; (a scaffolding tool), &lt;strong&gt;Grunt&lt;/strong&gt;, &lt;strong&gt;Bower&lt;/strong&gt; and more.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;npm install -g yo grunt-cli bower&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;a-id5a-50-mysql&quot;&gt;&lt;a id=&quot;5&quot;&gt;&lt;/a&gt; 5.0 MySQL:&lt;/h2&gt;
+
+&lt;h4 id=&quot;sidenote---debugging--path-issues&quot;&gt;Sidenote - Debugging / $PATH issues&lt;/h4&gt;
+
+&lt;p&gt;I actually had a few issues at this point with my new MacBook air and had to roll back the install of MySQL in order to fix a few issues… &lt;/p&gt;
+
+&lt;p&gt;I ran &lt;code&gt;brew doctor&lt;/code&gt; to discover that &lt;code&gt;/usr/bin&lt;/code&gt; was ahead of &lt;code&gt;/usr/local/bin&lt;/code&gt; in my $PATH.&lt;/p&gt;
+
+&lt;p&gt;In order to get round this, i needed to edit &lt;code&gt;/etc/paths&lt;/code&gt; to fix the order. &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;subl /etc/paths&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;This isn’t a file i recommend playing with often. However, i’ve mentioned it here, as it might come in handy to people needing to do a little DIY machine debugging.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Opening a new terminal window and running &lt;code&gt;brew doctor&lt;/code&gt; again should confirm this.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;install&quot;&gt;5.1 Install&lt;/h3&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;brew install mysql&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;You’re then requried to setup a few things. Run the following commands:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;unset &lt;/span&gt;TMPDIR
+mysql_install_db --verbose --user&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;whoami&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt; --basedir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;$(brew --prefix mysql)&amp;quot;&lt;/span&gt; --datadir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/usr/local/var/mysql --tmpdir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/tmp&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Followed by the following: &lt;strong&gt;&lt;em&gt;(you might also need to restart your machine to fix a conflict with Lion’s copy of MySQL.)&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;mysql.server start&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Then use the alternative security script:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;/usr/local/Cellar/mysql/5.5.25a/bin/mysql_secure_installation&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Boom!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;a-id6a-60-couchdb&quot;&gt;&lt;a id=&quot;6&quot;&gt;&lt;/a&gt; 6.0 CouchDB:&lt;/h2&gt;
+
+&lt;p&gt;CouchDB is a popular NoSQL database. &lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;If you’re not planning on developing node apps with persistent storate, &lt;strong&gt;you can skip this step&lt;/strong&gt;.&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;brew install couchdb&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;a-id7a-70-configuring-apache-and-virtual-hosts&quot;&gt;&lt;a id=&quot;7&quot;&gt;&lt;/a&gt; 7.0 Configuring Apache and Virtual Hosts:&lt;/h2&gt;
+
+&lt;p&gt;Type the following command in to edit the &lt;code&gt;httpd.conf&lt;/code&gt; file in Sublime Text.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;subl /etc/apache2/httpd.conf&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;enable-php5&quot;&gt;7.1 Enable PHP5&lt;/h3&gt;
+
+&lt;p&gt;Find &lt;code&gt;line 111&lt;/code&gt; and un-comment:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-apacheconf&quot; data-lang=&quot;apacheconf&quot;&gt;&lt;span class=&quot;nb&quot;&gt;LoadModule&lt;/span&gt; php5_module libexec/apache2/libphp5.so&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;a-id72a-72-enable-virtual-hosts&quot;&gt;&lt;a id=&quot;7.2&quot;&gt;&lt;/a&gt; 7.2 Enable Virtual Hosts&lt;/h3&gt;
+
+&lt;p&gt;Find and uncomment the following line. It can be found around &lt;code&gt;line 623&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-apacheconf&quot; data-lang=&quot;apacheconf&quot;&gt;&lt;span class=&quot;nb&quot;&gt;Include&lt;/span&gt; &lt;span class=&quot;sx&quot;&gt;/private/etc/apache2/extra/httpd-vhosts.conf&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;creating-a-virtual-hosts-file&quot;&gt;7.3 Creating a Virtual Hosts File&lt;/h3&gt;
+
+&lt;p&gt;You then want to create a vhosts file, to store all your virtual hosts in. So enter the following commands in the Terminal.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;touch /etc/apache2/other/vhosts.conf
+subl /etc/apache2/other/vhosts.conf&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;And enter the following:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-apacheconf&quot; data-lang=&quot;apacheconf&quot;&gt;&lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Virtual Hosts&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;NameVirtualHost&lt;/span&gt; *:80
+
+&lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# VirtualHost example:&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Almost any Apache directive may go into a VirtualHost container.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# The first VirtualHost section is used for all requests that do not&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# match a ServerName or ServerAlias in any &amp;lt;VirtualHost&amp;gt; block.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;VirtualHost&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;*:80&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;DocumentRoot&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;/Users/USERNAME/Sites/SITENAME&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;ServerAlias&lt;/span&gt; dev.*.xip.io
+    &lt;span class=&quot;nb&quot;&gt;ServerName&lt;/span&gt; dev.foo
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/VirtualHost&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Change &lt;strong&gt;username&lt;/strong&gt;, &lt;strong&gt;sitename&lt;/strong&gt;, &lt;strong&gt;dev&lt;/strong&gt;, and &lt;strong&gt;dev.foo&lt;/strong&gt; accordingly, and save the file.&lt;/p&gt;
+
+&lt;h3 id=&quot;pointing-localhost-to-a-virtual-host-server-name&quot;&gt;7.4 Pointing Localhost to a Virtual Host Server Name&lt;/h3&gt;
+
+&lt;p&gt;Now we need to point localhost to the server name, in order to enable the virtual host.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;subl /etc/hosts&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;And enter the following on a new line and save:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-apacheconf&quot; data-lang=&quot;apacheconf&quot;&gt;&lt;span class=&quot;c&quot;&gt;#servername to match that in the vhosts.conf file&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;127&lt;/span&gt;.&lt;span class=&quot;err&quot;&gt;0&lt;/span&gt;.&lt;span class=&quot;err&quot;&gt;0&lt;/span&gt;.&lt;span class=&quot;err&quot;&gt;1&lt;/span&gt;   &lt;span class=&quot;err&quot;&gt;dev&lt;/span&gt;.&lt;span class=&quot;nb&quot;&gt;foo&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;restart-apache-and-lock-n-load&quot;&gt;7.5 Restart Apache, and Lock ‘N’ Load!&lt;/h3&gt;
+
+&lt;p&gt;Lastly in &lt;code&gt;System Settings&lt;/code&gt; disable and re-enable &lt;code&gt;Web Sharing&lt;/code&gt; in the &lt;code&gt;Sharing&lt;/code&gt; panel.&lt;/p&gt;
+
+&lt;p&gt;Fire up your favourite web browser and enter the servername, you should be pointed to the doc root you entered in your vhosts file!&lt;/p&gt;
+
+&lt;p&gt;Neat, eh! &lt;/p&gt;
+
+&lt;p&gt;Now, there are plenty more options you can set for logs etc, but i’ll leave that out as not to over complicate this article.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;remaining-packages&quot;&gt;8.0 Remaining packages:&lt;/h2&gt;
+
+&lt;p&gt;There are a lot more packages that can be installed, and need less configuration than the ones mentioned above. I’ve put these in a .dotfile you can &lt;a href=&quot;https://raw.github.com/KingScooty/dotfiles/master/.brew&quot;&gt;download here&lt;/a&gt;, and can be batch executed calling:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;./.brew&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+
+</description>
+    </item>
+    
+    
+
+  </channel> 
+</rss>

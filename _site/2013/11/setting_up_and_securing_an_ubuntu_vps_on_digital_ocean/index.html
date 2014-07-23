@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <link rel="dns-prefetch" href="//use.typekit.net">
+  <link rel="dns-prefetch" href="//www.google-analytics.com">
+  <link rel="dns-prefetch" href="//ajax.googleapis.com">
+  <link rel="dns-prefetch" href="//connect.facebook.net">
+  <link rel="dns-prefetch" href="//platform.twitter.com">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Setting up and securing an Ubuntu VPS on Digital Ocean &mdash; Creative Nightly</title>
+
+  
+  
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="/images/logo.png"/>
+  <link href="/feed.xml" rel="alternate" type="application/rss+xml" title="Creative Nightly" />
+  <meta name="title" content="Setting up and securing an Ubuntu VPS on Digital Ocean ">
+  <link rel="canonical" href="http://creativenightly.com/2013/11/setting_up_and_securing_an_ubuntu_vps_on_digital_ocean">
+  
+   
+  <link rel="author" href="https://plus.google.com/+ScottyVernon">       
+  
+  <meta property="og:title" content="Setting up and securing an Ubuntu VPS on Digital Ocean "/>
+  <meta property="og:url" content="http://creativenightly.com/2013/11/setting_up_and_securing_an_ubuntu_vps_on_digital_ocean"/>
+  
+  
+  <meta property="og:image" content="http://creativenightly.com/images/server-rack.jpg"/>    
+  
+  <meta property="og:image" content="http://creativenightly.com/images/logo.png"/>   
+  
+
+  
+  <meta property="og:description" content="A guide on how to setup and secure a VPS on a clean install of Ubuntu 13.10 x64"/>
+  <meta name="description" content="A guide on how to setup and secure a VPS on a clean install of Ubuntu 13.10 x64"/>
+  
+
+  <meta property="og:site_name" content="Creative Nightly">     
+
+</head>
+<body>
+  
+<section class="site-nav">
+  <header>
+    <nav id="navigation">
+      <a class="brand" href="/">
+        <!-- <img src="/images/logo.png" alt="Inc"> -->
+        CREATIVE NIGHTLY
+      </a>
+      <a href="/" class="home">Home</a>
+      <a href="/archive" class="archive">Archive</a>
+      
+      
+    </nav>
+    
+  </header>
+</section>
+
+
+<div class="article-cover">
+  <div>
+    <img src="/images/server-rack.jpg" class="image">
+  </div>
+</div>
+
+<article>
+
+  <div class="container">
+    <header>
+      <div class="meta">
+        By <address><a rel="author" href="" title="Scotty Vernon" target="_blank">Scotty Vernon</a></address> &mdash;
+        <time pubdate datetime="2013-03-November" title="November 03, 2013">November 03, 2013</time>
+      </div>
+      <h1 class="title">Setting up and securing an Ubuntu VPS on Digital Ocean</h1>
+      <h2 class="subtitle">A guide on how to setup and secure a VPS on a clean install of Ubuntu 13.10 x64</h2>
+    </header>
+
+    <section>
+      <p><strong><em>This is a work in progress post, as i’m short on time to dabble with security. I’ll add to it as i get time to set up my VPS</em></strong></p>
+
+<h2 id="basic-security">Basic Security</h2>
+
+<p>This part is extensive, and for good reason. Security is the most important part of configuring a web server. Below are several measures to make sure you’ve got a good foundation in place to safeguard your server.</p>
+
+<h3 id="change-root-password">Change root password</h3>
+
+<p>Currently your root password is the default one that was sent to you when you registered your VPS. The first thing to do is change it to one of your choice.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">passwd</code></pre></div>
+
+<h3 id="create-a-new-user">Create a new user</h3>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">adduser &lt;your username&gt;
+visudo</code></pre></div>
+
+<p>Add the following line and save:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">&lt;your username&gt; <span class="nv">ALL</span><span class="o">=(</span>ALL:ALL<span class="o">)</span> ALL</code></pre></div>
+
+<h3 id="configure-ssh">Configure SSH</h3>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">nano /etc/ssh/sshd_config</code></pre></div>
+
+<p>Edit the following lines and save:</p>
+
+<div class="highlight"><pre><code class="language-sh" data-lang="sh">Port &lt;your port number&gt;
+Protocol 2
+PermitRootLogin no
+PermitEmptyPasswords no
+UseDNS no
+AllowUsers yourusername</code></pre></div>
+
+<p>You should choose a port number that is less than 1024, and not 22. Here’s why.</p>
+
+<p>reload ssh</p>
+
+<p>Exit and login as new user:</p>
+
+<p>exit
+ssh -p <your port="" number=""> <your username="">@<yourdomain.com></yourdomain.com></your></your></p>
+
+<h3 id="update-ubuntu">Update Ubuntu:</h3>
+
+<div class="highlight"><pre><code class="language-sh" data-lang="sh">sudo apt-get update <span class="o">&amp;&amp;</span> sudo apt-get upgrade --show-upgraded</code></pre></div>
+
+<h3 id="enable-automatic-security-updates">Enable automatic security updates:</h3>
+
+<div class="highlight"><pre><code class="language-sh" data-lang="sh">sudo apt-get install unattended-upgrades
+sudo nano /etc/apt/apt.conf.d/10periodic</code></pre></div>
+
+<h3 id="harden-security-of-git-user">Harden security of git user</h3>
+
+<p>Switch to git-shell for git user.</p>
+
+<div class="highlight"><pre><code class="language-sh" data-lang="sh">sudo chsh -s /usr/bin/git-shell git</code></pre></div>
+
+<div class="highlight"><pre><code class="language-sh" data-lang="sh">sudo mkdir /home/git/git-shell-commands
+sudo cp /usr/share/doc/git/contrib/git-shell-commands/list /home/git/git-shell-commands/
+sudo cp /usr/share/doc/git/contrib/git-shell-commands/help /home/git/git-shell-commands/
+sudo chown -R gituser /home/git/git-shell-commands
+sudo chmod -R u+x /home/git/git-shell-commands</code></pre></div>
+
+<h3 id="install-nmap">Install nmap</h3>
+
+<p>Nmap is a utility for network exploration or security auditing. It supports ping scanning (determine which hosts are up), many port scanning techniques, version detection (determine service protocols and application versions listening behind ports), and TCP/IP fingerprinting (remote host OS or device identification).</p>
+
+<div class="highlight"><pre><code class="language-sh" data-lang="sh">sudo apt-get install nmap
+nmap -v -sT localhost</code></pre></div>
+
+      
+<div class="social">
+    
+    <div class="social-twitter">
+        <a href="https://twitter.com/share" class="twitter-share-button"  data-text="Setting up and securing an Ubuntu VPS on Digital Ocean" data-related="kingscooty">Tweet</a>
+    </div>
+    
+    
+    <div class="social-facebook">
+        <div class="fb-like" data-width="150" data-layout="button_count" data-action="like" data-show-faces="true" data-send="false"></div>
+    </div>
+    
+    
+    <div class="social-google">
+        <div class="g-plusone" data-size="medium"></div>
+    </div>
+    
+    
+    
+</div>
+
+    </section>
+
+    <footer>
+      <address>
+        
+          <!-- <img src="/images/ks.png"> -->
+          <img src="http://www.gravatar.com/avatar/61f2bf61edacc1d2d6829b69cd530c93.png">
+        
+        <p>Written by <strong><a rel="author" href="https://twitter.com/KingScooty" title="" target="_blank">Scotty Vernon</a></strong><br>
+        <span class="muted">Founder, Software Engineer @ Wildflame Studios</span>
+        </p>
+      </address>
+
+    </footer>
+
+    
+    <section>
+      <p class="muted cover-copyright">Photo Credit: <a href="https://www.flickr.com/photos/traftery/4773457853/">Tom Raftery</a> via <a href="http://compfight.com">Compfight</a> <a href="https://creativecommons.org/licenses/by-sa/2.0/">cc</a></p>
+    </section>
+    
+
+    
+    <section>
+      <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'creativenightly'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+    </section>
+    
+  </div>
+</article>
+
+
+<footer class="site-footer">
+  <div class="container">
+    &copy; 2014 
+    
+    <nav>
+      <!-- http://creativenightly.com/ -->
+      <a href="http://wildflame.co.uk">Scotty Vernon / @KingScooty</a> <!-- &middot; -->
+      <a href="/">Blog</a> <!-- &middot; -->
+      
+      
+    </nav>
+    
+    <nav class="social">
+      
+      <a href="https://twitter.com/kingscooty" title="Follow on Twitter" target="_blank"><i class="icon icon-twitter black"></i></a>
+      
+      
+      <a href="http://facebook.com/creativenightly" title="Follow on Facebook" target="_blank"><i class="icon icon-facebook black"></i></a>
+          
+      <a href="/feed.xml" title="RSS Feed">
+        <i class="icon icon-rss black"></i>
+      </a>
+    </nav>
+    <p>Incorporated theme by <a href="https://sendtoinc.com">Inc</a></p>
+  </div>
+</footer>
+
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="/assets/main.js"></script>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=253595308025739";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+
+
+
+  <script type="text/javascript" src="//use.typekit.net/adu5fik.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</body>
+</html>

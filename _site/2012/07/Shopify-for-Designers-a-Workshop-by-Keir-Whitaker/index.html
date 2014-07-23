@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <link rel="dns-prefetch" href="//use.typekit.net">
+  <link rel="dns-prefetch" href="//www.google-analytics.com">
+  <link rel="dns-prefetch" href="//ajax.googleapis.com">
+  <link rel="dns-prefetch" href="//connect.facebook.net">
+  <link rel="dns-prefetch" href="//platform.twitter.com">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Shopify for Designers - A Workshop by Keir Whitaker &mdash; Creative Nightly</title>
+
+  
+  
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="/images/logo.png"/>
+  <link href="/feed.xml" rel="alternate" type="application/rss+xml" title="Creative Nightly" />
+  <meta name="title" content="Shopify for Designers - A Workshop by Keir Whitaker ">
+  <link rel="canonical" href="http://creativenightly.com/2012/07/Shopify-for-Designers-a-Workshop-by-Keir-Whitaker">
+  
+   
+  <link rel="author" href="https://plus.google.com/+ScottyVernon">       
+  
+  <meta property="og:title" content="Shopify for Designers - A Workshop by Keir Whitaker "/>
+  <meta property="og:url" content="http://creativenightly.com/2012/07/Shopify-for-Designers-a-Workshop-by-Keir-Whitaker"/>
+  
+  
+
+  
+  <meta property="og:description" content="Notes i took down from attending the Shopify for Designers workshop presented by Keir Whitaker."/>
+  <meta name="description" content="Notes i took down from attending the Shopify for Designers workshop presented by Keir Whitaker."/>
+  
+
+  <meta property="og:site_name" content="Creative Nightly">     
+
+</head>
+<body>
+  
+<section class="site-nav">
+  <header>
+    <nav id="navigation">
+      <a class="brand" href="/">
+        <!-- <img src="/images/logo.png" alt="Inc"> -->
+        CREATIVE NIGHTLY
+      </a>
+      <a href="/" class="home">Home</a>
+      <a href="/archive" class="archive">Archive</a>
+      
+      
+    </nav>
+    
+  </header>
+</section>
+
+
+<article>
+
+  <div class="container">
+    <header>
+      <div class="meta">
+        By <address><a rel="author" href="" title="Scotty Vernon" target="_blank">Scotty Vernon</a></address> &mdash;
+        <time pubdate datetime="2012-30-July" title="July 30, 2012">July 30, 2012</time>
+      </div>
+      <h1 class="title">Shopify for Designers - A Workshop by Keir Whitaker</h1>
+      <h2 class="subtitle">Notes i took down from attending the Shopify for Designers workshop presented by Keir Whitaker.</h2>
+    </header>
+
+    <section>
+      <p>These are the notes i took from the <strong>Shopify for Designers</strong> workshop by <a href="http://twitter.com/keir">Keir Whitaker</a> in <strong>Birmingham on the 30th July 2012</strong>. <em>Apologies if they’re a bit of an incoherent mess, i was trying to type fast and listen simultaenously :)</em></p>
+
+<p>Keir was aproached to do some outreach for Shopify in the UK. <em>This workshop was free</em>, which was quite a nice touch, and also good advertising for the platform.</p>
+
+<p>The following notes cover Shopify’s main features, what Shopify is good for, and what it’s bad for, Shopify’s file structure, the Liquid templating engine and some examples / helpful code snippets for various scenarios.</p>
+
+<h4 id="shopify-site-examples">Shopify Site Examples:</h4>
+
+<ul>
+  <li><a href="http://abookapart.com">A Book Apart</a></li>
+  <li><a href="http://unitedpixelworkers.com">United Pixel Workers</a>
+    <ul>
+      <li>Great custom checkout styles to override the ‘not so great’ Shopify default styles.</li>
+    </ul>
+  </li>
+  <li><a href="http://hardgraft.com">Hard Graft</a>
+    <ul>
+      <li>Custom JavaScript interactive browsing experience.</li>
+    </ul>
+  </li>
+  <li><a href="http://dodocase.com">Dodo Case</a></li>
+</ul>
+
+<p><strong>Slug</strong> term in Wordpress === <strong>Handle</strong> term in Shopify</p>
+
+<p>Handles can allow for customised templates to be used to alter the experience on different pages.</p>
+
+<h4 id="reserves-words">Reserves words:</h4>
+
+<ul>
+  <li>Products</li>
+  <li>Collections</li>
+  <li>Carts</li>
+</ul>
+
+<p>Image handling: Max size is 1024x1024.</p>
+
+<h4 id="shopify-restrictions">Shopify Restrictions</h4>
+
+<p>The only restriction is the <strong>Add to cart</strong> form location.</p>
+
+<h4 id="product-variant-options">Product Variant Options</h4>
+
+<p>Options for variants of the same product. e.g. T-shirts.</p>
+
+<ul>
+  <li>Colour</li>
+  <li>Sizes</li>
+</ul>
+
+<h4 id="shopify-as-a-blogging-tool">Shopify as a Blogging Tool</h4>
+
+<p>Shopify is not that great for blogging - it offers <em>basic</em> functionality for blogging. Best example of its use is for a Press page - small snippets of text explaining what’s new.</p>
+
+<h4 id="javascript-customisation">JavaScript Customisation</h4>
+
+<p>Powerful API tools to allow for customisating the browser experience e.g. Variant options, Collection sorting etc.</p>
+
+<h4 id="collections">Collections</h4>
+
+<ul>
+  <li>Smart Collections - price, in stock, sold out (but a shipment is coming in)</li>
+</ul>
+
+<h4 id="partners-test-section">Partners Test Section</h4>
+
+<p>Throws in all the functionality one would ever need from a shop. Allows users to start fiddling about with the platform without having to pay for a license. </p>
+
+<h4 id="product-features--fields">Product features / fields</h4>
+
+<ul>
+  <li>Title</li>
+  <li>URL &amp; Handle - <em>Similar to the permalink field in Wordpress</em></li>
+  <li>WYSIWYG Editor</li>
+  <li>Product properties / options
+    <ul>
+      <li>Product Type</li>
+      <li>Vendor</li>
+      <li>Size</li>
+    </ul>
+  </li>
+  <li>Tags
+    <ul>
+      <li>Custom Collections
+        <ul>
+          <li>Year for Music (1999)</li>
+          <li>Logical groupings for T-shirts
+Collections</li>
+        </ul>
+      </li>
+      <li>Front page collection to throw a product on the homepage.</li>
+    </ul>
+  </li>
+  <li>Inventory 
+    <ul>
+      <li>SKUS</li>
+      <li>Weight</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="collections-1">Collections</h4>
+
+<ul>
+  <li>Title</li>
+  <li>Description</li>
+</ul>
+
+<p><em>0-Many relationship - Products can be in as many or as little as 0 collections.</em></p>
+
+<h4 id="smart-collections">Smart Collections</h4>
+
+<p>Filters to determine what’s in the selection - everything on sale in 1999 (product == sale in 1999).</p>
+
+<h4 id="page">Page</h4>
+
+<ul>
+  <li>Template - page.FAQ, page.contact etc.</li>
+</ul>
+
+<h4 id="navigation">Navigation</h4>
+
+<p>Custom nav lists equivalent to menus in Wordpress.</p>
+
+<h4 id="bundles">Bundles</h4>
+
+<ul>
+  <li>Shopify Textmate Bundle - Allows you to edit and sync template files.</li>
+  <li>Shopify Theme Tool - <em>In Beta so not available yet.</em></li>
+</ul>
+
+<h4 id="theme-structures">Theme Structures</h4>
+
+<ul>
+  <li>assets - <em>Basic dumping folder for stuff - <strong>No nesting folders acceptable</strong>.</em></li>
+  <li>config - <em>Used to offer more control to client in admin section.</em></li>
+  <li>layout
+    <ul>
+      <li>theme.liquid - <em>layout file - outerskin of the site e.g. base.html etc.</em></li>
+    </ul>
+  </li>
+  <li>snippets - <em>include useful code snippets.</em></li>
+  <li>templates
+    <ul>
+      <li>404.liquid</li>
+      <li>article.liquid - <em>blog detail page</em></li>
+      <li>blog.liquid</li>
+      <li>cart.liquid</li>
+      <li>collection.liquid</li>
+      <li>index.liquid - <em>shop homepage</em></li>
+      <li>page.liquid</li>
+      <li>product.liquid</li>
+      <li>search.liquid</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="layouts">Layouts</h4>
+
+<p>Useful for injecting content into a base template that contains default elements used site-wide like, header and footer.</p>
+
+<p><code>important hook for header.
+</code> injects content into base layout.</p>
+
+<h2 id="liquid-templating-engine">Liquid Templating Engine</h2>
+
+<h4 id="output">Output</h4>
+
+<div class="highlight"><pre><code class="language-django" data-lang="django"><span class="cp">{{</span> <span class="nv">product.title</span> <span class="cp">}}</span><span class="x"></span>
+<span class="cp">{{</span> <span class="nv">product.price</span> <span class="cp">}}</span><span class="x"></span></code></pre></div>
+
+<h4 id="filters">Filters</h4>
+
+<p><em>What goes in at the beginning, comes out altered at the end.</em></p>
+
+<div class="highlight"><pre><code class="language-django" data-lang="django"><span class="cp">{{</span> <span class="nv">product.title</span> <span class="o">|</span> <span class="nf">upcase</span> <span class="cp">}}</span><span class="x"> </span>
+<span class="x">//Comes out as a string, turned into uppercase.</span>
+
+<span class="cp">{{</span> <span class="s1">&#39;logo.png&#39;</span> <span class="o">|</span> <span class="nf">asset_url</span> <span class="o">|</span> <span class="nf">img_tag</span><span class="o">:</span> <span class="s1">&#39;Site Logo&#39;</span> <span class="cp">}}</span><span class="x"></span>
+<span class="cp">{{</span> <span class="s1">&#39;style.css&#39;</span> <span class="o">|</span> <span class="nf">asset_url</span> <span class="o">|</span> <span class="nf">stylesheet_tag</span> <span class="cp">}}</span><span class="x"></span></code></pre></div>
+
+<h4 id="logic">Logic</h4>
+
+<div class="highlight"><pre><code class="language-django" data-lang="django"><span class="cp">{%</span> <span class="k">if</span> <span class="nv">product.available</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">Show Add to cart button here</span>
+<span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">Display message about when the product will be next available</span>
+<span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
+
+<span class="cp">{%</span> <span class="k">cycle</span> <span class="s1">&#39;one&#39;</span><span class="o">,</span> <span class="s1">&#39;two&#39;</span> <span class="cp">%}</span><span class="x"></span>
+<span class="cp">{%</span> <span class="k">cycle</span> <span class="s1">&#39;one&#39;</span><span class="o">,</span> <span class="s1">&#39;two&#39;</span> <span class="cp">%}</span><span class="x"></span>
+<span class="cp">{%</span> <span class="k">cycle</span> <span class="s1">&#39;one&#39;</span><span class="o">,</span> <span class="s1">&#39;two&#39;</span> <span class="cp">%}</span><span class="x"></span>
+
+<span class="x">// one</span>
+<span class="x">// two</span>
+<span class="x">// one</span>
+
+<span class="x">// Operators == != &gt; &lt; &gt;= &lt;= or and</span>
+
+<span class="cp">{%</span> <span class="k">case</span> <span class="nv">handle</span> <span class="cp">%}</span><span class="x"></span>
+<span class="cp">{%</span> <span class="k">when</span> <span class="s1">&#39;cake&#39;</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">This is a cake</span>
+<span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">This is not a cake</span>
+<span class="cp">{%</span> <span class="k">endcase</span> <span class="cp">%}</span><span class="x"></span></code></pre></div>
+
+<h4 id="loops">Loops</h4>
+
+<div class="highlight"><pre><code class="language-django" data-lang="django"><span class="cp">{%</span> <span class="k">for</span> <span class="nv">image</span> <span class="k">in</span> <span class="nv">product.images</span> <span class="cp">%}</span><span class="x"></span>
+
+<span class="cp">{%</span> <span class="k">if</span> <span class="nb">forloop</span><span class="nv">.first</span> <span class="cp">%}</span><span class="x"></span>
+
+<span class="x">//Large first image.</span>
+
+<span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span><span class="x"></span>
+
+<span class="x">//Small images for remaining items.</span>
+
+<span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
+<span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span><span class="x"></span></code></pre></div>
+
+<h2 id="templates">Templates</h2>
+
+<h4 id="variables">Variables</h4>
+
+<p>List of variables here on the <a href="http://wiki.shopify.com/Product.variables">wiki page</a>.</p>
+
+<h4 id="collection-pagination">Collection pagination</h4>
+
+<div class="highlight"><pre><code class="language-django" data-lang="django"><span class="cp">{%</span> <span class="k">paginate</span> <span class="nv">collection.products</span> <span class="nv">by</span> <span class="m">12</span> <span class="cp">%}</span><span class="x"></span>
+
+<span class="cp">{%</span> <span class="k">if</span> <span class="nv">collection.products.size</span> <span class="o">==</span> <span class="m">0</span> <span class="cp">%}</span><span class="x"></span>
+
+<span class="x">	&lt;h1&gt;No products, baby!&lt;/h1&gt;</span>
+
+<span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span><span class="x"></span>
+
+<span class="x">//Show products</span>
+
+<span class="cp">{%</span> <span class="k">if</span> <span class="nv">paginate.pages</span> <span class="o">&gt;</span> <span class="m">1</span> <span class="cp">%}</span><span class="x"></span>
+
+<span class="x">	</span><span class="cp">{{</span> <span class="nv">paginate</span> <span class="o">|</span> <span class="nf">default_pagination</span> <span class="cp">}}</span><span class="x"></span>
+
+<span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span></code></pre></div>
+
+<h4 id="feature-collections">Feature Collections</h4>
+
+<p>Show products on homepage:</p>
+
+<div class="highlight"><pre><code class="language-django" data-lang="django"><span class="cp">{%</span> <span class="k">for</span> <span class="nv">product</span> <span class="k">in</span> <span class="nv">collections.frontpage.products</span> <span class="nv">limit</span><span class="o">:</span><span class="m">3</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">	//Show some products</span>
+<span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span><span class="x"></span></code></pre></div>
+
+<p>Special offers:</p>
+
+<div class="highlight"><pre><code class="language-django" data-lang="django"><span class="cp">{%</span> <span class="k">assign</span> <span class="nv">article</span> <span class="o">=</span> <span class="nv">pages.frontpage</span> <span class="cp">%}</span><span class="x"> //Assign variable by grabbing data from a page</span>
+<span class="cp">{%</span> <span class="k">if</span> <span class="nv">article.content</span> <span class="p">!</span><span class="o">=</span> <span class="s1">&#39;&#39;</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">	//Show some front page articles by injecting page data</span>
+<span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span></code></pre></div>
+
+<h4 id="theme-settings">Theme Settings</h4>
+
+<p>Done by assiging variables to to name parameter on markup.</p>
+
+<p><code>name="text_color"</code></p>
+
+<h4 id="cssliquid---dynamic-css">CSS.liquid - Dynamic CSS</h4>
+
+<div class="highlight"><pre><code class="language-django" data-lang="django"><span class="x">body {</span>
+<span class="x">	color: </span><span class="cp">{{</span> <span class="nv">settings.text_color</span> <span class="cp">}}</span><span class="x">;</span>
+<span class="x">	background-color: </span><span class="cp">{{</span> <span class="nv">settings.bg_color</span> <span class="cp">}}</span><span class="x">;</span>
+<span class="x">}</span></code></pre></div>
+
+<h4 id="alternate-layouts">Alternate Layouts</h4>
+
+<div class="highlight"><pre><code class="language-django" data-lang="django"><span class="cp">{%</span> <span class="k">layout</span> <span class="nv">bacon.liquid</span> <span class="cp">%}</span><span class="x"></span></code></pre></div>
+
+<h4 id="cartjs---cart-json-for-sweet-js-customisation">Cart.js - cart JSON for sweet JS customisation</h4>
+
+<p>Going to <code>/cart.js</code> on a Shopify front end will give you access to a JSON file of the clients cart - nice for JavaScript dev customisation.</p>
+
+<h4 id="alternate-add-to-cart-methods">Alternate “Add to Cart” methods</h4>
+
+<p>Cart Permalinks - use URLS to add items to a cart.</p>
+
+<h2 id="the-shopify-cheat-sheet">The Shopify cheat sheet</h2>
+
+<p>The shopify cheat sheet is a fantastic little resource to have open when using Shopify’s liquid templating engine.</p>
+
+<p><a href="http://cheat.markdunkley.com">Shopify Cheat Sheet</a></p>
+
+      
+<div class="social">
+    
+    <div class="social-twitter">
+        <a href="https://twitter.com/share" class="twitter-share-button"  data-text="Shopify for Designers - A Workshop by Keir Whitaker" data-related="kingscooty">Tweet</a>
+    </div>
+    
+    
+    <div class="social-facebook">
+        <div class="fb-like" data-width="150" data-layout="button_count" data-action="like" data-show-faces="true" data-send="false"></div>
+    </div>
+    
+    
+    <div class="social-google">
+        <div class="g-plusone" data-size="medium"></div>
+    </div>
+    
+    
+    
+</div>
+
+    </section>
+
+    <footer>
+      <address>
+        
+          <!-- <img src="/images/ks.png"> -->
+          <img src="http://www.gravatar.com/avatar/61f2bf61edacc1d2d6829b69cd530c93.png">
+        
+        <p>Written by <strong><a rel="author" href="https://twitter.com/KingScooty" title="" target="_blank">Scotty Vernon</a></strong><br>
+        <span class="muted">Founder, Software Engineer @ Wildflame Studios</span>
+        </p>
+      </address>
+
+    </footer>
+
+    
+
+    
+    <section>
+      <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'creativenightly'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+    </section>
+    
+  </div>
+</article>
+
+
+<footer class="site-footer">
+  <div class="container">
+    &copy; 2014 
+    
+    <nav>
+      <!-- http://creativenightly.com/ -->
+      <a href="http://wildflame.co.uk">Scotty Vernon / @KingScooty</a> <!-- &middot; -->
+      <a href="/">Blog</a> <!-- &middot; -->
+      
+      
+    </nav>
+    
+    <nav class="social">
+      
+      <a href="https://twitter.com/kingscooty" title="Follow on Twitter" target="_blank"><i class="icon icon-twitter black"></i></a>
+      
+      
+      <a href="http://facebook.com/creativenightly" title="Follow on Facebook" target="_blank"><i class="icon icon-facebook black"></i></a>
+          
+      <a href="/feed.xml" title="RSS Feed">
+        <i class="icon icon-rss black"></i>
+      </a>
+    </nav>
+    <p>Incorporated theme by <a href="https://sendtoinc.com">Inc</a></p>
+  </div>
+</footer>
+
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="/assets/main.js"></script>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=253595308025739";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+
+
+
+  <script type="text/javascript" src="//use.typekit.net/adu5fik.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</body>
+</html>
