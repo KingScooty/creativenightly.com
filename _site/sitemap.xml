@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"> 
+    <url> 
+        <loc>http://scottyv.me</loc>
+        <changefreq>daily</changefreq> 
+        <priority>1</priority> 
+    </url>
+    
+    <url>
+        <loc>http://creativenightly.com/2014/07/setting_up_hyperion_on_a_raspberry_pi_for_use_with_lightpack</loc>
+        
+        <lastmod>2014-07-22</lastmod>
+        
+        <changefreq>weekly</changefreq>
+    </url>
+    
+    <url>
+        <loc>http://creativenightly.com/2013/11/setting_up_and_securing_an_ubuntu_vps_on_digital_ocean</loc>
+        
+        <lastmod>2013-11-03</lastmod>
+        
+        <changefreq>weekly</changefreq>
+    </url>
+    
+    <url>
+        <loc>http://creativenightly.com/2013/10/How-to-fix-Homebrew-on-Mac-OSX-Mavericks</loc>
+        
+        <lastmod>2013-10-25</lastmod>
+        
+        <changefreq>weekly</changefreq>
+    </url>
+    
+    <url>
+        <loc>http://creativenightly.com/2013/03/How-to-install-ruby-2-0-0-on-OSX-Mountain-Lion</loc>
+        
+        <lastmod>2013-03-11</lastmod>
+        
+        <changefreq>weekly</changefreq>
+    </url>
+    
+    <url>
+        <loc>http://creativenightly.com/2012/09/Visual-tweaks-to-improve-Sublime-Text-2-workflow</loc>
+        
+        <lastmod>2013-02-13</lastmod>
+        
+        <changefreq>weekly</changefreq>
+    </url>
+    
+    <url>
+        <loc>http://creativenightly.com/2012/07/Shopify-for-Designers-a-Workshop-by-Keir-Whitaker</loc>
+        
+        <lastmod>2013-02-10</lastmod>
+        
+        <changefreq>weekly</changefreq>
+    </url>
+    
+    <url>
+        <loc>http://creativenightly.com/2012/07/Sublime-Text-2-Theme-Package-Management</loc>
+        
+        <lastmod>2013-02-12</lastmod>
+        
+        <changefreq>weekly</changefreq>
+    </url>
+    
+    <url>
+        <loc>http://creativenightly.com/2012/06/Setting-up-a-mac-as-a-dev-machine</loc>
+        
+        <lastmod>2013-03-16</lastmod>
+        
+        <changefreq>weekly</changefreq>
+    </url>
+    
+</urlset>
