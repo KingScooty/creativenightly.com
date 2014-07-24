@@ -50,45 +50,36 @@ namespace :site do
     })).process
   end
 
-desc "Commit _site/"
-task :commit do
-  puts "\n## Staging modified files"
-  status = system("git add -A")
-  puts status ? "Success" : "Failed"
-
-  puts "\n## Committing a site build at #{Time.now.utc}"
-  message = "Build site at #{Time.now.utc}"
-  status = system
-end
-
   desc "Generate and publish blog to master"
   task :publish => [:generate] do
     Dir.mktmpdir do |tmp|
-      system "git branch -D master"
-      system "git push origin :master -f"
-      system "git checkout -b master"
-      puts "Regenerated master branch."
-      
-      puts "Adding _site to master..."
-      system "git add ."
-      
+      puts "\n## Staging modified files"
+      status = system("git add -A")
+      puts status ? "Success" : "Failed"
+
       message = "Site updated at #{Time.now.utc}"
-      puts = "Successfully added at #{Time.now.utc}."
+      status = system "git commit -m #{message.inspect}"
+      puts = status ? "Successfully commited to local repo." : "Failed"
+
+      status = system "git branch -D master"
+      puts = status ? "Successfully deleted master." : "Failed deleting master."
       
-      system "git commit -m #{message.inspect}"
-      puts = "Successfully commited to local repo."
+      status = system "git checkout -b master"
+      puts = status ? "Successfully checked out new master branch." : "Failed checking out new master"
       
       puts "Forcing subdir _site to be root dir..."
-      system "git filter-branch --subdirectory-filter _site/ -f"
+      status = system "git filter-branch --subdirectory-filter _site/ -f"
+      puts = status ? "Success" : "Failed"
 
       puts "Removing .sass-cache"
       system "rm -r .sass-cache"
+
+      system "git checkout source"
       
       puts = "Pushing to remote #{GITHUB_REPONAME}..."
-      system "git push origin master -f"
-      system "git push origin source"
+      status = system "git push origin --all"
       
-      puts = "le BOOM! :)"
+      puts = status ? "le BOOM! :)" : "le fail :/"
     end
   end
 end
