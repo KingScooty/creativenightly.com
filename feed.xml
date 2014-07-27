@@ -6,8 +6,8 @@
     <atom:link href="http://creativenightly.com/feed.xml" rel="self" type="application/rss+xml" />
     <description></description>
     <language>en-us</language>
-    <pubDate>Sun, 27 Jul 2014 10:45:51 +0000</pubDate>
-    <lastBuildDate>Sun, 27 Jul 2014 10:45:51 +0000</lastBuildDate>
+    <pubDate>Sun, 27 Jul 2014 10:51:48 +0000</pubDate>
+    <lastBuildDate>Sun, 27 Jul 2014 10:51:48 +0000</lastBuildDate>
 
     
     
@@ -49,10 +49,10 @@ apt-get install libqtcore4 libqtgui4 libqt4-network libusb-1.0-0 libprotobuf7 ca
     
     <item>
       <title>Setting up and securing an Ubuntu VPS on Digital Ocean</title>
-      <link>http://creativenightly.com/2013/11/Setting_up_and_securing_a_VPS_on_Ubuntu_13_10_x64</link>
+      <link>http://creativenightly.com/2013/11/Setting-up-and-securing-a-VPS-on-Ubuntu-13-10-x64</link>
       <pubDate>Sun, 03 Nov 2013 00:00:00 +0000</pubDate>
       <author></author>
-      <guid>http://creativenightly.com/2013/11/Setting_up_and_securing_a_VPS_on_Ubuntu_13_10_x64</guid>
+      <guid>http://creativenightly.com/2013/11/Setting-up-and-securing-a-VPS-on-Ubuntu-13-10-x64</guid>
       <description>&lt;p&gt;&lt;strong&gt;&lt;em&gt;This is a work in progress post, as i’m short on time to dabble with security. I’ll add to it as i get time to set up my VPS&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;basic-security&quot;&gt;Basic Security&lt;/h2&gt;
