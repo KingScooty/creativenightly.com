@@ -45,11 +45,11 @@ inc:
 url:         http://creativenightly.com
 source:      .
 destination: ./_site
-plugins:     ./_plugins
+plugins:     null
 layouts:     ./_layouts
 include:     ['.htaccess']
 exclude:     []
-timezone:    nil
+timezone:    null
 
 # Show future posts
 future:      false
@@ -72,7 +72,7 @@ excerpt_separator: "<!-- more -->"
 safe:        false
 host:        0.0.0.0
 port:        4000
-baseurl:     /
+#baseurl:     /
 lsi:         false
 
 maruku:
@@ -110,17 +110,22 @@ redcloth:
 #
 # jekyll-assets: see more at https://github.com/ixti/jekyll-assets
 #
-assets:
 
-  dirname: assets
-  baseurl: /assets/
-  sources:
-    - _assets/javascripts
-    - _assets/stylesheets
-    - _assets/images
-  js_compressor: uglifier
-  css_compressor: sass
-  cachebust: none
-  cache: false
-  gzip: [ text/css, application/javascript ]
-  debug: false
+sass:
+    sass_dir: assets/_sass
+    style: :compressed
+
+# assets:
+
+#   dirname: assets
+#   baseurl: /assets/
+#   sources:
+#     - _assets/javascripts
+#     - _assets/stylesheets
+#     - _assets/images
+#   js_compressor: uglifier
+#   css_compressor: sass
+#   cachebust: none
+#   cache: false
+#   gzip: [ text/css, application/javascript ]
+#   debug: false
