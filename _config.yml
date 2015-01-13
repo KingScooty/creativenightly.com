@@ -7,9 +7,9 @@ inc:
   logo:         logo.png
 
   # Company information
-  company:      Scotty Vernon / @KingScooty
+  company:      Creative Nightly
   url:          http://creativenightly.com/
-  facebook:     creativenightly
+  facebook:     null
   twitter:      kingscooty
   gplus:        '101183822199340201470'
   about_link:   false
