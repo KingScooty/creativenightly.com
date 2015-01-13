@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 <head>
@@ -60,6 +61,13 @@
 
 <div id="yield">
   <div class="blog-cover" style="background-image:url(/images/archive-1.jpg);">
+=======
+---
+layout: base
+---
+
+<div class="blog-cover" style="background-image:url(/images/archive-1.jpg);">
+>>>>>>> 2015
   <section>
     <div class="container">
       <h1>ARCHIVE</h1>
@@ -73,6 +81,7 @@
 
   <section class="posts">
     <ul class="list-ui">
+<<<<<<< HEAD
     
     
       <li class="list-ui__item">
@@ -105,6 +114,16 @@
       </li>
     
     
+=======
+    {% for post in site.posts %}
+    {% unless post.draft or post.path contains '_posts/archive' %}
+      <li class="list-ui__item">
+          <time class="post__date" datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%d %B, %Y" }}</time>
+          <h3 class="post__title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+      </li>
+    {% endunless %}
+    {% endfor %}
+>>>>>>> 2015
     </ul>
   </section>
 
@@ -112,6 +131,7 @@
 
   <section class="posts">
     <ul class="list-ui">
+<<<<<<< HEAD
     
     
     
@@ -232,3 +252,17 @@
 
 </body>
 </html>
+=======
+    {% for post in site.posts %}
+    {% if  post.path contains '_posts/archive' %}
+      <li class="list-ui__item">
+          <time class="post__date" datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%d %B, %Y" }}</time>
+          <h3 class="post__title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+      </li>
+    {% endif %}
+    {% endfor %}
+    </ul>
+  </section>
+
+</div>
+>>>>>>> 2015
