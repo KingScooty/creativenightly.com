@@ -51,7 +51,7 @@ article {
   address {
     margin:0;
     font-size:0.9em;
-    max-height:48px;
+    // max-height:48px;
     
     p {
       margin:0;
@@ -64,11 +64,13 @@ article {
       height: 64px;
       margin: 0 20px 0 0;
       display: inline-block;
-      margin-top: -28px;
+      // margin-top: -28px;
     }       
     
     .follow {
-      margin:1em 0 0;
+      // margin:1em 0 0;
+      // margin: 1em 75px 0;
+      margin: -12px 88px 0;
     }
 
   }
