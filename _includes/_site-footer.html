@@ -1,0 +1,46 @@
+<footer class="site-footer">
+  <div class="container">
+    &copy; {{ site.time | date: "%Y" }} 
+
+    <nav class="navigation navigation--horizontal navigation--secondary">
+      <ul>
+        <li><a href="/">{{ site.inc.company }}</a></li> &middot;
+        <li><a href="http://twitter.com/kingscooty">KingScooty</a></li> &middot;
+        <li><a href="http://www.wildflame.co.uk/">Wildflame</a></li>
+        {% if site.inc.about_link %}
+        <li><a href="{{ site.inc.about_link }}">About</a></li>
+        {% endif %}
+      </ul>
+    </nav>
+
+    <nav class="navigation navigation--horizontal navigation--secondary">
+      <ul>
+        <!-- Twitter -->
+        {% if site.inc.twitter %}
+        <li>
+          <a href="https://twitter.com/{{ site.inc.twitter }}" title="Follow on Twitter" target="_blank" class="btn-outline">
+            <i class="icon icon-twitter black"></i>
+          </a>
+        </li>
+        {% endif %}
+
+        <!-- Facebook -->
+        {% if site.inc.facebook %}
+        <li>
+          <a href="http://facebook.com/{{ site.inc.facebook }}" title="Follow on Facebook" target="_blank" class="btn-outline">
+            <i class="icon icon-facebook black"></i>
+          </a>
+        </li>
+        {% endif %}
+        
+        <!-- RSS -->
+        <li>
+          <a href="/feed.xml" title="RSS Feed" class="btn-outline">
+            <i class="icon icon-rss black"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+  </div>
+</footer>
