@@ -15,3 +15,10 @@
 }
 
 /* IMPORT CSS FILES */
+
+@import "plugins/sassline/variables";
+@import "plugins/sassline/modular-scale";
+@import "plugins/sassline/mixins";
+@import "theme/typography";
+
+body { @include container(63rem); }
