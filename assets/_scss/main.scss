@@ -1,0 +1,17 @@
+
+@import "config";
+// Move above into a config file?
+
+// Import componenets
+
+
+@import "../_bower_components/normalize-scss/normalize";
+@import "../_bower_components/susy/sass/susy";
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; 
+}
+
+/* IMPORT CSS FILES */

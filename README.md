@@ -3,7 +3,7 @@ Copyright 2015 KingScooty / Creative Nightly
 
 ##HOME
 
-```
+```jade
 section.site-nav
   header
     #navigation
@@ -57,7 +57,7 @@ footer.site-footer
 ```
 
 ##POST
-```
+```jade
 ...
 
 #yield
