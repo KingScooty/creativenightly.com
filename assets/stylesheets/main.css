@@ -467,3 +467,19 @@ body {
   background-image: linear-gradient(to bottom, cyan 0, rgba(255, 255, 255, 0) 1px);
   background-repeat: repeat-y;
   background-size: 100% 1rem; }
+
+.navigation--horizontal ul:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.navigation ul {
+  list-style-type: none; }
+
+.navigation--horizontal li {
+  float: left; }
+
+.navigation--spacer li:after {
+  content: '\b7'; }
+.navigation--spacer li:last-child:after {
+  content: ''; }

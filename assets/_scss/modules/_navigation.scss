@@ -1,0 +1,27 @@
+.navigation {
+  ul {
+    list-style-type: none;
+  }
+}
+
+.navigation--horizontal {
+  ul {
+    @extend %clearfix;
+  }
+
+  li {
+    // display: inline-block;
+    float: left;
+  }
+}
+
+.navigation--spacer {
+  li {
+    &:after {
+      content: '\b7'
+    }
+    &:last-child:after {
+      content: '';
+    }
+  }
+}
