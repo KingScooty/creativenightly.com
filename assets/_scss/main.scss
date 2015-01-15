@@ -17,6 +17,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 caption, th, td { text-align: left; font-weight: normal; vertical-align: middle; }
 
 @import "../_bower_components/susy/sass/susy";
+@import "../_bower_components/sass-mediaqueries/media-queries";
 
 *, *:before, *:after {
   -moz-box-sizing: border-box;

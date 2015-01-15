@@ -4,6 +4,7 @@
   "dependencies": {},
   "devDependencies": {
     "susy": "~2.2.1",
-    "normalize-scss": "git://github.com/appleboy/normalize.scss.git#~3.0.2"
+    "normalize-scss": "git://github.com/appleboy/normalize.scss.git#~3.0.2",
+    "sass-mediaqueries": "~1.4.0"
   }
 }
