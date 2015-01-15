@@ -31,8 +31,6 @@ caption, th, td { text-align: left; font-weight: normal; vertical-align: middle;
 @import "plugins/sassline/mixins";
 @import "theme/typography";
 
-body { @include container(63rem); }
-
 .show-grid {
   background-image: -webkit-linear-gradient(top, cyan 0, rgba(255,255,255,0) 1px);
   background-image: -moz-linear-gradient(top, cyan 0, rgba(255,255,255,0) 1px);
