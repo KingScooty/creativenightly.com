@@ -36,8 +36,6 @@ caption, th, td {
   vertical-align: middle; }
 
 *, *:before, *:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
 /* IMPORT CSS FILES */
@@ -79,9 +77,6 @@ body {
 
 a {
   -webkit-transition: color .1s, background-color .1s;
-  -moz-transition: color .1s, background-color .1s;
-  -ms-transition: color .1s, background-color .1s;
-  -o-transition: color .1s, background-color .1s;
   transition: color .1s, background-color .1s;
   color: #0E58F5;
   text-decoration: none; }
@@ -91,8 +86,6 @@ a {
 
 p a, li a {
   background-image: -webkit-linear-gradient(top, transparent 50%, #709cf9 50%);
-  background-image: -moz-linear-gradient(top, transparent 50%, #709cf9 50%);
-  background-image: -o-linear-gradient(top, transparent 50%, #709cf9 50%);
   background-image: linear-gradient(to bottom, transparent 50%, #709cf9 50%);
   background-position: 0 93%;
   background-repeat: repeat-x;
@@ -100,15 +93,12 @@ p a, li a {
   text-shadow: 0.1rem 0 #FCFCFC, 0.15rem 0 #FCFCFC, -0.1rem 0 #FCFCFC, -0.15rem 0 #FCFCFC; }
   p a:hover, p a:active, p a:focus, li a:hover, li a:active, li a:focus {
     background-image: -webkit-linear-gradient(top, transparent 50%, #1257ea 50%);
-    background-image: -moz-linear-gradient(top, transparent 50%, #1257ea 50%);
-    background-image: -o-linear-gradient(top, transparent 50%, #1257ea 50%);
     background-image: linear-gradient(to bottom, transparent 50%, #1257ea 50%); }
 
 p {
   -webkit-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
   -moz-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
   -ms-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
-  -o-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
   font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
   line-height: 2rem;
   margin-bottom: 1.54666rem;
@@ -134,7 +124,6 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
   -moz-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
   -ms-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
-  -o-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
   font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
   color: #2E2E2E;
   font-family: futura-pt;
@@ -321,7 +310,6 @@ ul, ol {
     -webkit-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
     -moz-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
     -ms-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
-    -o-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
     font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
     margin-left: 2rem; }
     @media screen and (min-width: 40em) {
@@ -458,7 +446,6 @@ code {
   -webkit-font-feature-settings: 'smcp' 1, 'kern' 1;
   -moz-font-feature-settings: 'smcp' 1, 'kern' 1;
   -ms-font-feature-settings: 'smcp' 1, 'kern' 1;
-  -o-font-feature-settings: 'smcp' 1, 'kern' 1;
   font-feature-settings: 'smcp' 1, 'kern' 1;
   letter-spacing: 0.1rem; }
 
@@ -466,20 +453,16 @@ code {
   -webkit-font-feature-settings: 'lnum' 1, 'kern' 1;
   -moz-font-feature-settings: 'lnum' 1, 'kern' 1;
   -ms-font-feature-settings: 'lnum' 1, 'kern' 1;
-  -o-font-feature-settings: 'lnum' 1, 'kern' 1;
   font-feature-settings: 'lnum' 1, 'kern' 1; }
 
 .oldstyle-numerals {
   -webkit-font-feature-settings: 'onum' 1, 'kern' 1;
   -moz-font-feature-settings: 'onum' 1, 'kern' 1;
   -ms-font-feature-settings: 'onum' 1, 'kern' 1;
-  -o-font-feature-settings: 'onum' 1, 'kern' 1;
   font-feature-settings: 'onum' 1, 'kern' 1; }
 
 .show-grid {
   background-image: -webkit-linear-gradient(top, cyan 0, rgba(255, 255, 255, 0) 1px);
-  background-image: -moz-linear-gradient(top, cyan 0, rgba(255, 255, 255, 0) 1px);
-  background-image: -o-linear-gradient(top, cyan 0, rgba(255, 255, 255, 0) 1px);
   background-image: linear-gradient(to bottom, cyan 0, rgba(255, 255, 255, 0) 1px);
   background-repeat: repeat-y;
   background-size: 100% 1rem; }
@@ -534,15 +517,22 @@ body {
   box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
   -webkit-backface-visibility: hidden;
   -webkit-perspective: 1000;
+  -webkit-transition: all 0.35s ease;
   transition: all 0.35s ease;
   z-index: 100; }
 
 .media-window {
   height: 323px;
-  height: 19rem; }
+  height: 19rem;
+  background-size: cover;
+  background-position: center center;
+  background-color: #333; }
 
 .media-window__content {
-  text-align: center; }
+  text-align: center;
+  padding: 4rem 0 3rem;
+  background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.7) 0%, transparent 100%);
+  background-image: linear-gradient(bottom, rgba(0, 0, 0, 0.7) 0%, transparent 100%); }
 
 .media-window__title, .media-window__subtitle, .media-window__content {
   color: white; }

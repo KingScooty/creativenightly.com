@@ -33,19 +33,19 @@ gulp.task('sass', function () {
 
 
 //Watch task built for speed in development
-gulp.task('sass-dev', function() {
-  gulp.src('./assets/_scss/main.scss')
+// gulp.task('sass-dev', function() {
+//   gulp.src('./assets/_scss/main.scss')
 
-    //Plumb pipe breaks incase of errors
-    .pipe(plumber())
+//     //Plumb pipe breaks incase of errors
+//     .pipe(plumber())
 
-    .pipe(sass())
+//     .pipe(sass())
 
-    .pipe(gulp.dest('./assets/stylesheets'));
-});
+//     .pipe(gulp.dest('./assets/stylesheets'));
+// });
 
-gulp.task('sass-watch', ['sass-dev'], function(){
-  gulp.watch('./assets/_scss/**/*.scss', ['sass-dev']).on('change', function(evt) {
+gulp.task('sass-watch', ['sass'], function(){
+  gulp.watch('./assets/_scss/**/*.scss', ['sass']).on('change', function(evt) {
     changeEvent(evt);
   });
 });

@@ -1,10 +1,18 @@
 .media-window {
   height: 323px;
   height: 19rem;
+
+  background-size: cover;
+  background-position: center center;
+  background-color: #333;
 }
 
 .media-window__content {
   text-align: center;
+  padding: 4rem 0 3rem;
+
+  // background-color: rgba(0,0,0,0.4);
+  background-image: linear-gradient(bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
 }
 
 .media-window__title,
