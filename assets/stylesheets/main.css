@@ -36,6 +36,8 @@ caption, th, td {
   vertical-align: middle; }
 
 *, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
 /* IMPORT CSS FILES */
@@ -77,6 +79,9 @@ body {
 
 a {
   -webkit-transition: color .1s, background-color .1s;
+  -moz-transition: color .1s, background-color .1s;
+  -ms-transition: color .1s, background-color .1s;
+  -o-transition: color .1s, background-color .1s;
   transition: color .1s, background-color .1s;
   color: #0E58F5;
   text-decoration: none; }
@@ -84,302 +89,327 @@ a {
     color: #0B348B;
     text-decoration: none; }
 
-.typeset p a, .typeset li a {
+p a, li a {
   background-image: -webkit-linear-gradient(top, transparent 50%, #709cf9 50%);
+  background-image: -moz-linear-gradient(top, transparent 50%, #709cf9 50%);
+  background-image: -o-linear-gradient(top, transparent 50%, #709cf9 50%);
   background-image: linear-gradient(to bottom, transparent 50%, #709cf9 50%);
   background-position: 0 93%;
   background-repeat: repeat-x;
   background-size: 100% 0.15rem;
   text-shadow: 0.1rem 0 #FCFCFC, 0.15rem 0 #FCFCFC, -0.1rem 0 #FCFCFC, -0.15rem 0 #FCFCFC; }
-  .typeset p a:hover, .typeset p a:active, .typeset p a:focus, .typeset li a:hover, .typeset li a:active, .typeset li a:focus {
+  p a:hover, p a:active, p a:focus, li a:hover, li a:active, li a:focus {
     background-image: -webkit-linear-gradient(top, transparent 50%, #1257ea 50%);
+    background-image: -moz-linear-gradient(top, transparent 50%, #1257ea 50%);
+    background-image: -o-linear-gradient(top, transparent 50%, #1257ea 50%);
     background-image: linear-gradient(to bottom, transparent 50%, #1257ea 50%); }
-.typeset p {
+
+p {
   -webkit-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
   -moz-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
   -ms-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+  -o-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
   font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
   line-height: 2rem;
   margin-bottom: 1.54666rem;
   padding-top: 0.45334rem; }
   @media screen and (min-width: 40em) {
-    .typeset p {
+    p {
       margin-bottom: 1.49785rem;
       padding-top: 0.50215rem; } }
   @media screen and (min-width: 50em) {
-    .typeset p {
+    p {
       margin-bottom: 1.49199rem;
       padding-top: 0.50801rem; } }
   @media screen and (min-width: 64em) {
-    .typeset p {
+    p {
       margin-bottom: 1.48234rem;
       padding-top: 0.51766rem; } }
   @media screen and (min-width: 100em) {
-    .typeset p {
+    p {
       margin-bottom: 1.47473rem;
       padding-top: 0.52527rem; } }
-.typeset h1, .typeset h2, .typeset h3, .typeset h4, .typeset h5, .typeset h6 {
+
+h1, h2, h3, h4, h5, h6 {
   -webkit-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
   -moz-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
   -ms-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+  -o-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
   font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
   color: #2E2E2E;
   font-family: futura-pt;
   font-style: normal;
   font-weight: 700; }
-.typeset h1, .typeset .alpha {
+
+h1, .alpha {
   line-height: 3rem;
   font-size: 2.33333rem;
   margin-bottom: 0.26999rem;
   padding-top: 0.73001rem; }
   @media screen and (min-width: 40em) {
-    .typeset h1, .typeset .alpha {
+    h1, .alpha {
       font-size: 2.14286rem;
       margin-bottom: 0.20713rem;
       padding-top: 0.79287rem; } }
   @media screen and (min-width: 50em) {
-    .typeset h1, .typeset .alpha {
+    h1, .alpha {
       font-size: 2.13333rem;
       margin-bottom: 0.20399rem;
       padding-top: 0.79601rem; } }
   @media screen and (min-width: 64em) {
-    .typeset h1, .typeset .alpha {
+    h1, .alpha {
       font-size: 2.35294rem;
       margin-bottom: 0.27646rem;
       padding-top: 0.72354rem; } }
   @media screen and (min-width: 100em) {
-    .typeset h1, .typeset .alpha {
+    h1, .alpha {
       font-size: 2.63158rem;
       margin-bottom: 0.36841rem;
       padding-top: 0.63159rem; } }
-.typeset h2, .typeset .beta {
+
+h2, .beta {
   line-height: 3rem;
   font-size: 2.08333rem;
   margin-bottom: 0.18749rem;
   padding-top: 0.81251rem; }
   @media screen and (min-width: 40em) {
-    .typeset h2, .typeset .beta {
+    h2, .beta {
       font-size: 1.9rem;
       margin-bottom: 0.12699rem;
       padding-top: 0.87301rem; } }
   @media screen and (min-width: 50em) {
-    .typeset h2, .typeset .beta {
+    h2, .beta {
       font-size: 1.87333rem;
       margin-bottom: 0.11819rem;
       padding-top: 0.88181rem; } }
   @media screen and (min-width: 64em) {
-    .typeset h2, .typeset .beta {
+    h2, .beta {
       font-size: 2.08824rem;
       margin-bottom: 0.18911rem;
       padding-top: 0.81089rem; } }
   @media screen and (min-width: 100em) {
-    .typeset h2, .typeset .beta {
+    h2, .beta {
       font-size: 2.31053rem;
       margin-bottom: 0.26246rem;
       padding-top: 0.73754rem; } }
-.typeset h3, .typeset .gamma {
+
+h3, .gamma {
   line-height: 3rem;
   font-size: 1.86667rem;
   margin-bottom: 0.11599rem;
   padding-top: 0.88401rem; }
   @media screen and (min-width: 40em) {
-    .typeset h3, .typeset .gamma {
+    h3, .gamma {
       font-size: 1.71429rem;
       margin-bottom: 0.0657rem;
       padding-top: 0.9343rem; } }
   @media screen and (min-width: 50em) {
-    .typeset h3, .typeset .gamma {
+    h3, .gamma {
       font-size: 1.70667rem;
       margin-bottom: 0.06319rem;
       padding-top: 0.93681rem; } }
   @media screen and (min-width: 64em) {
-    .typeset h3, .typeset .gamma {
+    h3, .gamma {
       font-size: 1.76471rem;
       margin-bottom: 0.08234rem;
       padding-top: 0.91766rem; } }
   @media screen and (min-width: 100em) {
-    .typeset h3, .typeset .gamma {
+    h3, .gamma {
       font-size: 1.85789rem;
       margin-bottom: 0.1131rem;
       padding-top: 0.8869rem; } }
-.typeset h4, .typeset .delta {
+
+h4, .delta {
   line-height: 2rem;
   font-size: 1.66667rem;
   margin-bottom: -0.45001rem;
   padding-top: 0.45001rem; }
   @media screen and (min-width: 40em) {
-    .typeset h4, .typeset .delta {
+    h4, .delta {
       font-size: 1.52143rem;
       margin-bottom: -0.49794rem;
       padding-top: 0.49794rem; } }
   @media screen and (min-width: 50em) {
-    .typeset h4, .typeset .delta {
+    h4, .delta {
       font-size: 1.5rem;
       margin-bottom: -0.50501rem;
       padding-top: 0.50501rem; } }
   @media screen and (min-width: 64em) {
-    .typeset h4, .typeset .delta {
+    h4, .delta {
       font-size: 1.57059rem;
       margin-bottom: -0.48172rem;
       padding-top: 0.48172rem; } }
   @media screen and (min-width: 100em) {
-    .typeset h4, .typeset .delta {
+    h4, .delta {
       font-size: 1.63684rem;
       margin-bottom: -0.45985rem;
       padding-top: 0.45985rem; } }
-.typeset h5, .typeset .epsilon {
+
+h5, .epsilon {
   line-height: 2rem;
   font-size: 1.49167rem;
   margin-bottom: -0.50776rem;
   padding-top: 0.50776rem; }
   @media screen and (min-width: 40em) {
-    .typeset h5, .typeset .epsilon {
+    h5, .epsilon {
       font-size: 1.37143rem;
       margin-bottom: -0.54744rem;
       padding-top: 0.54744rem; } }
   @media screen and (min-width: 50em) {
-    .typeset h5, .typeset .epsilon {
+    h5, .epsilon {
       font-size: 1.36667rem;
       margin-bottom: -0.54901rem;
       padding-top: 0.54901rem; } }
   @media screen and (min-width: 64em) {
-    .typeset h5, .typeset .epsilon {
+    h5, .epsilon {
       font-size: 1.32353rem;
       margin-bottom: -0.56325rem;
       padding-top: 0.56325rem; } }
   @media screen and (min-width: 100em) {
-    .typeset h5, .typeset .epsilon {
+    h5, .epsilon {
       font-size: 1.31579rem;
       margin-bottom: -0.5658rem;
       padding-top: 0.5658rem; } }
-.typeset h6, .typeset .zeta {
+
+h6, .zeta {
   line-height: 2rem;
   font-size: 1.33333rem;
   margin-bottom: -0.56001rem;
   padding-top: 0.56001rem; }
   @media screen and (min-width: 40em) {
-    .typeset h6, .typeset .zeta {
+    h6, .zeta {
       font-size: 1.21429rem;
       margin-bottom: -0.5993rem;
       padding-top: 0.5993rem; } }
   @media screen and (min-width: 50em) {
-    .typeset h6, .typeset .zeta {
+    h6, .zeta {
       font-size: 1.2rem;
       margin-bottom: -0.60401rem;
       padding-top: 0.60401rem; } }
   @media screen and (min-width: 64em) {
-    .typeset h6, .typeset .zeta {
+    h6, .zeta {
       font-size: 1.17647rem;
       margin-bottom: -0.61177rem;
       padding-top: 0.61177rem; } }
   @media screen and (min-width: 100em) {
-    .typeset h6, .typeset .zeta {
+    h6, .zeta {
       font-size: 1.15789rem;
       margin-bottom: -0.6179rem;
       padding-top: 0.6179rem; } }
-.typeset ul, .typeset ol {
+
+ul, ol {
   line-height: 2rem;
   margin-bottom: 1.54666rem;
   padding-top: 0.45334rem; }
   @media screen and (min-width: 40em) {
-    .typeset ul, .typeset ol {
+    ul, ol {
       margin-bottom: 1.49785rem;
       padding-top: 0.50215rem; } }
   @media screen and (min-width: 50em) {
-    .typeset ul, .typeset ol {
+    ul, ol {
       margin-bottom: 1.49199rem;
       padding-top: 0.50801rem; } }
   @media screen and (min-width: 64em) {
-    .typeset ul, .typeset ol {
+    ul, ol {
       margin-bottom: 1.48234rem;
       padding-top: 0.51766rem; } }
   @media screen and (min-width: 100em) {
-    .typeset ul, .typeset ol {
+    ul, ol {
       margin-bottom: 1.47473rem;
       padding-top: 0.52527rem; } }
-  .typeset ul li, .typeset ol li {
+  ul li, ol li {
     -webkit-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
     -moz-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
     -ms-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+    -o-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
     font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
     margin-left: 2rem; }
     @media screen and (min-width: 40em) {
-      .typeset ul li, .typeset ol li {
+      ul li, ol li {
         margin-left: 0; } }
-.typeset b, .typeset strong, .typeset .bold {
+
+b, strong, .bold {
   font-weight: 700; }
-.typeset em, .typeset i, .typeset .italic {
+
+em, i, .italic {
   font-style: italic; }
-.typeset small, .typeset .caption {
+
+small, .caption {
   font-family: futura-pt;
   font-style: normal;
   
   font-size: 1.06667rem; }
   @media screen and (min-width: 40em) {
-    .typeset small, .typeset .caption {
+    small, .caption {
       font-size: 0.97143rem; } }
   @media screen and (min-width: 50em) {
-    .typeset small, .typeset .caption {
+    small, .caption {
       font-size: 0.96rem; } }
   @media screen and (min-width: 64em) {
-    .typeset small, .typeset .caption {
+    small, .caption {
       font-size: 0.88235rem; } }
   @media screen and (min-width: 100em) {
-    .typeset small, .typeset .caption {
+    small, .caption {
       font-size: 0.82105rem; } }
-.typeset small {
+
+small {
   line-height: 1rem; }
-.typeset .caption {
+
+.caption {
   color: #BDC8CC;
   line-height: 2rem;
   margin-bottom: 1.35199rem;
   padding-top: 0.64801rem; }
   @media screen and (min-width: 40em) {
-    .typeset .caption {
+    .caption {
       margin-bottom: 1.32056rem;
       padding-top: 0.67944rem; } }
   @media screen and (min-width: 50em) {
-    .typeset .caption {
+    .caption {
       margin-bottom: 1.31679rem;
       padding-top: 0.68321rem; } }
   @media screen and (min-width: 64em) {
-    .typeset .caption {
+    .caption {
       margin-bottom: 1.29117rem;
       padding-top: 0.70883rem; } }
   @media screen and (min-width: 100em) {
-    .typeset .caption {
+    .caption {
       margin-bottom: 1.27094rem;
       padding-top: 0.72906rem; } }
-.typeset h1 + .caption, .typeset .alpha + .caption, .typeset h2 + .caption, .typeset .beta + .caption, .typeset h3 + .caption, .typeset .gamma + .caption {
+
+h1 + .caption, .alpha + .caption, h2 + .caption, .beta + .caption, h3 + .caption, .gamma + .caption {
   margin-top: -1rem; }
-.typeset .delta + .caption, .typeset .epsilon + .caption, .typeset .zeta + .caption {
+
+.delta + .caption, .epsilon + .caption, .zeta + .caption {
   margin-top: 0rem; }
-.typeset blockquote p {
+
+blockquote p {
   border-left: 0.15rem solid #0E58F5;
   font-style: italic;
   padding-left: 1rem;
   margin-bottom: 2.09332rem;
   padding-bottom: 0.45334rem; }
   @media screen and (min-width: 40em) {
-    .typeset blockquote p {
+    blockquote p {
       margin-bottom: 1.9957rem;
       padding-bottom: 0.50215rem; } }
   @media screen and (min-width: 50em) {
-    .typeset blockquote p {
+    blockquote p {
       margin-bottom: 1.98399rem;
       padding-bottom: 0.50801rem; } }
   @media screen and (min-width: 64em) {
-    .typeset blockquote p {
+    blockquote p {
       margin-bottom: 1.9647rem;
       padding-bottom: 0.51766rem; } }
   @media screen and (min-width: 100em) {
-    .typeset blockquote p {
+    blockquote p {
       margin-bottom: 1.94946rem;
       padding-bottom: 0.52527rem; } }
 @media screen and (min-width: 40em) {
-  .typeset blockquote {
+  blockquote {
     margin-left: -1rem; } }
-.typeset hr {
+
+hr {
   background-image: -webkit-gradient(linear, left top, left bottom, left, right);
   background-image: -webkit-linear-gradient(top, transparent 50%, #BDC8CC 50%);
   background-image: linear-gradient(to bottom, transparent 50%, #BDC8CC 50%);
@@ -390,10 +420,12 @@ a {
   margin: 0;
   padding-bottom: 3rem;
   padding-top: 3rem; }
-.typeset code, .typeset pre {
+
+code, pre {
   background-color: #F5F4F2;
   font-family: Menlo, monospace; }
-.typeset pre {
+
+pre {
   display: block;
   margin-bottom: 2rem;
   padding: 1rem;
@@ -401,43 +433,53 @@ a {
   white-space: pre-wrap;
   word-break: break-all;
   word-wrap: break-word; }
-.typeset code {
+
+code {
   line-height: 1rem;
   font-size: 1.06667rem; }
   @media screen and (min-width: 40em) {
-    .typeset code {
+    code {
       font-size: 0.97143rem; } }
   @media screen and (min-width: 50em) {
-    .typeset code {
+    code {
       font-size: 0.96rem; } }
   @media screen and (min-width: 64em) {
-    .typeset code {
+    code {
       font-size: 0.88235rem; } }
   @media screen and (min-width: 100em) {
-    .typeset code {
+    code {
       font-size: 0.82105rem; } }
-.typeset .upper {
+
+.upper {
   letter-spacing: 0.1rem;
   text-transform: uppercase; }
-.typeset .small-caps {
+
+.small-caps {
   -webkit-font-feature-settings: 'smcp' 1, 'kern' 1;
   -moz-font-feature-settings: 'smcp' 1, 'kern' 1;
   -ms-font-feature-settings: 'smcp' 1, 'kern' 1;
+  -o-font-feature-settings: 'smcp' 1, 'kern' 1;
   font-feature-settings: 'smcp' 1, 'kern' 1;
   letter-spacing: 0.1rem; }
-.typeset .lining-numerals {
+
+.lining-numerals {
   -webkit-font-feature-settings: 'lnum' 1, 'kern' 1;
   -moz-font-feature-settings: 'lnum' 1, 'kern' 1;
   -ms-font-feature-settings: 'lnum' 1, 'kern' 1;
+  -o-font-feature-settings: 'lnum' 1, 'kern' 1;
   font-feature-settings: 'lnum' 1, 'kern' 1; }
-.typeset .oldstyle-numerals {
+
+.oldstyle-numerals {
   -webkit-font-feature-settings: 'onum' 1, 'kern' 1;
   -moz-font-feature-settings: 'onum' 1, 'kern' 1;
   -ms-font-feature-settings: 'onum' 1, 'kern' 1;
+  -o-font-feature-settings: 'onum' 1, 'kern' 1;
   font-feature-settings: 'onum' 1, 'kern' 1; }
 
 .show-grid {
   background-image: -webkit-linear-gradient(top, cyan 0, rgba(255, 255, 255, 0) 1px);
+  background-image: -moz-linear-gradient(top, cyan 0, rgba(255, 255, 255, 0) 1px);
+  background-image: -o-linear-gradient(top, cyan 0, rgba(255, 255, 255, 0) 1px);
   background-image: linear-gradient(to bottom, cyan 0, rgba(255, 255, 255, 0) 1px);
   background-repeat: repeat-y;
   background-size: 100% 1rem; }
@@ -446,6 +488,10 @@ a {
   content: "";
   display: table;
   clear: both; }
+
+body {
+  padding-top: 80px;
+  padding-top: 5rem; }
 
 .container {
   max-width: 63rem;
@@ -460,9 +506,43 @@ a {
   list-style-type: none; }
 
 .navigation--horizontal li {
-  float: left; }
+  float: left;
+  margin-left: .5rem;
+  margin-right: .5rem; }
+  .navigation--horizontal li:first-child {
+    margin-left: 0; }
+  .navigation--horizontal li:last-child {
+    margin-right: 0; }
 
-.navigation--spacer li:after {
-  content: '\b7'; }
-.navigation--spacer li:last-child:after {
-  content: ''; }
+.navigation--spacer li {
+  margin-right: 0; }
+  .navigation--spacer li:after {
+    content: '\b7';
+    margin-left: .5rem; }
+  .navigation--spacer li:last-child:after {
+    content: '';
+    margin-left: 0; }
+
+.masthead {
+  position: absolute;
+  height: 80px;
+  height: 5rem;
+  left: 0;
+  right: 0;
+  top: 0;
+  background: #fff;
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  transition: all 0.35s ease;
+  z-index: 100; }
+
+.media-window {
+  height: 323px;
+  height: 19rem; }
+
+.media-window__content {
+  text-align: center; }
+
+.media-window__title, .media-window__subtitle, .media-window__content {
+  color: white; }

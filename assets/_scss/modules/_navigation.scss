@@ -5,23 +5,30 @@
 }
 
 .navigation--horizontal {
-  ul {
-    @extend %clearfix;
-  }
-
-  li {
-    // display: inline-block;
-    float: left;
+  ul { @extend %clearfix; }
+  li { 
+    float: left; 
+    margin-left: .5rem;
+    margin-right: .5rem;
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }
 
 .navigation--spacer {
   li {
+    margin-right: 0;
     &:after {
-      content: '\b7'
+      content: '\b7';
+      margin-left: .5rem;
     }
     &:last-child:after {
       content: '';
+      margin-left: 0;
     }
   }
 }

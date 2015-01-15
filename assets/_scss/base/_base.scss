@@ -6,5 +6,9 @@
   }
 }
 
+body {
+  padding-top: 80px;
+  padding-top: 5rem;
+}
+
 .container { @include container(63rem); }
-.container { display: none; }

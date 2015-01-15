@@ -2,7 +2,7 @@ inc:
   # Blog Information
   title:        "Creative Nightly"
   subtitle:     "Random musings, and experimental blog of Scotty Vernon" #"Creative coding and inspiration"
-  colophon:     false  #"Setup as a digital scrapbook of notes by Scotty Vernon @KingScooty"
+  colophon:     "Setup as a digital scrapbook of notes by Scotty Vernon @KingScooty"
   cover_image:  blog-cover.jpg
   logo:         logo.png
 
