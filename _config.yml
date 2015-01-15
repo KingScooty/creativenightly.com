@@ -48,7 +48,7 @@ destination: ./_site
 plugins:     null
 layouts:     ./_layouts
 include:     ['.htaccess']
-exclude:     []
+exclude:     ['node_modules', 'bower.json', 'package.json', 'Rakefile', 'gulpfile.js', 'README.md']
 timezone:    null
 
 # Show future posts
