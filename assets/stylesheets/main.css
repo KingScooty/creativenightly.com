@@ -312,6 +312,10 @@ ul, ol {
     @media screen and (min-width: 40em) {
       ul li, ol li {
         margin-left: 0; } }
+  ul ul, ol ul {
+    margin-left: 2rem;
+    padding-top: 0;
+    margin-bottom: 0; }
 
 b, strong, .bold {
   font-weight: 700; }

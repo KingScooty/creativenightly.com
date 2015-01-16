@@ -130,6 +130,12 @@ a {
         margin-left: 0;
       }
     }
+    // Fix nested lists
+    ul, ol {
+      margin-left: 2rem;
+      padding-top: 0;
+      margin-bottom: 0;
+    }
   }
 
   // Bold.
