@@ -4,6 +4,20 @@
   }
 }
 
+.navigation--primary {
+  // padding: 22px 30px;
+  // float: left;
+  height: 5rem;
+  display: table-cell;
+  vertical-align: middle;
+  a { 
+    margin: 0 0.5rem; 
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
+
 .navigation--horizontal {
   ul { @extend %clearfix; }
   li { 

@@ -525,6 +525,15 @@ a {
 .navigation ul {
   list-style-type: none; }
 
+.navigation--primary {
+  height: 5rem;
+  display: table-cell;
+  vertical-align: middle; }
+  .navigation--primary a {
+    margin: 0 0.5rem; }
+    .navigation--primary a:first-child {
+      margin-left: 0; }
+
 .navigation--horizontal li {
   float: left;
   margin-left: .5rem;
@@ -545,11 +554,11 @@ a {
 
 .masthead {
   position: absolute;
-  height: 80px;
   height: 5rem;
   left: 0;
   right: 0;
   top: 0;
+  padding-left: 10%;
   background: #fff;
   box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
   -webkit-backface-visibility: hidden;
