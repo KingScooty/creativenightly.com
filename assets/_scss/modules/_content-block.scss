@@ -4,7 +4,8 @@
 
 .content-block__header,
 .content-block__body,
-.content-block__footer {
+.content-block__footer, 
+.content-block__aside {
   @extend %clearfix;
 }
 
@@ -22,4 +23,16 @@
   }
 }
 .content-block__body {}
-.content-block__footer {}
+
+.content-block__footer {
+  // border-top: .1rem solid #ddd;
+  // border-bottom: .1rem solid #ddd;
+  // box-shadow: inset 0 0 1px -1px #000000;
+  // padding-top: 1rem;
+  // padding-bottom: 1rem;
+  // margin-top: 1rem;
+  // margin-bottom: 1rem;
+}
+
+.content-block__aside {
+}

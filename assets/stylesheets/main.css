@@ -486,7 +486,7 @@ code {
   background-repeat: repeat-y;
   background-size: 100% 1rem; }
 
-.navigation--horizontal ul:after, .content-block__header:after, .content-block__body:after, .content-block__footer:after {
+.navigation--horizontal ul:after, .content-block__header:after, .content-block__body:after, .content-block__footer:after, .content-block__aside:after, .social:after {
   content: "";
   display: table;
   clear: both; }
@@ -593,6 +593,37 @@ a {
 
 .meta address {
   display: inline; }
+
+.social {
+  position: relative;
+  height: 2rem; }
+
+.social--horizontal .social__button {
+  height: 20px;
+  width: 6rem;
+  float: left;
+  margin-left: 2rem; }
+  .social--horizontal .social__button:first-child {
+    margin-left: 0; }
+  .social--horizontal .social__button > div {
+    vertical-align: baseline !important; }
+
+.fb_iframe_widget span {
+  vertical-align: baseline !important; }
+
+.media-object__image {
+  display: block;
+  width: 8rem;
+  margin: 1rem auto;
+  border-radius: 100%; }
+  @media screen and (min-width: 600px) {
+    .media-object__image {
+      float: left;
+      width: 5rem;
+      margin: 1rem 1rem 1rem 0; } }
+
+.media-object .follow {
+  margin-top: -1rem; }
 
 /* Solarized Light 
 

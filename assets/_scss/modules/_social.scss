@@ -1,0 +1,28 @@
+.social {
+  position: relative;
+  @extend %clearfix;
+  height: 2rem;
+}
+
+.social--horizontal {
+  .social__button {
+    height: 20px;
+    width: 6rem;
+    float: left;
+    margin-left: 2rem;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    > div {
+      vertical-align: baseline !important;
+    }
+  }
+}
+
+.fb_iframe_widget{ 
+  span {
+    vertical-align: baseline !important;
+  }
+}

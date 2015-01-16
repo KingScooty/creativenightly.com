@@ -29,27 +29,28 @@ layout: base
     </section>
 
     <footer class="content-block__footer large-gutter">
-      <address>
+      <hr>
+      <address class="media-object">
         {% if page.author.image %}
           <!-- <img src="/images/{{ page.author.image }}"> -->
-          <img src="http://www.gravatar.com/avatar/61f2bf61edacc1d2d6829b69cd530c93.png">
+          <img class="media-object__image" src="http://www.gravatar.com/avatar/61f2bf61edacc1d2d6829b69cd530c93.png">
         {% endif %}
         <p>Written by <strong><a rel="author" href="https://twitter.com/{{ page.author.twitter }}" title="{{ page.author_name }}" target="_blank">{{ page.author.name }}</a></strong><br>
         <span class="muted">{{ page.author.bio }}</span>
         </p>
         <div class="follow"><a href="https://twitter.com/KingScooty" class="twitter-follow-button" data-show-count="false">Follow @KingScooty</a></div>
       </address>
-
+      <hr>
     </footer>
 
     {% if page.cover_copyright %}
-    <section>
+    <section class="content-block__aside large-gutter">
       <p class="muted cover-copyright">{{ page.cover_copyright }}</p>
     </section>
     {% endif %}
 
     {% if site.inc.disqus.shortname %}
-    <section>
+    <section class="comments content-block__aside large-gutter">
       {% include _disqus.html %}
     </section>
     {% endif %}
