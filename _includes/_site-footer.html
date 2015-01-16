@@ -1,46 +1,38 @@
 <footer class="site-footer">
   <div class="container">
-    &copy; {{ site.time | date: "%Y" }} 
+    <div class="large-gutter">
+      &copy; {{ site.time | date: "%Y" }} 
 
-    <nav class="navigation navigation--horizontal navigation--secondary navigation--spacer">
-      <ul>
-        <li><a href="/">{{ site.inc.company }}</a></li>
-        <li><a href="http://twitter.com/kingscooty">KingScooty</a></li>
-        <li><a href="http://www.wildflame.co.uk/">Wildflame</a></li>
+      <nav class="navigation navigation--horizontal navigation--secondary navigation--spacer">
+        <a href="/">{{ site.inc.company }}</a> &middot;
+        <a href="http://twitter.com/kingscooty">KingScooty</a> &middot;
+        <a href="http://www.wildflame.co.uk/">Wildflame</a>
         {% if site.inc.about_link %}
-        <li><a href="{{ site.inc.about_link }}">About</a></li>
+        <a href="{{ site.inc.about_link }}">About</a>
         {% endif %}
-      </ul>
-    </nav>
+      </nav>
 
-    <nav class="navigation navigation--horizontal navigation--secondary">
-      <ul>
+      <nav class="navigation navigation--horizontal navigation--secondary">
         <!-- Twitter -->
         {% if site.inc.twitter %}
-        <li>
-          <a href="https://twitter.com/{{ site.inc.twitter }}" title="Follow on Twitter" target="_blank" class="btn-outline">
-            <i class="icon icon-twitter black"></i>
-          </a>
-        </li>
+        <a href="https://twitter.com/{{ site.inc.twitter }}" title="Follow on Twitter" target="_blank" class="btn-outline">
+          <i class="icon icon-twitter black"></i>
+        </a>
         {% endif %}
 
         <!-- Facebook -->
         {% if site.inc.facebook %}
-        <li>
-          <a href="http://facebook.com/{{ site.inc.facebook }}" title="Follow on Facebook" target="_blank" class="btn-outline">
-            <i class="icon icon-facebook black"></i>
-          </a>
-        </li>
+        <a href="http://facebook.com/{{ site.inc.facebook }}" title="Follow on Facebook" target="_blank" class="btn-outline">
+          <i class="icon icon-facebook black"></i>
+        </a>
         {% endif %}
         
         <!-- RSS -->
-        <li>
-          <a href="/feed.xml" title="RSS Feed" class="btn-outline">
-            <i class="icon icon-rss black"></i>
-          </a>
-        </li>
-      </ul>
-    </nav>
+        <a href="/feed.xml" title="RSS Feed" class="btn-outline">
+          <i class="icon icon-rss black"></i>
+        </a>
+      </nav>
 
+    </div>
   </div>
 </footer>
