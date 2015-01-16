@@ -601,6 +601,13 @@ a {
     height: 0.2rem;
     background: #ddd; }
 
+.content-block__body .highlight {
+  margin-left: -3rem;
+  margin-right: -3rem; }
+  .content-block__body .highlight pre {
+    padding-left: 3rem;
+    padding-right: 3rem; }
+
 .meta address {
   display: inline; }
 
