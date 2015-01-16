@@ -161,6 +161,11 @@ a {
     @include baseline(theta, $headingtype, 2, 2, all);
   }
 
+  .subtitle {
+    @include sassline(epsilon, $headingtype, 2, 0, all);
+    padding-bottom: 2rem;
+  }
+
   // Nice spacing for captions.
   h1 + .caption, .alpha + .caption, h2 + .caption, .beta + .caption, h3 + .caption, .gamma + .caption {
     margin-top: -1rem;
@@ -169,6 +174,7 @@ a {
   .delta + .caption, .epsilon + .caption, .zeta + .caption {
     margin-top: 0rem;
   }
+
 
   // Quotes.
   blockquote {
@@ -223,7 +229,7 @@ a {
 
   // Code block.
   code, pre {
-    background-color: $codeBackgroundColour;
+    // background-color: $codeBackgroundColour;
     font-family: unquote(map-get($monospacetype, font-family));
   }
 

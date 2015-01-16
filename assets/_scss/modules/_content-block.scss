@@ -8,6 +8,18 @@
   @extend %clearfix;
 }
 
-.content-block__header {}
+.content-block__header {
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0.4rem;
+    display: block;
+    width: 1.5em;
+    height: 0.2rem;
+    background: #ddd;
+  }
+}
 .content-block__body {}
 .content-block__footer {}

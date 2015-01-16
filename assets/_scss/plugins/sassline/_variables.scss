@@ -57,7 +57,7 @@ $gutterwidths: (
 // ! Set cap height to set to the baseline.
 //cap-height: 0.66
 $bodytype: (
-  font-family: 'ff-tisa-web-pro', 'Georgia, serif',
+  font-family: 'ff-tisa-web-pro, Georgia, serif',
   regular: 400,
   bold: 700,
   italic: italic,
@@ -67,7 +67,7 @@ $bodytype: (
 
 //cap-height: 0.65
 $headingtype: (
-  font-family: 'futura-pt', 'Helvetica, sans-serif',
+  font-family: 'futura-pt, Helvetica, sans-serif',
   regular: 400,
   bold: 700,
   cap-height: 0.66
@@ -88,6 +88,7 @@ $monospacetype: (
 
 // Text colours. British English.
 $headingColour: #2E2E2E;
+// $headingColour: #263c4c;
 $bodyColour: #494949;
 $linkColour: #0E58F5;
 $hoverColour: #0B348B;
