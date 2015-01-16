@@ -1,4 +1,6 @@
 .media-window {
+  position: relative;
+
   height: 323px;
   height: 19rem;
 
@@ -7,6 +9,23 @@
   background-color: #333;
 
   overflow:hidden;
+
+  // img { 
+  //   display: block; 
+  //   width: 100%;
+  // }
+
+  // &:after {
+  //   content: '';
+  //   background: inherit;
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   right: 0;
+  //   bottom: 0;
+
+  //   filter: blur(25px);
+  // }
 }
 
 .media-window__content {
@@ -21,4 +40,12 @@
 .media-window__subtitle,
 .media-window__content {
   color: white;
+}
+
+.media-window--large {
+  // height: auto;
+  @include min-screen(720px) {
+    height: 28rem;
+  }
+  // max-height: 28rem;
 }

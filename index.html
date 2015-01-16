@@ -25,15 +25,18 @@ layout: base
 </div>
 
 
-<article class="container">
+<article class="container shift-down">
 
 {% for post in paginator.posts %}
   {% unless post.draft %}
-    <section class="index">
+    <section class="index-item large-gutter">
       <!-- {% if post.author.image %}<img src="/images/{{ post.author.image }}" class="avatar">{% endif %}-->
       <div>
         <h2 class="title"><a href="{{ post.url }}" rel="prefetch">{{ post.title }}</a></h2>
+        {% assign content = post.excerpt | strip_newlines %}
+        {% unless content == ""  %}
         <p>{{ post.excerpt }}</p>
+        {% endunless %}
         <div class="meta">
           Written By <address>{{ post.author.name }}</address> &mdash;
           <time pubdate datetime="{{ post.date | date: "%Y-%d-%B" }}" title="{{ post.date | date: "%B %d, %Y" }}">{{ post.date | date: "%B %d, %Y" }}</time>

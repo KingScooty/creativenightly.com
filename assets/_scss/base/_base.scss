@@ -11,16 +11,7 @@ body {
   padding-top: 5rem;
 }
 
-// .container { @include container(63rem); }
-.container { @include container(52rem); }
 
-.index {
-  margin: 0 4rem;
-}
-
-@include max-screen(1000px) {
-  .index {
-    padding: 0;
-    margin: 1rem 10%;
-  }
+a {
+  color: #2077b2;
 }

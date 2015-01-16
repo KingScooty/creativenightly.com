@@ -41,9 +41,9 @@ a {
 
   // Nice underlines for text links.
   p a, li a {
-    background-image: -webkit-linear-gradient(top,rgba(0, 0, 0, 0) 50%,lighten($linkColour,20%) 50%);
-    background-image: -moz-linear-gradient(top,rgba(0, 0, 0, 0) 50%,lighten($linkColour,20%) 50%);
-    background-image: -o-linear-gradient(top,rgba(0, 0, 0, 0) 50%,lighten($linkColour,20%) 50%);
+    // background-image: -webkit-linear-gradient(top,rgba(0, 0, 0, 0) 50%,lighten($linkColour,20%) 50%);
+    // background-image: -moz-linear-gradient(top,rgba(0, 0, 0, 0) 50%,lighten($linkColour,20%) 50%);
+    // background-image: -o-linear-gradient(top,rgba(0, 0, 0, 0) 50%,lighten($linkColour,20%) 50%);
     background-image: linear-gradient(to bottom,rgba(0, 0, 0, 0) 50%,lighten($linkColour,20%) 50%);
     background-position: 0 93%;
     background-repeat: repeat-x;
@@ -51,19 +51,19 @@ a {
     text-shadow: 0.1rem 0 $backgroundColour,0.15rem 0 $backgroundColour,-0.1rem 0 $backgroundColour,-0.15rem 0 $backgroundColour;
 
     &:hover, &:active, &:focus {
-      background-image: -webkit-linear-gradient(top,rgba(0, 0, 0, 0) 50%,lighten($hoverColour,20%) 50%);
-      background-image: -moz-linear-gradient(top,rgba(0, 0, 0, 0) 50%,lighten($hoverColour,20%) 50%);
-      background-image: -o-linear-gradient(top,rgba(0, 0, 0, 0) 50%,lighten($hoverColour,20%) 50%);
+      // background-image: -webkit-linear-gradient(top,rgba(0, 0, 0, 0) 50%,lighten($hoverColour,20%) 50%);
+      // background-image: -moz-linear-gradient(top,rgba(0, 0, 0, 0) 50%,lighten($hoverColour,20%) 50%);
+      // background-image: -o-linear-gradient(top,rgba(0, 0, 0, 0) 50%,lighten($hoverColour,20%) 50%);
       background-image: linear-gradient(to bottom,rgba(0, 0, 0, 0) 50%,lighten($hoverColour,20%) 50%);
     }
   }
 
   // Paragraphs. OpenType ligatures and oldstyle figures enabled if available.
   p {
-    -webkit-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
-    -moz-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
-    -ms-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
-    -o-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+    // -webkit-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+    // -moz-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+    // -ms-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+    // -o-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
     font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
 
     @include baseline($fontsize: zeta, $font: $bodytype, $lineheight: 2, $below: 2, $breakpoint: all);
@@ -71,10 +71,10 @@ a {
 
   // Headings. OpenType ligatures, discretionary ligatures and lining figures enabled if available.
   h1, h2, h3, h4, h5, h6 {
-    -webkit-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
-    -moz-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
-    -ms-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
-    -o-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+    // -webkit-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+    // -moz-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+    // -ms-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+    // -o-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
     font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
 
     color: $headingColour;
@@ -118,10 +118,10 @@ a {
     @include baseline(zeta, $bodytype, 2, 2, all);
 
     li {
-      -webkit-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
-      -moz-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
-      -ms-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
-      -o-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+      // -webkit-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+      // -moz-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+      // -ms-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+      // -o-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
       font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
 
       margin-left: 2rem;
@@ -143,7 +143,7 @@ a {
   }
 
   // Caption and inline small text.
-  small, .caption {
+  small, .caption, .meta {
     font-family: unquote(map-get($headingtype, font-family));
     font-style: normal;
     font-weight: map-get($headingtype, regular);
@@ -155,7 +155,7 @@ a {
     line-height: 1rem;
   }
 
-  .caption {
+  .caption, .meta {
     color: $captionColour;
 
     @include baseline(theta, $headingtype, 2, 2, all);
@@ -209,8 +209,8 @@ a {
 
   // Horizontal rule.
   hr {
-    background-image: -webkit-gradient(linear,left top,left bottom,from(rgba(0, 0, 0, 0)),to($captionColour));
-    background-image: -webkit-linear-gradient(top,rgba(0, 0, 0, 0) 50%,$captionColour 50%);
+    // background-image: -webkit-gradient(linear,left top,left bottom,from(rgba(0, 0, 0, 0)),to($captionColour));
+    // background-image: -webkit-linear-gradient(top,rgba(0, 0, 0, 0) 50%,$captionColour 50%);
     background-image: linear-gradient(to bottom,rgba(0, 0, 0, 0) 50%,$captionColour 50%);
     background-position: 0 50%;
     background-repeat: repeat-x;
@@ -251,10 +251,10 @@ a {
 
   // Real small caps.
   .small-caps {
-    -webkit-font-feature-settings: 'smcp' 1, 'kern' 1;
-    -moz-font-feature-settings: 'smcp' 1, 'kern' 1;
-    -ms-font-feature-settings: 'smcp' 1, 'kern' 1;
-    -o-font-feature-settings: 'smcp' 1, 'kern' 1;
+    // -webkit-font-feature-settings: 'smcp' 1, 'kern' 1;
+    // -moz-font-feature-settings: 'smcp' 1, 'kern' 1;
+    // -ms-font-feature-settings: 'smcp' 1, 'kern' 1;
+    // -o-font-feature-settings: 'smcp' 1, 'kern' 1;
     font-feature-settings: 'smcp' 1, 'kern' 1;
 
     letter-spacing: 0.1rem;
@@ -262,19 +262,19 @@ a {
 
   // Consistent height numbers with OpenType.
   .lining-numerals {
-    -webkit-font-feature-settings: 'lnum' 1, 'kern' 1;
-    -moz-font-feature-settings: 'lnum' 1, 'kern' 1;
-    -ms-font-feature-settings: 'lnum' 1, 'kern' 1;
-    -o-font-feature-settings: 'lnum' 1, 'kern' 1;
+    // -webkit-font-feature-settings: 'lnum' 1, 'kern' 1;
+    // -moz-font-feature-settings: 'lnum' 1, 'kern' 1;
+    // -ms-font-feature-settings: 'lnum' 1, 'kern' 1;
+    // -o-font-feature-settings: 'lnum' 1, 'kern' 1;
     font-feature-settings: 'lnum' 1, 'kern' 1;
   }
 
   // Ascending and descending numbers with OpenType.
   .oldstyle-numerals {
-    -webkit-font-feature-settings: 'onum' 1, 'kern' 1;
-    -moz-font-feature-settings: 'onum' 1, 'kern' 1;
-    -ms-font-feature-settings: 'onum' 1, 'kern' 1;
-    -o-font-feature-settings: 'onum' 1, 'kern' 1;
+    // -webkit-font-feature-settings: 'onum' 1, 'kern' 1;
+    // -moz-font-feature-settings: 'onum' 1, 'kern' 1;
+    // -ms-font-feature-settings: 'onum' 1, 'kern' 1;
+    // -o-font-feature-settings: 'onum' 1, 'kern' 1;
     font-feature-settings: 'onum' 1, 'kern' 1;
   }
 // }

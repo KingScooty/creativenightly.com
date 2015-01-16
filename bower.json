@@ -1,7 +1,9 @@
 {
   "name": "creative-nightly",
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "zepto": "~1.1.6"
+  },
   "devDependencies": {
     "susy": "~2.2.1",
     "normalize-scss": "git://github.com/appleboy/normalize.scss.git#~3.0.2",

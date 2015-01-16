@@ -1,0 +1,13 @@
+.content-block {
+}
+
+
+.content-block__header,
+.content-block__body,
+.content-block__footer {
+  @extend %clearfix;
+}
+
+.content-block__header {}
+.content-block__body {}
+.content-block__footer {}

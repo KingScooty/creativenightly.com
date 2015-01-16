@@ -2,16 +2,13 @@
 layout: base
 ---
 {% if page.cover_image %}
-<div class="is-full-width">
-  <div>
-    <img src="/images/{{ page.cover_image }}" class="image">
-  </div>
+<div class="media-window media-window--large is-full-width" style="background-image: url(/images/{{ page.cover_image }})">
 </div>
 {% endif %}
-<article>
+<article class="content-block shift-down">
 
   <div class="container">
-    <header>
+    <header class="content-block__header large-gutter">
       
       <div class="meta">
         By <address><a rel="author" href="{{ page.author.link }}" title="{{ page.author.name }}" target="_blank">{{ page.author.name }}</a></address> &mdash;
@@ -26,12 +23,12 @@ layout: base
 
     </header>
 
-    <section>
+    <section class="content-block__body large-gutter">
       {{ content }}
       {% include _social.html %}
     </section>
 
-    <footer>
+    <footer class="content-block__footer large-gutter">
       <address>
         {% if page.author.image %}
           <!-- <img src="/images/{{ page.author.image }}"> -->

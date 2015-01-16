@@ -1,0 +1,22 @@
+.container { @include container(52rem); }
+
+.large-gutter {
+  margin: 0 6rem;
+}
+
+@include max-screen(1000px) {
+  .large-gutter {
+    padding: 0;
+    margin: 1rem 10%;
+  }
+}
+
+.shift-down {
+  padding: 3rem 0;
+}
+
+@include max-screen(720px) {
+  .shift-down {
+    padding: 2rem 0;
+  }
+}

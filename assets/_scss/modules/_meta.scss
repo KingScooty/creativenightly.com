@@ -1,0 +1,7 @@
+.meta {
+  @extend .upper;
+  @extend .small-upper;
+  address {
+    display: inline;
+  }
+}
