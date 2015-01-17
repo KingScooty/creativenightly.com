@@ -430,8 +430,8 @@ blockquote p {
     margin-left: -1rem; } }
 
 hr {
-  background-image: -webkit-linear-gradient(top, transparent 50%, #BDC8CC 50%);
-  background-image: linear-gradient(to bottom, transparent 50%, #BDC8CC 50%);
+  background-image: -webkit-linear-gradient(top, transparent 50%, #eeeeee 50%);
+  background-image: linear-gradient(to bottom, transparent 50%, #eeeeee 50%);
   background-position: 0 50%;
   background-repeat: repeat-x;
   background-size: 100% 0.15rem;
@@ -596,6 +596,9 @@ img {
 @media screen and (min-width: 720px) {
   .media-window--large {
     height: 28rem; } }
+
+.media-window__title {
+  text-transform: uppercase; }
 
 .media-window__subtitle, .media-window__colophon {
   display: none; }

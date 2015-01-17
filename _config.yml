@@ -1,8 +1,8 @@
 inc:
   # Blog Information
   title:        "Creative Nightly"
-  subtitle:     "Random musings, and experimental blog of Scotty Vernon" #"Creative coding and inspiration"
-  colophon:     "Setup as a digital scrapbook of notes by Scotty Vernon @KingScooty"
+  subtitle:     "A blog for creative digital and technical explorers." #"Creative coding and inspiration"
+  colophon:     false
   cover_image:  blog-cover.jpg
   logo:         logo.png
 
@@ -61,7 +61,7 @@ relative_permalinks: true
 
 permalink: /:year/:month/:title
 paginate_path: 'page:num'
-paginate: 2
+paginate: 10
 
 markdown:      kramdown
 markdown_ext:  markdown,mkd,mkdn,md
