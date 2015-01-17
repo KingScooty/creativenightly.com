@@ -189,9 +189,9 @@ a {
 
   .type-p + .fine-print {
     margin-top: -2rem;
-    @include max-screen(640px) {
-      padding-bottom: 1rem;
-    }
+    // @include max-screen(640px) {
+    //   padding-bottom: 1rem;
+    // }
   }
 
   // Quotes.
@@ -241,10 +241,16 @@ a {
     background-size: 100% 0.15rem;
     border: 0;
     margin: 0;
+    margin-left: -3%;
+    margin-right: -3%;
     // padding-bottom: 3rem;
     // padding-top: 3rem;
     padding-bottom: 2rem;
     padding-top: 2rem;
+
+    &.dark {
+      background-image: linear-gradient(to bottom,rgba(0, 0, 0, 0) 50%, #ddd 50%);
+    }
   }
 
   // Code block.

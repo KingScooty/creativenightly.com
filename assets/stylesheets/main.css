@@ -405,9 +405,6 @@ h1 + .caption, .alpha + .caption, h2 + .caption, .beta + .caption, h3 + .caption
 
 .type-p + .fine-print {
   margin-top: -2rem; }
-  @media screen and (max-width: 640px) {
-    .type-p + .fine-print {
-      padding-bottom: 1rem; } }
 
 blockquote p {
   border-left: 0.15rem solid #0E58F5;
@@ -443,8 +440,13 @@ hr {
   background-size: 100% 0.15rem;
   border: 0;
   margin: 0;
+  margin-left: -3%;
+  margin-right: -3%;
   padding-bottom: 2rem;
   padding-top: 2rem; }
+  hr.dark {
+    background-image: -webkit-linear-gradient(top, transparent 50%, #ddd 50%);
+    background-image: linear-gradient(to bottom, transparent 50%, #ddd 50%); }
 
 code, pre {
   font-family: Menlo, monospace; }
@@ -529,7 +531,7 @@ code {
   background-repeat: repeat-y;
   background-size: 100% 1rem; }
 
-.container:after, .social:after {
+.container:after, .social:after, .media-object:after {
   content: "";
   display: table;
   clear: both; }
@@ -583,7 +585,8 @@ img {
   .navigation--primary a {
     margin: 0 0.5rem; }
     .navigation--primary a:first-child {
-      margin-left: 0; }
+      margin-left: 0;
+      margin-right: 1rem; }
 
 .navigation--secondary a {
   margin: 0 0.5rem; }
@@ -693,6 +696,14 @@ img {
   @media screen and (min-width: 600px) {
     .media-object {
       text-align: left; } }
+  .media-object .seperator:first-child {
+    margin-top: 2rem; }
+  .media-object .seperator:last-child {
+    margin-bottom: 2rem; }
+  @media screen and (min-width: 640px) {
+    .media-object .seperator {
+      padding-top: 1rem;
+      padding-bottom: 1rem; } }
 
 .media-object__image {
   display: block;
@@ -707,6 +718,12 @@ img {
 
 .media-object .follow {
   margin-top: -1rem; }
+  @media screen and (max-width: 640px) {
+    .media-object .follow {
+      margin-top: 0; } }
+
+.media-object .fine-print {
+  color: #848484; }
 
 .site-footer {
   padding: 4rem 0;
