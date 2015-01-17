@@ -1652,7 +1652,7 @@ $(function() {
             fixRhythm(disqusHeight);
           }
         }
-      }, 1000);
+      }, 2000);
 
       // $('img').rhythm();
       // if ($('.media-window img').length !== 0) {

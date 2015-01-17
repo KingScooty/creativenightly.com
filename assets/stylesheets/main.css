@@ -437,8 +437,8 @@ hr {
   background-size: 100% 0.15rem;
   border: 0;
   margin: 0;
-  padding-bottom: 3rem;
-  padding-top: 3rem; }
+  padding-bottom: 2rem;
+  padding-top: 2rem; }
 
 code, pre {
   font-family: Menlo, monospace; }
@@ -471,6 +471,35 @@ code {
 .upper, .meta {
   letter-spacing: 0.1rem;
   text-transform: uppercase; }
+
+.fine-print {
+  -webkit-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+  -moz-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+  font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+  line-height: 2rem;
+  font-size: 1.19167rem;
+  margin-bottom: 1.48857rem;
+  padding-top: 0.51143rem; }
+  @media screen and (min-width: 40em) {
+    .fine-print {
+      font-size: 1.09286rem;
+      margin-bottom: 1.44806rem;
+      padding-top: 0.55194rem; } }
+  @media screen and (min-width: 50em) {
+    .fine-print {
+      font-size: 1.08667rem;
+      margin-bottom: 1.44552rem;
+      padding-top: 0.55448rem; } }
+  @media screen and (min-width: 64em) {
+    .fine-print {
+      font-size: 0.99412rem;
+      margin-bottom: 1.40758rem;
+      padding-top: 0.59242rem; } }
+  @media screen and (min-width: 100em) {
+    .fine-print {
+      font-size: 0.92632rem;
+      margin-bottom: 1.37978rem;
+      padding-top: 0.62022rem; } }
 
 .small-caps {
   -webkit-font-feature-settings: 'smcp' 1, 'kern' 1;
@@ -579,7 +608,7 @@ img {
   height: 323px;
   height: 19rem;
   background-size: cover;
-  background-position: center center;
+  background-position: center 40%;
   background-color: #333;
   overflow: hidden; }
 
@@ -589,6 +618,10 @@ img {
   padding: 4rem 0 3rem;
   background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.7) 0%, transparent 100%);
   background-image: linear-gradient(bottom, rgba(0, 0, 0, 0.7) 0%, transparent 100%); }
+
+.home .media-window__content {
+  background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.3) 0%, transparent 100%);
+  background-image: linear-gradient(bottom, rgba(0, 0, 0, 0.3) 0%, transparent 100%); }
 
 .media-window__title, .media-window__subtitle, .media-window__colophon {
   color: white; }
@@ -648,6 +681,12 @@ img {
 
 .fb_iframe_widget span {
   vertical-align: baseline !important; }
+
+.media-object {
+  text-align: center; }
+  @media screen and (min-width: 600px) {
+    .media-object {
+      text-align: left; } }
 
 .media-object__image {
   display: block;
@@ -990,6 +1029,15 @@ green     #859900  operators, other keywords
   color: #2aa198; }
 
 /* Literal.Number.Integer.Long */
+.is-full-width {
+  width: 100%; }
+
+.desk {
+  display: none; }
+  @media screen and (min-width: 600px) {
+    .desk {
+      display: inline; } }
+
 /**
  * Solarized colors by Ethan Schoonover
  */

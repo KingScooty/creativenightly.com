@@ -1,3 +1,10 @@
 .is-full-width {
   width: 100%;
 }
+
+.desk {
+  display: none;
+  @include min-screen(600px) {
+    display: inline;
+  }
+}

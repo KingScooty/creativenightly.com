@@ -234,8 +234,10 @@ a {
     background-size: 100% 0.15rem;
     border: 0;
     margin: 0;
-    padding-bottom: 3rem;
-    padding-top: 3rem;
+    // padding-bottom: 3rem;
+    // padding-top: 3rem;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
   }
 
   // Code block.
@@ -264,6 +266,13 @@ a {
   .upper {
     letter-spacing: 0.1rem;
     text-transform: uppercase;
+  }
+
+  .fine-print {
+    font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+
+    // @include baseline($fontsize: theta, $font: $bodytype, $lineheight: 2, $below: 2, $breakpoint: all);
+    @include sassline(eta, $bodytype, 2, 2, all);
   }
 
   // Real small caps.

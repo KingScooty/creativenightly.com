@@ -1,5 +1,9 @@
 .media-object {
+  text-align: center;
 
+  @include min-screen(600px) {
+    text-align: left;
+  }
 }
 
 .media-object__image {

@@ -5,7 +5,7 @@
   height: 19rem;
 
   background-size: cover;
-  background-position: center center;
+  background-position: center 40%;
   background-color: #333;
 
   overflow:hidden;
@@ -35,6 +35,10 @@
 
   // background-color: rgba(0,0,0,0.4);
   background-image: linear-gradient(bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+}
+
+.home .media-window__content {
+  background-image: linear-gradient(bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 100%);
 }
 
 .media-window__title,
