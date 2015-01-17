@@ -84,18 +84,18 @@ a {
     color: #0B348B;
     text-decoration: none; }
 
-p a, li a {
+p a, li a, .type-p a {
   background-image: -webkit-linear-gradient(top, transparent 50%, #709cf9 50%);
   background-image: linear-gradient(to bottom, transparent 50%, #709cf9 50%);
   background-position: 0 93%;
   background-repeat: repeat-x;
   background-size: 100% 0.15rem;
   text-shadow: 0.1rem 0 #FCFCFC, 0.15rem 0 #FCFCFC, -0.1rem 0 #FCFCFC, -0.15rem 0 #FCFCFC; }
-  p a:hover, p a:active, p a:focus, li a:hover, li a:active, li a:focus {
+  p a:hover, p a:active, p a:focus, li a:hover, li a:active, li a:focus, .type-p a:hover, .type-p a:active, .type-p a:focus {
     background-image: -webkit-linear-gradient(top, transparent 50%, #1257ea 50%);
     background-image: linear-gradient(to bottom, transparent 50%, #1257ea 50%); }
 
-p {
+p, .type-p {
   -webkit-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
   -moz-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
   font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
@@ -103,19 +103,19 @@ p {
   margin-bottom: 1.54666rem;
   padding-top: 0.45334rem; }
   @media screen and (min-width: 40em) {
-    p {
+    p, .type-p {
       margin-bottom: 1.49785rem;
       padding-top: 0.50215rem; } }
   @media screen and (min-width: 50em) {
-    p {
+    p, .type-p {
       margin-bottom: 1.49199rem;
       padding-top: 0.50801rem; } }
   @media screen and (min-width: 64em) {
-    p {
+    p, .type-p {
       margin-bottom: 1.48234rem;
       padding-top: 0.51766rem; } }
   @media screen and (min-width: 100em) {
-    p {
+    p, .type-p {
       margin-bottom: 1.47473rem;
       padding-top: 0.52527rem; } }
 
@@ -402,6 +402,12 @@ h1 + .caption, .alpha + .caption, h2 + .caption, .beta + .caption, h3 + .caption
 @media screen and (min-width: 640px) {
   .meta + h1 {
     margin-top: -1rem; } }
+
+.type-p + .fine-print {
+  margin-top: -2rem; }
+  @media screen and (max-width: 640px) {
+    .type-p + .fine-print {
+      padding-bottom: 1rem; } }
 
 blockquote p {
   border-left: 0.15rem solid #0E58F5;
