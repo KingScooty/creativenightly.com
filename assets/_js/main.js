@@ -1,73 +1,95 @@
-;require('zepto');
-// require('./rhythm');
+var $ = require('jquery');
+require('pjax');
+require('./plugins/isVisible');
+var loadWidgets = require('./modules/loadWidgets');
+
+// require('isInViewport');
 
 $(function() {
 
-  // $(".full img").on("click", function() {
-  //   $(this).toggleClass("zoom");
-  // });
+  // var widgetTimer;
+  // var disqusTimer;
+  var widgetsLoaded = false;
+  var disqusLoaded = false;
 
-  // $(window).load(function () {
+  // Stagger loading of plugins to improve pageload/render performance
+  var refreshWidgets = function() {
 
-    window.onload = function() {
+    if ($('#disqus_thread').length !== 0) {
+      console.log('Disqus exists!');
 
-      var $disqus = $('#disqus_thread');
-      // var height = $disqus.height();
+      $(window).scroll(function() {
+        console.log('scrolling');
+        console.log($('#disqus_thread').visible(true));
+        console.log($('.social').visible(true));
 
-      function fixRhythm(height) {
-        // var baseline = 16;
-        // var remainder = height % baseline;
-
-        var body_font_size_px   = parseFloat($('body').css('font-size'));
-        var body_line_height_px = parseFloat($('body').css('line-height'));
-        var body_line_height_rem = body_line_height_px / body_font_size_px;
-
-        var baseline = body_line_height_px / 2;
-        var remainder = height % baseline;
-        var invertRemainder = baseline - remainder;
-
-        console.log('Line height:', baseline);
-        console.log('Disqus height:', height);
-        console.log('Remainder:', invertRemainder);
-
-        if (remainder > 0) {
-          $disqus.css({
-            'padding-bottom': invertRemainder + "px"
-          });
-          console.log('Fixing height.');
+        if ($('.social').visible(true) && !widgetsLoaded) {
+          loadWidgets.loadFacebookLikes();
+          loadWidgets.loadTwitterWidgets();
+          loadWidgets.loadGoogleWidgets(); 
+          widgetsLoaded = true;
         }
 
-      }
-
-      var editable = true; // set a flag
-      var disqusInitTest = setInterval(function() {
-      // Initially Disqus renders this div with the height of 0px prior to the comments being loaded. So run a check to see if the comments have been loaded yet.
-      // console.log('interval');
-
-        var disqusHeight = $disqus.height();
-        if ( disqusHeight > 0 ) {
-          if (editable) { // To make sure that the changes you want to make only happen once check to see if the flag has been changed, if not run the changes and update the flag.
-            editable = false;
-            clearInterval(disqusInitTest);
-            // console.log('hello? disqus loaded');
-            // Your code here...
-            fixRhythm(disqusHeight);
-          }
+        if ($('#disqus_thread').visible(true) && !disqusLoaded) {
+          loadWidgets.loadDisqus();
+          disqusLoaded = true;
         }
-      }, 2000);
 
-      // $('img').rhythm();
-      // if ($('.media-window img').length !== 0) {
-      //   var url = $('.media-window img').attr('src');
 
-      //   $('.media-window').css(
-      //     'background-image', "url(" + url + ")"
-      //   );
+      });
 
-      //   $('.media-window img').remove();
-      // }
+      // widgetTimer = setTimeout(function() {
+
+      //   console.log('intialising the plugin shit!');
+
+      //   loadWidgets.loadFacebookLikes();
+      //   loadWidgets.loadTwitterWidgets();
+      //   loadWidgets.loadGoogleWidgets();
+
+      // }, 1500);
+
+      // disqusTimer = setTimeout(function() {
+      //   loadWidgets.loadDisqus();
+      // }, 2000)
     }
-      // $("img").keepTheRhythm();
-  // });
+
+  }
+
+  $.pjax({
+    area: '.site-body',
+    // callback: function() {
+    //   console.log('page load callback - hopefully last?');
+    // },
+    load: {
+      head: 'Base, meta, link'
+      // css: true ,
+      // script: true
+    },
+    Cache: {
+      click: true,
+      // Submit: false,
+      popstate: true  
+    },
+    wait: 0,
+    callback: function() {
+      refreshWidgets();
+    },
+    rewrite: function(document, area, host) {
+      // console.log('Rewriting page parts');
+    }
+  })
+
+  $(document).bind('pjax:fetch', function() {
+    // console.log('fetching new page');
+    $(window).unbind('scroll');
+    // clearTimeout(refreshWidgets);
+    // clearTimeout(disqusTimer);
+  });
+
+
+
+  window.onload = function() {
+    require('./modules/rhythm');
+  }
 
 });

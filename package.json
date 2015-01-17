@@ -18,10 +18,13 @@
     "node": ">=0.10.0"
   },
   "browser": {
-    "zepto": "./assets/_bower_components/zepto/zepto.js"
+    "pjax": "./assets/_bower_components/jquery.pjax/index.js",
+    "jquery": "./assets/_bower_components/jquery/dist/jquery.js",
+    "isInViewport": "./assets/_bower_components/isInViewport/lib/isInViewport.js"
   },
   "browserify-shim": {
-    "zepto": "$"
+    "pjax": "pjax",
+    "jquery": "$"
   },
   "browserify": {
     "transform": [
