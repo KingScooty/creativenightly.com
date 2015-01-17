@@ -4,7 +4,7 @@ layout: base
 <div class="media-window is-full-width" style="background-image:url(/images/{{ site.inc.cover_image }});">
   
   <section class="media-window__content">
-    <div class="container">
+    <div class="section">
       <h1 class="media-window__title">{{ site.inc.title }}</h1>
       {% if site.inc.subtitle %}<h3 class="media-window__subtitle">{{ site.inc.subtitle }}</h3>{% endif %}
       {% if site.inc.colophon %}<p class="media-window__colophon">{{ site.inc.colophon }}</p>{% endif %}
@@ -29,7 +29,7 @@ layout: base
 
 {% for post in paginator.posts %}
   {% unless post.draft %}
-    <section class="index-item large-gutter">
+    <section class="index-item section">
       <!-- {% if post.author.image %}<img src="/images/{{ post.author.image }}" class="avatar">{% endif %}-->
       <div>
         <h2 class="title"><a href="{{ post.url }}" rel="prefetch">{{ post.title }}</a></h2>

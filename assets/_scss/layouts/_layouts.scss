@@ -1,4 +1,14 @@
-.container { @include container(52rem); }
+// .container { @include container(52rem); }
+.container {
+  @extend %clearfix;
+
+  margin: 0 auto;
+  position: relative;
+  width: 94%;
+
+  max-width: 42rem;
+}
+
 
 .large-gutter {
   margin: 0 6rem;
@@ -39,3 +49,19 @@
     text-align: center;
   }
 }
+
+// .section {
+//   margin: 0 auto;
+//   position: relative;
+//   width: 94%;
+//   @include clearfix;
+
+//   @include breakpoint(break-3) {
+//     @include maxwidth(3);
+//   }
+
+//   @include breakpoint(break-4) {
+//     @include maxwidth(4);
+//   }
+// }
+
