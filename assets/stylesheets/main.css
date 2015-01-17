@@ -538,18 +538,6 @@ img {
   .shift-down {
     padding: 2rem 0; } }
 
-.site-footer {
-  padding: 4rem 0;
-  margin: 4rem 0 0 0;
-  background: whitesmoke; }
-  @media screen and (min-width: 720px) {
-    .site-footer nav {
-      display: inline-block; } }
-  @media screen and (max-width: 719px) {
-    .site-footer {
-      margin-top: 0;
-      text-align: center; } }
-
 .navigation ul {
   list-style-type: none; }
 
@@ -580,6 +568,11 @@ img {
   z-index: 100; }
   .masthead .container {
     max-width: none; }
+
+.brand {
+  font-family: futura-pt;
+  font-weight: bold;
+  text-transform: uppercase; }
 
 .media-window {
   position: relative;
@@ -666,6 +659,34 @@ img {
 
 .media-object .follow {
   margin-top: -1rem; }
+
+.site-footer {
+  padding: 4rem 0;
+  margin: 4rem 0 0 0;
+  color: #aaa;
+  background: whitesmoke; }
+  .site-footer a {
+    color: #777; }
+    .site-footer a:hover {
+      color: #222; }
+  .site-footer p {
+    margin: -1rem 0 0; }
+  @media screen and (min-width: 720px) {
+    .site-footer nav {
+      display: inline-block; } }
+  @media screen and (max-width: 719px) {
+    .site-footer {
+      margin-top: 0;
+      text-align: center; }
+      .site-footer .navigation {
+        margin: 1rem 0 0; } }
+
+button, .btn {
+  background: whitesmoke;
+  color: white;
+  border: 0;
+  padding: 1rem;
+  color: #aaa; }
 
 /* Solarized Light 
 
