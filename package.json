@@ -19,8 +19,7 @@
   },
   "browser": {
     "pjax": "./assets/_bower_components/jquery.pjax/index.js",
-    "jquery": "./assets/_bower_components/jquery/dist/jquery.js",
-    "isInViewport": "./assets/_bower_components/isInViewport/lib/isInViewport.js"
+    "jquery": "./assets/_bower_components/jquery/dist/jquery.js"
   },
   "browserify-shim": {
     "pjax": "pjax",

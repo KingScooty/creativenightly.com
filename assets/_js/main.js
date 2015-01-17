@@ -3,12 +3,9 @@ require('pjax');
 require('./plugins/isVisible');
 var loadWidgets = require('./modules/loadWidgets');
 
-// require('isInViewport');
-
 $(function() {
 
-  // var widgetTimer;
-  // var disqusTimer;
+
   var widgetsLoaded = false;
   var disqusLoaded = false;
 
@@ -19,9 +16,9 @@ $(function() {
       console.log('Disqus exists!');
 
       $(window).scroll(function() {
-        console.log('scrolling');
-        console.log($('#disqus_thread').visible(true));
-        console.log($('.social').visible(true));
+        // console.log('scrolling');
+        // console.log($('#disqus_thread').visible(true));
+        // console.log($('.social').visible(true));
 
         if ($('.social').visible(true) && !widgetsLoaded) {
           loadWidgets.loadFacebookLikes();
@@ -35,22 +32,8 @@ $(function() {
           disqusLoaded = true;
         }
 
-
       });
 
-      // widgetTimer = setTimeout(function() {
-
-      //   console.log('intialising the plugin shit!');
-
-      //   loadWidgets.loadFacebookLikes();
-      //   loadWidgets.loadTwitterWidgets();
-      //   loadWidgets.loadGoogleWidgets();
-
-      // }, 1500);
-
-      // disqusTimer = setTimeout(function() {
-      //   loadWidgets.loadDisqus();
-      // }, 2000)
     }
 
   }
@@ -82,8 +65,6 @@ $(function() {
   $(document).bind('pjax:fetch', function() {
     // console.log('fetching new page');
     $(window).unbind('scroll');
-    // clearTimeout(refreshWidgets);
-    // clearTimeout(disqusTimer);
   });
 
 
