@@ -715,6 +715,9 @@ button, .btn {
 .fb_iframe_widget span {
   vertical-align: baseline !important; }
 
+.posts ul {
+  list-style: none; }
+
 .masthead {
   position: absolute;
   height: 5rem;

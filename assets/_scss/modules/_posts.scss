@@ -1,4 +1,6 @@
-.posts {}
+.posts {
+  ul { list-style: none; }
+}
 
 .posts.current {
   //h3 -> h4
