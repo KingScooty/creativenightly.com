@@ -1,0 +1,48 @@
+// .container { @include container(52rem); }
+.container {
+  @extend %clearfix;
+
+  margin: 0 auto;
+  position: relative;
+  width: 94%;
+
+  max-width: 42rem;
+}
+
+
+.large-gutter {
+  margin: 0 6rem;
+}
+
+@include max-screen(1000px) {
+  .large-gutter {
+    padding: 0;
+    margin: 1rem 10%;
+  }
+}
+
+.shift-down {
+  padding: 3rem 0;
+}
+
+@include max-screen(720px) {
+  .shift-down {
+    padding: 2rem 0;
+  }
+}
+
+// .section {
+//   margin: 0 auto;
+//   position: relative;
+//   width: 94%;
+//   @include clearfix;
+
+//   @include breakpoint(break-3) {
+//     @include maxwidth(3);
+//   }
+
+//   @include breakpoint(break-4) {
+//     @include maxwidth(4);
+//   }
+// }
+

@@ -1,8 +1,8 @@
 inc:
   # Blog Information
   title:        "Creative Nightly"
-  subtitle:     "Random musings, and experimental blog of Scotty Vernon" #"Creative coding and inspiration"
-  colophon:     false  #"Setup as a digital scrapbook of notes by Scotty Vernon @KingScooty"
+  subtitle:     "A blog for creative, digital and technical explorers." #"Creative coding and inspiration"
+  colophon:     false
   cover_image:  blog-cover.jpg
   logo:         logo.png
 
@@ -48,7 +48,7 @@ destination: ./_site
 plugins:     null
 layouts:     ./_layouts
 include:     ['.htaccess']
-exclude:     []
+exclude:     ['node_modules', 'bower.json', 'package.json', 'Rakefile', 'gulpfile.js', 'README.md']
 timezone:    null
 
 # Show future posts
@@ -111,9 +111,9 @@ redcloth:
 # jekyll-assets: see more at https://github.com/ixti/jekyll-assets
 #
 
-sass:
-    sass_dir: assets/_sass
-    style: :compressed
+#sass:
+#    sass_dir: assets/_sass
+#    style: :compressed
 
 # assets:
 

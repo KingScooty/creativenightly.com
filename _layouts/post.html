@@ -2,50 +2,62 @@
 layout: base
 ---
 {% if page.cover_image %}
-<div class="article-cover">
-  <div>
-    <img src="/images/{{ page.cover_image }}" class="image">
-  </div>
+<div class="media-window media-window--large is-full-width" style="background-image: url(/images/{{ page.cover_image }})">
 </div>
 {% endif %}
-<article>
+<article class="content-block shift-down">
 
   <div class="container">
-    <header>
+    <header class="content-block__header">
+      
       <div class="meta">
         By <address><a rel="author" href="{{ page.author.link }}" title="{{ page.author.name }}" target="_blank">{{ page.author.name }}</a></address> &mdash;
         <time pubdate datetime="{{ page.date | date: "%Y-%d-%B" }}" title="{{ page.date | date: "%B %d, %Y" }}">{{ page.date | date: "%B %d, %Y" }}</time>
       </div>
-      <h1 class="title">{{ page.title }}</h1>
-      {% if page.subtitle %}<h2 class="subtitle">{{ page.subtitle }}</h2>{% endif %}
+      
+      <h1 class="title">{{ page.title }}</h1>      
+      
+      {% if page.subtitle %}
+      <h2 class="subtitle">{{ page.subtitle }}</h2>
+      {% endif %}
+
     </header>
 
-    <section>
+    <section class="content-block__body">
       {{ content }}
-      {% include _social.html %}
     </section>
+  
+    <hr>
 
-    <footer>
-      <address>
+    <aside class="content-block__aside">
+      {% include _social.html %}
+    </aside>
+
+    <footer class="content-block__footer">
+      <address class="content-block__author media-object">
+        <hr class="dark seperator seperator--tight">
         {% if page.author.image %}
           <!-- <img src="/images/{{ page.author.image }}"> -->
-          <img src="http://www.gravatar.com/avatar/61f2bf61edacc1d2d6829b69cd530c93.png">
+          <!-- <img class="media-object__image" src="https://en.gravatar.com/userimage/9935112/8e8d80494b972ad43cd3ad745d7d3b04.png?size=200"> -->
+          <img src="/images/gravatar.png" alt="Scotty Vernon" class="media-object__image">
         {% endif %}
-        <p>Written by <strong><a rel="author" href="https://twitter.com/{{ page.author.twitter }}" title="{{ page.author_name }}" target="_blank">{{ page.author.name }}</a></strong><br>
-        <span class="muted">{{ page.author.bio }}</span>
-        </p>
+        <div class="type-p">
+          Written by <strong><a rel="author" href="https://twitter.com/{{ page.author.twitter }}" title="{{ page.author_name }}" target="_blank">{{ page.author.name }}</a></strong>
+        </div>
+        <div class="muted fine-print">{{ page.author.bio }}</div>
+        <div class="follow"><a href="https://twitter.com/KingScooty" class="twitter-follow-button" data-show-count="false">Follow @KingScooty</a></div>
+        <hr class="dark seperator seperator--tight">
       </address>
-
     </footer>
 
     {% if page.cover_copyright %}
-    <section>
-      <p class="muted cover-copyright">{{ page.cover_copyright }}</p>
+    <section class="content-block__aside">
+      <p class="muted fine-print cover-copyright">{{ page.cover_copyright }}</p>
     </section>
     {% endif %}
 
     {% if site.inc.disqus.shortname %}
-    <section>
+    <section class="comments content-block__aside">
       {% include _disqus.html %}
     </section>
     {% endif %}

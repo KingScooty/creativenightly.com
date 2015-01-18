@@ -1,0 +1,49 @@
+.media-object {
+  text-align: center;
+  
+  @extend %clearfix;
+
+  @include min-screen(600px) {
+    text-align: left;
+  }
+
+  // Keep incase the media object gets used more globally
+  // REFACTOR the content-block__author bits
+  // .seperator {
+  //   &:first-child { 
+  //     margin-top: 2rem; 
+  //     margin-top: 1rem; //<------- content block author
+  //   }
+  //   &:last-child { 
+  //     margin-bottom: 2rem; 
+  //   }
+  //   @include min-screen(640px) {
+  //     padding-top: 1rem;
+  //     padding-bottom: 1rem;
+  //   }
+  // }
+}
+
+.media-object__image {
+  @include min-screen(600px) {
+    float: left;
+    width: 5rem;
+    margin: 1rem 1rem 1rem 0;
+  }
+
+  display: block;
+  width: 8rem;
+  margin: 1rem auto;
+
+  border-radius: 100%;
+}
+
+.media-object {
+  .follow {
+    margin-top: -1rem;
+    @include max-screen(640px) {
+      // padding-bottom: 1rem;
+      margin-top: 0;
+    }
+  }
+}
