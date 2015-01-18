@@ -15,6 +15,7 @@ function loadGoogleWidgets() {
 function loadDisqus() {
   var disqus_shortname = 'scottyvernon';
   var disqus_identifier = 1544990;
+  var disqus_url = document.URL;
 
   (function() {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
