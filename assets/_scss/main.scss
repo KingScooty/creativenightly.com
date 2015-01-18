@@ -40,17 +40,32 @@ caption, th, td { text-align: left; font-weight: normal; vertical-align: middle;
 @import "base/base";
 @import "layouts/layouts";
 @import "modules/navigation";
-@import "modules/masthead";
+@import "modules/button";
+@import "modules/list";
+
+// Media Window
+// Used 
 @import "modules/media-window";
 @import "modules/content-block";
 @import "modules/meta";
-@import "modules/social";
+// Media object
+// Currently only used for the author footer on blog posts
 @import "modules/media-object";
-@import "modules/site-footer";
-@import "modules/button";
+// Social Sharing
+// Used in footer of post detail pages
+@import "modules/social";
+// Posts
+// Used on archive.
+@import "modules/posts";
 
+// Global modulde/layout (needs defining)
+@import "modules/masthead";
+@import "modules/site-footer";
+
+// Syntax
 @import "theme/pygments";
 
+// States
 @import "states/states";
 
 /**

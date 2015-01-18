@@ -1,0 +1,15 @@
+.posts {}
+
+.posts.current {
+  //h3 -> h4
+  .post__title {
+    @extend .delta;
+  }
+}
+
+.posts.archived {
+  //h4 -> h5
+  .post__title {
+    @extend .epsilon;
+  }
+}

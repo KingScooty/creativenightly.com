@@ -2,7 +2,7 @@
 layout: base
 ---
 
-<div class="media-window is-full-width" style="background-image:url(https://prcdn.500px.org/watermark/61542855/14/position%3Dnorthwest_opacity%3D80_watermark%3Dprime_attachment%3Dtrue_filename%3Dstock-photo-stuttgart-library-color-effects-61542855/2d3475c1929d6317d5be9ffe08118d317f968fa2);">
+<div class="media-window is-full-width" style="background-image:url(https://ppcdn.500px.org/81002443/dfe695d5626d244996656578b96f690b6d958b4a/2048.jpg);">
   
   <section class="media-window__content">
     <div class="container">
@@ -17,12 +17,12 @@ layout: base
 
   <h2 class="archive-header">Articles</h2>
 
-  <section class="posts">
-    <ul class="list-ui">
+  <section class="posts current">
+    <ul class="list-short">
 
     {% for post in site.posts %}
     {% unless post.draft or post.path contains '_posts/archive' %}
-      <li class="list-ui__item">
+      <li class="list-short__item">
           <time class="post__date" datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%d %B, %Y" }}</time>
           <h3 class="post__title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
       </li>
@@ -34,14 +34,14 @@ layout: base
 
   <h3>No longer maintained</h3>
 
-  <section class="posts">
-    <ul class="list-ui">
+  <section class="posts archived">
+    <ul class="list-short">
 
     {% for post in site.posts %}
     {% if  post.path contains '_posts/archive' %}
-      <li class="list-ui__item">
+      <li class="list-short__item">
           <time class="post__date" datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%d %B, %Y" }}</time>
-          <h3 class="post__title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+          <h4 class="post__title"><a href="{{ post.url }}">{{ post.title }}</a></h4>
       </li>
     {% endif %}
     {% endfor %}
