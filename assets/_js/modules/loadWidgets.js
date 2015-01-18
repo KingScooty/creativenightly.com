@@ -14,14 +14,40 @@ function loadGoogleWidgets() {
 
 function loadDisqus() {
   var disqus_shortname = 'scottyvernon';
-  var disqus_identifier = 1544990;
-  var disqus_url = document.URL;
+  var disqus_identifier = window.location.pathname;
+  var disqus_url = 'http://www.creativenightly.com';
+  var disqus_config = function () { 
+    this.language = "en";
+  };
 
-  (function() {
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
+  // (function() {
+  //     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+  //     dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+  //     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  // })();
+
+  DISQUS.reset({
+    reload: true,
+    config: function () {  
+      this.page.identifier = disqus_identifier;  
+      this.page.url = disqus_url + "/#!" + disqus_identifier;
+    }
+  });
+
+  /* * * Disqus Reset Function * * */
+    // DISQUS.reset({
+    //   reload: true,
+    //   config: function () {
+    //     this.page.identifier = disqus_identifier;
+    //     this.page.url = disqus_url;
+    //     // this.page.title = newTitle;
+    //     // this.language = newLanguage;
+    //   }
+    // });
+
+  //Fix rhythm
+  require('./rhythm');
+
 }
 
 function triggerAnalytics() {
