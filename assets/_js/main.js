@@ -9,8 +9,16 @@ $(function() {
   var widgetsLoaded = false;
   var disqusLoaded = false;
 
+  function resetWidgetStates() {
+    widgetsLoaded = false;
+    disqusLoaded = false;
+    $(window).unbind('scroll');
+  }
+
   // Stagger loading of plugins to improve pageload/render performance
   var refreshWidgets = function() {
+
+    loadWidgets.triggerAnalytics();
 
     if ($('#disqus_thread').length !== 0) {
       console.log('Disqus exists!');
@@ -39,7 +47,7 @@ $(function() {
   }
 
   $.pjax({
-    area: '.site-body',
+    area: '.site-body', 
     // callback: function() {
     //   console.log('page load callback - hopefully last?');
     // },
@@ -64,7 +72,7 @@ $(function() {
 
   $(document).bind('pjax:fetch', function() {
     // console.log('fetching new page');
-    $(window).unbind('scroll');
+    resetWidgetStates();
   });
 
 

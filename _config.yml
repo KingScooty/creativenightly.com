@@ -1,7 +1,7 @@
 inc:
   # Blog Information
   title:        "Creative Nightly"
-  subtitle:     "A blog for creative digital and technical explorers." #"Creative coding and inspiration"
+  subtitle:     "A blog for creative, digital and technical explorers." #"Creative coding and inspiration"
   colophon:     false
   cover_image:  blog-cover.jpg
   logo:         logo.png

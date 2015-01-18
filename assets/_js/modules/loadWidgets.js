@@ -12,7 +12,7 @@ function loadGoogleWidgets() {
   gapi.plusone.go();
 }
 
-function loadDisqus()   {
+function loadDisqus() {
   var disqus_shortname = 'scottyvernon';
 
   (function() {
@@ -22,9 +22,16 @@ function loadDisqus()   {
   })();
 }
 
+function triggerAnalytics() {
+  if (window.location.hostname != 'localhost') {
+    _gs('track');
+  }
+}
+
 module.exports = {
   loadFacebookLikes: loadFacebookLikes,
   loadTwitterWidgets: loadTwitterWidgets,
   loadGoogleWidgets: loadGoogleWidgets,
-  loadDisqus: loadDisqus
+  loadDisqus: loadDisqus,
+  triggerAnalytics: triggerAnalytics
 }
