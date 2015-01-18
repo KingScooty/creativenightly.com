@@ -5,6 +5,8 @@ var sass = require('gulp-sass');
 var watch = require('gulp-watch');
 var gutil = require('gulp-util');
 
+var cssmin = require('gulp-minify-css');
+
 var transform = require('vinyl-transform');
 var browserify = require('browserify');
 var uglify = require('gulp-uglify');
@@ -24,13 +26,17 @@ gulp.task('sass', function () {
     //Plumb pipe breaks incase of errors
     .pipe(plumber())
 
-    .pipe(sass())
+    .pipe(sass({
+      style: 'compact'
+    }))
 
     //Autoprefixer
     .pipe(prefix({
       browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1'],
       cascade: false
     }))
+
+    .pipe(cssmin())
 
     .pipe(gulp.dest('./assets/stylesheets'));
 });
@@ -47,7 +53,7 @@ gulp.task('js-compile', function() {
     .pipe(plumber())
     .pipe(browserified)
 
-    // .pipe(uglify())
+    .pipe(uglify())
 
     .pipe(gulp.dest('./assets/javascripts/'));
 });
