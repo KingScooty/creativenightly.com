@@ -5,14 +5,14 @@ layout: null
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"> 
     <url> 
-        <loc>http://creativenightly.com</loc>
+        <loc>http://www.creativenightly.com</loc>
         <changefreq>daily</changefreq> 
         <priority>1</priority> 
     </url>
 
     {% for page in site.posts %}
     <url>
-        <loc>http://creativenightly.com{{ page.url }}/</loc>
+        <loc>http://www.creativenightly.com{{ page.url }}/</loc>
         {% if page.lastmod %}
         <lastmod>{{ page.lastmod }}</lastmod>
         {% else %}
@@ -21,5 +21,10 @@ layout: null
         <changefreq>weekly</changefreq>
     </url>
     {% endfor %}
+
+    <url> 
+        <loc>http://www.creativenightly.com/contact</loc>
+        <changefreq>weekly</changefreq> 
+    </url>
 
 </urlset>
