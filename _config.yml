@@ -1,7 +1,9 @@
 inc:
   # Blog Information
   title:        "Creative Nightly"
-  subtitle:     "A blog for creative, digital and technical explorers." #"Creative coding and inspiration"
+  subtitle:     "@KingScooty's crusade to stay on top of the ever expanding/advancing web tech industry"
+  #"A developer's account on the world of digital." 
+  #"Creative coding and inspiration" #A blog for creative, digital and technical explorers.
   colophon:     false
   cover_image:  blog-cover.jpg
   logo:         logo.png
