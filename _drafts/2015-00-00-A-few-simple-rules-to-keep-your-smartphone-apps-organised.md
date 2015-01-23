@@ -46,7 +46,7 @@ Here are some rules I've formulated to help keep me productive when using my iPh
 - Keep folders to a minimum on the first 2 pages. Folders aren't very visually appealling, and increase the amount of presses to get to important items. iPhones are beautiful, and so should navigating them.
 
 #####1. What apps do you use more than 1-3 times a day?
-These apps should probably go in your dock. I had a few contenders. Mailbox, Safari and Things are all apps I use fairly regularly throughout the day, and oddly, the Phone app wasn't one of them. However, I only tend to use them *during* the day, and not really in the evenings. Where as messages, socials apps, and spotify were apps I'd dip into irrespective of time. They key part of the dock mechanism is that apps are made accessible from any page you're on. 
+These apps should probably go in your dock. I had a few contenders. Mailbox, Safari and Things are all apps I use fairly regularly throughout the day, and oddly, the Phone app wasn't one of them. However, I only tend to use them *during* the day, and not really in the evenings. Where as messaging apps, social apps, and music were apps I'd dip into irrespective of time. They key part of the dock mechanism is that apps are made accessible from any page you're on. 
 
 #####2. What apps do you use at least once a day?
 
@@ -62,4 +62,3 @@ This page isn't pretty. It's a nightmare to navigate, and not visually appealing
 
 #####.5 Oh, and games go on page 4.
 
- Strikethrough uses two tildes. ~~Scratch this.~~ ~~Scratch this.~~ Hello.
