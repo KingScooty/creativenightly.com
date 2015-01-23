@@ -66,10 +66,12 @@ $bodytype: (
 
 //cap-height: 0.65
 $headingtype: (
-  font-family: 'futura-pt, Helvetica, sans-serif',
+  // font-family: 'futura-pt, Helvetica, sans-serif',
+  font-family: 'source-sans-pro, Helvetica, sans-serif',
   regular: 400,
   bold: 700,
   cap-height: 0.66
+  // cap-height: 0.60
 );
 
 $monospacetype: (
