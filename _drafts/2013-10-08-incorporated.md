@@ -42,6 +42,39 @@ author:
 draft: false
 {% endhighlight %}
 
+
+1. First ordered list item
+2. Another item
+  * Unordered sub-list. 
+1. Actual numbers don't matter, just that it's a number
+  1. Ordered sub-list
+
+* Unordered list can use asterisks
+- Or minuses
++ Or pluses
+
+
+| Tables        | Are           | Cool  |
+| ------------- |---------------| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+
+
+Three or more...
+
+---
+
+Hyphens
+
+***
+
+Asterisks
+
+___
+
+Underscores
+
 #### Configurable & Code Snipped Highlighting
 
 /assets/stylesheets/main.scss:
