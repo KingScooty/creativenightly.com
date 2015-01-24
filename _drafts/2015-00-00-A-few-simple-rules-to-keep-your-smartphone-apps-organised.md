@@ -22,9 +22,7 @@ At the beginning of 2015, [I promised myself I'd get more organised](/). I coine
 ###The best apps do one thing, and one thing well
 The big problem with most apps is that they try to do *too much*. The best apps do *one thing*, and one thing *well*. Until recently, my iPhone suffered from serious app clutter; I had several apps installed, all competing to solve the same problem. The reason for this is partly fuelled by the fact Apple force a collection of apps on you that you can't remove, and my reluctance to pick a standard for each of the major use categories. The outcome is I ended up using none of the apps the way they were intended and often struggling to find the apps I actually wanted to use.
 
-At the beginning of the year, I decided to lock down an app for each of the major use categories (*mail, photos, tasks, notes etc*). And remove the rest / hide the redundant Apple apps. A big requirement for me was the ability to synchonise the data in the cloud for access on multiple devices.
-
-These are apps I've picked to do *one* thing, and one thing *well*:
+At the beginning of the year, I decided to lock down an app for each of the major use categories (*mail, photos, tasks, notes etc*). And remove the rest / hide the redundant Apple apps. A big requirement for me was the ability to synchonise the data in the cloud for access on multiple devices. These are apps I've picked to do *one* thing, and one thing *well*:
 
 - **Mail** - [Mailbox](https://itunes.apple.com/gb/app/mailbox/id576502633)
 - **Tasks** - [Things](https://itunes.apple.com/gb/app/things/id284971781)
@@ -41,7 +39,7 @@ These are apps I've picked to do *one* thing, and one thing *well*:
 ###App page organisation rules
 Here are some rules I've formulated to help keep me productive when using my iPhone. 
 
-1. Allow no more than 12 apps per page. That's 3 full rows. (I'm using an iPhone 5)
+1. Allow no more than 12 apps per page. That's 3 full rows. (I'm using an iPhone 5) Any more than that clutters the page.
 2. Allow no more than 4 pages of apps.
 3. Keep folders to a minimum on the first 2 pages. Folders aren't very visually appealling, and increase the amount of presses to get to important items. iPhones are beautiful, and so should navigating them.
 4. Reduce app overlap - don't...
