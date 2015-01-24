@@ -17,7 +17,7 @@ author:
   image: ks.png
 ---
 
-At the beginning of 2015, [I promised myself I'd get more organised](/). I coined 2015 as the year of automation and productivity, so each day this year, I've been trying to improve on the previous day by just 1%. 
+At the beginning of 2015, [I promised myself I'd get more organised](/2014/12/Farewell-2014-hello-2015/). I coined 2015 as the year of automation and productivity, so each day this year, I've been trying to improve on the previous day by just 1%. 
 
 ###The best apps do one thing, and one thing well
 The big problem with most apps is that they try to do *too much*. The best apps do *one thing*, and one thing *well*. Until recently, my iPhone suffered from serious app clutter; I had several apps installed, all competing to solve the same problem. The reason for this is partly fuelled by the fact Apple force a collection of apps on you that you can't remove, and my reluctance to pick a standard for each of the major use categories. The outcome is I ended up using none of the apps the way they were intended and often struggling to find the apps I actually wanted to use.
