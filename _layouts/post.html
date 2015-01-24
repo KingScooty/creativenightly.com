@@ -8,7 +8,7 @@ layout: base
 <article class="content-block shift-down">
 
   <div class="container">
-    <header class="content-block__header">
+    <header class="content-block__header {% if page.subtitle %} content-block__header--group {% endif %}">
       
       <div class="meta">
         By <address><a rel="author" href="{{ page.author.link }}" title="{{ page.author.name }}" target="_blank">{{ page.author.name }}</a></address> &mdash;

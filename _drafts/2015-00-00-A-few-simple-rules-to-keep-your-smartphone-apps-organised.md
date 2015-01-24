@@ -17,7 +17,6 @@ author:
   image: ks.png
 ---
 
-
 At the beginning of 2015, [I promised myself I'd get more organised](/). I coined 2015 as the year of automation and productivity, so each day this year, I've been trying to improve on the previous day by just 1%. 
 
 ###The best apps do one thing, and one thing well
@@ -42,23 +41,31 @@ These are apps I've picked to do *one* thing, and one thing *well*:
 ###App page organisation rules
 Here are some rules I've formulated to help keep me productive when using my iPhone. 
 
-- No more than 12 apps per page. That's 3 full rows. (I'm using an iPhone 5)
-- Keep folders to a minimum on the first 2 pages. Folders aren't very visually appealling, and increase the amount of presses to get to important items. iPhones are beautiful, and so should navigating them.
+1. Allow no more than 12 apps per page. That's 3 full rows. (I'm using an iPhone 5)
+2. Allow no more than 4 pages of apps.
+3. Keep folders to a minimum on the first 2 pages. Folders aren't very visually appealling, and increase the amount of presses to get to important items. iPhones are beautiful, and so should navigating them.
+4. Reduce app overlap - don't...
+  * Hide all Apple apps you're not using in an 'Apple' folder.
+5. Don't install apps for the sake of it
+6. Clear out and delete all old apps that haven't been used in the last 2 months.
 
-#####1. What apps do you use more than 1-3 times a day?
+#####What apps do you use more than 1-3 times a day?
 These apps should probably go in your dock. I had a few contenders. Mailbox, Safari and Things are all apps I use fairly regularly throughout the day, and oddly, the Phone app wasn't one of them. However, I only tend to use them *during* the day, and not really in the evenings. Where as messaging apps, social apps, and music were apps I'd dip into irrespective of time. They key part of the dock mechanism is that apps are made accessible from any page you're on. 
 
-#####2. What apps do you use at least once a day?
+#####What apps do you use at least once a day?
 
 These apps go on the *frontpage*. Don't allow for any more than **3 rows** of apps. Less is more, plus I refuse to believe you use more than 12 apps at least once a day.
 
-#####3. What apps do you use less than once a day, but more than once a week?
+#####What apps do you use less than once a day, but more than once a week?
 
+These apps go on page 2.
 
-#####4. And the rest? Folders. Search is your friend!
+#####And the rest? Folders. Search is your friend!
 
 This page isn't pretty. It's a nightmare to navigate, and not visually appealing. I have friends who's frontpages look like this! Pages like this should be reserved *only* for apps you use once in a blue moon. I think I'm going to try and clear up many of the apps on this page that I haven't used in over 2 months.
 
 
-#####.5 Oh, and games go on page 4.
+#####What about games?
+
+They go on the last page, page 4. Keep the distractions hidden on the final page. 
 

@@ -169,7 +169,7 @@ a {
 
   .subtitle {
     @include sassline(epsilon, $headingtype, 2, 0, all);
-    padding-bottom: 2rem;
+    // padding-bottom: 2rem;
   }
 
   // Nice spacing for captions.
@@ -183,6 +183,8 @@ a {
 
   @include min-screen(640px) {
     .meta + h1 {
+    // .meta + h1, 
+    // h1 + .subtitle {
       margin-top: -1rem;
     }
   }

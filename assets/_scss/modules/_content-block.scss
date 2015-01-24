@@ -14,16 +14,22 @@
 
 .content-block__header {
   position: relative;
+  padding-bottom: 1rem;
 
   &:after {
     content: "";
     position: absolute;
-    bottom: 0.4rem;
+    // bottom: 0.4rem;
+    bottom: -.15rem;
     display: block;
     width: 1.5em;
     height: 0.2rem;
     background: #ddd;
   }
+}
+
+.content-block__header--group {
+  padding-bottom: 2rem;
 }
 
 .content-block__body {
