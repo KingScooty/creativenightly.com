@@ -1,7 +1,7 @@
 ---
 layout: post
 #title: A few simple rules to keep your iPhone apps organised
-title: I've started setting rules for organising my iPhone apps
+title: Why I've started setting rules for organising my iPhone apps
 subtitle: Reduce the distractions, improve page visual appeal and enhance productivity.
 
 lastmod: 2015-01-24
