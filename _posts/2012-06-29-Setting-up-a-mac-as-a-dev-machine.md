@@ -6,7 +6,7 @@ lastmod: 2013-03-16
 
 cover_image: false
 
-excerpt: "Incorporated provides a great typography, responsive design, author details, semantic markup and more."
+excerpt: "The following notes will cover how to set up a fresh Mac &ndash; on OS X Mountain Lion &ndash; as a lean mean coding machine."
 
 author:
   name: Scotty Vernon
