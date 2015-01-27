@@ -68,6 +68,8 @@ caption, th, td { text-align: left; font-weight: normal; vertical-align: middle;
 // States
 @import "states/states";
 
+@import "modules/twitter_tweet";
+
 /**
  * Solarized colors by Ethan Schoonover
  */
