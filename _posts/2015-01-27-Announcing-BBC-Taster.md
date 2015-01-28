@@ -26,9 +26,9 @@ For the last 10 months, we've been working with BBC Connected Studio developing 
 <blockquote class="twitter-tweet" lang="en"><p>We are beyond excited to share something with you. <a href="https://twitter.com/BBCTaster">@BBCTaster</a> is a home for new ideas from the BBC&#10;<a href="https://t.co/dZOaal4E6H">https://t.co/dZOaal4E6H</a></p>&mdash; BBC Taster (@BBCTaster) <a href="https://twitter.com/BBCTaster/status/559644934056079360">January 26, 2015</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-The product started off as a vision from BBC Connected Studio to show off experiments that are developed across the BBC to the general public. Initially, we worked with a bare bones team at BBC Connected Studio to create rapid prototypes for stakeholders in order to get backing and acquire funding for a fully fledged product. After achieving funding, development transitioned from prototyping to production grade continuous delivery and the team bolstered. I led the front end team and deployed development infrastructure.
+The product started off as a vision from BBC Connected Studio to show off experiments that are developed across the BBC to the general public. Initially, we worked with a bare bones team at BBC Connected Studio to create rapid prototypes for stakeholders in order to get backing and acquire funding for a fully fledged product. After achieving funding, development transitioned from prototyping to production grade continuous delivery and the team bolstered. All in all, the turnaround from concept to fully funded live product was just 10 months.
 
-The BBC announced the new product at their Future is Everything event yesterday, and the press and reception from the general public has been very positive. Here's a few links to some of the articles:
+The BBC announced the new product at their Future is Now event <s>yesterday</s> Monday 26<sup>th</sup> Jan 2015, and the press and reception from the general public has been very positive. Here's a few links to some of the articles:
 
 - **Engadget** - [http://www.engadget.com/2015/01/26/bbc-taster/](http://www.engadget.com/2015/01/26/bbc-taster/)
 - **Guardian** - [http://www.theguardian.com/media/2015/jan/26/bbc-taster-launch-users-shape-content](http://www.theguardian.com/media/2015/jan/26/bbc-taster-launch-users-shape-content)
