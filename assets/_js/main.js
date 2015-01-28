@@ -19,6 +19,7 @@ $(function() {
   var refreshWidgets = function() {
 
     loadWidgets.triggerAnalytics();
+    loadWidgets.loadTwitterWidgets();
 
     if ($('#disqus_thread').length !== 0) {
       console.log('Disqus exists!');
