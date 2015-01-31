@@ -20,7 +20,7 @@ author:
 
 I'm a big fan of Gulp. It's much faster than Grunt (thanks to the use of streams to manipulate the data before outputting it to a file). Grunt, on the other hand, relies on a .tmp folder as a dumping place for files as they get transformed from plugin to plugin.
 
-**Due to this fact that Gulp is faster, I've fallen into the rather bad habbit of trying to do *everything* in Gulp, even if plugins have no support for it.**
+**However, due to this fact that Gulp is faster, I've fallen into the rather bad habbit of trying to do *everything* in Gulp, even if plugins have no support for it.**
 
 ##Why not use both together?
 
