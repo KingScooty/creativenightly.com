@@ -11,15 +11,44 @@ function fixRhythm($el, height) {
   var invertRemainder = baseline - remainder;
 
   console.log('Line height:', baseline);
-  console.log('Disqus height:', height);
+  console.log('El height:', height);
   console.log('Remainder:', invertRemainder);
 
-  if (remainder > 0) {
-    $el.css({
+  if ($el.is('iframe')) {
+    args = {
+      'margin-bottom': invertRemainder + "px"
+    }
+  } else {
+    args = {
       'padding-bottom': invertRemainder + "px"
-    });
+    }  
+  }
+
+  if (remainder > 0) {
+    $el.css(args);
     console.log('Fixing height.');
   }
+
+}
+
+function isRenderedFixRhythm(el) {
+  var $el = el;
+  var editable = true; // set a flag
+  var elInitTest = setInterval(function() {
+
+  console.log('interval');
+
+    var elHeight = $el.outerHeight();
+    if ( elHeight > 0 ) {
+      if (editable) { 
+        editable = false;
+        clearInterval(elInitTest);
+        // console.log('hello? disqus loaded');
+        // Your code here...
+        fixRhythm($el, elHeight);
+      }
+    }
+  }, 2000);
 
 }
 
@@ -28,25 +57,28 @@ function fixDisqusRhythm() {
   if ($('#disqus_thread').length !== 0) {
 
     var $disqus = $('#disqus_thread');
-
-    var editable = true; // set a flag
-    var disqusInitTest = setInterval(function() {
-    // Initially Disqus renders this div with the height of 0px prior to the comments being loaded. So run a check to see if the comments have been loaded yet.
-    console.log('interval');
-
-      var disqusHeight = $disqus.height();
-      if ( disqusHeight > 0 ) {
-        if (editable) { // To make sure that the changes you want to make only happen once check to see if the flag has been changed, if not run the changes and update the flag.
-          editable = false;
-          clearInterval(disqusInitTest);
-          // console.log('hello? disqus loaded');
-          // Your code here...
-          fixRhythm($disqus, disqusHeight);
-        }
-      }
-    }, 2000);
+    isRenderedFixRhythm($disqus);
   }
 
 }
 
-module.exports = fixDisqusRhythm();
+function fixTweetEmbedRhythm() {
+
+  var initialHeight = $('.twitter-tweet').outerHeight();
+
+  $('.twitter-tweet').bind('DOMSubtreeModified', function(e) {
+
+    if ($('.twitter-tweet.twitter-tweet-rendered').length !==0 ) {
+      var $tweet = $('.twitter-tweet.twitter-tweet-rendered');
+      if ($tweet.outerHeight() > initialHeight) {
+        isRenderedFixRhythm($tweet);
+      }
+    }
+  });
+
+}
+
+module.exports = {
+  fixDisqusRhythm: fixDisqusRhythm(),
+  fixTweetEmbedRhythm: fixTweetEmbedRhythm()
+}
