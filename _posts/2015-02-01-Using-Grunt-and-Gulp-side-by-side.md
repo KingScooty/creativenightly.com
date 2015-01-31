@@ -36,7 +36,9 @@ As you've probably guessed by this point, all of my tasks and watch tasks are wi
 
 Not wanting to spend too much time getting everything wired up, I started searching for something that would help me link the two build tools together. Introducing [gulp-grunt](https://github.com/gratimax/gulp-grunt) a tool that will allow for running grunt tasks from gulp.
 
-**So far so good!** I've only been testing this workflow out for a few hours, but it's definitely an improvement &ndash; especially when working with Assemble or any other plugin that don't support Gulp (*e.g. rsync*).
+####So far so good! 
+
+I've only been testing this workflow out for a few hours, but it's definitely an improvement &ndash; especially when working with Assemble or any other plugin that don't support Gulp (*e.g. rsync*).
 
 Here's an example of getting a Grunt Assemble task wired into Gulp for watching and updating the browser with browsersync:
 
