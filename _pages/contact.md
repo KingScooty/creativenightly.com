@@ -2,7 +2,6 @@
 layout: page
 title: About + Contact
 subtitle:
-lastmod: 2015-02-01
 
 permalink: /contact/
 
