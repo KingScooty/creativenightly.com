@@ -43,8 +43,7 @@ function isRenderedFixRhythm(el) {
       if (editable) { 
         editable = false;
         clearInterval(elInitTest);
-        // console.log('hello? disqus loaded');
-        // Your code here...
+
         fixRhythm($el, elHeight);
       }
     }
