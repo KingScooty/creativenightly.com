@@ -56,7 +56,16 @@
   <meta property="og:site_name" content="{{ site.inc.title }}"> 
 
   <!-- Async Typekit -->
+  <script>
+  if( window.innerWidth < 800 ) { 
+    document.write('\x3Cscript src="//use.typekit.net/adu5fik.js" onload="try{Typekit.load();}catch(e){}" async>\x3C/script>');
+  } else { 
+    document.write('\x3Cscript src="//use.typekit.net/adu5fik.js">\x3C/script>');
+    document.write('\x3Cscript>try{Typekit.load();}catch(e){}\x3C/script>');
+  };
+  </script>
+
 <!--  <script type="text/javascript" src="//use.typekit.net/adu5fik.js" onload="try{Typekit.load();}catch(e){}" async></script> -->
 
-  <script type="text/javascript" src="//use.typekit.net/adu5fik.js"></script>
-  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  <!-- <script type="text/javascript" src="//use.typekit.net/adu5fik.js"></script> -->
+  <!-- <script type="text/javascript">try{Typekit.load();}catch(e){}</script> -->
