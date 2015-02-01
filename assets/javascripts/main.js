@@ -13784,8 +13784,8 @@ function initCreativeNightly() {
   // Attach global page state variable to window.
   require('./modules/core.state').initPageState();
 
-  var checkPage = require('./modules/core.current_page_is');
-  checkPage.init();
+  // var checkPage = require('./modules/core.current_page_is');
+  // checkPage.init();
 
   require('./modules/core.page_loader');
 
@@ -13794,7 +13794,7 @@ function initCreativeNightly() {
 $(function() {
   initCreativeNightly();
 });
-},{"./modules/core.current_page_is":5,"./modules/core.page_loader":7,"./modules/core.state":8,"./plugins/is-visible":14,"jquery":2}],5:[function(require,module,exports){
+},{"./modules/core.page_loader":8,"./modules/core.state":9,"./plugins/is-visible":15,"jquery":2}],5:[function(require,module,exports){
 var routes = require('../_config');
 var pages = require('../pages/_pages');
 
@@ -13822,7 +13822,111 @@ module.exports = {
   init: init,
   destroy: destroy 
 }
-},{"../_config":3,"../pages/_pages":9}],6:[function(require,module,exports){
+},{"../_config":3,"../pages/_pages":10}],6:[function(require,module,exports){
+function fixRhythm($el, height) {
+  // var baseline = 16;
+  // var remainder = height % baseline;
+
+  var body_font_size_px   = parseFloat($('body').css('font-size'));
+  var body_line_height_px = parseFloat($('body').css('line-height'));
+  var body_line_height_rem = body_line_height_px / body_font_size_px;
+
+  var baseline = body_line_height_px / 2;
+  var remainder = height % baseline;
+  var invertRemainder = baseline - remainder;
+
+  console.log('Line height:', baseline);
+  console.log('El height:', height);
+  console.log('Remainder:', invertRemainder);
+
+  if ($el.is('iframe')) {
+    args = {
+      'margin-bottom': invertRemainder + "px"
+    }
+  } else {
+    args = {
+      'padding-bottom': invertRemainder + "px"
+    }  
+  }
+
+  if (remainder > 0) {
+    $el.css(args);
+    console.log('Fixing height.');
+  }
+
+}
+
+module.exports = fixRhythm;
+
+// function isRenderedFixRhythm(el) {
+//   var $el = el;
+//   var editable = true; // set a flag
+//   var elInitTest = setInterval(function() {
+
+//   console.log('interval');
+
+//     var elHeight = $el.outerHeight();
+//     if ( elHeight > 0 ) {
+//       if (editable) { 
+//         editable = false;
+//         clearInterval(elInitTest);
+
+//         fixRhythm($el, elHeight);
+//       }
+//     }
+//   }, 2000);
+
+// }
+
+// function isRendered($el) {
+//   var initialHeight = $el.outerHeight;
+//   if ($el.length !== 0) && ($el.outerHeight > 0) {
+//     return true;
+//   } else {
+//     deferRendered($el);
+//   }
+// }
+
+// function deferRendered($el) {
+//   $('.site-body').bind('DOMSubtreeModified', function(e) {
+//     if (e.target === $el) {
+//       return true;
+//     }
+//   }
+// }
+
+// function fixDisqusRhythm() {
+
+//   if ($('#disqus_thread').length !== 0) {
+
+//     var $disqus = $('#disqus_thread');
+//     isRenderedFixRhythm($disqus);
+//   }
+
+// }
+
+// function fixTweetEmbedRhythm() {
+
+//   var initialHeight = $('.twitter-tweet').outerHeight();
+
+//   $('.twitter-tweet').bind('DOMSubtreeModified', function(e) {
+
+//     if ($('.twitter-tweet.twitter-tweet-rendered').length !==0 ) {
+//       var $tweet = $('.twitter-tweet.twitter-tweet-rendered');
+//       if ($tweet.outerHeight() > initialHeight) {
+//         isRenderedFixRhythm($tweet);
+//       }
+//     }
+//   });
+
+// }
+
+
+
+
+},{}],7:[function(require,module,exports){
+var fixRhythm = require('./core.fix-rhythm');
+
 function getScripts(path, callback) {
   $.ajax({
     type: "GET",
@@ -13860,6 +13964,9 @@ function initTwitterWidgets() {
   getScripts("https://platform.twitter.com/widgets.js");
   } else {
     twttr.widgets.load();
+
+    // isRenderedFixRhythm($('.twitter-tweet'));
+
     page_state.widgets.twitter.tweet.init = true;
     page_state.widgets.twitter.follow.init = true;
   }
@@ -13879,6 +13986,8 @@ function initGoogleWidgets() {
 function initGists() {
   require('../plugins/ajax-gist-embed')();
   page_state.widgets.gist.init = true;
+
+  // isRenderedFixRhythm($('.gist'));
 }
 
 function initDisqus() {
@@ -13905,6 +14014,8 @@ function initDisqus() {
 
   }
 
+  // isRenderedFixRhythm($('#disqus_thread'))
+
   page_state.widgets.disqus.init = true;
 
 }
@@ -13917,6 +14028,61 @@ function triggerAnalytics() {
 }
 
 
+// function rhythm($el) {
+//   var fixed = false;
+//   $('.site-body').bind('DOMSubtreeModified', function(e) {
+//     if (($el.is(e.target)) && !fixed) {
+//       console.log('RENDERING', $el);
+//       setTimeout(function() {
+//         fixRhythm($el);
+//       }, 2000);
+//       fixed = true;
+//     }
+//   });
+// }
+
+// function isRenderedFixRhythm($el) {
+
+//   if ($el.length !== 0) {
+
+//     var editable = true;
+//     var elInitTest = setInterval(function() {
+
+//     console.log('interval');
+
+//       var elHeight = $el.outerHeight();
+//       if ( elHeight > 0 ) {
+//         if (editable) { 
+//           editable = false;
+//           clearInterval(elInitTest);
+
+//           fixRhythm($el, elHeight);
+//         }
+//       }
+//     }, 2000);
+
+//   }
+
+// }
+
+// function isRendered($el) {
+//   var initialHeight = $el.outerHeight;
+//   if ($el.length !== 0) && ($el.outerHeight > 0) {
+//     return true;
+//   } else {
+//     deferRendered($el);
+//   }
+// }
+
+// function deferRendered($el) {
+//   $('.site-body').bind('DOMSubtreeModified', function(e) {
+//     if (e.target === $el) {
+//       return true;
+//     }
+//   }
+// }
+
+
 module.exports = {
   initFacebookLikes: initFacebookLikes,
   initTwitterWidgets: initTwitterWidgets,
@@ -13925,7 +14091,7 @@ module.exports = {
   triggerAnalytics: triggerAnalytics,
   initGists: initGists
 }
-},{"../plugins/ajax-gist-embed":13}],7:[function(require,module,exports){
+},{"../plugins/ajax-gist-embed":14,"./core.fix-rhythm":6}],8:[function(require,module,exports){
 require('pjax');
 var currentPage = require('./core.current_page_is');
 var widgets = require('../modules/core.init-widgets');
@@ -13967,7 +14133,7 @@ $(document).bind('pjax:render', function () {
   widgets.triggerAnalytics();
 });
 
-},{"../modules/core.init-widgets":6,"./core.current_page_is":5,"./core.state":8,"pjax":1}],8:[function(require,module,exports){
+},{"../modules/core.init-widgets":7,"./core.current_page_is":5,"./core.state":9,"pjax":1}],9:[function(require,module,exports){
 // Manage that state, yo.
 
 function initPageState() {
@@ -14013,12 +14179,12 @@ module.exports = {
   initPageState: initPageState,
   resetPageStates: resetPageStates
 };
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 module.exports = {
   page: require('./page'),
   post: require('./post')
 }
-},{"./page":10,"./post":11}],10:[function(require,module,exports){
+},{"./page":11,"./post":12}],11:[function(require,module,exports){
 function init () {}
 function destroy () {}
 
@@ -14026,7 +14192,7 @@ module.exports = {
   init: init,
   destroy: destroy
 }
-},{}],11:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 var widgets = require('../modules/core.init-widgets');
 
 function init () {
@@ -14059,7 +14225,7 @@ module.exports = {
   init: init,
   destroy: destroy
 }
-},{"../modules/core.init-widgets":6}],12:[function(require,module,exports){
+},{"../modules/core.init-widgets":7}],13:[function(require,module,exports){
 function add_stylesheet_once( url ){
   $head = $('head');
   if( $head.find('link[rel="stylesheet"][href="'+url+'"]').length < 1 )
@@ -14067,7 +14233,7 @@ function add_stylesheet_once( url ){
 }
 
 module.exports = add_stylesheet_once;
-},{}],13:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 function loadGistScripts() {
 
   var add_stylesheet_once = require('./add-stylesheet-once');
@@ -14103,7 +14269,7 @@ function loadGistScripts() {
 }
 
 module.exports = loadGistScripts;
-},{"./add-stylesheet-once":12}],14:[function(require,module,exports){
+},{"./add-stylesheet-once":13}],15:[function(require,module,exports){
 var $ = require('jquery');
 
 (function($){

@@ -1,3 +1,5 @@
+var fixRhythm = require('./core.fix-rhythm');
+
 function getScripts(path, callback) {
   $.ajax({
     type: "GET",
@@ -35,6 +37,9 @@ function initTwitterWidgets() {
   getScripts("https://platform.twitter.com/widgets.js");
   } else {
     twttr.widgets.load();
+
+    // isRenderedFixRhythm($('.twitter-tweet'));
+
     page_state.widgets.twitter.tweet.init = true;
     page_state.widgets.twitter.follow.init = true;
   }
@@ -54,6 +59,8 @@ function initGoogleWidgets() {
 function initGists() {
   require('../plugins/ajax-gist-embed')();
   page_state.widgets.gist.init = true;
+
+  // isRenderedFixRhythm($('.gist'));
 }
 
 function initDisqus() {
@@ -80,6 +87,8 @@ function initDisqus() {
 
   }
 
+  // isRenderedFixRhythm($('#disqus_thread'))
+
   page_state.widgets.disqus.init = true;
 
 }
@@ -90,6 +99,61 @@ function triggerAnalytics() {
     _gs('track');
   }
 }
+
+
+// function rhythm($el) {
+//   var fixed = false;
+//   $('.site-body').bind('DOMSubtreeModified', function(e) {
+//     if (($el.is(e.target)) && !fixed) {
+//       console.log('RENDERING', $el);
+//       setTimeout(function() {
+//         fixRhythm($el);
+//       }, 2000);
+//       fixed = true;
+//     }
+//   });
+// }
+
+// function isRenderedFixRhythm($el) {
+
+//   if ($el.length !== 0) {
+
+//     var editable = true;
+//     var elInitTest = setInterval(function() {
+
+//     console.log('interval');
+
+//       var elHeight = $el.outerHeight();
+//       if ( elHeight > 0 ) {
+//         if (editable) { 
+//           editable = false;
+//           clearInterval(elInitTest);
+
+//           fixRhythm($el, elHeight);
+//         }
+//       }
+//     }, 2000);
+
+//   }
+
+// }
+
+// function isRendered($el) {
+//   var initialHeight = $el.outerHeight;
+//   if ($el.length !== 0) && ($el.outerHeight > 0) {
+//     return true;
+//   } else {
+//     deferRendered($el);
+//   }
+// }
+
+// function deferRendered($el) {
+//   $('.site-body').bind('DOMSubtreeModified', function(e) {
+//     if (e.target === $el) {
+//       return true;
+//     }
+//   }
+// }
 
 
 module.exports = {

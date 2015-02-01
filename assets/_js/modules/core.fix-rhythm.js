@@ -31,6 +31,8 @@ function fixRhythm($el, height) {
 
 }
 
+module.exports = fixRhythm;
+
 // function isRenderedFixRhythm(el) {
 //   var $el = el;
 //   var editable = true; // set a flag
