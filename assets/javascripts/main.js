@@ -13830,9 +13830,10 @@ function getScripts(path, callback) {
     dataType: "script",
     cache: true
   }).done(function() {
-    if (typeof callback == 'function') { 
     // make sure the callback is a function
-      callback.call(this); // brings the scope to the callback
+    if (typeof callback == 'function') { 
+      // brings the scope to the callback
+      callback.call(this); 
     }
   });
 }
