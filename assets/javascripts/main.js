@@ -13856,7 +13856,30 @@ function fixRhythm($el, height) {
 
 }
 
-module.exports = fixRhythm;
+function initMonitorRhythm() {
+  var elements = [
+    '.gist',
+    '.twitter-tweet',
+    '#disqus_thread'
+  ];
+
+  window.rhythm_intervals = setInterval(loopWidgets, 2000);
+
+  function loopWidgets() {
+    $.each(elements, function(index, el) {
+      var $el = $(el);
+      var height = $el.outerHeight();
+      // console.log($el, height);
+      if (($el.length !== 0) && (height > 0)) {
+        // console.log('Fixing: ', $el);
+        fixRhythm($el, height);
+      }
+    });
+  }
+
+}
+
+module.exports = initMonitorRhythm;
 
 // function isRenderedFixRhythm(el) {
 //   var $el = el;
@@ -13925,8 +13948,6 @@ module.exports = fixRhythm;
 
 
 },{}],7:[function(require,module,exports){
-var fixRhythm = require('./core.fix-rhythm');
-
 function getScripts(path, callback) {
   $.ajax({
     type: "GET",
@@ -13964,9 +13985,6 @@ function initTwitterWidgets() {
   getScripts("https://platform.twitter.com/widgets.js");
   } else {
     twttr.widgets.load();
-
-    // isRenderedFixRhythm($('.twitter-tweet'));
-
     page_state.widgets.twitter.tweet.init = true;
     page_state.widgets.twitter.follow.init = true;
   }
@@ -13986,8 +14004,6 @@ function initGoogleWidgets() {
 function initGists() {
   require('../plugins/ajax-gist-embed')();
   page_state.widgets.gist.init = true;
-
-  // isRenderedFixRhythm($('.gist'));
 }
 
 function initDisqus() {
@@ -14014,8 +14030,6 @@ function initDisqus() {
 
   }
 
-  // isRenderedFixRhythm($('#disqus_thread'))
-
   page_state.widgets.disqus.init = true;
 
 }
@@ -14028,61 +14042,6 @@ function triggerAnalytics() {
 }
 
 
-// function rhythm($el) {
-//   var fixed = false;
-//   $('.site-body').bind('DOMSubtreeModified', function(e) {
-//     if (($el.is(e.target)) && !fixed) {
-//       console.log('RENDERING', $el);
-//       setTimeout(function() {
-//         fixRhythm($el);
-//       }, 2000);
-//       fixed = true;
-//     }
-//   });
-// }
-
-// function isRenderedFixRhythm($el) {
-
-//   if ($el.length !== 0) {
-
-//     var editable = true;
-//     var elInitTest = setInterval(function() {
-
-//     console.log('interval');
-
-//       var elHeight = $el.outerHeight();
-//       if ( elHeight > 0 ) {
-//         if (editable) { 
-//           editable = false;
-//           clearInterval(elInitTest);
-
-//           fixRhythm($el, elHeight);
-//         }
-//       }
-//     }, 2000);
-
-//   }
-
-// }
-
-// function isRendered($el) {
-//   var initialHeight = $el.outerHeight;
-//   if ($el.length !== 0) && ($el.outerHeight > 0) {
-//     return true;
-//   } else {
-//     deferRendered($el);
-//   }
-// }
-
-// function deferRendered($el) {
-//   $('.site-body').bind('DOMSubtreeModified', function(e) {
-//     if (e.target === $el) {
-//       return true;
-//     }
-//   }
-// }
-
-
 module.exports = {
   initFacebookLikes: initFacebookLikes,
   initTwitterWidgets: initTwitterWidgets,
@@ -14091,7 +14050,7 @@ module.exports = {
   triggerAnalytics: triggerAnalytics,
   initGists: initGists
 }
-},{"../plugins/ajax-gist-embed":14,"./core.fix-rhythm":6}],8:[function(require,module,exports){
+},{"../plugins/ajax-gist-embed":14}],8:[function(require,module,exports){
 require('pjax');
 var currentPage = require('./core.current_page_is');
 var widgets = require('../modules/core.init-widgets');
@@ -14173,6 +14132,7 @@ function initPageState() {
 function resetPageStates() {
   initPageState();
   $(window).unbind('scroll');
+  clearInterval(window.rhythm_interval);
 }
 
 module.exports = {
@@ -14194,8 +14154,11 @@ module.exports = {
 }
 },{}],12:[function(require,module,exports){
 var widgets = require('../modules/core.init-widgets');
+var fixRhythm = require('../modules/core.fix-rhythm');
 
 function init () {
+
+  fixRhythm();
 
   widgets.initTwitterWidgets();
   widgets.initGists();
@@ -14225,7 +14188,7 @@ module.exports = {
   init: init,
   destroy: destroy
 }
-},{"../modules/core.init-widgets":7}],13:[function(require,module,exports){
+},{"../modules/core.fix-rhythm":6,"../modules/core.init-widgets":7}],13:[function(require,module,exports){
 function add_stylesheet_once( url ){
   $head = $('head');
   if( $head.find('link[rel="stylesheet"][href="'+url+'"]').length < 1 )

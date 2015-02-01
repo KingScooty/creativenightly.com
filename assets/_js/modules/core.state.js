@@ -37,6 +37,7 @@ function initPageState() {
 function resetPageStates() {
   initPageState();
   $(window).unbind('scroll');
+  clearInterval(window.rhythm_interval);
 }
 
 module.exports = {

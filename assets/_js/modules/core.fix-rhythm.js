@@ -31,7 +31,30 @@ function fixRhythm($el, height) {
 
 }
 
-module.exports = fixRhythm;
+function initMonitorRhythm() {
+  var elements = [
+    '.gist',
+    '.twitter-tweet',
+    '#disqus_thread'
+  ];
+
+  window.rhythm_intervals = setInterval(loopWidgets, 2000);
+
+  function loopWidgets() {
+    $.each(elements, function(index, el) {
+      var $el = $(el);
+      var height = $el.outerHeight();
+      // console.log($el, height);
+      if (($el.length !== 0) && (height > 0)) {
+        // console.log('Fixing: ', $el);
+        fixRhythm($el, height);
+      }
+    });
+  }
+
+}
+
+module.exports = initMonitorRhythm;
 
 // function isRenderedFixRhythm(el) {
 //   var $el = el;
