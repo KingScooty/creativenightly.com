@@ -8,6 +8,8 @@ function init (value) {
     return true;
   }
 
+  fixRhythm();
+
   widgets.initTwitterWidgets();
   widgets.initGists();
 
