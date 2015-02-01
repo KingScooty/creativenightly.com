@@ -51,7 +51,7 @@ plugins:     null
 layouts:     ./_layouts
 include:     ['.htaccess']
 exclude:     ['node_modules', 'bower.json', 'package.json', 'Rakefile', 'gulpfile.js', 'README.md']
-timezone:    null
+timezone:    Europe/London
 
 # Show future posts
 future:      false
