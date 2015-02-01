@@ -85,19 +85,12 @@ function initDisqus() {
 }
 
 function triggerAnalytics() {
+  // console.log('Pushing analytics');
   if (window.location.hostname != 'localhost') {
     _gs('track');
   }
 }
 
-
-// loadWidgets.triggerAnalytics();
-
-
-function testVariables() {
-  console.log('Logging page state from global');
-  console.log(page_state);
-}
 
 module.exports = {
   initFacebookLikes: initFacebookLikes,
@@ -105,6 +98,5 @@ module.exports = {
   initGoogleWidgets: initGoogleWidgets,
   initDisqus: initDisqus,
   triggerAnalytics: triggerAnalytics,
-  initGists: initGists,
-  testVariables: testVariables
+  initGists: initGists
 }

@@ -13910,19 +13910,12 @@ function initDisqus() {
 }
 
 function triggerAnalytics() {
+  // console.log('Pushing analytics');
   if (window.location.hostname != 'localhost') {
     _gs('track');
   }
 }
 
-
-// loadWidgets.triggerAnalytics();
-
-
-function testVariables() {
-  console.log('Logging page state from global');
-  console.log(page_state);
-}
 
 module.exports = {
   initFacebookLikes: initFacebookLikes,
@@ -13930,12 +13923,12 @@ module.exports = {
   initGoogleWidgets: initGoogleWidgets,
   initDisqus: initDisqus,
   triggerAnalytics: triggerAnalytics,
-  initGists: initGists,
-  testVariables: testVariables
+  initGists: initGists
 }
 },{"../plugins/ajax-gist-embed":13}],7:[function(require,module,exports){
 require('pjax');
 var currentPage = require('./core.current_page_is');
+var widgets = require('../modules/core.init-widgets');
 
 $.pjax({
   area: '.site-body', 
@@ -13971,9 +13964,10 @@ $(document).bind('pjax:fetch', function() {
 
 $(document).bind('pjax:render', function () {
   currentPage.init();
+  widgets.triggerAnalytics();
 });
 
-},{"./core.current_page_is":5,"./core.state":8,"pjax":1}],8:[function(require,module,exports){
+},{"../modules/core.init-widgets":6,"./core.current_page_is":5,"./core.state":8,"pjax":1}],8:[function(require,module,exports){
 // Manage that state, yo.
 
 function initPageState() {

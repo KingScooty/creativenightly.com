@@ -1,5 +1,6 @@
 require('pjax');
 var currentPage = require('./core.current_page_is');
+var widgets = require('../modules/core.init-widgets');
 
 $.pjax({
   area: '.site-body', 
@@ -35,4 +36,5 @@ $(document).bind('pjax:fetch', function() {
 
 $(document).bind('pjax:render', function () {
   currentPage.init();
+  widgets.triggerAnalytics();
 });
