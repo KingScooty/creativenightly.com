@@ -58,7 +58,7 @@ function initGists() {
 
 function initDisqus() {
   var disqus_shortname = 'scottyvernon';
-  var disqus_identifier = window.location.pathname;
+  var disqus_identifier = window.location.pathname.replace(/\/$/, '');
   var disqus_url = 'http://www.creativenightly.com';
   var disqus_config = function () { 
     this.language = "en";

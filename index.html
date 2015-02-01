@@ -34,7 +34,7 @@ sitemap:
     <section class="index-item section">
       <!-- {% if post.author.image %}<img src="/images/{{ post.author.image }}" class="avatar">{% endif %}-->
       <div>
-        <h2 class="title"><a href="{{ post.url }}" rel="prefetch">{{ post.title }}</a></h2>
+        <h2 class="title"><a href="{{ post.url }}/" rel="prefetch">{{ post.title }}</a></h2>
         {% assign content = post.excerpt | strip_newlines %}
         {% unless content == ""  %}
         <p>{{ post.excerpt }}</p>
