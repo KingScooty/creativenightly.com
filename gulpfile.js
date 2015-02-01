@@ -53,7 +53,7 @@ gulp.task('js-compile', function() {
     .pipe(plumber())
     .pipe(browserified)
 
-    // .pipe(uglify())
+    .pipe(uglify())
 
     .pipe(gulp.dest('./assets/javascripts/'));
 });
