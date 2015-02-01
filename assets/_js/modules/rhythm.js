@@ -77,7 +77,15 @@ function fixTweetEmbedRhythm() {
 
 }
 
+function fixGists() {
+  $('.gist').bind('DOMSubtreeModified', function(e) {
+    var $gist = $('.gist');
+    isRenderedFixRhythm($gist);
+  }
+}
+
 module.exports = {
   fixDisqusRhythm: fixDisqusRhythm(),
-  fixTweetEmbedRhythm: fixTweetEmbedRhythm()
+  fixTweetEmbedRhythm: fixTweetEmbedRhythm(),
+  fixGists: fixGists()
 }
