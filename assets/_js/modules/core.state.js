@@ -3,14 +3,32 @@
 function initPageState() {
   window.page_state = {
     widgets: {
-      gist: false,
-      twitter: {
-        tweet : false,
-        follow: false
+      gist: {
+        init: false,
+        rendered: false,
       },
-      facebook: false,
-      google_plus: false,
-      disqus: false
+      twitter: {
+        tweet : {
+          init: false,
+          rendered: false
+        },
+        follow: {
+          init: false,
+          rendered: false
+        }
+      },
+      facebook: {
+        init: false,
+        rendered: false
+      },
+      google_plus: {
+        init: false,
+        rendered: false
+      },
+      disqus: {
+        init: false,
+        rendered: false
+      }
     },
     social_widgets: false
   };

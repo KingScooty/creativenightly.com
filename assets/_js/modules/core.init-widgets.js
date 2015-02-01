@@ -1,23 +1,58 @@
+function getScripts(path, callback) {
+  $.ajax({
+    type: "GET",
+    url: path,
+    dataType: "script",
+    cache: true
+  }).done(function() {
+    if (typeof callback == 'function') { 
+    // make sure the callback is a function
+      callback.call(this); // brings the scope to the callback
+    }
+  });
+}
+
 function initFacebookLikes() {
+
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=1576288162589072";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
   try{
-      FB.XFBML.parse(); 
-  }catch(ex){}
+    FB.XFBML.parse();
+  } catch(ex) {}
+
 }
 
 function initTwitterWidgets() {
-  twttr.widgets.load();
-  page_state.widgets.twitter.tweet_loaded = true;
-  page_state.widgets.twitter.follow_loaded = true;
+
+  if(typeof twttr === 'undefined'){
+  getScripts("https://platform.twitter.com/widgets.js");
+  } else {
+    twttr.widgets.load();
+    page_state.widgets.twitter.tweet.init = true;
+    page_state.widgets.twitter.follow.init = true;
+  }
 }
 
 function initGoogleWidgets() {
-  gapi.plusone.go();
-  page_state.widgets.google_plus_loaded = true;
+
+  if(typeof gapi === 'undefined'){
+    getScripts("https://apis.google.com/js/plusone.js");
+  } else {
+    gapi.plusone.go();
+    page_state.widgets.google_plus.init = true;
+  }
+
 }
 
 function initGists() {
   require('../plugins/ajax-gist-embed')();
-  page_state.widgets.gist_loaded = true;
+  page_state.widgets.gist.init = true;
 }
 
 function initDisqus() {
@@ -30,12 +65,7 @@ function initDisqus() {
 
   if(typeof DISQUS === 'undefined'){
 
-    $.ajax({
-      type: "GET",
-      url: "http://" + disqus_shortname + ".disqus.com/embed.js",
-      dataType: "script",
-      cache: true
-    });
+    getScripts("https://" + disqus_shortname + ".disqus.com/embed.js");
 
   } else {
 
@@ -49,7 +79,8 @@ function initDisqus() {
 
   }
 
-  page_state.widgets.disqus_loaded = true;
+  page_state.widgets.disqus.init = true;
+
 }
 
 function triggerAnalytics() {

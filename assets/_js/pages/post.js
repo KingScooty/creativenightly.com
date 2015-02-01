@@ -11,10 +11,13 @@ function init () {
       widgets.initFacebookLikes();
       // widgets.initTwitterWidgets();
       widgets.initGoogleWidgets(); 
+      page_state.social_widgets = true;
+      console.log('scrolling social widgets');
     }
 
-    if ($('#disqus_thread').visible(true) && !page_state.widgets.disqus_loaded) {
+    if ($('#disqus_thread').visible(true) && !page_state.widgets.disqus.init) {
       widgets.initDisqus();
+      console.log('scrolling disqus widgets');
     }
 
   });
