@@ -13841,7 +13841,6 @@ function initGoogleWidgets() {
 }
 
 function initGists() {
-  console.warn('INIT GIST FUNCTION');
   require('../plugins/ajax-gist-embed')();
   page_state.widgets.gist_loaded = true;
 }
@@ -13854,13 +13853,26 @@ function initDisqus() {
     this.language = "en";
   };
 
-  DISQUS.reset({
-    reload: true,
-    config: function () {  
-      this.page.identifier = disqus_identifier;  
-      this.page.url = disqus_url + "/#!" + disqus_identifier;
-    }
-  });
+  if(typeof DISQUS === 'undefined'){
+
+    $.ajax({
+      type: "GET",
+      url: "http://" + disqus_shortname + ".disqus.com/embed.js",
+      dataType: "script",
+      cache: true
+    });
+
+  } else {
+
+    DISQUS.reset({
+      reload: true,
+      config: function () {  
+        this.page.identifier = disqus_identifier;  
+        this.page.url = disqus_url + "/#!" + disqus_identifier;
+      }
+    });
+
+  }
 
   page_state.widgets.disqus_loaded = true;
 }
@@ -14017,11 +14029,8 @@ function loadGistScripts() {
   // … find all gist scripts inside the ajax container
   var $gists = $ajax_container.find('script[src^="https://gist.github.com/"]');
 
-  console.warn('GISTS????');
-
   // if gist embeds are found
   if( $gists.length ){
-    console.warn('DOING GISTS');
     // update each gist
     $gists.each(function(){
    

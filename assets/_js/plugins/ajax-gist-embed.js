@@ -6,11 +6,8 @@ function loadGistScripts() {
   // … find all gist scripts inside the ajax container
   var $gists = $ajax_container.find('script[src^="https://gist.github.com/"]');
 
-  console.warn('GISTS????');
-
   // if gist embeds are found
   if( $gists.length ){
-    console.warn('DOING GISTS');
     // update each gist
     $gists.each(function(){
    

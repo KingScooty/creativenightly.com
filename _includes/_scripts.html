@@ -40,6 +40,7 @@
 </script>
 {% endif %}
 
+{% if page.page-class == 'page--post' %}
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
     var disqus_shortname = '{{ site.inc.disqus.shortname }}'; // required: replace example with your forum shortname
@@ -53,6 +54,7 @@
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
 </script>
+{% endif %}
 
 {% if site.inc.analytics.google %}
   {% include _google-analytics.html %}
