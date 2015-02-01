@@ -13835,9 +13835,10 @@ function fixRhythm($el, height) {
   var remainder = height % baseline;
   var invertRemainder = baseline - remainder;
 
-  console.log('Line height:', baseline);
-  console.log('El height:', height);
-  console.log('Remainder:', invertRemainder);
+  // console.log('Line height:', baseline);
+  // console.log('El height:', height);
+  // console.log('Remainder:', invertRemainder);
+  // console.log('Polling fix');
 
   if ($el.is('iframe')) {
     args = {
@@ -13851,7 +13852,7 @@ function fixRhythm($el, height) {
 
   if (remainder > 0) {
     $el.css(args);
-    console.log('Fixing height.');
+    console.log($el);
   }
 
 }
