@@ -3,10 +3,10 @@ var pages = require('../pages/_pages');
 
 var init, destroy;
 
-function init () {
+function init (value) {
   for (var key in routes) {
     if ($('body').hasClass('page--' + routes[key].name)) {
-      pages[key].init();
+      pages[key].init(value);
       // header();
     }
   }

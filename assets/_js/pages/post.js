@@ -1,9 +1,12 @@
 var widgets = require('../modules/core.init-widgets');
 var fixRhythm = require('../modules/core.fix-rhythm');
 
-function init () {
+function init (value) {
 
-  fixRhythm();
+  if (value === 'init') {
+    fixRhythm();
+    return true;
+  }
 
   widgets.initTwitterWidgets();
   widgets.initGists();

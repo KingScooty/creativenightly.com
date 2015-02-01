@@ -13784,8 +13784,8 @@ function initCreativeNightly() {
   // Attach global page state variable to window.
   require('./modules/core.state').initPageState();
 
-  // var checkPage = require('./modules/core.current_page_is');
-  // checkPage.init();
+  var checkPage = require('./modules/core.current_page_is');
+  checkPage.init('init');
 
   require('./modules/core.page_loader');
 
@@ -13794,16 +13794,16 @@ function initCreativeNightly() {
 $(function() {
   initCreativeNightly();
 });
-},{"./modules/core.page_loader":8,"./modules/core.state":9,"./plugins/is-visible":15,"jquery":2}],5:[function(require,module,exports){
+},{"./modules/core.current_page_is":5,"./modules/core.page_loader":8,"./modules/core.state":9,"./plugins/is-visible":15,"jquery":2}],5:[function(require,module,exports){
 var routes = require('../_config');
 var pages = require('../pages/_pages');
 
 var init, destroy;
 
-function init () {
+function init (value) {
   for (var key in routes) {
     if ($('body').hasClass('page--' + routes[key].name)) {
-      pages[key].init();
+      pages[key].init(value);
       // header();
     }
   }
@@ -13884,70 +13884,6 @@ function initMonitorRhythm() {
 }
 
 module.exports = initMonitorRhythm;
-
-// function isRenderedFixRhythm(el) {
-//   var $el = el;
-//   var editable = true; // set a flag
-//   var elInitTest = setInterval(function() {
-
-//   console.log('interval');
-
-//     var elHeight = $el.outerHeight();
-//     if ( elHeight > 0 ) {
-//       if (editable) { 
-//         editable = false;
-//         clearInterval(elInitTest);
-
-//         fixRhythm($el, elHeight);
-//       }
-//     }
-//   }, 2000);
-
-// }
-
-// function isRendered($el) {
-//   var initialHeight = $el.outerHeight;
-//   if ($el.length !== 0) && ($el.outerHeight > 0) {
-//     return true;
-//   } else {
-//     deferRendered($el);
-//   }
-// }
-
-// function deferRendered($el) {
-//   $('.site-body').bind('DOMSubtreeModified', function(e) {
-//     if (e.target === $el) {
-//       return true;
-//     }
-//   }
-// }
-
-// function fixDisqusRhythm() {
-
-//   if ($('#disqus_thread').length !== 0) {
-
-//     var $disqus = $('#disqus_thread');
-//     isRenderedFixRhythm($disqus);
-//   }
-
-// }
-
-// function fixTweetEmbedRhythm() {
-
-//   var initialHeight = $('.twitter-tweet').outerHeight();
-
-//   $('.twitter-tweet').bind('DOMSubtreeModified', function(e) {
-
-//     if ($('.twitter-tweet.twitter-tweet-rendered').length !==0 ) {
-//       var $tweet = $('.twitter-tweet.twitter-tweet-rendered');
-//       if ($tweet.outerHeight() > initialHeight) {
-//         isRenderedFixRhythm($tweet);
-//       }
-//     }
-//   });
-
-// }
-
 
 
 
@@ -14160,9 +14096,12 @@ module.exports = {
 var widgets = require('../modules/core.init-widgets');
 var fixRhythm = require('../modules/core.fix-rhythm');
 
-function init () {
+function init (value) {
 
-  fixRhythm();
+  if (value === 'init') {
+    fixRhythm();
+    return true;
+  }
 
   widgets.initTwitterWidgets();
   widgets.initGists();
