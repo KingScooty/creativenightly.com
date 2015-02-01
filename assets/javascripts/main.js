@@ -13792,13 +13792,7 @@ function initCreativeNightly() {
 }
 
 $(function() {
-
-  // window.onload = function() {
-  //   // require('./modules/rhythm');
-  // }
-
   initCreativeNightly();
-
 });
 },{"./modules/core.current_page_is":5,"./modules/core.page_loader":7,"./modules/core.state":8,"./plugins/is-visible":14,"jquery":2}],5:[function(require,module,exports){
 var routes = require('../_config');
@@ -13847,7 +13841,8 @@ function initGoogleWidgets() {
 }
 
 function initGists() {
-  require('../plugins/ajax-gist-embed');
+  console.warn('INIT GIST FUNCTION');
+  require('../plugins/ajax-gist-embed')();
   page_state.widgets.gist_loaded = true;
 }
 
@@ -14014,36 +14009,44 @@ function add_stylesheet_once( url ){
 
 module.exports = add_stylesheet_once;
 },{}],13:[function(require,module,exports){
-var add_stylesheet_once = require('./add-stylesheet-once');
-var $ajax_container = $('.site-body');
+function loadGistScripts() {
 
-// … find all gist scripts inside the ajax container
-var $gists = $ajax_container.find('script[src^="https://gist.github.com/"]');
+  var add_stylesheet_once = require('./add-stylesheet-once');
+  var $ajax_container = $('.site-body');
 
-// if gist embeds are found
-if( $gists.length ){
-  console.warn('DOING GISTS');
-  // update each gist
-  $gists.each(function(){
- 
-    // we need to store $this for the callback
-    var $this = $(this);
- 
-    // load gist as json instead with a jsonp request
-    $.getJSON( $this.attr('src') + 'on?callback=?', function( data ) {
- 
-      // replace script with gist html
-      $this.replaceWith( $( data.div ) );
- 
-      // load the stylesheet, but only once…
-      // add_stylesheet_once( 'https://gist.github.com/' + data.stylesheet )
-      add_stylesheet_once( data.stylesheet )
- 
+  // … find all gist scripts inside the ajax container
+  var $gists = $ajax_container.find('script[src^="https://gist.github.com/"]');
+
+  console.warn('GISTS????');
+
+  // if gist embeds are found
+  if( $gists.length ){
+    console.warn('DOING GISTS');
+    // update each gist
+    $gists.each(function(){
+   
+      // we need to store $this for the callback
+      var $this = $(this);
+   
+      // load gist as json instead with a jsonp request
+      $.getJSON( $this.attr('src') + 'on?callback=?', function( data ) {
+   
+        // replace script with gist html
+        $this.replaceWith( $( data.div ) );
+   
+        // load the stylesheet, but only once…
+        // add_stylesheet_once( 'https://gist.github.com/' + data.stylesheet )
+        add_stylesheet_once( data.stylesheet )
+   
+      });
+   
     });
- 
-  });
- 
+   
+  }
+
 }
+
+module.exports = loadGistScripts;
 },{"./add-stylesheet-once":12}],14:[function(require,module,exports){
 var $ = require('jquery');
 

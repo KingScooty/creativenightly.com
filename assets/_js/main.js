@@ -14,11 +14,5 @@ function initCreativeNightly() {
 }
 
 $(function() {
-
-  // window.onload = function() {
-  //   // require('./modules/rhythm');
-  // }
-
   initCreativeNightly();
-
 });

@@ -16,7 +16,8 @@ function initGoogleWidgets() {
 }
 
 function initGists() {
-  require('../plugins/ajax-gist-embed');
+  console.warn('INIT GIST FUNCTION');
+  require('../plugins/ajax-gist-embed')();
   page_state.widgets.gist_loaded = true;
 }
 
