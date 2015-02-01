@@ -1,3 +1,5 @@
+var rhythm = require('./rhythm');
+
 function loadFacebookLikes() {
   try{
       FB.XFBML.parse(); 
@@ -14,6 +16,7 @@ function loadGoogleWidgets() {
 
 function loadGists() {
   require('./ajax-gist-embed');
+  rhythm.fixGistRhythm();
 }
 
 function loadDisqus() {
@@ -24,12 +27,6 @@ function loadDisqus() {
     this.language = "en";
   };
 
-  // (function() {
-  //     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-  //     dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-  //     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  // })();
-
   DISQUS.reset({
     reload: true,
     config: function () {  
@@ -38,19 +35,8 @@ function loadDisqus() {
     }
   });
 
-  /* * * Disqus Reset Function * * */
-    // DISQUS.reset({
-    //   reload: true,
-    //   config: function () {
-    //     this.page.identifier = disqus_identifier;
-    //     this.page.url = disqus_url;
-    //     // this.page.title = newTitle;
-    //     // this.language = newLanguage;
-    //   }
-    // });
-
   //Fix rhythm
-  require('./rhythm');
+  rhythm.fixDisqusRhythm();
 
 }
 

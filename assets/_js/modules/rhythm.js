@@ -77,7 +77,7 @@ function fixTweetEmbedRhythm() {
 
 }
 
-function fixGists() {
+function fixGistRhythm() {
   // $('.site-body').bind('DOMSubtreeModified', function(e) {
   if ($('.gist').length !== 0) {
     var $gist = $('.gist');
@@ -87,7 +87,7 @@ function fixGists() {
 }
 
 module.exports = {
-  fixDisqusRhythm: fixDisqusRhythm(),
-  fixTweetEmbedRhythm: fixTweetEmbedRhythm(),
-  fixGists: fixGists()
+  fixDisqusRhythm: fixDisqusRhythm,
+  fixTweetEmbedRhythm: fixTweetEmbedRhythm,
+  fixGistRhythm: fixGistRhythm
 }
