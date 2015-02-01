@@ -1,4 +1,6 @@
 .twitter-tweet.twitter-tweet-rendered {
+  margin-top: 0 !important; 
   margin-left:  auto !important;
   margin-right: auto !important;
+  @extend %clearfix;
 }
