@@ -13779,8 +13779,17 @@ module.exports = routes;
 var $ = require('jquery');
 require('./plugins/is-visible');
 
-// Attach global page state variable to window.
-require('./modules/core.state').initPageState();
+function initCreativeNightly() {
+
+  // Attach global page state variable to window.
+  require('./modules/core.state').initPageState();
+
+  var checkPage = require('./modules/core.current_page_is');
+  checkPage.init();
+
+  require('./modules/core.page_loader');
+
+}
 
 $(function() {
 
@@ -13788,10 +13797,7 @@ $(function() {
   //   // require('./modules/rhythm');
   // }
 
-  var checkPage = require('./modules/core.current_page_is');
-  checkPage.init();
-
-  require('./modules/core.page_loader');
+  initCreativeNightly();
 
 });
 },{"./modules/core.current_page_is":5,"./modules/core.page_loader":7,"./modules/core.state":8,"./plugins/is-visible":14,"jquery":2}],5:[function(require,module,exports){
@@ -13920,7 +13926,7 @@ $.pjax({
 
 $(document).bind('pjax:fetch', function() {
   // Fetching new page
-  // resetWidgetStates();
+  require('./core.state').resetPageStates()
   currentPage.destroy();
 });
 
@@ -13928,25 +13934,23 @@ $(document).bind('pjax:render', function () {
   currentPage.init();
 });
 
-},{"./core.current_page_is":5,"pjax":1}],8:[function(require,module,exports){
+},{"./core.current_page_is":5,"./core.state":8,"pjax":1}],8:[function(require,module,exports){
 // Manage that state, yo.
 
-var page_state = {
-  widgets: {
-    gist: false,
-    twitter: {
-      tweet : false,
-      follow: false
-    },
-    facebook: false,
-    google_plus: false,
-    disqus: false
-  },
-  social_widgets: false
-};  
-
 function initPageState() {
-  window.page_state = page_state;
+  window.page_state = {
+    widgets: {
+      gist: false,
+      twitter: {
+        tweet : false,
+        follow: false
+      },
+      facebook: false,
+      google_plus: false,
+      disqus: false
+    },
+    social_widgets: false
+  };
 }
 
 function resetPageStates() {

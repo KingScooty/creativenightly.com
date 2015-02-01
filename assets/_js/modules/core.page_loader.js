@@ -29,7 +29,7 @@ $.pjax({
 
 $(document).bind('pjax:fetch', function() {
   // Fetching new page
-  // resetWidgetStates();
+  require('./core.state').resetPageStates()
   currentPage.destroy();
 });
 
