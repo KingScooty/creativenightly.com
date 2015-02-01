@@ -78,10 +78,12 @@ function fixTweetEmbedRhythm() {
 }
 
 function fixGists() {
-  $('.gist').bind('DOMSubtreeModified', function(e) {
+  // $('.site-body').bind('DOMSubtreeModified', function(e) {
+  if ($('.gist').length !== 0) {
     var $gist = $('.gist');
     isRenderedFixRhythm($gist);
   }
+  // });
 }
 
 module.exports = {

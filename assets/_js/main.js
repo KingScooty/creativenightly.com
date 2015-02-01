@@ -1,7 +1,7 @@
 var $ = require('jquery');
 require('pjax');
-require('./plugins/isVisible');
-var loadWidgets = require('./modules/loadWidgets');
+require('./plugins/is-visible');
+var loadWidgets = require('./modules/load-widgets');
 
 $(function() {
 
@@ -20,6 +20,7 @@ $(function() {
 
     loadWidgets.triggerAnalytics();
     loadWidgets.loadTwitterWidgets();
+    loadWidgets.loadGists();
 
     if ($('#disqus_thread').length !== 0) {
       console.log('Disqus exists!');

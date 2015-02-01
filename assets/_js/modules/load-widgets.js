@@ -12,6 +12,10 @@ function loadGoogleWidgets() {
   gapi.plusone.go();
 }
 
+function loadGists() {
+  require('./ajax-gist-embed');
+}
+
 function loadDisqus() {
   var disqus_shortname = 'scottyvernon';
   var disqus_identifier = window.location.pathname;
@@ -61,5 +65,6 @@ module.exports = {
   loadTwitterWidgets: loadTwitterWidgets,
   loadGoogleWidgets: loadGoogleWidgets,
   loadDisqus: loadDisqus,
-  triggerAnalytics: triggerAnalytics
+  triggerAnalytics: triggerAnalytics,
+  loadGists: loadGists
 }
