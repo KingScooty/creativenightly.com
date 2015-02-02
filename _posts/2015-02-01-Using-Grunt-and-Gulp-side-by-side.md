@@ -38,7 +38,7 @@ Not wanting to spend too much time getting everything wired up, I started search
 
 ####So far so good! 
 
-I've only been testing this workflow out for a few hours, but it's definitely an improvement &ndash; especially when working with Assemble or any other plugin that don't support Gulp (*e.g. rsync*).
+I've only been testing this workflow out for a few hours, but it's definitely an improvement &ndash; especially when working with Assemble or any other plugin that doesn't support Gulp (*e.g. rsync*).
 
 **Here's an example** of getting a Grunt Assemble task wired into Gulp for watching and updating the browser with browsersync.
 (*You'll notice that I've namespaced my Grunt tasks to avoid them clashing with anything in Gulp, so my Assemble task is **grunt-assemble***):
