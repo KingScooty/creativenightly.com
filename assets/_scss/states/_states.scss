@@ -3,8 +3,7 @@
 }
 
 .desk {
-  display: none;
-  @include min-screen(600px) {
-    display: inline;
+  @include max-screen(600px) {
+    display: none;
   }
 }
