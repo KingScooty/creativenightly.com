@@ -43,9 +43,10 @@ inc:
 
   # Setup your fonts, colors etc at _assets/stylesheets/main.scss
 
-collections:
-  pages:
-    output: true
+include: ['_pages']
+# collections:
+#   pages:
+#     output: true
 
 gems:
   - jekyll-redirect-from
@@ -55,7 +56,7 @@ source:      .
 destination: ./_site
 plugins:     null
 layouts:     ./_layouts
-include:     ['.htaccess']
+# include:     ['.htaccess']
 exclude:     ['node_modules', 'bower.json', 'package.json', 'Rakefile', 'gulpfile.js', 'README.md']
 timezone:    Europe/London
 
@@ -65,7 +66,8 @@ show_drafts: false
 limit_posts: 0
 highlighter: pygments
 
-relative_permalinks: true
+# relative_permalinks: true
+relative_permalinks: false
 
 permalink: /:year/:month/:title
 paginate_path: 'page:num'
