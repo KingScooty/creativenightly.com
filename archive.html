@@ -19,41 +19,41 @@ sitemap:
   </section>
 </div>
 
+<div class="content-block shift-down">
+  <div class="container">
 
-<div class="container">
+    <h2 class="archive-header">Articles</h2>
 
-  <h2 class="archive-header">Articles</h2>
+    <section class="posts current">
+      <ul class="list-short">
 
-  <section class="posts current">
-    <ul class="list-short">
+      {% for post in site.posts %}
+      {% unless post.draft or post.path contains '_posts/archive' %}
+        <li class="list-short__item">
+            <time class="post__date" datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%d %B, %Y" }}</time>
+            <h3 class="post__title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+        </li>
+      {% endunless %}
+      {% endfor %}
 
-    {% for post in site.posts %}
-    {% unless post.draft or post.path contains '_posts/archive' %}
-      <li class="list-short__item">
-          <time class="post__date" datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%d %B, %Y" }}</time>
-          <h3 class="post__title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
-      </li>
-    {% endunless %}
-    {% endfor %}
+      </ul>
+    </section>
 
-    </ul>
-  </section>
+    <h3>No longer maintained</h3>
 
-  <h3>No longer maintained</h3>
+    <section class="posts archived">
+      <ul class="list-short">
 
-  <section class="posts archived">
-    <ul class="list-short">
+      {% for post in site.posts %}
+      {% if  post.path contains '_posts/archive' %}
+        <li class="list-short__item">
+            <time class="post__date" datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%d %B, %Y" }}</time>
+            <h4 class="post__title"><a href="{{ post.url }}">{{ post.title }}</a></h4>
+        </li>
+      {% endif %}
+      {% endfor %}
+      </ul>
+    </section>
 
-    {% for post in site.posts %}
-    {% if  post.path contains '_posts/archive' %}
-      <li class="list-short__item">
-          <time class="post__date" datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%d %B, %Y" }}</time>
-          <h4 class="post__title"><a href="{{ post.url }}">{{ post.title }}</a></h4>
-      </li>
-    {% endif %}
-    {% endfor %}
-    </ul>
-  </section>
-
+  </div>
 </div>
-

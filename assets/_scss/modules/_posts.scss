@@ -1,4 +1,5 @@
 .posts {
+  &, ul { @extend %clearfix; }
   ul { list-style: none; }
 }
 
