@@ -6,7 +6,7 @@ lastmod: 2015-02-01
 
 cover_image: null
 
-excerpt: "Sometimes, just sometimes,you need the power of both in the same project.."
+excerpt: "Sometimes, just sometimes,you need the power of both in the same project..."
 
 author:
   name: Scotty Vernon
