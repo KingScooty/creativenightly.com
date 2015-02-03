@@ -14,6 +14,7 @@ var browserify = require('browserify');
 var uglify = require('gulp-uglify');
 
 var shell = require('gulp-shell');
+var critical = require('critical');
 
 var basePaths = {
   src:    'app/assets/',
