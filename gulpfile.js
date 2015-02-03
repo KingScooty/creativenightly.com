@@ -92,28 +92,39 @@ gulp.task('copystyles', ['build'], function () {
 // Generate & Inline Critical-path CSS
 gulp.task('critical', ['build', 'copystyles'], function (cb) {
 
-    // At this point, we have our
-    // production styles in main/styles.css
+  // At this point, we have our
+  // production styles in main/styles.css
 
-    // As we're going to overwrite this with
-    // our critical-path CSS let's create a copy
-    // of our site-wide styles so we can async
-    // load them in later. We do this with
-    // 'copystyles' above
+  // As we're going to overwrite this with
+  // our critical-path CSS let's create a copy
+  // of our site-wide styles so we can async
+  // load them in later. We do this with
+  // 'copystyles' above
 
-    critical.generate({
-        base: '_site/',
-        src: 'index.html',
-        dest: 'assets/stylesheets/site.css',
-        width: 320,
-        height: 480,
-        minify: true
-    }, function(err, output){
-        critical.inline({
-            base: '_includes/',
-            src: 'index.html',
-            dest: 'index-critical.html',
-            minify: true
-        });        
-    });
+    // critical.generate({
+    //     base: '_site/',
+    //     src: 'index.html',
+    //     dest: 'assets/stylesheets/site.css',
+    //     width: 320,
+    //     height: 480,
+    //     minify: true
+    // }, function(err, output){
+    //     critical.inline({
+    //         base: '_site/',
+    //         src: 'index.html',
+    //         dest: 'index-critical.html',
+    //         minify: true
+    //     });        
+    // });
+
+  critical.generateInline({
+    base: '_site/',
+    src: 'index.html',
+    styleTarget: 'assets/stylesheets/main.css',
+    htmlTarget: 'index.html',
+    width: 320,
+    height: 480,
+    minify: true
+  });
+
 });
