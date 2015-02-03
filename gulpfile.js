@@ -12,7 +12,6 @@ var browserify = require('browserify');
 var uglify = require('gulp-uglify');
 
 var shell = require('gulp-shell');
-var runSequence = require('run-sequence');
 
 var basePaths = {
   src:    'app/assets/',
