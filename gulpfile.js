@@ -7,6 +7,8 @@ var gutil = require('gulp-util');
 
 var cssmin = require('gulp-minify-css');
 
+var rename = require('gulp-rename');
+
 var transform = require('vinyl-transform');
 var browserify = require('browserify');
 var uglify = require('gulp-uglify');
@@ -78,12 +80,12 @@ gulp.task('build', ['sass', 'js-compile'],
 
 // Copy our site styles to a site.css file
 // for async loading later
-gulp.task('copystyles', function () {
-    return gulp.src(['assets/stylesheets/main.css'])
-        .pipe($.rename({
+gulp.task('copystyles', ['build'], function () {
+    return gulp.src(['_site/assets/stylesheets/main.css'])
+        .pipe(rename({
             basename: "site"
         }))
-        .pipe(gulp.dest('assets/stylesheets'));
+        .pipe(gulp.dest('_site/assets/stylesheets'));
 });
 
 // Generate & Inline Critical-path CSS
