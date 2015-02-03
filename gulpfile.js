@@ -16,6 +16,8 @@ var uglify = require('gulp-uglify');
 var shell = require('gulp-shell');
 var critical = require('critical');
 
+var manifest = require('gulp-manifest');
+
 var basePaths = {
   src:    'app/assets/',
   dest:   'app/static/'
@@ -101,22 +103,6 @@ gulp.task('critical', ['build', 'copystyles'], function (cb) {
   // load them in later. We do this with
   // 'copystyles' above
 
-    // critical.generate({
-    //     base: '_site/',
-    //     src: 'index.html',
-    //     dest: 'assets/stylesheets/site.css',
-    //     width: 320,
-    //     height: 480,
-    //     minify: true
-    // }, function(err, output){
-    //     critical.inline({
-    //         base: '_site/',
-    //         src: 'index.html',
-    //         dest: 'index-critical.html',
-    //         minify: true
-    //     });        
-    // });
-
   critical.generateInline({
     base: '_site/',
     src: 'index.html',
@@ -131,9 +117,29 @@ gulp.task('critical', ['build', 'copystyles'], function (cb) {
 
 });
 
-// gulp.task('generate-critical-template', ['critical'], function() {
-// });
-gulp.task('production', ['critical'], function() {
+gulp.task('manifest', ['critical', 'generate-critical-partials'], function(){
+  gulp.src(['_site/**/*'])
+    .pipe(manifest({
+      hash: true,
+      preferOnline: true,
+      network: ['http://*', 'https://*', '*'],
+      filename: 'cache.manifest',
+      exclude: [
+        'cache.manifest', 
+        'googleacfe19709071df8d.html',
+        'Gemfile',
+        'Gemfile.lock',
+        'CNAME',
+        'robots.txt',
+        'sitemap.xml',
+        'feed.xml'
+      ],
+      timestamp: false
+     }))
+    .pipe(gulp.dest('./'));
+});
+
+gulp.task('generate-critical-partials', ['critical'], function() {
   console.log('Generating correct partial');
   gulp.src('_site/assets/stylesheets/main.css')
     .pipe(rename({
@@ -142,10 +148,12 @@ gulp.task('production', ['critical'], function() {
     }))
     .pipe(gulp.dest('./_includes/'));
 
-    console.log('Partial _critical-path.html ready!');
+  console.log('Partial _critical-path.html ready!');
 
   gulp.src('_site/assets/stylesheets/site.css')
     .pipe(gulp.dest('./assets/stylesheets/'));
 
-    console.log('Site wide CSS ready!');
+  console.log('Site wide CSS ready!');
 });
+
+gulp.task('production', ['critical', 'generate-critical-partials', 'manifest']);
