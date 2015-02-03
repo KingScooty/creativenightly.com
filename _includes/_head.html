@@ -10,7 +10,11 @@
 
   <meta name="google-site-verification" content="NIyg5RnuWdhOCZD2mmca13kZl374sKKhRD74XmMO_fM" />
   
+  {% if jekyll.environment == 'production' %}
+  <style>{% include _critical-path.html %}</style>
+  {% else %}
   <link rel="stylesheet" type="text/css" href="/assets/stylesheets/main.css">
+  {% endif %}
 
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
   <link rel="apple-touch-icon" href="/images/{{ site.inc.logo }}"/>

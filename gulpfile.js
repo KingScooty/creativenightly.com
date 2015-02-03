@@ -127,4 +127,18 @@ gulp.task('critical', ['build', 'copystyles'], function (cb) {
     minify: true
   });
 
+  console.log('Generating correct partial');
+  gulp.src('_site/assets/stylesheets/site.css')
+    .pipe(rename({
+      basename: '_critical-path',
+      extname: '.html'
+    }))
+    .pipe(gulp.dest('./_includes/'));
+
+    console.log('Partial _critical-path.html ready!');
+
 });
+
+// gulp.task('generate-critical-template', ['critical'], function() {
+// });
+// gulp.task('production', ['generate-critical-template']);
