@@ -11,14 +11,14 @@ var transform = require('vinyl-transform');
 var browserify = require('browserify');
 var uglify = require('gulp-uglify');
 
+var shell = require('gulp-shell');
+var runSequence = require('run-sequence');
+
 var basePaths = {
   src:    'app/assets/',
   dest:   'app/static/'
 };
 
-// changeEvent = function(evt) {
-//   gutil.log('File', gutil.colors.cyan(evt.path.replace(new RegExp('/.*(?=/' + basePaths.src + ')/'), '')), 'was', gutil.colors.magenta(evt.type));
-// };
 
 gulp.task('sass', function () {
   gulp.src('./assets/_scss/main.scss')
@@ -67,10 +67,51 @@ gulp.task('watch', ['sass', 'js-compile'], function(){
       gulp.start('js-compile');
   });
 
-  // gulp.watch('./assets/_scss/**/*.scss', ['sass']).on('change', function(evt) {
-//     changeEvent(evt);
-//   });
-//   gulp.watch('./assets/_js/**/*.js', ['js-compile']).on('change', function(evt) {
-//     changeEvent(evt);
-//   });
+});
+
+gulp.task('jekyll', shell.task([
+  'jekyll build'
+]));
+
+gulp.task('build', ['sass', 'js-compile'], 
+  shell.task(['jekyll build']
+));
+
+// Copy our site styles to a site.css file
+// for async loading later
+gulp.task('copystyles', function () {
+    return gulp.src(['assets/stylesheets/main.css'])
+        .pipe($.rename({
+            basename: "site"
+        }))
+        .pipe(gulp.dest('assets/stylesheets'));
+});
+
+// Generate & Inline Critical-path CSS
+gulp.task('critical', ['build', 'copystyles'], function (cb) {
+
+    // At this point, we have our
+    // production styles in main/styles.css
+
+    // As we're going to overwrite this with
+    // our critical-path CSS let's create a copy
+    // of our site-wide styles so we can async
+    // load them in later. We do this with
+    // 'copystyles' above
+
+    critical.generate({
+        base: '_site/',
+        src: 'index.html',
+        dest: 'assets/stylesheets/site.css',
+        width: 320,
+        height: 480,
+        minify: true
+    }, function(err, output){
+        critical.inline({
+            base: '_includes/',
+            src: 'index.html',
+            dest: 'index-critical.html',
+            minify: true
+        });        
+    });
 });
