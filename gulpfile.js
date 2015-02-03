@@ -125,10 +125,17 @@ gulp.task('critical', ['build', 'copystyles'], function (cb) {
     width: 320,
     height: 480,
     minify: true
+  }, function(err, output) {
+    cb(err);
   });
 
+});
+
+// gulp.task('generate-critical-template', ['critical'], function() {
+// });
+gulp.task('production', ['critical'], function() {
   console.log('Generating correct partial');
-  gulp.src('_site/assets/stylesheets/site.css')
+  gulp.src('_site/assets/stylesheets/main.css')
     .pipe(rename({
       basename: '_critical-path',
       extname: '.html'
@@ -137,8 +144,8 @@ gulp.task('critical', ['build', 'copystyles'], function (cb) {
 
     console.log('Partial _critical-path.html ready!');
 
-});
+  gulp.src('_site/assets/stylesheets/site.css')
+    .pipe(gulp.dest('./assets/stylesheets/'));
 
-// gulp.task('generate-critical-template', ['critical'], function() {
-// });
-// gulp.task('production', ['generate-critical-template']);
+    console.log('Site wide CSS ready!');
+});
