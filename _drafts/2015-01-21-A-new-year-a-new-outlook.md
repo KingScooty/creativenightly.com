@@ -2,7 +2,6 @@
 layout: post
 title: A new year, a new outlook
 subtitle: Small changes I've made over the last 21 days that have already started to make a difference.
-lastmod: 2015-00-00
 
 cover_image: null
 
