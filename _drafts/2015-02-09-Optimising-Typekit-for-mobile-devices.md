@@ -3,7 +3,7 @@ layout: post
 title: Optimise Typekit for mobile and improve your Page Insights
 subtitle: Here's two pretty interesting things you can do to optimise Typekit for mobile and improve your page insight score.
 
-cover_image: false
+cover_image: article-images/2015-02-09-page_insights.png
 
 excerpt: "Here's two pretty interesting things you can do to optimise Typekit for mobile and improve your page insight score"
 
@@ -45,8 +45,6 @@ The trick here is create **2 different kits for mobile and desktop**. If we use 
 
 {% gist f8eb664f2ad02cab003d %}
 
-##Bask in the glory of your improved score
+###3. Bask in the glory of your improved score
 
-Now all that's left to do is bask in the glory of your improved Page Insights score! Here's what Creative Nightly scores:
-
-![](/images/article-images/2015-02-09-page_insights.png)
+Now all that's left to do is bask in the glory of your improved Page Insights score! Creative Nightly scores a whopping 95/100 for mobile and 84/100 for desktop. ***That's the difference async typekit makes!***
