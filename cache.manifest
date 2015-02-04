@@ -6,7 +6,6 @@ CACHE:
 archive.html
 favicon.ico
 index.html
-tmp-66366ckmuznk.css
 archive/index.html
 contact/index.html
 images/archive-1.jpg
@@ -50,4 +49,4 @@ https://*
 SETTINGS:
 prefer-online
 
-# hash: e7a65ba1fb0992b269e69313b0c0dbf2097cdad0355abc5d9ffdf9e0897ab601
+# hash: c4e8a92f958fef1324745d15df7d7d7ce5e67bc1a21ab50525aed229fee8e131
