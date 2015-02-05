@@ -6,5 +6,4 @@ _site
 _bower_components/
 node_modules/
 
-images/article-images
 /assets/stylesheets/main.css
