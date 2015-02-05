@@ -43,17 +43,19 @@ function initMonitorRhythm() {
 
   function loopWidgets() {
     $.each(elements, function(index, el) {
-      var $el = $(el);
-      if (el === '.twitter-tweet') {
-        var height = $el.outerHeight();
-      } else {
-        var height = $el.height();
-      }
-      // console.log($el, height);
-      if (($el.length !== 0) && (height > 0)) {
-        // console.log('Fixing: ', $el);
-        fixRhythm($el, height);
-      }
+      $(el).each(function(index, el) {
+        var $el = $(el);
+        if (el === '.twitter-tweet') {
+          var height = $el.outerHeight();
+        } else {
+          var height = $el.height();
+        }
+        // console.log($el, height);
+        if (($el.length !== 0) && (height > 0)) {
+          // console.log('Fixing: ', $el);
+          fixRhythm($el, height);
+        }
+      });
     });
   }
 
