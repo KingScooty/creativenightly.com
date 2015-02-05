@@ -45,7 +45,7 @@ function initMonitorRhythm() {
     $.each(elements, function(index, el) {
       $(el).each(function(index, el) {
         var $el = $(el);
-        if (el === '.twitter-tweet') {
+        if ($el.is('.twitter-tweet')) {
           var height = $el.outerHeight();
         } else {
           var height = $el.height();
