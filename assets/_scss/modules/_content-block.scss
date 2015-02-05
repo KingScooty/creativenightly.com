@@ -53,7 +53,22 @@
   // margin-bottom: 1rem;
 }
 
+// .content-block__aside {
+//   padding-top: 1rem;
+//   padding-bottom: 1rem;
+// }
+
 .content-block__aside {
+  @extend %clearfix;
+  hr {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  // margin-top: 1rem;
+}
+
+.content-block__aside + .content-block__aside {
+  // margin-top: 1rem;
 }
 
 .content-block__author {
