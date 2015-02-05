@@ -8,11 +8,12 @@ permalink: /contact/
 cover_image: contact.jpg
 ---
 
-Creative Nightly is lovingly crafted in Manchester, England. It is the personal blog of <a href="http://twitter.com/KingScooty">Scotty Vernon</a>, a creative technologist and director of <a href="http://wildflame.co.uk">Wildflame Studios</a>
+*Creative Nightly is lovingly crafted in Manchester, England. It is the personal blog of <a href="http://twitter.com/KingScooty">Scotty Vernon</a>, a creative technologist and director of <a href="http://wildflame.co.uk">Wildflame Studios</a>.*
 
 
 My name is <a target="_blank" href="http://twitter.com/kingscooty">Scotty Vernon</a>, I'm a developer and creative technologist based in Manchester, England. I run a cutting edge digital prototyping company called <a target="_blank" href="http://wildflame.co.uk">Wildflame Studios</a>, and have produced work for clients including *BBC Sport, BBC R&amp;D, Diageo, and England cricketer James Anderson*
 
+<!--
 ###In the beginning...
 In my early teens, I was fanatical about games and special effects. Companies like <a target="_blank" href="http://en.wikipedia.org/wiki/Rare_Ltd.">Rare</a> were a big inspiration. Back in the SNES and N64 days, Rare churned out at least 2 blockbusters a year, and were valuable to Nintendo's success in the 90's. These blockbusters included: Donkey Kong Country, Goldeneye, Banjo Kazooie, Jet Force Gemini, and Donkey Kong 64. They were constantly developing pioneering techniques in house, from <a target="_blank" href="http://en.wikipedia.org/wiki/Donkey_Kong_Country#Development">new compression techniques to enable higher sprite fidelity at a given memory footprint</a>, to ACM (Advanced Computer Modelling, <a target="_blank" href="http://en.wikipedia.org/wiki/Banjo-Kazooie#Development">to proprietary techniques to enable hi res texture rendering on the N64</a>. Rare were renowned for always <strong>pushing the boundaries and challenging technology</strong>, and this philosophy rubbed off on me from a young age.
 
@@ -26,10 +27,11 @@ Basically, **let your craft do the talking**, and the work will come.
 Soon after all this I stumbled across (then) Macromedia Flash and my love for hyper interactive websites was born. <a target="_blank" href="http://2advanced.com">2Advanced Studios</a> were now the new company I looked up to for creative inspiration. They constantly set higer bars for animation on The Web. I just had to get involved. I started up Wildflame Studios, which initially was merely a tag I slapped on all of my experimental learning projects, and started honing my craft.
 
 When the first draft of the HTML5 specification took the web by storm in 2008, my goal was to achieve that level of interactive fidelity in a Flash-less browser environment and the rest is history...
+-->
 
-###Creative Nightly
+<!-- ###Creative Nightly -->
 
-Creative Nightly is my personal blog that I plan to use to record and share development notes, and share awesome things i've discovered in the world of tech. It's essentially a bi-product of my crusade to stay on top of the ever expanding/advancing web tech industry.
+At the end of 2014, [I set myself a goal to write more](/2014/12/Farewell-2014-hello-2015/). Creative Nightly is the bi-product of that goal. I plan to use this site to record and share development notes, and share awesome things I've discovered in the world of tech, with the aim of essentially being a log of my crusade to stay on top of the ever expanding / advancing web tech industry.
 
 ##Contact
 I hope you find the notes and articles on here are interesting. Feel free to <a target="_blank" href="http://twitter.com/kingscooty">follow me</a>.

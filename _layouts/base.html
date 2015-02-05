@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html manifest="/cache.manifest">
+<html {% if jekyll.environment == 'production' %}manifest="/cache.manifest"{% endif %}>
 <head>
 
   {% include _head.html %} 
