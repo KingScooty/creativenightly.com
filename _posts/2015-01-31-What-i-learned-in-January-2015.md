@@ -27,15 +27,15 @@ I'll probably tinker with the format of this as the year goes on, but for now, h
   - I'm really enjoying it. Especially when I spend a few days isolated in an empty office with no social interaction. It definitely helps to keep that part of your brain working!
 - **I've been 1000% more productive this month.**
   - Really. This may be due to all the little things like [clearing out the apps on my iPhone](), and automating tasks with Hazel (which I must write about at some point!), but I'm definitely staying much more focused for longer periods of time!
-- Walks in the morning...
+- **Incorporated more exercise into my daily commute**
+  - I've been taking the scenic route to work &ndash; walking from the Northern Quarter through the city centre, past Albert Square, through the AMC Complex, and to Deansgate tram stop. Once I get to the office, I skip the lift and take 10 flights of stairs. It's done wonders, and properly gets me awake for the day. It's going to be a struggle maintaining this when I'm based in my Northern Quarter office next month.
 
-Topics I learned about this month:
-
-- Assetgraph
-- Thinking beyond scalable CSS
-- Inlining critical CSS
-- Susy SASS
-- Responsive Images
+- **Things I covered/learned about this month:**
+  - [Assetgraph](https://github.com/assetgraph/assetgraph)
+  - [Thinking beyond scalable CSS](http://www.thedotpost.com/2014/11/nicolas-gallagher-thinking-beyond-scalable-css)
+  - [Inlining critical CSS](https://github.com/addyosmani/critical)
+  - [Susy SASS](http://susy.oddbird.net/)
+  - [Responsive Images](http://alistapart.com/article/responsive-images-in-practice)
 
 ###The bad
 
@@ -43,6 +43,8 @@ Topics I learned about this month:
   - I probably need to reign this in a bit, ha.
 - **The improved productivity has led to me working from dawn till dusk.**
   - Again, I need to reign this in. I've definitely gone to bed a few times this month with an overactive brain. Not really too sure how to action this &ndash; perhaps things will settle down once I've gotten up to speed with the huge backlog of stuff I wanted to work on after finishing with BBC Taster. ***Revisit next month***. 
+- **There's just *too* much to learn**
+  - The industry moves at such a fast pace, it's almost impossible to stay on top of everything &ndash; even when working from dusk till dawn. I need to stop letting this get to me and focus on improving *just one thing* by 1% a day.
 
 ###The angry
 
