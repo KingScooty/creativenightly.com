@@ -31,7 +31,7 @@ When the first draft of the HTML5 specification took the web by storm in 2008, m
 
 <!-- ###Creative Nightly -->
 
-At the end of 2014, [I set myself a goal to write more](/2014/12/Farewell-2014-hello-2015/). Creative Nightly is the bi-product of that goal. I plan to use this site to record and share development notes, and share awesome things I've discovered in the world of tech. Essentially, Creative Nightly is a log of my crusade to stay on top of the ever expanding / advancing web tech industry.
+At the end of 2014, [I set myself a goal to write more](/2014/12/Farewell-2014-hello-2015/). Creative Nightly is the by-product of that goal. A platform for which to record and share development notes, and share awesome things I've discovered in the world of tech. Essentially, Creative Nightly is a log of my crusade to stay on top of the ever expanding / advancing web tech industry.
 
 ##Contact
 I hope you find the notes and articles on here are interesting. Feel free to <a target="_blank" href="http://twitter.com/kingscooty">follow me</a>.
