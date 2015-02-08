@@ -6,32 +6,20 @@ CACHE:
 archive.html
 favicon.ico
 index.html
-tmp-85659h2ii8m8.css
 archive/index.html
 contact/index.html
-images/archive-1.jpg
-images/archive-2.jpg
 images/archive-3.jpg
-images/archive.jpg
 images/blog-cover.jpg
 images/composite.jpg
 images/contact.jpg
 images/gravatar.png
 images/hyperion-raspberry-pi-lightpack.jpg
-images/ks.png
-images/logo.png
 images/server-rack.jpg
 images/taster.jpg
 page2/index.html
 assets/javascripts/main.js
 assets/stylesheets/main.css
 assets/stylesheets/site.css
-images/article-images/2015-02-09-page_insights.png
-images/article-images/page1a.png
-images/article-images/page1b.png
-images/article-images/page2.png
-images/article-images/page3.png
-images/article-images/page4.png
 2012/07/Shopify-for-Designers-a-Workshop-by-Keir-Whitaker/index.html
 2012/06/Setting-up-a-mac-as-a-dev-machine/index.html
 2012/07/Sublime-Text-2-Theme-Package-Management/index.html
@@ -56,4 +44,4 @@ https://*
 SETTINGS:
 prefer-online
 
-# hash: bcd9c6b8307153af7496770bdab7167928b4bcdd5291951de1bd0648009a2712
+# hash: bcd9c6b8307153af7496770bdab7167928b4bcdd5291951de1bd0648009a2711
