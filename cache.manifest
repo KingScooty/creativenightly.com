@@ -6,6 +6,7 @@ CACHE:
 archive.html
 favicon.ico
 index.html
+tmp-85659h2ii8m8.css
 archive/index.html
 contact/index.html
 images/archive-1.jpg
@@ -26,6 +27,11 @@ assets/javascripts/main.js
 assets/stylesheets/main.css
 assets/stylesheets/site.css
 images/article-images/2015-02-09-page_insights.png
+images/article-images/page1a.png
+images/article-images/page1b.png
+images/article-images/page2.png
+images/article-images/page3.png
+images/article-images/page4.png
 2012/07/Shopify-for-Designers-a-Workshop-by-Keir-Whitaker/index.html
 2012/06/Setting-up-a-mac-as-a-dev-machine/index.html
 2012/07/Sublime-Text-2-Theme-Package-Management/index.html
@@ -37,6 +43,7 @@ images/article-images/2015-02-09-page_insights.png
 2014/12/Farewell-2014-hello-2015/index.html
 2015/01/A-few-simple-rules-to-keep-your-smartphone-apps-organised/index.html
 2015/01/Announcing-BBC-Taster/index.html
+2015/01/What-i-learned-in-January-2015/index.html
 2015/02/Using-Grunt-and-Gulp-side-by-side/index.html
 
 
@@ -49,4 +56,4 @@ https://*
 SETTINGS:
 prefer-online
 
-# hash: 37aff377f89df08bfa4bbf9d3be487796c3579ebfe8f5ba6e398a9e95f8db2fe
+# hash: bcd9c6b8307153af7496770bdab7167928b4bcdd5291951de1bd0648009a2712
