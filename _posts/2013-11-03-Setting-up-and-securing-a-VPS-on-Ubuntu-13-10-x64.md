@@ -13,7 +13,7 @@ author:
   name: Scotty Vernon
   twitter: KingScooty
   gplus: +ScottyVernon 
-  bio: Founder, Software Engineer @ Wildflame Studios
+  bio: Founder, Creative Technologist @ Wildflame Studios
   image: ks.png
 ---
 
