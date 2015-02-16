@@ -45,6 +45,14 @@ The trick here is create **2 different kits for mobile and desktop**. If we use 
 
 {% gist f8eb664f2ad02cab003d %}
 
-###3. Bask in the glory of your improved score
+###3. Remove Typekit from mobile all together
+
+Bit drastic, but if you're happy with your font stack, why not remove Typekit from mobile devices all together?  After all, the fastest HTTP request is the one not made at all. 
+
+Here's the above snippet adjusted for this scenario.
+
+{% gist 2bf2ddbd3054c76b5c7a %}
+
+###4. Bask in the glory of your improved score
 
 Now all that's left to do is bask in the glory of your improved Page Insights score! Creative Nightly scores a whopping 95/100 for mobile and 84/100 for desktop. ***That's the difference async typekit makes!***
