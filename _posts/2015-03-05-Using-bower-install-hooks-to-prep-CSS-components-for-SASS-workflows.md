@@ -17,11 +17,7 @@ Have you ever tried to import a vanilla CSS bower component into your SASS/SCSS 
 
 **Yes, *me too*. In fact, it happened again, just this morning!**
 
-*The CSS file in question was Nicolas Gallagher's [normalize.css](http://necolas.github.io/normalize.css/). Now I know there are plenty of SCSS versions out there, but they normally try and do too much! Just let me physically import the CSS version into my main.scss file! **ARGH!***
-
-***Rant over***.
-
--------
+*The CSS file in question was Nicolas Gallagher's [normalize.css](http://necolas.github.io/normalize.css/). Now I know there are plenty of SCSS versions out there, but they normally try and do too much! Just let me physically import the CSS version into my main.scss file! 
 
 Of course we can just *rename* the offending CSS file so that it now immiates an SCSS file, but we don't want to have to do that each and every time someone clones the project, or integration builds the project!
 
@@ -41,3 +37,9 @@ Checkout the following example. What we're doing here, is setting up a reference
 This is really neat, becuase it means you can upgrade your components, and you can use them on an integration server without having to rename them each time, or include them in your repository!
 
 All that's left to do now, is import the component into your main.scss file, and you're away!
+
+**Update 1:** If you're having any issues, make sure to run the following command in the terminal to ensure the file has the right permissions to run.
+ 
+ ```
+ chmod +x .bower-postinstall.sh
+ ```
