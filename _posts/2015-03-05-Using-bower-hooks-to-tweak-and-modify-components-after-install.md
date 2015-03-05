@@ -17,7 +17,7 @@ Have you ever tried to import a vanilla CSS bower component into your SASS/SCSS 
 
 **Yes, *me too*. In fact, it happened again, just this morning!**
 
-*The CSS file in question was Nicolas Gallagher's [normalize.css](http://necolas.github.io/normalize.css/). There's plenty of overcomplicated SCSS versions of this, but they're so unecessary! Just let me import the damn CSS version into my *main.scss* file! **ARGH!***
+*The CSS file in question was Nicolas Gallagher's [normalize.css](http://necolas.github.io/normalize.css/). There's plenty of overcomplicated SCSS versions of this, but they're so unecessary! Just let me import the damn CSS version into my main.scss file! **ARGH!***
 
 It should be something so simple! All I'm asking is for that CSS file to be *physically* imported and included in my main style pipeline. Yet, what happens is the file gets ignored during the build process, and *referenced*.
 
