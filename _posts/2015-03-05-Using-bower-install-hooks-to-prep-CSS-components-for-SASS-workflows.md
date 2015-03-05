@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Using Bower install hooks to prep CSS components for SASS workflows"
-subtitle: "An upgrade, and integration server safe method to include CSS components in your SASS workflow and build pipeline."
+title: "Using Bower install hooks to prep vanilla CSS components for SASS workflows"
+subtitle: "An upgrade, and integration server safe method to include vanilla CSS components in your SASS workflow and build pipeline."
 
-excerpt: "An upgrade, and integration server safe method to include CSS components in your SASS workflow and build pipeline."
+excerpt: "An upgrade, and integration server safe method to include vanilla CSS components in your SASS workflow and build pipeline."
 
 author:
   name: Scotty Vernon
