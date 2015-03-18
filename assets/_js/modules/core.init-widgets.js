@@ -74,7 +74,8 @@ function initDisqus() {
       reload: true,
       config: function () {  
         this.page.identifier = disqus_identifier;  
-        this.page.url = disqus_url + "/#!" + disqus_identifier;
+        // this.page.url = disqus_url + "/#!" + disqus_identifier;
+        this.page.url = disqus_url + disqus_identifier;
       }
     });
 
