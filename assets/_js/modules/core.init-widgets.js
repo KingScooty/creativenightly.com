@@ -56,6 +56,7 @@ function initGists() {
   page_state.widgets.gist.init = true;
 }
 
+
 function initDisqus() {
   var disqus_shortname = 'creativenightly';
   var disqus_identifier = window.location.pathname.replace(/\/$/, '');
@@ -64,12 +65,8 @@ function initDisqus() {
     this.language = "en";
   };
 
-  if(typeof DISQUS === 'undefined'){
-
-    getScripts("https://" + disqus_shortname + ".disqus.com/embed.js");
-
-  } else {
-
+  var resetDisqus = function resetDisqus() {
+    // console.log('RESETTING DISQUS');
     DISQUS.reset({
       reload: true,
       config: function () {  
@@ -78,7 +75,17 @@ function initDisqus() {
         this.page.url = disqus_url + disqus_identifier;
       }
     });
+  }
 
+
+  if(typeof DISQUS === 'undefined'){
+
+    // console.log('GETTING DISQUS SCRIPT');
+    getScripts("https://" + disqus_shortname + ".disqus.com/embed.js", function() {
+      resetDisqus();
+    });
+  } else {
+    resetDisqus();
   }
 
   page_state.widgets.disqus.init = true;

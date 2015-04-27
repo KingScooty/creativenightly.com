@@ -3,6 +3,8 @@ var fixRhythm = require('../modules/core.fix-rhythm');
 
 function init (value) {
 
+  // console.log('INIT POST!!!');
+
   if (value === 'init') {
     fixRhythm();
     return true;
@@ -32,7 +34,9 @@ function init (value) {
 
 }
 
-function destroy () {}
+function destroy () {
+  console.log('DESTROY POST.');
+}
 
 module.exports = {
   init: init,

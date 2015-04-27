@@ -30,11 +30,11 @@ $.pjax({
 
 $(document).bind('pjax:fetch', function() {
   // Fetching new page
-  require('./core.state').resetPageStates()
+  // require('./core.state').resetPageStates()
   currentPage.destroy();
 });
 
 $(document).bind('pjax:render', function () {
   currentPage.init();
-  widgets.triggerAnalytics();
+  // widgets.triggerAnalytics();
 });

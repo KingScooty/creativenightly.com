@@ -1,4 +1,7 @@
 routes = {
+  all: {
+    name: 'all'
+  },
   home: {
     name: 'home'
     // visited: false,
