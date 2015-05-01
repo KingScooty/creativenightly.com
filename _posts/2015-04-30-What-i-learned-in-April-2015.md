@@ -42,4 +42,4 @@ author:
 
 ###The angry
 - **The Apple Watch**
-  - I really don't like it, or anything it stands for. Irrational, maybe, but i can't help it.
+  - I really don't like it, or anything it stands for. Irrational? Maybe.
