@@ -17,10 +17,10 @@ author:
 
 
 ###The good
-- **Prodictivity on steroids**
-  - Somehow, I've learned more than ever in the last month. Like, really! I've been really productive this month, and somehow managed to cover/learn more than I think I ever have in a single month!
+- **Productivity on steroids**
+  - This month's been a really productive one. I'm really happy with the number of topics I've managed to cover and learn. I've listed them below.
 - **Docker**
-  - Finally got round to learning Docker, and, wow, it's amazing. I always had a gripe with having to use vagrant, as you need a new image for each project you work on, and that very quickly adds up. With Docker, you can spin up an instance of a base image, and add layers on top of it, meaning that resources can be shared across containers. Awesome!
+  - Finally got round to learning Docker, and, wow, it's amazing. I've always had a gripe with having to use vagrant, as you need a new image for each project you work on, and that very quickly adds up. With Docker, you can spin up an instance of a base image, and add layers on top of it, meaning that resources can be shared across containers. Awesome!
 - **Topics I learned about this month:**
   - [Docker](https://www.docker.com/) - Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications.
   - [Redis](http://redis.io/) - High performance data persistence.
