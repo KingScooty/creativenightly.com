@@ -15,7 +15,6 @@ author:
   image: ks.png
 ---
 
-
 ###The good
 - **Productivity on steroids**
   - This month's been a really productive one. I'm really happy with the number of topics I've managed to cover and learn. I've listed them below.
@@ -39,7 +38,3 @@ author:
   - Email has a tendency to get on top of me. That clean inbox that Dropbox Mailbox tries to force on you can get near to 100 sometimes. (It's on 140 at the moment.)
 - **Not finding time to blog**
   - There's 4 or 5 articles I want to write, and that number isn't going down.
-
-###The angry
-- **The Apple Watch**
-  - I really don't like it, or anything it stands for. Irrational? Maybe.

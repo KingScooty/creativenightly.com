@@ -23,12 +23,13 @@
     @extend .desk;
     @extend %cleafix;
 
-    overflow: hidden;
+    // overflow: hidden;
     
     width: 131px;
     height: 20px;
-    vertical-align: inherit;
-    top: -1px;
+    // vertical-align: inherit;
+    vertical-align: baseline;
+    top: 4px;
     margin: 0 1rem;
 
     iframe {
