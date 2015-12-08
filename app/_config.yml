@@ -53,12 +53,14 @@ include: ['_pages']
 
 gems:
   - jekyll-redirect-from
+  - jekyll-gist
+  - jekyll-paginate
 
 url:         http://www.creativenightly.com
 source:      .
 destination: ./_site
-plugins:     null
-layouts:     ./_layouts
+# plugins:     null
+layouts_dir:     ./_layouts
 # include:     ['.htaccess']
 exclude:     ['node_modules', 'bower.json', 'package.json', 'Rakefile', 'gulpfile.js', 'README.md']
 timezone:    Europe/London
@@ -107,7 +109,7 @@ kramdown:
   entity_output: as_char
   toc_levels: 1..6
   smart_quotes: lsquo,rsquo,ldquo,rdquo
-  use_coderay: false
+  enable_coderay: false
 
   coderay:
     coderay_wrap: div

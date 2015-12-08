@@ -180,9 +180,8 @@ var sass_production = function sass_production() {
   var nano_options = {
     autoprefixer: {
       browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1', 'Android >= 2.3']
-      },
-      discardComments: { removeAll: true }
-    }
+    },
+    discardComments: { removeAll: true }
   };
 
   var task = gulp
@@ -193,7 +192,7 @@ var sass_production = function sass_production() {
     .pipe(plugins.nano(nano_options))
     // move to temp/production
     .pipe( gulp.dest( '_site/assets/css' ) )
-    .pipe( gulp.dest( '.temp/production/assets/css' ) )
+    .pipe( gulp.dest( '.temp/production/assets/css' ) );
 
   return task;
 }
