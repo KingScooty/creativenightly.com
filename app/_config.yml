@@ -1,8 +1,11 @@
+env: production
+production: true
+
 inc:
   # Blog Information
   title:        "Creative Nightly"
   subtitle:     "@KingScooty's crusade to stay on top of the ever expanding/advancing web tech industry"
-  #"A developer's account on the world of digital." 
+  #"A developer's account on the world of digital."
   #"Creative coding and inspiration" #A blog for creative, digital and technical explorers.
   colophon:     false
   cover_image:  blog-cover.jpg
@@ -32,7 +35,7 @@ inc:
     gplus:      true
     hn:         false
 
- # Analytics     
+ # Analytics
   analytics:
     google: true # Add tracking code in _includes/_google-analytics.html
 
