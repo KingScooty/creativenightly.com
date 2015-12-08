@@ -27,10 +27,10 @@ var critical = require('critical');
 
 // var manifest = require('gulp-manifest');
 
-var basePaths = {
-  src:    'app/assets/',
-  dest:   'app/static/'
-};
+// var basePaths = {
+//   src:    'app/assets/',
+//   dest:   'app/static/'
+// };
 
 
 
@@ -57,7 +57,12 @@ var jekyllEnv = {
   production: 'app/_config.yml'
 }
 
-var jekyllBuild = function jekyllBuild(jekyllEnv, done) {
+var jekyllBuild = function jekyllBuild(jekyllEnv, done, destination) {
+
+  if (!destination) {
+    destination = '_site';
+  }
+
   return plugins.spawn('bundle', ['exec', 'jekyll', 'build', '--source', 'app', '--destination', '_site', '--plugins', 'plugins', '--config', jekyllEnv], { stdio: 'inherit' }).on('close', done);
 }
 
@@ -66,7 +71,7 @@ gulp.task('jekyll-build-dev', function( done ) {
 });
 
 gulp.task('jekyll-build-production--pre', function( done ) {
-  jekyllBuild(jekyllEnv.production, done);
+  jekyllBuild(jekyllEnv.production, done, '.temp/production/');
 });
 
 gulp.task('jekyll-build-production--post', ['production'], function( done ) {
@@ -222,7 +227,7 @@ gulp.task('js-development', function() {
   });
 
   return b.bundle()
-    .pipe(source('assets/_js/main.js'))
+    .pipe(source('app/assets/_js/main.js'))
     .pipe(buffer())
     .pipe(sourcemaps.init({loadMaps: true}))
       .on('error', gutil.log)
@@ -238,7 +243,7 @@ gulp.task('js-production', ['jekyll-build-production--pre'], function() {
   });
 
   return b.bundle()
-    .pipe(source('assets/_js/main.js'))
+    .pipe(source('app/assets/_js/main.js'))
     .pipe(buffer())
     .pipe(uglify())
     // move to temp/production
@@ -370,14 +375,23 @@ gulp.task('critical', ['build', 'copystyles'], function (cb) {
   // load them in later. We do this with
   // 'copystyles' above
 
-  critical.generateInline({
-    base: '_site/'
-    // base: '.temp/production',
+  // critical.generateInline({
+  critical.generate({
+    // base: '_site/'
+    base: '.temp/production/',
     src: 'index.html',
     styleTarget: 'assets/css/main.css',
     htmlTarget: 'index.html',
-    width: 320,
-    height: 480,
+    dimensions: [{
+      width: 320,
+      height: 480
+    },{
+      width: 768,
+      height: 1024
+    },{
+      width: 1280,
+      height: 960
+    }],
     minify: true
   }, function(err, output) {
     cb(err);
@@ -425,14 +439,15 @@ gulp.task('generate-critical-partials', ['critical'], function() {
       basename: '_critical-path',
       extname: '.html'
     }))
-    .pipe(gulp.dest('./_includes/.temp/'));
+    .pipe(gulp.dest('./app/_includes/.temp/'));
 
   console.log('Partial _critical-path.html ready!');
 
   // gulp.src('_site/assets/css/site.css')
-  //   .pipe(gulp.dest('./assets/css/'));
-  //
-  // console.log('Site wide CSS ready!');
+  gulp.src('./temp/production/assets/css/site.css')
+    .pipe(gulp.dest('./app/assets/css/'));
+
+  console.log('Site wide CSS ready!');
 });
 
 
@@ -516,6 +531,9 @@ gulp.task('deploy', ['production', 'jekyll-build-production'], function() {
     .pipe(plugins.ghPages());
 
 });
+
+gulp.task('deploy-test', ['production', 'jekyll-build-production']);
+
 
 
 
