@@ -14,6 +14,9 @@ plugins.spawn       = require('child_process').spawn;
 
 // var rename = require('gulp-rename');
 
+// Imported via plugins too, but cleaner syntax referencing directly.
+var gulpif = require('gulp-if');
+
 var source = require('vinyl-source-stream');
 var transform = require('vinyl-transform');
 var browserify = require('browserify');
@@ -43,9 +46,9 @@ var basePaths = {
 
 
 // current
-gulp.task('jekyll', plugins.shell.task([
-  'jekyll build'
-]));
+// gulp.task('jekyll', plugins.shell.task([
+//   'jekyll build'
+// ]));
 
 
 
@@ -56,11 +59,15 @@ var jekyllEnv = {
 }
 
 var jekyllBuild = function jekyllBuild(jekyllEnv, done) {
-  return plugins.spawn('bundle', ['exec', 'jekyll', 'build', '--source', 'app', '--destination', '_site', '--plugins', '_plugins', '--config', jekyllEnv], { stdio: 'inherit' }).on('close', done);
+  return plugins.spawn('bundle', ['exec', 'jekyll', 'build', '--source', 'app', '--destination', '_site', '--plugins', 'plugins', '--config', jekyllEnv], { stdio: 'inherit' }).on('close', done);
 }
 
 gulp.task('jekyll-build-dev', function( done ) {
   jekyllBuild(jekyllEnv.dev, done);
+});
+
+gulp.task('jekyll-build-production', function( done ) {
+  jekyllBuild(jekyllEnv.production, done);
 });
 
 gulp.task('jekyll-reload', ['jekyll-build-dev'], function() {
@@ -80,12 +87,12 @@ gulp.task('jekyll-reload', ['jekyll-build-dev'], function() {
 // BROWSER SYNC
 //
 
-gulp.task('browser-sync', ['sass', 'jekyll-build-dev'], function() {
+gulp.task('browser-sync', ['sass-development', 'jekyll-build-dev'], function() {
 
   plugins.browserSync({
     ui: false,
     server: {
-      baseDir: ['_site'/*,'.temp'*/]
+      baseDir: ['_site', '.temp']
     },
     ghostMode: false,
     online: false,
@@ -108,46 +115,72 @@ gulp.task('browser-sync', ['sass', 'jekyll-build-dev'], function() {
 //
 
 
-gulp.task('sass', function () {
-  gulp.src('./assets/_scss/main.scss')
+// gulp.task('sass', function () {
+//   gulp.src('./assets/_scss/main.scss')
+//
+//     //Plumb pipe breaks incase of errors
+//     .pipe(plugins.plumber())
+//
+//     .pipe(plugins.sass({
+//       style: 'compact'
+//     }))
+//
+//     //Autoprefixer
+//     .pipe(prefix({
+//       browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1'],
+//       cascade: false
+//     }))
+//
+//     .pipe(cssmin())
+//
+//     .pipe(gulp.dest('./assets/stylesheets'));
+// });
+//
 
-    //Plumb pipe breaks incase of errors
-    .pipe(plugins.plumber())
-
-    .pipe(plugins.sass({
-      style: 'compact'
-    }))
-
-    //Autoprefixer
-    .pipe(prefix({
-      browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1'],
-      cascade: false
-    }))
-
-    .pipe(cssmin())
-
-    .pipe(gulp.dest('./assets/stylesheets'));
-});
 
 
-
-
-var compileSass = function compileSass() {
-  return gulp
+var sass_development = function sass_development() {
+  var task = gulp
     .src( 'app/assets/_scss/*.scss')
     .pipe(plugins.plumber())
-    .pipe(
-      plugins.sass({ outputStyle: 'compressed' })
-        .on('error', plugins.sass.logError)
-    )
-    .pipe( plugins.autoprefixer() )
-    .pipe( gulp.dest( '_site/assets/css' ) )
-    .pipe( plugins.browserSync.reload({ stream: true }) )
-    .pipe( gulp.dest( '.temp/assets/css' ) );
+
+    .pipe(sourcemaps.init())
+    .pipe(sass.sync().on('error', sass.logError))
+    .pipe(sourcemaps.write())
+
+    .pipe(plugins.browserSync.reload({ stream: true }))
+    .pipe(gulp.dest('.temp/assets/css'));
+
+  return task;
 }
 
-gulp.task('sass', function() {
-  return compileSass(gulp);
+var sass_production = function sass_production() {
+  var nano_options = {
+    autoprefixer: {
+      browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1', 'Android >= 2.3']
+      },
+      discardComments: { removeAll: true }
+    }
+  };
+
+  var task = gulp
+    .src( 'app/assets/_scss/*.scss')
+    .pipe(plugins.plumber())
+
+    .pipe(sass.sync().on('error', sass.logError))
+    .pipe(plugins.nano(nano_options))
+    .pipe( gulp.dest( '_site/assets/css' ) )
+
+  return task;
+}
+
+
+gulp.task('sass-development', function() {
+  return sass_development();
+});
+
+gulp.task('sass-production', ['jekyll-build-production'], function() {
+  return sass_production();
 });
 
 
@@ -163,22 +196,33 @@ gulp.task('sass', function() {
 //
 
 
-gulp.task('js-compile', function() {
+gulp.task('js-development', function() {
   var b = browserify({
-    entries: './assets/_js/main.js',
+    // entries: './assets/_js/main.js',
     debug: true
   });
 
   return b.bundle()
     .pipe(source('assets/_js/main.js'))
     .pipe(buffer())
+    .pipe(sourcemaps.init({loadMaps: true}))
+      .on('error', gutil.log)
+    .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest('.temp/assets/js/'));
+});
 
-    // .pipe(plumber())
-    // .pipe(browserify())
 
-    // .pipe(uglify())
+gulp.task('js-production', ['jekyll-build-production'], function() {
+  var b = browserify({
+    // entries: './assets/_js/main.js',
+    debug: true
+  });
 
-    .pipe(gulp.dest('../javascripts/'));
+  return b.bundle()
+    .pipe(source('assets/_js/main.js'))
+    .pipe(buffer())
+    .pipe(uglify())
+    .pipe(gulp.dest('_site/assets/js/'));
 });
 
 
@@ -198,17 +242,42 @@ gulp.task('js-compile', function() {
 // WATCH TASKS
 //
 
+gulp.task('watch', function() {
 
-gulp.task('watch', ['sass', 'js-compile'], function(){
-  plugins.watch(['./assets/_scss/**/*.scss'], function() {
-      gulp.start('sass');
-  });
-
-  plugins.watch(['./assets/_js/**/*.js'], function() {
-      gulp.start('js-compile');
-  });
+  gulp.watch('app/assets/_scss/**/*.scss', ['sass-development']);
+  gulp.watch('app/assets/_js/**/*.js', ['js-development']);
+  gulp.watch([
+    // 'app/_components/**/*.html',
+    'app/_includes/**/*.html',
+    'app/_includes/**/*.md',
+    'app/_layouts/**/*.html',
+    'app/_pagetypes/**/*.html',
+    'app/pages/*.html',
+    'app/assets/css/*.css',
+    'app/assets/images/*.{svg,png,jpg}',
+    'app/assets/svg/*.svg',
+    // 'app/{.,atoms,molecules,organisms}/index.html',
+    // 'app/{.,atoms,molecules,organisms}/index.html',
+    'app/_data/*.yml'
+    // '_includes/**/*.html',
+    // '_layouts/*.html',
+    // 'img/**/*',
+    // 'js/main.js'
+  ], ['jekyll-reload']);
 
 });
+
+
+// gulp.task('watch', ['sass', 'js-compile'], function(){
+//   plugins.watch(['./assets/_scss/**/*.scss'], function() {
+//       gulp.start('sass');
+//   });
+//
+//   plugins.watch(['./assets/_js/**/*.js'], function() {
+//       gulp.start('js-compile');
+//   });
+//
+// });
 
 
 
@@ -228,9 +297,7 @@ gulp.task('watch', ['sass', 'js-compile'], function(){
 //
 
 
-gulp.task('build', ['sass', 'js-compile'],
-  plugins.shell.task(['jekyll build']
-));
+gulp.task('build', ['sass-production', 'js-production', 'jekyll-build-production']);
 
 
 
@@ -246,13 +313,13 @@ gulp.task('build', ['sass', 'js-compile'],
 
 // Copy our site styles to a site.css file
 // for async loading later
-gulp.task('copystyles', ['build'], function () {
-    return gulp.src(['_site/assets/stylesheets/main.css'])
-        .pipe(plugins.rename({
-            basename: "site"
-        }))
-        .pipe(gulp.dest('_site/assets/stylesheets'));
-});
+// gulp.task('copystyles', ['build'], function () {
+//   return gulp.src(['_site/assets/stylesheets/main.css'])
+//     .pipe(plugins.rename({
+//       basename: "site"
+//     }))
+//     .pipe(gulp.dest('_site/assets/stylesheets'));
+// });
 
 
 
@@ -367,3 +434,39 @@ gulp.task('manifest', ['critical', 'generate-critical-partials'], function(){
 
 
 gulp.task('production', ['critical', 'generate-critical-partials' /*, 'manifest'*/]);
+
+
+gulp.task('jekyll-build-production', function( done ) {
+  jekyllBuild(jekyllEnv.production, done);
+});
+
+
+gulp.task('sass-production', ['jekyll-build-production'], function() {
+  return compileSass();
+});
+
+
+
+
+// DEPLOY
+//
+// Stagger build to ensure compiled css drops into _site folder after jekyll
+// build.
+
+
+gulp.task('deploy', ['sass-production', 'jekyll-build-production'], function() {
+
+  return gulp
+    .src('_site/**/*')
+    .pipe(plugins.ghPages());
+
+});
+
+
+
+
+
+// DEFAULT
+// - `gulp`
+
+gulp.task('default', ['browser-sync', 'watch']);
