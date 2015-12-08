@@ -166,9 +166,9 @@ var sass_development = function sass_development() {
     .src( 'app/assets/_scss/*.scss')
     .pipe(plugins.plumber())
 
-    .pipe(sourcemaps.init())
+    .pipe(plugins.sourcemaps.init())
     .pipe(plugins.sass.sync().on('error', plugins.sass.logError))
-    .pipe(sourcemaps.write())
+    .pipe(plugins.sourcemaps.write())
 
     .pipe(plugins.browserSync.reload({ stream: true }))
     .pipe(gulp.dest('.temp/development/assets/css'));
@@ -221,16 +221,16 @@ gulp.task('sass-production', ['jekyll-build-production--pre'], function() {
 
 gulp.task('js-development', function() {
   var b = browserify({
-    // entries: './assets/_js/main.js',
+    entries: './app/assets/_js/main.js',
     debug: true
   });
 
   return b.bundle()
-    .pipe(source('app/assets/_js/main.js'))
+    .pipe(source('./app/assets/_js/main.js'))
     .pipe(buffer())
-    .pipe(sourcemaps.init({loadMaps: true}))
-      .on('error', gutil.log)
-    .pipe(sourcemaps.write('./'))
+    .pipe(plugins.sourcemaps.init({loadMaps: true}))
+      .on('error', plugins.util.log)
+    .pipe(plugins.sourcemaps.write('./'))
     .pipe(gulp.dest('.temp/development/assets/js/'));
 });
 
