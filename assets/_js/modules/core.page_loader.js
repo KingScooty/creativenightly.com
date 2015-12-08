@@ -1,9 +1,10 @@
 require('pjax');
+// require('../../_bower_components/jquery.pjax/index');
 var currentPage = require('./core.current_page_is');
 var widgets = require('../modules/core.init-widgets');
 
 $.pjax({
-  area: '.site-body', 
+  area: '.site-body',
   // callback: function() {
   //   console.log('page load callback - hopefully last?');
   // },
@@ -15,7 +16,7 @@ $.pjax({
   Cache: {
     click: true,
     // Submit: false,
-    popstate: true  
+    popstate: true
   },
   wait: 0,
   callback: function() {

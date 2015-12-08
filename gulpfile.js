@@ -1,22 +1,29 @@
-var gulp = require('gulp');
-var plumber = require('gulp-plumber');
-var prefix = require('gulp-autoprefixer');
-var sass = require('gulp-sass');
-var watch = require('gulp-watch');
-var gutil = require('gulp-util');
+var gulp    = require('gulp');
+var plugins = require('gulp-load-plugins')();
 
-var cssmin = require('gulp-minify-css');
+plugins.browserSync = require('browser-sync');
+plugins.spawn       = require('child_process').spawn;
 
-var rename = require('gulp-rename');
+// var plumber = require('gulp-plumber');
+// var prefix = require('gulp-autoprefixer');
+// var sass = require('gulp-sass');
+// var watch = require('gulp-watch');
+// var gutil = require('gulp-util');
 
+// var cssmin = require('gulp-minify-css');
+
+// var rename = require('gulp-rename');
+
+var source = require('vinyl-source-stream');
 var transform = require('vinyl-transform');
 var browserify = require('browserify');
+var buffer = require('vinyl-buffer');
 var uglify = require('gulp-uglify');
 
-var shell = require('gulp-shell');
+// var shell = require('gulp-shell');
 var critical = require('critical');
 
-var manifest = require('gulp-manifest');
+// var manifest = require('gulp-manifest');
 
 var basePaths = {
   src:    'app/assets/',
@@ -24,13 +31,90 @@ var basePaths = {
 };
 
 
+
+
+
+
+
+
+
+// JEKYLL
+//
+
+
+// current
+gulp.task('jekyll', plugins.shell.task([
+  'jekyll build'
+]));
+
+
+
+// new
+var jekyllEnv = {
+  dev: 'app/_config.yml,app/_config.dev.yml',
+  production: 'app/_config.yml'
+}
+
+var jekyllBuild = function jekyllBuild(jekyllEnv, done) {
+  return plugins.spawn('bundle', ['exec', 'jekyll', 'build', '--source', 'app', '--destination', '_site', '--plugins', '_plugins', '--config', jekyllEnv], { stdio: 'inherit' }).on('close', done);
+}
+
+gulp.task('jekyll-build-dev', function( done ) {
+  jekyllBuild(jekyllEnv.dev, done);
+});
+
+gulp.task('jekyll-reload', ['jekyll-build-dev'], function() {
+  plugins.browserSync.reload();
+});
+
+
+
+
+
+
+
+
+
+
+
+// BROWSER SYNC
+//
+
+gulp.task('browser-sync', ['sass', 'jekyll-build-dev'], function() {
+
+  plugins.browserSync({
+    ui: false,
+    server: {
+      baseDir: ['_site'/*,'.temp'*/]
+    },
+    ghostMode: false,
+    online: false,
+    notify: false
+  });
+
+});
+
+
+
+
+
+
+
+
+
+
+
+// SASS
+//
+
+
 gulp.task('sass', function () {
   gulp.src('./assets/_scss/main.scss')
 
     //Plumb pipe breaks incase of errors
-    .pipe(plumber())
+    .pipe(plugins.plumber())
 
-    .pipe(sass({
+    .pipe(plugins.sass({
       style: 'compact'
     }))
 
@@ -46,50 +130,147 @@ gulp.task('sass', function () {
 });
 
 
-gulp.task('js-compile', function() {
-  var browserified = transform(function(filename) {
-    var b = browserify(filename);
-    return b.bundle();
-  });
 
-  return gulp.src('./assets/_js/main.js')
 
-    .pipe(plumber())
-    .pipe(browserified)
+var compileSass = function compileSass() {
+  return gulp
+    .src( 'app/assets/_scss/*.scss')
+    .pipe(plugins.plumber())
+    .pipe(
+      plugins.sass({ outputStyle: 'compressed' })
+        .on('error', plugins.sass.logError)
+    )
+    .pipe( plugins.autoprefixer() )
+    .pipe( gulp.dest( '_site/assets/css' ) )
+    .pipe( plugins.browserSync.reload({ stream: true }) )
+    .pipe( gulp.dest( '.temp/assets/css' ) );
+}
 
-    .pipe(uglify())
-
-    .pipe(gulp.dest('./assets/javascripts/'));
+gulp.task('sass', function() {
+  return compileSass(gulp);
 });
 
+
+
+
+
+
+
+
+
+
+// JAVASCRIPT
+//
+
+
+gulp.task('js-compile', function() {
+  var b = browserify({
+    entries: './assets/_js/main.js',
+    debug: true
+  });
+
+  return b.bundle()
+    .pipe(source('assets/_js/main.js'))
+    .pipe(buffer())
+
+    // .pipe(plumber())
+    // .pipe(browserify())
+
+    // .pipe(uglify())
+
+    .pipe(gulp.dest('../javascripts/'));
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// WATCH TASKS
+//
+
+
 gulp.task('watch', ['sass', 'js-compile'], function(){
-  watch(['./assets/_scss/**/*.scss'], function() {
+  plugins.watch(['./assets/_scss/**/*.scss'], function() {
       gulp.start('sass');
   });
 
-  watch(['./assets/_js/**/*.js'], function() {
+  plugins.watch(['./assets/_js/**/*.js'], function() {
       gulp.start('js-compile');
   });
 
 });
 
-gulp.task('jekyll', shell.task([
-  'jekyll build'
-]));
 
-gulp.task('build', ['sass', 'js-compile'], 
-  shell.task(['jekyll build']
+
+
+
+
+
+
+
+
+
+
+
+
+
+// BUILD
+//
+
+
+gulp.task('build', ['sass', 'js-compile'],
+  plugins.shell.task(['jekyll build']
 ));
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Copy our site styles to a site.css file
 // for async loading later
 gulp.task('copystyles', ['build'], function () {
     return gulp.src(['_site/assets/stylesheets/main.css'])
-        .pipe(rename({
+        .pipe(plugins.rename({
             basename: "site"
         }))
         .pipe(gulp.dest('_site/assets/stylesheets'));
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// CRITICAL PATH CSS
+//
+
 
 // Generate & Inline Critical-path CSS
 gulp.task('critical', ['build', 'copystyles'], function (cb) {
@@ -117,32 +298,10 @@ gulp.task('critical', ['build', 'copystyles'], function (cb) {
 
 });
 
-gulp.task('manifest', ['critical', 'generate-critical-partials'], function(){
-  gulp.src(['_site/**/*'])
-    .pipe(manifest({
-      hash: true,
-      preferOnline: true,
-      network: ['http://*', 'https://*', '*'],
-      filename: 'cache.manifest',
-      exclude: [
-        'cache.manifest', 
-        'googleacfe19709071df8d.html',
-        'Gemfile',
-        'Gemfile.lock',
-        'CNAME',
-        'robots.txt',
-        'sitemap.xml',
-        'feed.xml'
-      ],
-      timestamp: false
-     }))
-    .pipe(gulp.dest('./'));
-});
-
 gulp.task('generate-critical-partials', ['critical'], function() {
   console.log('Generating correct partial');
   gulp.src('_site/assets/stylesheets/main.css')
-    .pipe(rename({
+    .pipe(plugins.rename({
       basename: '_critical-path',
       extname: '.html'
     }))
@@ -156,4 +315,55 @@ gulp.task('generate-critical-partials', ['critical'], function() {
   console.log('Site wide CSS ready!');
 });
 
-gulp.task('production', ['critical', 'generate-critical-partials', 'manifest']);
+
+
+
+
+
+
+
+
+
+// CACHE MANIFEST
+//
+
+
+gulp.task('manifest', ['critical', 'generate-critical-partials'], function(){
+  gulp.src(['_site/**/*'])
+    .pipe(plugins.manifest({
+      hash: true,
+      preferOnline: true,
+      network: ['http://*', 'https://*', '*'],
+      filename: 'cache.manifest',
+      exclude: [
+        'cache.manifest',
+        'googleacfe19709071df8d.html',
+        'Gemfile',
+        'Gemfile.lock',
+        'CNAME',
+        'robots.txt',
+        'sitemap.xml',
+        'feed.xml'
+      ],
+      timestamp: false
+     }))
+    .pipe(gulp.dest('./'));
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+// PRODUCTION
+//
+
+
+gulp.task('production', ['critical', 'generate-critical-partials' /*, 'manifest'*/]);
