@@ -63,7 +63,7 @@ var jekyllBuild = function jekyllBuild(jekyllEnv, done, destination) {
     destination = '_site';
   }
 
-  return plugins.spawn('bundle', ['exec', 'jekyll', 'build', '--source', 'app', '--destination', '_site', '--plugins', 'plugins', '--config', jekyllEnv], { stdio: 'inherit' }).on('close', done);
+  return plugins.spawn('bundle', ['exec', 'jekyll', 'build', '--source', 'app', '--destination', destination, '--plugins', 'plugins', '--config', jekyllEnv], { stdio: 'inherit' }).on('close', done);
 }
 
 gulp.task('jekyll-build-dev', function( done ) {
@@ -167,7 +167,7 @@ var sass_development = function sass_development() {
     .pipe(plugins.plumber())
 
     .pipe(sourcemaps.init())
-    .pipe(sass.sync().on('error', sass.logError))
+    .pipe(plugins.sass.sync().on('error', plugins.sass.logError))
     .pipe(sourcemaps.write())
 
     .pipe(plugins.browserSync.reload({ stream: true }))
@@ -188,8 +188,8 @@ var sass_production = function sass_production() {
     .src( 'app/assets/_scss/*.scss')
     .pipe(plugins.plumber())
 
-    .pipe(sass.sync().on('error', sass.logError))
-    .pipe(plugins.nano(nano_options))
+    .pipe(plugins.sass.sync().on('error', plugins.sass.logError))
+    .pipe(plugins.cssnano(nano_options))
     // move to temp/production
     .pipe( gulp.dest( '_site/assets/css' ) )
     .pipe( gulp.dest( '.temp/production/assets/css' ) );
