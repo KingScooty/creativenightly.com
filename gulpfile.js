@@ -226,6 +226,7 @@ gulp.task('js-development', function() {
   });
 
   return b.bundle()
+  // Source is the *name* of the outputted file from browserify
     .pipe(source('main.js'))
     .pipe(buffer())
     .pipe(plugins.sourcemaps.init({loadMaps: true}))
@@ -237,12 +238,13 @@ gulp.task('js-development', function() {
 
 gulp.task('js-production', ['jekyll-build-production--pre'], function() {
   var b = browserify({
-    // entries: './assets/_js/main.js',
+    entries: './app/assets/_js/main.js',
     debug: true
   });
 
   return b.bundle()
-    .pipe(source('app/assets/_js/main.js'))
+  // Source is the *name* of the outputted file from browserify
+    .pipe(source('main.js'))
     .pipe(buffer())
     .pipe(uglify())
     // move to temp/production
