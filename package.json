@@ -34,7 +34,7 @@
     "node": ">=0.10.0"
   },
   "browser": {
-    "pjax": "./assets/_bower_components/jquery.pjax/index.js"
+    "pjax": "./app/assets/_bower_components/jquery.pjax/index.js"
   },
   "browserify-shim": {
     "pjax": "pjax"

@@ -226,7 +226,7 @@ gulp.task('js-development', function() {
   });
 
   return b.bundle()
-    .pipe(source('./app/assets/_js/main.js'))
+    .pipe(source('main.js'))
     .pipe(buffer())
     .pipe(plugins.sourcemaps.init({loadMaps: true}))
       .on('error', plugins.util.log)
