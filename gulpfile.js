@@ -190,7 +190,7 @@ var sass_production = function sass_production() {
 
     .pipe(plugins.sass.sync().on('error', plugins.sass.logError))
     .pipe(plugins.cssnano(nano_options))
-    // move to temp/production
+  // Output to both _site and temp for crticial path
     .pipe( gulp.dest( '_site/assets/css' ) )
     .pipe( gulp.dest( '.temp/production/assets/css' ) );
 
@@ -247,9 +247,9 @@ gulp.task('js-production', ['jekyll-build-production--pre'], function() {
     .pipe(source('main.js'))
     .pipe(buffer())
     .pipe(uglify())
-    // move to temp/production
+  // Output to both _site and temp for crticial path
     .pipe(gulp.dest('_site/assets/js/'))
-    .pipe(gulp.dest('temp/production/assets/js/'));
+    .pipe(gulp.dest('.temp/production/assets/js/'));
 });
 
 
@@ -445,7 +445,7 @@ gulp.task('generate-critical-partials', ['critical'], function() {
   console.log('Partial _critical-path.html ready!');
 
   // gulp.src('_site/assets/css/site.css')
-  gulp.src('./temp/production/assets/css/site.css')
+  gulp.src('.temp/production/assets/css/site.css')
     .pipe(gulp.dest('./app/assets/css/'));
 
   console.log('Site wide CSS ready!');
