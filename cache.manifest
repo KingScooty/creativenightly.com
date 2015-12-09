@@ -26,9 +26,14 @@ assets/javascripts/main.js
 assets/stylesheets/main.css
 assets/stylesheets/site.css
 images/article-images/2015-02-09-page_insights.png
+images/article-images/page1a.png
+images/article-images/page1b.png
+images/article-images/page2.png
+images/article-images/page3.png
+images/article-images/page4.png
 2012/06/Setting-up-a-mac-as-a-dev-machine/index.html
-2012/07/Sublime-Text-2-Theme-Package-Management/index.html
 2012/07/Shopify-for-Designers-a-Workshop-by-Keir-Whitaker/index.html
+2012/07/Sublime-Text-2-Theme-Package-Management/index.html
 2012/09/Visual-tweaks-to-improve-Sublime-Text-2-workflow/index.html
 2013/03/How-to-install-ruby-2-0-0-on-OSX-Mountain-Lion/index.html
 2013/10/How-to-fix-Homebrew-on-Mac-OSX-Mavericks/index.html
@@ -40,7 +45,9 @@ images/article-images/2015-02-09-page_insights.png
 2015/01/What-i-learned-in-January-2015/index.html
 2015/02/Optimising-Typekit-for-mobile-devices/index.html
 2015/02/Using-Grunt-and-Gulp-side-by-side/index.html
-2015/03/Using-bower-hooks-to-tweak-and-modify-components-after-install/index.html
+2015/02/What-i-learned-in-February-2015/index.html
+2015/03/Using-bower-install-hooks-to-prep-CSS-components-for-SASS-workflows/index.html
+2015/04/What-i-learned-in-April-2015/index.html
 
 
 NETWORK:
@@ -52,4 +59,4 @@ https://*
 SETTINGS:
 prefer-online
 
-# hash: bfc8d3f84cb4c2e43e1b6e27e17d6802d8ea8a23cfd2f7db53c77f09065cff31
+# hash: 231470328cb60624c81bb958628ed263ba5ec5ee53036f39983dc9818cf7dc65
