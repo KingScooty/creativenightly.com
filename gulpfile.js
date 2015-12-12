@@ -121,7 +121,7 @@ gulp.task('jekyll:reload', ['jekyll:dev'], function() {
 // BROWSER SYNC
 //
 
-gulp.task('browser-sync', ['sass-development', 'jekyll:dev'], function() {
+gulp.task('browser-sync', ['sass:development', 'jekyll:dev'], function() {
 
   plugins.browserSync({
     ui: false,
@@ -225,11 +225,11 @@ var sass_production = function sass_production() {
 }
 
 
-gulp.task('sass-development', function() {
+gulp.task('sass:development', function() {
   return sass_development();
 });
 
-gulp.task('sass-production', ['jekyll:production:pre'], function() {
+gulp.task('sass:production', ['jekyll:production:pre'], function() {
   return sass_production();
 });
 
@@ -246,7 +246,7 @@ gulp.task('sass-production', ['jekyll:production:pre'], function() {
 //
 
 
-gulp.task('js-development', function() {
+gulp.task('js:development', function() {
   var b = browserify({
     entries: './app/assets/_js/main.js',
     debug: true
@@ -263,7 +263,7 @@ gulp.task('js-development', function() {
 });
 
 
-gulp.task('js-production', ['jekyll:production:pre'], function() {
+gulp.task('js:production', ['jekyll:production:pre'], function() {
   var b = browserify({
     entries: './app/assets/_js/main.js',
     debug: true
@@ -283,8 +283,8 @@ gulp.task('js-production', ['jekyll:production:pre'], function() {
 // assets:dev
 // assets:production
 
-gulp.task('assets:dev', ['sass-development', 'js-development']);
-gulp.task('assets:production', ['sass-production', 'js-production']);
+gulp.task('assets:dev', ['sass:development', 'js:development']);
+gulp.task('assets:production', ['sass:production', 'js:production']);
 
 
 
@@ -303,8 +303,8 @@ gulp.task('assets:production', ['sass-production', 'js-production']);
 
 gulp.task('watch', function() {
 
-  gulp.watch('app/assets/_scss/**/*.scss', ['sass-development']);
-  gulp.watch('app/assets/_js/**/*.js', ['js-development']);
+  gulp.watch('app/assets/_scss/**/*.scss', ['sass:development']);
+  gulp.watch('app/assets/_js/**/*.js', ['js:development']);
   gulp.watch([
     // 'app/_components/**/*.html',
     'app/_includes/**/*.html',
@@ -356,7 +356,7 @@ gulp.task('watch', function() {
 //
 
 
-gulp.task('build', ['jekyll:production:pre', 'sass-production', 'js-production']);
+gulp.task('build', ['jekyll:production:pre', 'sass:production', 'js:production']);
 
 
 
@@ -584,7 +584,7 @@ gulp.task('production', ['build', 'critical', 'generate-critical-partials' /*, '
 // });
 
 
-// gulp.task('sass-production', ['jekyll:production:pre'], function() {
+// gulp.task('sass:production', ['jekyll:production:pre'], function() {
 //   return compileSass();
 // });
 
