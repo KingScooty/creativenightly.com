@@ -86,25 +86,25 @@ var jekyllBuild = function jekyllBuild(jekyllEnv, done, destination) {
       '--config', jekyllEnv.config
     ],
     {
-      // env: environment_variables,
+      env: environment_variables,
       stdio: 'inherit'
     }
   ).on('close', done);
 }
 
-gulp.task('jekyll-build-dev', function( done ) {
+gulp.task('jekyll:dev', function( done ) {
   jekyllBuild(jekyllEnv.dev, done);
 });
 
-gulp.task('jekyll-build-production--pre', function( done ) {
-  jekyllBuild(jekyllEnv.production, done, '.temp/production/');
+gulp.task('jekyll:production--pre', function( done ) {
+  jekyllBuild(jekyllEnv.dev, done, '.temp/production/');
 });
 
-gulp.task('jekyll-build-production--post', ['production'], function( done ) {
+gulp.task('jekyll:production--post', ['production'], function( done ) {
   jekyllBuild(jekyllEnv.production, done);
 });
 
-gulp.task('jekyll-reload', ['jekyll-build-dev'], function() {
+gulp.task('jekyll:reload', ['jekyll:dev'], function() {
   plugins.browserSync.reload();
 });
 
@@ -121,7 +121,7 @@ gulp.task('jekyll-reload', ['jekyll-build-dev'], function() {
 // BROWSER SYNC
 //
 
-gulp.task('browser-sync', ['sass-development', 'jekyll-build-dev'], function() {
+gulp.task('browser-sync', ['sass-development', 'jekyll:dev'], function() {
 
   plugins.browserSync({
     ui: false,
@@ -155,6 +155,7 @@ gulp.task('clean:production', function () {
     '.temp/production/**/*'
   ]);
 });
+
 
 
 
@@ -228,7 +229,7 @@ gulp.task('sass-development', function() {
   return sass_development();
 });
 
-gulp.task('sass-production', ['jekyll-build-production--pre'], function() {
+gulp.task('sass-production', ['jekyll:production--pre'], function() {
   return sass_production();
 });
 
@@ -262,7 +263,7 @@ gulp.task('js-development', function() {
 });
 
 
-gulp.task('js-production', ['jekyll-build-production--pre'], function() {
+gulp.task('js-production', ['jekyll:production--pre'], function() {
   var b = browserify({
     entries: './app/assets/_js/main.js',
     debug: true
@@ -316,7 +317,7 @@ gulp.task('watch', function() {
     // '_layouts/*.html',
     // 'img/**/*',
     // 'js/main.js'
-  ], ['jekyll-reload']);
+  ], ['jekyll:reload']);
 
 });
 
@@ -350,7 +351,7 @@ gulp.task('watch', function() {
 //
 
 
-gulp.task('build', ['jekyll-build-production--pre', 'sass-production', 'js-production']);
+gulp.task('build', ['jekyll:production--pre', 'sass-production', 'js-production']);
 
 
 
@@ -443,21 +444,22 @@ gulp.task('critical', ['build', 'copystyles'], function (cb) {
 
 /**
 
-0. Compile Jekyll production
+0. Compile jekyll in pre production mode (env: dev / path: .temp/production)
 
 1. Clear temp/production folder.
-2. Output sass production to temp/production and _site/
-3. Output js production to temp/production and _site/
+2. Output sass production to temp/production
+3. Output js production to temp/production
 
-4. Copy and rename compiled css file to site.css
+4. Copy and rename compiled css file from main.css to site.css
 4. Copy index.html over to temp/production
 
 !! Critical path spins up a server to see what is visible in the sized viewport.
 -  Jekyll build production will have to run twice?? (See step 0.)
 
-4. Generate critical path and output css replacing main.CSS
-5. Generate critical path jekyll template for inclusion
-6. Compile jekyll production
+4. Generate critical path and output critical.css
+5. Copy and rename critical.css to _critical-path.html and place it in
+   app/includes/.temp/_critical-path.html
+6. Compile jekyll production to _site
 
 7. Cache manifest?
 8. Deploy
@@ -466,7 +468,6 @@ gulp.task('critical', ['build', 'copystyles'], function (cb) {
 
 gulp.task('generate-critical-partials', ['critical'], function() {
   console.log('Generating correct partial');
-  // gulp.src('_site/assets/css/main.css')
   gulp.src('.temp/production/assets/css/critical.css')
     .pipe(plugins.rename({
       basename: '_critical-path',
@@ -476,19 +477,28 @@ gulp.task('generate-critical-partials', ['critical'], function() {
 
   console.log('Partial _critical-path.html ready!');
 
-  // gulp.src('_site/assets/css/site.css')
   gulp.src('.temp/production/assets/css/site.css')
     .pipe(gulp.dest('./app/assets/css/'));
+
+  gulp.src('.temp/production/assets/js/main.js')
+    .pipe(gulp.dest('./app/assets/js/'));
 
   console.log('Site wide CSS ready!');
 });
 
+gulp.task('jekyll:production', function() {
 
+});
 
+// copy js and css to app/assets/css
+gulp.task('cleanup:post-production', [], function() {
 
+  return del([
+    'app/assets/css',
+    'app/assets/js'
+  ]);
 
-
-
+});
 
 
 
@@ -539,12 +549,12 @@ gulp.task('production', ['build', 'critical', 'generate-critical-partials' /*, '
 //   jekyllBuild(jekyllEnv.production, done);
 // })
 
-// gulp.task('jekyll-build-production--pre', function( done ) {
+// gulp.task('jekyll:production--pre', function( done ) {
 //   jekyllBuild(jekyllEnv.production, done);
 // });
 
 
-// gulp.task('sass-production', ['jekyll-build-production--pre'], function() {
+// gulp.task('sass-production', ['jekyll:production--pre'], function() {
 //   return compileSass();
 // });
 
