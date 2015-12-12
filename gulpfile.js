@@ -546,8 +546,8 @@ gulp.task('manifest', ['critical', 'generate-critical-partials'], function(){
 // Tasks
 
 // jekyll:dev
-// jekyll:production--pre
-// jekyll:production--post
+// jekyll:production:pre
+// jekyll:production:post
 // jekyll:reload
 
 // sass:dev
@@ -557,10 +557,16 @@ gulp.task('manifest', ['critical', 'generate-critical-partials'], function(){
 // assets:dev
 // assets:production
 
+// optimise:critical-path:pre
+// optimise:critical-path:generate
+// optimise:critical-path:post
+// optimise:manifest
+
 // build:all--production
 //
 
 // deploy
+// deploy:test
 
 gulp.task('production', ['build', 'critical', 'generate-critical-partials' /*, 'manifest'*/]);
 
