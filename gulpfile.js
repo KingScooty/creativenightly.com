@@ -543,6 +543,25 @@ gulp.task('manifest', ['critical', 'generate-critical-partials'], function(){
 // PRODUCTION
 //
 
+// Tasks
+
+// jekyll:dev
+// jekyll:production--pre
+// jekyll:production--post
+// jekyll:reload
+
+// sass:dev
+// sass:production
+// js:dev
+// js:production
+// assets:dev
+// assets:production
+
+// build:all--production
+//
+
+// deploy
+
 gulp.task('production', ['build', 'critical', 'generate-critical-partials' /*, 'manifest'*/]);
 
 // gulp.task('finalise', ['critical', 'generate-critical-partials'], function() {
@@ -567,7 +586,7 @@ gulp.task('production', ['build', 'critical', 'generate-critical-partials' /*, '
 // build.
 
 
-gulp.task('deploy', ['production', 'jekyll-build-production'], function() {
+gulp.task('deploy', ['production', 'jekyll:production--post'], function() {
 
   return gulp
     .src('_site/**/*')
@@ -575,7 +594,7 @@ gulp.task('deploy', ['production', 'jekyll-build-production'], function() {
 
 });
 
-gulp.task('deploy-test', ['production', 'jekyll-build-production']);
+gulp.task('deploy:test', ['production', 'jekyll:production--post']);
 
 
 
