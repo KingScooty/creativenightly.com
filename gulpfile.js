@@ -96,11 +96,11 @@ gulp.task('jekyll:dev', function( done ) {
   jekyllBuild(jekyllEnv.dev, done);
 });
 
-gulp.task('jekyll:production--pre', function( done ) {
+gulp.task('jekyll:production:pre', function( done ) {
   jekyllBuild(jekyllEnv.dev, done, '.temp/production/');
 });
 
-gulp.task('jekyll:production--post', ['production'], function( done ) {
+gulp.task('jekyll:production:post', ['production'], function( done ) {
   jekyllBuild(jekyllEnv.production, done);
 });
 
@@ -229,7 +229,7 @@ gulp.task('sass-development', function() {
   return sass_development();
 });
 
-gulp.task('sass-production', ['jekyll:production--pre'], function() {
+gulp.task('sass-production', ['jekyll:production:pre'], function() {
   return sass_production();
 });
 
@@ -263,7 +263,7 @@ gulp.task('js-development', function() {
 });
 
 
-gulp.task('js-production', ['jekyll:production--pre'], function() {
+gulp.task('js-production', ['jekyll:production:pre'], function() {
   var b = browserify({
     entries: './app/assets/_js/main.js',
     debug: true
@@ -280,6 +280,11 @@ gulp.task('js-production', ['jekyll:production--pre'], function() {
 });
 
 
+// assets:dev
+// assets:production
+
+gulp.task('assets:dev', ['sass-development', 'js-development']);
+gulp.task('assets:production', ['sass-production', 'js-production']);
 
 
 
@@ -351,7 +356,7 @@ gulp.task('watch', function() {
 //
 
 
-gulp.task('build', ['jekyll:production--pre', 'sass-production', 'js-production']);
+gulp.task('build', ['jekyll:production:pre', 'sass-production', 'js-production']);
 
 
 
@@ -574,12 +579,12 @@ gulp.task('production', ['build', 'critical', 'generate-critical-partials' /*, '
 //   jekyllBuild(jekyllEnv.production, done);
 // })
 
-// gulp.task('jekyll:production--pre', function( done ) {
+// gulp.task('jekyll:production:pre', function( done ) {
 //   jekyllBuild(jekyllEnv.production, done);
 // });
 
 
-// gulp.task('sass-production', ['jekyll:production--pre'], function() {
+// gulp.task('sass-production', ['jekyll:production:pre'], function() {
 //   return compileSass();
 // });
 
@@ -592,7 +597,7 @@ gulp.task('production', ['build', 'critical', 'generate-critical-partials' /*, '
 // build.
 
 
-gulp.task('deploy', ['production', 'jekyll:production--post'], function() {
+gulp.task('deploy', ['production', 'jekyll:production:post'], function() {
 
   return gulp
     .src('_site/**/*')
@@ -600,7 +605,7 @@ gulp.task('deploy', ['production', 'jekyll:production--post'], function() {
 
 });
 
-gulp.task('deploy:test', ['production', 'jekyll:production--post']);
+gulp.task('deploy:test', ['production', 'jekyll:production:post']);
 
 
 
