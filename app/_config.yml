@@ -1,4 +1,4 @@
-env: production
+environment: production
 production: true
 
 inc:
@@ -58,7 +58,7 @@ gems:
 
 url:         http://www.creativenightly.com
 source:      .
-destination: ./_site
+# destination: ./_site
 # plugins:     null
 layouts_dir:     ./_layouts
 # include:     ['.htaccess']

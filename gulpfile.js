@@ -53,8 +53,14 @@ var critical = require('critical');
 
 // new
 var jekyllEnv = {
-  dev: 'app/_config.yml,app/_config.dev.yml',
-  production: 'app/_config.yml'
+  dev: {
+    env: 'development',
+    config: 'app/_config.yml,app/_config.dev.yml'
+  },
+  production: {
+    env: 'production',
+    config: 'app/_config.yml'
+  }
 }
 
 var jekyllBuild = function jekyllBuild(jekyllEnv, done, destination) {
@@ -63,7 +69,27 @@ var jekyllBuild = function jekyllBuild(jekyllEnv, done, destination) {
     destination = '_site';
   }
 
-  return plugins.spawn('bundle', ['exec', 'jekyll', 'build', '--source', 'app', '--destination', destination, '--plugins', 'plugins', '--config', jekyllEnv], { stdio: 'inherit' }).on('close', done);
+  var environment_variables = Object.create(process.env);
+  environment_variables.JEKYLL_ENV = jekyllEnv.env;
+
+  return plugins.spawn(
+    //'bundle',
+    'jekyll',
+    [
+      // 'exec',
+      // 'JEKYLL_ENV=' + jekyllEnv.env,
+      //'jekyll',
+      'build',
+      '--source', 'app',
+      '--destination', destination,
+      '--plugins', 'plugins',
+      '--config', jekyllEnv.config
+    ],
+    {
+      // env: environment_variables,
+      stdio: 'inherit'
+    }
+  ).on('close', done);
 }
 
 gulp.task('jekyll-build-dev', function( done ) {
@@ -191,7 +217,7 @@ var sass_production = function sass_production() {
     .pipe(plugins.sass.sync().on('error', plugins.sass.logError))
     .pipe(plugins.cssnano(nano_options))
   // Output to both _site and temp for crticial path
-    .pipe( gulp.dest( '_site/assets/css' ) )
+    // .pipe( gulp.dest( '_site/assets/css' ) )
     .pipe( gulp.dest( '.temp/production/assets/css' ) );
 
   return task;
@@ -248,7 +274,7 @@ gulp.task('js-production', ['jekyll-build-production--pre'], function() {
     .pipe(buffer())
     .pipe(uglify())
   // Output to both _site and temp for crticial path
-    .pipe(gulp.dest('_site/assets/js/'))
+    // .pipe(gulp.dest('_site/assets/js/'))
     .pipe(gulp.dest('.temp/production/assets/js/'));
 });
 
@@ -379,10 +405,15 @@ gulp.task('critical', ['build', 'copystyles'], function (cb) {
   // critical.generateInline({
   critical.generate({
     // base: '_site/'
+    // inline: true,
     base: '.temp/production/',
     src: 'index.html',
-    styleTarget: 'assets/css/main.css',
-    htmlTarget: 'index.html',
+    // pathPrefix: '.temp/production/',
+    // dest: '.temp/production/assets/css/site.css',
+    css: ['.temp/production/assets/css/main.css'],
+    // styleTarget: '.temp/production/assets/css/critical.css',
+    dest: '.temp/production/assets/css/critical.css',
+    // htmlTarget: 'index.html',
     dimensions: [{
       width: 320,
       height: 480
@@ -393,6 +424,7 @@ gulp.task('critical', ['build', 'copystyles'], function (cb) {
       width: 1280,
       height: 960
     }],
+    // extract: true,
     minify: true
   }, function(err, output) {
     cb(err);
@@ -435,7 +467,7 @@ gulp.task('critical', ['build', 'copystyles'], function (cb) {
 gulp.task('generate-critical-partials', ['critical'], function() {
   console.log('Generating correct partial');
   // gulp.src('_site/assets/css/main.css')
-  gulp.src('.temp/production/assets/css/main.css')
+  gulp.src('.temp/production/assets/css/critical.css')
     .pipe(plugins.rename({
       basename: '_critical-path',
       extname: '.html'
