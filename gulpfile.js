@@ -565,6 +565,7 @@ gulp.task('manifest', ['critical', 'generate-critical-partials'], function(){
 // optimise:critical-path:pre
 // optimise:critical-path:generate
 // optimise:critical-path:post
+//optimise:critical-path
 // optimise:manifest
 
 // build:all--production
