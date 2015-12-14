@@ -1,17 +1,17 @@
 ---
 layout: post
 title: How to install Ruby 2.0.0 with RVM on OSX 10.8 Mountain Lion
-subtitle: 
+subtitle:
 lastmod: 2013-03-11
 
 cover_image: false
 
-excerpt:
+excerpt: If you've come across the any of the following errors while trying to install Ruby 2.0.0, you've come to the right place!
 
 author:
   name: Scotty Vernon
   twitter: KingScooty
-  gplus: +ScottyVernon 
+  gplus: +ScottyVernon
   bio: Founder, Software Engineer @ Wildflame Studios
   image: ks.png
 ---
@@ -37,8 +37,8 @@ rvm get stable
 brew update
 
 brew install libyaml
-brew install pkg-config 
-brew install libxml2 
+brew install pkg-config
+brew install libxml2
 brew install libxslt
 
 brew install openssl

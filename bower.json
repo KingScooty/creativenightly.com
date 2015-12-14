@@ -3,7 +3,8 @@
   "private": true,
   "dependencies": {
     "jquery-pjax": "git@github.com:falsandtru/jquery-pjax.git#~2.40.0",
-    "jquery.pjax": "https://github.com/falsandtru/jquery-pjax/releases/download/v2.40.0/jquery.pjax.js"
+    "jquery.pjax": "https://github.com/falsandtru/jquery-pjax/releases/download/v2.40.0/jquery.pjax.js",
+    "jquery": "~2.1.4"
   },
   "devDependencies": {
     "susy": "~2.2.1",

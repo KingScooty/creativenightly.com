@@ -10,14 +10,14 @@ page-class: page--post
 
   <div class="container">
     <header class="content-block__header {% if page.subtitle %} content-block__header--group {% endif %}">
-      
+
       <div class="meta">
         By <address><a rel="author" href="http://twitter.com/kingscooty" title="{{ page.author.name }}" target="_blank">{{ page.author.name }}</a></address> &mdash;
         <time pubdate datetime="{{ page.date | date: "%Y-%d-%B" }}" title="{{ page.date | date: "%B %d, %Y" }}">{{ page.date | date: "%B %d, %Y" }}</time>
       </div>
-      
-      <h1 class="title">{{ page.title }}</h1>      
-      
+
+      <h1 class="title">{{ page.title }}</h1>
+
       {% if page.subtitle %}
       <h2 class="subtitle">{{ page.subtitle }}</h2>
       {% endif %}
@@ -44,7 +44,7 @@ page-class: page--post
           Written by <strong><a rel="author" href="https://twitter.com/{{ page.author.twitter }}" title="{{ page.author_name }}" target="_blank">{{ page.author.name }}</a></strong>
         </div>
         <div class="muted fine-print">{{ page.author.bio }}</div>
-        
+
         {% include _follow_button.html %}
 
         <hr class="dark seperator seperator--tight">

@@ -2,7 +2,6 @@
   "name": "creative-nightly",
   "version": "0.0.0",
   "dependencies": {
-    "jquery": "^2.1.4"
   },
   "devDependencies": {
     "browser-sync": "^2.10.0",
@@ -25,6 +24,7 @@
     "gulp-uglify": "^1.5.1",
     "gulp-util": "~3.0.2",
     "gulp-watch": "^4.3.5",
+    "node-static": "^0.7.7",
     "postcss": "^5.0.12",
     "run-sequence": "^1.1.5",
     "vinyl-buffer": "^1.0.0",
@@ -35,10 +35,12 @@
     "node": ">=0.10.0"
   },
   "browser": {
-    "pjax": "./app/assets/_bower_components/jquery.pjax/index.js"
+    "pjax": "./assets/_bower_components/jquery.pjax/index.js",
+    "jquery": "./assets/_bower_components/jquery/dist/jquery.js"
   },
   "browserify-shim": {
-    "pjax": "pjax"
+    "pjax": "pjax",
+    "jquery": "$"
   },
   "browserify": {
     "transform": [

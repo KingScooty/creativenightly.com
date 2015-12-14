@@ -1,8 +1,9 @@
 var gulp    = require('gulp');
 var plugins = require('gulp-load-plugins')();
 
+var child_process = require('child_process');
 plugins.browserSync = require('browser-sync');
-plugins.spawn       = require('child_process').spawn;
+plugins.spawn       = child_process.spawn;
 
 // var plumber = require('gulp-plumber');
 // var prefix = require('gulp-autoprefixer');
@@ -572,9 +573,18 @@ gulp.task('manifest', ['optimise:critical-path:generate', 'optimise:critical-pat
 gulp.task('cleanup:post-production', function() {
 
   return del([
+    'app/_includes/.temp',
     'app/assets/css',
     'app/assets/js',
     '.temp/production/'
+  ]);
+
+});
+
+gulp.task('cleanup:post-deploy', function() {
+
+  return del([
+    '_site'
   ]);
 
 });
@@ -588,6 +598,37 @@ gulp.task('production', function(callback) {
               //'manifest',
               callback);
 });
+
+gulp.task('production:test', function() {
+  var spawn = child_process.spawn;
+
+  console.info('Starting simple server');
+
+  // spawn(
+  //   'python',
+  //   [
+  //     '-m',
+  //     'SimpleHTTPServer',
+  //     '8000'
+  //   ],
+  //   {
+  //     stdio: 'inherit'
+  //   }
+  // );
+
+  spawn(
+    './node_modules/node-static/bin/cli.js',
+    [
+      '_site',
+      '-p',
+      '8000'
+    ],
+    {
+      stdio: 'inherit'
+    }
+  );
+
+})
 
 // gulp.task('finalise', ['optimise:critical-path:generate', 'optimise:critical-path:post'], function() {
 //   jekyllBuild(jekyllEnv.production, done);
@@ -611,7 +652,7 @@ gulp.task('production', function(callback) {
 // build.
 
 
-gulp.task('deploy', ['production', 'jekyll:production:post'], function() {
+gulp.task('deploy', ['production'], function() {
 
   return gulp
     .src('_site/**/*')
@@ -619,7 +660,7 @@ gulp.task('deploy', ['production', 'jekyll:production:post'], function() {
 
 });
 
-gulp.task('deploy:test', ['production', 'jekyll:production:post']);
+// gulp.task('deploy:test', ['production', 'jekyll:production:post']);
 
 
 
