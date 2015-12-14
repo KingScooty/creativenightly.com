@@ -1,12 +1,12 @@
 {
   "name": "creative-nightly",
   "version": "0.0.0",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "browser-sync": "^2.10.0",
     "browserify": "^12.0.1",
     "browserify-shim": "~3.8.2",
+    "cave": "^2.0.0",
     "critical": "^0.6.0",
     "del": "^2.2.0",
     "gulp": "^3.9.0",
@@ -34,9 +34,17 @@
   "engines": {
     "node": ">=0.10.0"
   },
+  "scripts": {
+    "gulp": "./node_modules/gulp/bin/gulp.js",
+    "cave": "./node_modules/cave/bin/cave",
+    "start": "npm run gulp",
+    "deploy": "npm run gulp -- deploy",
+    "bower_install": "./node_modules/bower/bin/bower install",
+    "postinstall": "bundle install && npm run bower_install"
+  },
   "browser": {
-    "pjax": "./assets/_bower_components/jquery.pjax/index.js",
-    "jquery": "./assets/_bower_components/jquery/dist/jquery.js"
+    "pjax": "./app/assets/_bower_components/jquery.pjax/index.js",
+    "jquery": "./app/assets/_bower_components/jquery/dist/jquery.js"
   },
   "browserify-shim": {
     "pjax": "pjax",

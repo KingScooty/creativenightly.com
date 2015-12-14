@@ -25,6 +25,8 @@ var runSequence = require('run-sequence');
 
 var uglify = require('gulp-uglify');
 
+var cave = require('cave');
+
 
 
 // var shell = require('gulp-shell');
@@ -472,6 +474,8 @@ gulp.task('optimise:critical-path:generate', function (cb) {
 
 gulp.task('optimise:critical-path:post', function() {
   console.log('Generating correct partial');
+
+
   gulp.src('.temp/production/assets/css/critical.css')
     .pipe(plugins.rename({
       basename: '_critical-path',
@@ -594,7 +598,7 @@ gulp.task('production', function(callback) {
               'assets:production',
               'optimise:critical-path',
               'jekyll:production:post',
-              'cleanup:post-production',
+              // 'cleanup:post-production',
               //'manifest',
               callback);
 });
