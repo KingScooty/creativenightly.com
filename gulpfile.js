@@ -492,15 +492,6 @@ gulp.task('optimise:critical-path:post', function() {
 
 
 // copy js and css to app/assets/css
-gulp.task('cleanup:post-production', function() {
-
-  return del([
-    'app/assets/css',
-    'app/assets/js'
-  ]);
-
-});
-
 gulp.task('optimise:critical-path', function(callback) {
   runSequence('optimise:critical-path:pre',
               'optimise:critical-path:generate',
@@ -578,10 +569,22 @@ gulp.task('manifest', ['optimise:critical-path:generate', 'optimise:critical-pat
 // deploy
 // deploy:test
 
+gulp.task('cleanup:post-production', function() {
+
+  return del([
+    'app/assets/css',
+    'app/assets/js',
+    '.temp/production/'
+  ]);
+
+});
+
 gulp.task('production', function(callback) {
   runSequence('jekyll:production:pre',
               'assets:production',
-              // 'optimise:critical-path',
+              'optimise:critical-path',
+              'jekyll:production:post',
+              'cleanup:post-production',
               //'manifest',
               callback);
 });
