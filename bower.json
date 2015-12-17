@@ -7,6 +7,7 @@
     "jquery": "~2.1.4"
   },
   "devDependencies": {
+    "minifyHTML":"https://github.com/penibelst/jekyll-compress-html/releases/download/v2.1.0/compress.html.zip",
     "susy": "~2.2.1",
     "normalize-scss": "git://github.com/appleboy/normalize.scss.git#~3.0.2",
     "sass-mediaqueries": "~1.4.0"
