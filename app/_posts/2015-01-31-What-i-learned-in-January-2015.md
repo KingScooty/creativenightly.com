@@ -3,8 +3,6 @@ layout: post
 title: What I learned in January 2015
 subtitle: This is the first of a monthly retrospective that looks back on the month for better or for worse.
 
-cover_image: false
-
 excerpt: "This is the first of a monthly retrospective that looks back on the month for better or for worse."
 ---
 

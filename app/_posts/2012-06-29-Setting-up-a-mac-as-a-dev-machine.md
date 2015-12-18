@@ -3,8 +3,6 @@ layout: post
 title: Setting up a Mac on OS X 10.8 as a dev machine from scratch
 subtitle: The following notes will cover how to set up a fresh Mac &ndash; on OS X Mountain Lion &ndash; as a lean mean coding machine.
 
-cover_image: false
-
 excerpt: "The following notes will cover how to set up a fresh Mac &ndash; on OS X Mountain Lion &ndash; as a lean mean coding machine."
 ---
 
