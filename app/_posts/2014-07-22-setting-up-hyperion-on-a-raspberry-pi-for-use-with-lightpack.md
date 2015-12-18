@@ -6,13 +6,6 @@ subtitle: Get Lightpack working with a Raspberry Pi on Linux and take advantage 
 cover_image: hyperion-raspberry-pi-lightpack.jpg
 
 excerpt: "Get Lightpack working with a Raspberry Pi on Linux and take advantage of insanely low power useage."
-
-author:
-  name: Scotty Vernon
-  twitter: KingScooty
-  gplus: +ScottyVernon 
-  bio: Founder, Creative Technologist @ Wildflame Studios
-  image: ks.png
 ---
 
 ##Installing Hyperion
@@ -20,14 +13,14 @@ author:
 Install the following prerequisites first using apt-get.
 
 {% highlight sh %}
-apt-get update 
+apt-get update
 apt-get install libqtcore4 libqtgui4 libqt4-network libusb-1.0-0 libprotobuf7 ca-certificates
 {% endhighlight %}
 
 Next grab the install hyperion script from the hyprion github repo.
 
 {% highlight sh %}
-wget -N https://raw.github.com/tvdzwan/hyperion/master/bin/install_hyperion.sh 
+wget -N https://raw.github.com/tvdzwan/hyperion/master/bin/install_hyperion.sh
 {% endhighlight %}
 
 Installing hyperion is as simple as running the following command.

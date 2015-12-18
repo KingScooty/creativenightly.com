@@ -122,25 +122,12 @@ kramdown:
 redcloth:
   hard_breaks: true
 
-#
-# jekyll-assets: see more at https://github.com/ixti/jekyll-assets
-#
 
-#sass:
-#    sass_dir: assets/_sass
-#    style: :compressed
 
-# assets:
 
-#   dirname: assets
-#   baseurl: /assets/
-#   sources:
-#     - _assets/javascripts
-#     - _assets/stylesheets
-#     - _assets/images
-#   js_compressor: uglifier
-#   css_compressor: sass
-#   cachebust: none
-#   cache: false
-#   gzip: [ text/css, application/javascript ]
-#   debug: false
+author:
+  name: Scotty Vernon
+  twitter: KingScooty
+  gplus: +ScottyVernon
+  bio: Founder, Software Engineer @ Wildflame Studios
+  image: ks.png

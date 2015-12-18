@@ -6,13 +6,6 @@ subtitle: The following notes will cover how to set up a fresh Mac &ndash; on OS
 cover_image: false
 
 excerpt: "The following notes will cover how to set up a fresh Mac &ndash; on OS X Mountain Lion &ndash; as a lean mean coding machine."
-
-author:
-  name: Scotty Vernon
-  twitter: KingScooty
-  gplus: +ScottyVernon 
-  bio: Founder, Creative Technologist @ Wildflame Studios
-  image: ks.png
 ---
 
 - *Last updated on the **16th February 2013***
@@ -54,7 +47,7 @@ sudo ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" /u
 
 ###1.1 Requirements:
 
-Homebrew has two dependencies: **XQuartz**, and **Xcode***. 
+Homebrew has two dependencies: **XQuartz**, and **Xcode***.
 
 *It's a common delusion that the entire 2.8gb install of Xcode is required, however, the only part of Xcode Homebrew requires, is the **Command Line Tools**.*
 
@@ -68,7 +61,7 @@ As of the 26th July 2012, Apple has dropped X11 from its OS. OS X Mountain Lion 
 
 Homebrew requires Xcode to be installed in order to work, but Xcode is massively bloated for what is actually required by homebrew to build apps.
 
-[OSX-GCC-Installer][4] by [Kenneth Reitz][5] was a way round this bloat, but lacked the 10.6/7 SDKs due to licensing restrictions. Apple, however, took interest in this project and were keen to ship something official. 
+[OSX-GCC-Installer][4] by [Kenneth Reitz][5] was a way round this bloat, but lacked the 10.6/7 SDKs due to licensing restrictions. Apple, however, took interest in this project and were keen to ship something official.
 
 Thus, Apple announced the **Command Line Tools for Xcode**. It's a 171 MB download that includes all of the tools Homebrew should ever need. Plus, Homebrew officially supports this package.
 
@@ -173,9 +166,9 @@ According to the node docs, Brew installs of node are known to be buggy, the nod
 
 [Download the Node Macintosh package installer][10]
 
-#####Note (8th Feb 2013): 
+#####Note (8th Feb 2013):
 
-Node devs recently made some changes so that Node no longer installs on OS X via homebrew if Xcode is **not** installed. We haven't installed Node via homebrew, however this issue *still* affects us. 
+Node devs recently made some changes so that Node no longer installs on OS X via homebrew if Xcode is **not** installed. We haven't installed Node via homebrew, however this issue *still* affects us.
 
 Next time you run **npm install** you may come across the following error:
 
@@ -203,11 +196,11 @@ npm install -g yo grunt-cli bower
 
 ####Sidenote - Debugging / $PATH issues
 
-I actually had a few issues at this point with my new MacBook air and had to roll back the install of MySQL in order to fix a few issues... 
+I actually had a few issues at this point with my new MacBook air and had to roll back the install of MySQL in order to fix a few issues...
 
 I ran `brew doctor` to discover that `/usr/bin` was ahead of `/usr/local/bin` in my $PATH.
 
-In order to get round this, i needed to edit `/etc/paths` to fix the order. 
+In order to get round this, i needed to edit `/etc/paths` to fix the order.
 
 {% highlight bash %}
 subl /etc/paths
@@ -250,7 +243,7 @@ Boom!
 
 ##<a id="6"></a> 6.0 CouchDB:
 
-CouchDB is a popular NoSQL database. 
+CouchDB is a popular NoSQL database.
 
 *If you're not planning on developing node apps with persistent storate, **you can skip this step**.*
 
@@ -336,7 +329,7 @@ Lastly in `System Settings` disable and re-enable `Web Sharing` in the `Sharing`
 
 Fire up your favourite web browser and enter the servername, you should be pointed to the doc root you entered in your vhosts file!
 
-Neat, eh! 
+Neat, eh!
 
 Now, there are plenty more options you can set for logs etc, but i'll leave that out as not to over complicate this article.
 

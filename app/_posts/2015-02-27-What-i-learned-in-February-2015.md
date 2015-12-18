@@ -6,13 +6,6 @@ subtitle: "The monthly retrospective that looks back on the month for better or 
 cover_image: false
 
 excerpt: "The monthly retrospective that looks back on the month for better or for worse."
-
-author:
-  name: Scotty Vernon
-  twitter: KingScooty
-  gplus: +ScottyVernon
-  bio: Founder, Software Engineer @ Wildflame Studios
-  image: ks.png
 ---
 
 

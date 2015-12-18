@@ -9,20 +9,13 @@ sitemap:
 cover_image: "taster.jpg"
 
 excerpt: "10 months of hard work comes to fruition with a new product for the BBC."
-
-author:
-  name: Scotty Vernon
-  twitter: KingScooty
-  gplus: +ScottyVernon 
-  bio: Founder, Creative Technologist @ Wildflame Studios
-  image: ks.png
 ---
 
 As a digital supplier for the BBC, I've been fortunate enough to work on a few BBC projects over the last 2 years. I helped BBC Homepage in 2013 with early UX prototypes of what is now becoming their vision for a new personalised Homepage; I helped BBC Sport shape Live into the [product it is today](http://www.bbc.co.uk/sport/live/football/30517006); I've also helped BBC R&D with creating early prototypes of a vision for an interactive children's app based on Sarah &amp; Duck, which is now a [fully fledged app in the app store](https://itunes.apple.com/gb/app/sarah-duck-day-at-the-park/id942926747). However, the latest project that I've been working on is turning into something really special.
 
 ##Say hello to BBC Taster
 
-For the last 10 months, I've been working with BBC Connected Studio developing a new online product called [BBC Taster](http://bbc.co.uk/taster). 
+For the last 10 months, I've been working with BBC Connected Studio developing a new online product called [BBC Taster](http://bbc.co.uk/taster).
 
 <blockquote class="twitter-tweet" lang="en"><p>We are beyond excited to share something with you. <a href="https://twitter.com/BBCTaster">@BBCTaster</a> is a home for new ideas from the BBC&#10;<a href="https://t.co/dZOaal4E6H">https://t.co/dZOaal4E6H</a></p>&mdash; BBC Taster (@BBCTaster) <a href="https://twitter.com/BBCTaster/status/559644934056079360">January 26, 2015</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>

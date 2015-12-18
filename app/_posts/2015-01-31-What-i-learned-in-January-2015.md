@@ -6,13 +6,6 @@ subtitle: This is the first of a monthly retrospective that looks back on the mo
 cover_image: false
 
 excerpt: "This is the first of a monthly retrospective that looks back on the month for better or for worse."
-
-author:
-  name: Scotty Vernon
-  twitter: KingScooty
-  gplus: +ScottyVernon 
-  bio: Founder, Creative Technologist @ Wildflame Studios
-  image: ks.png
 ---
 
 As part of my [New Year plans for self improvement](/2014/12/Farewell-2014-hello-2015/), I'm going to take up a monthly retrospective. It's something I got used to doing while working with the BBC Taster team, and I quite like it. Essentially it's a look back on a given time period; you jot down what went well, what went bad, and what made you angry. The good is celebrated, while the rest is actioned for improvement during the next time block. At the BBC, we had retrospectives every 2 weeks, but since it's just me, a month will do fine.
@@ -39,10 +32,10 @@ I'll probably tinker with the format of this as the year goes on, but for now, h
 
 ###The bad
 
-- **I now have the urge to write about *everything***. 
+- **I now have the urge to write about *everything***.
   - I probably need to reign this in a bit, ha.
 - **The improved productivity has led to me working from dawn till dusk.**
-  - Again, I need to reign this in. I've definitely gone to bed a few times this month with an overactive brain. Not really too sure how to action this &ndash; perhaps things will settle down once I've gotten up to speed with the huge backlog of stuff I wanted to work on after finishing with BBC Taster. ***Revisit next month***. 
+  - Again, I need to reign this in. I've definitely gone to bed a few times this month with an overactive brain. Not really too sure how to action this &ndash; perhaps things will settle down once I've gotten up to speed with the huge backlog of stuff I wanted to work on after finishing with BBC Taster. ***Revisit next month***.
 - **There's just *too* much to learn**
   - The industry moves at such a fast pace, it's almost impossible to stay on top of everything &ndash; even when working from dusk till dawn. I need to stop letting this get to me and focus on improving *just one thing* by 1% a day.
 
@@ -51,4 +44,4 @@ I'll probably tinker with the format of this as the year goes on, but for now, h
 - **I hate advertising and click bait**
   - Goes without saying, really. It's particularly bothered me this month, especially since [AdBlock is probably the reason why Firefox and Chrome are such memory hogs](http://www.extremetech.com/computing/182428-ironic-iframes-adblock-plus-is-probably-the-reason-firefox-and-chrome-are-such-memory-hogs) these days. *Rawr!*
 - **It's too damn cold!**
-  - I'm so over Winter already, and in desperate need for some warmth and sunlight. 
+  - I'm so over Winter already, and in desperate need for some warmth and sunlight.

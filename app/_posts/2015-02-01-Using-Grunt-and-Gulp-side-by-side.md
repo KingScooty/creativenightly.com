@@ -6,13 +6,6 @@ subtitle: Sometimes, just sometimes, you need the power of both in the same proj
 cover_image: null
 
 excerpt: "Sometimes, just sometimes,you need the power of both in the same project..."
-
-author:
-  name: Scotty Vernon
-  twitter: KingScooty
-  gplus: +ScottyVernon 
-  bio: Founder, Creative Technologist @ Wildflame Studios
-  image: ks.png
 ---
 
 ***Disclaimer**: There are purists out there that will argue that [npm is perfectly capable doing what Grunt and Gulp do](http://blog.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/) (which I do agree with &ndash; to a point). Grunt and Gulp (and their plugins wrappers) are <s>fairly</s> very bloaty, but there's no denying what Grunt and Gulp provide in terms of ease of use and configuration.*
@@ -35,7 +28,7 @@ As you've probably guessed by this point, all of my tasks and watch tasks are wi
 
 Not wanting to spend too much time getting everything wired up, I started searching for something that would help me link the two build tools together. Introducing [gulp-grunt](https://github.com/gratimax/gulp-grunt) a tool that will allow for running grunt tasks from gulp.
 
-####So far so good! 
+####So far so good!
 
 I've only been testing this workflow out for a few hours, but it's definitely an improvement &ndash; especially when working with Assemble or any other plugin that doesn't support Gulp (*e.g. rsync*).
 

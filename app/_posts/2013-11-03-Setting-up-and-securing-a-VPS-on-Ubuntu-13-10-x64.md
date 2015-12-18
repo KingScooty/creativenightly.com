@@ -8,13 +8,6 @@ cover_copyright: 'Photo Credit: <a href="https://www.flickr.com/photos/traftery/
 tags: software
 
 excerpt: "A guide on how to setup and secure a VPS on a clean install of Ubuntu 13.10 x64"
-
-author:
-  name: Scotty Vernon
-  twitter: KingScooty
-  gplus: +ScottyVernon 
-  bio: Founder, Creative Technologist @ Wildflame Studios
-  image: ks.png
 ---
 
 ***This is a work in progress post, as i'm short on time to dabble with security. I'll add to it as i get time to set up my VPS***
