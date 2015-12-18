@@ -1,5 +1,4 @@
 ---
-layout: post
 title: What I learned in April 2015
 subtitle: "The monthly retrospective that looks back on the month for better or for worse."
 

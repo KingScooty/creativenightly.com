@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Optimise Typekit for mobile and improve your Page Insights Score
 subtitle: Here's two pretty interesting things you can do to optimise Typekit for mobile and improve your page insight score.
 

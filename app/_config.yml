@@ -125,9 +125,19 @@ redcloth:
 
 
 
-author:
-  name: Scotty Vernon
-  twitter: KingScooty
-  gplus: +ScottyVernon
-  bio: Founder, Software Engineer @ Wildflame Studios
-  image: ks.png
+
+
+
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+      type: "posts" # previously `post` in Jekyll 2.2.
+    values:
+      layout: "post"
+      author:
+        name: Scotty Vernon
+        twitter: KingScooty
+        gplus: +ScottyVernon
+        bio: Founder, Software Engineer @ Wildflame Studios
+        image: ks.png

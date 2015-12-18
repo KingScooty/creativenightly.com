@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Announcing BBC Taster
 subtitle: 10 months of hard work comes to fruition with a new product for the BBC.
 

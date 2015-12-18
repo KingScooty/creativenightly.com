@@ -314,6 +314,8 @@ gulp.task('watch', function() {
   gulp.watch('app/assets/_js/**/*.js', ['js:development']);
   gulp.watch([
     // 'app/_components/**/*.html',
+    'app/_config.yml',
+    'app/_config.dev.yml',
     'app/_includes/**/*.html',
     'app/_includes/**/*.md',
     'app/_layouts/**/*.html',

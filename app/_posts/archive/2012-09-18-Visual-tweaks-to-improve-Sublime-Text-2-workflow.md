@@ -1,19 +1,9 @@
 ---
-layout: post
 title: Visual tweaks and enhancements to improve workflow in Sublime Text
 subtitle: By making a few simple tweaks, the user experience and workflow within Sublime Text 2 can be improved.
 lastmod: 2013-02-13
 
-cover_image: false
-
 excerpt: By making a few simple tweaks, the user experience and workflow within Sublime Text 2 can be improved.
-
-author:
-  name: Scotty Vernon
-  twitter: KingScooty
-  gplus: +ScottyVernon 
-  bio: Founder, Software Engineer @ Wildflame Studios
-  image: ks.png
 ---
 
 Sublime Text is my editor of choice for an abundance of reasons, but one key one is it's customisability. I'm constantly tweaking settings to tailor Sublime Text to suit my personal taste. The following settings are my favourite ones.

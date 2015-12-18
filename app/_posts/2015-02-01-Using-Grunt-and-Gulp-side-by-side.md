@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Using Grunt and Gulp together on the same project
 subtitle: Sometimes, just sometimes, you need the power of both in the same project.
 

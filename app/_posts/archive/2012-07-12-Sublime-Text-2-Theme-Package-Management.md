@@ -1,19 +1,9 @@
 ---
-layout: post
 title: Sublime Text 2 Theme Package Management
 subtitle: Will Bond has created a delightful tool for managing packages; packages can include syntax highlighters for preprocessors such as LESS.
 lastmod: 2013-02-12
 
-cover_image: false
-
 excerpt: Will Bond has created a delightful tool for managing packages; packages can include syntax highlighters for preprocessors such as LESS.
-
-author:
-  name: Scotty Vernon
-  twitter: KingScooty
-  gplus: +ScottyVernon 
-  bio: Founder, Software Engineer @ Wildflame Studios
-  image: ks.png
 ---
 
 Most devs are familiar with installing software packages on their systems via package managers, but did you know, if you're using [Sublime Text 2][1], you can do the same with your text editor too?

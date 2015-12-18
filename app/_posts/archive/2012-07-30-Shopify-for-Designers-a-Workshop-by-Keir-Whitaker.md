@@ -1,19 +1,9 @@
 ---
-layout: post
 title: Shopify for Designers - A Workshop by Keir Whitaker
 subtitle: Notes i took down from attending the Shopify for Designers workshop presented by Keir Whitaker.
 lastmod: 2013-02-10
 
-cover_image: false
-
 excerpt: Notes i took down from attending the Shopify for Designers workshop presented by Keir Whitaker.
-
-author:
-  name: Scotty Vernon
-  twitter: KingScooty
-  gplus: +ScottyVernon 
-  bio: Founder, Software Engineer @ Wildflame Studios
-  image: ks.png
 ---
 
 
@@ -70,7 +60,7 @@ Powerful API tools to allow for customisating the browser experience e.g. Varian
 
 ####Partners Test Section
 
-Throws in all the functionality one would ever need from a shop. Allows users to start fiddling about with the platform without having to pay for a license. 
+Throws in all the functionality one would ever need from a shop. Allows users to start fiddling about with the platform without having to pay for a license.
 
 ####Product features / fields
 
@@ -87,7 +77,7 @@ Throws in all the functionality one would ever need from a shop. Allows users to
 		- Logical groupings for T-shirts
 Collections
 	- Front page collection to throw a product on the homepage.
-- Inventory 
+- Inventory
 	- SKUS
 	- Weight
 
@@ -157,7 +147,7 @@ Useful for injecting content into a base template that contains default elements
 
 {% highlight django %}
 {% raw %}
-{{ product.title | upcase }} 
+{{ product.title | upcase }}
 //Comes out as a string, turned into uppercase.
 
 {{ 'logo.png' | asset_url | img_tag: 'Site Logo' }}
