@@ -2,12 +2,12 @@
 title: Setting up a Mac on OS X 10.8 as a dev machine from scratch
 subtitle: The following notes will cover how to set up a fresh Mac &ndash; on OS X Mountain Lion &ndash; as a lean mean coding machine.
 
-excerpt: "The following notes will cover how to set up a fresh Mac &ndash; on OS X Mountain Lion &ndash; as a lean mean coding machine."
+lastmod: 2013-02-16
 ---
 
-- *Last updated on the **16th February 2013***
-
 Originally, these were the notes I took down when setting up the development environment on my new MacBook Air in June 2012, but it's now become a step by step guide to setting up a full development stack on Mac OS X 10.8 Mountain Lion. I'll aim to keep this post up to date with the latest dev environments / workflows as new tools are released in order to setup the leanest / efficient development machine possible.
+
+<!--more-->
 
 The only prerequisite is an **up-to-date install of OS X 10.8 Mountain Lion**.
 

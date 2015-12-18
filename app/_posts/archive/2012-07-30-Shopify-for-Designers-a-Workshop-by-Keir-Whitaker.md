@@ -2,12 +2,14 @@
 title: Shopify for Designers - A Workshop by Keir Whitaker
 subtitle: Notes i took down from attending the Shopify for Designers workshop presented by Keir Whitaker.
 lastmod: 2013-02-10
-
-excerpt: Notes i took down from attending the Shopify for Designers workshop presented by Keir Whitaker.
 ---
 
 
-These are the notes i took from the **Shopify for Designers** workshop by [Keir Whitaker](http://twitter.com/keir) in **Birmingham on the 30th July 2012**. *Apologies if they're a bit of an incoherent mess, i was trying to type fast and listen simultaenously :)*
+These are the notes i took from the Shopify for Designers workshop by [Keir Whitaker](http://twitter.com/keir) in Birmingham on the 30th July 2012.
+
+*Apologies if they're a bit of an incoherent mess, i was trying to type fast and listen simultaenously :)*
+
+<!--more-->
 
 Keir was aproached to do some outreach for Shopify in the UK. *This workshop was free*, which was quite a nice touch, and also good advertising for the platform.
 

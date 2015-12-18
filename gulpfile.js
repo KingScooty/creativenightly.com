@@ -329,7 +329,8 @@ gulp.task('watch', function() {
     'app/_drafts/**/*.md',
     // 'app/{.,atoms,molecules,organisms}/index.html',
     // 'app/{.,atoms,molecules,organisms}/index.html',
-    'app/_data/*.yml'
+    'app/_data/*.yml',
+    'app/*.html',
     // '_includes/**/*.html',
     // '_layouts/*.html',
     // 'img/**/*',

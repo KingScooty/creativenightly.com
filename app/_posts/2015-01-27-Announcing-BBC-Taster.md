@@ -6,11 +6,17 @@ sitemap:
   priority: 0.6
 
 cover_image: "taster.jpg"
-
-excerpt: "10 months of hard work comes to fruition with a new product for the BBC."
 ---
 
-As a digital supplier for the BBC, I've been fortunate enough to work on a few BBC projects over the last 2 years. I helped BBC Homepage in 2013 with early UX prototypes of what is now becoming their vision for a new personalised Homepage; I helped BBC Sport shape Live into the [product it is today](http://www.bbc.co.uk/sport/live/football/30517006); I've also helped BBC R&D with creating early prototypes of a vision for an interactive children's app based on Sarah &amp; Duck, which is now a [fully fledged app in the app store](https://itunes.apple.com/gb/app/sarah-duck-day-at-the-park/id942926747). However, the latest project that I've been working on is turning into something really special.
+As a digital supplier for the BBC, I've been fortunate enough to work on a few BBC projects over the last 2 years.
+
+<!--more-->
+
+- I helped BBC Homepage in 2013 with early UX prototypes of what is now becoming their vision for a new personalised Homepage.
+- I helped BBC Sport shape Live into the [product it is today](http://www.bbc.co.uk/sport/live/football/30517006).
+- I've also helped BBC R&D with creating early prototypes of a vision for an interactive children's app based on Sarah &amp; Duck, which is now a [fully fledged app in the app store](https://itunes.apple.com/gb/app/sarah-duck-day-at-the-park/id942926747).
+
+*However*, the latest project that I've been working on is turning into something really special.
 
 ##Say hello to BBC Taster
 

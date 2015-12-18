@@ -13,7 +13,7 @@ page-class: page--post
 
       <div class="meta">
         By <address><a rel="author" href="http://twitter.com/kingscooty" title="{{ page.author.name }}" target="_blank">{{ page.author.name }}</a></address> &mdash;
-        <time pubdate datetime="{{ page.date | date: "%Y-%d-%B" }}" title="{{ page.date | date: "%B %d, %Y" }}">{{ page.date | date: "%B %d, %Y" }}</time>
+        <time pubdate datetime="{{ page.date | date_to_xmlschema }}" title="{{ page.date | date: "%B %d, %Y" }}">{{ page.date | date: "%B %d, %Y" }}</time>
       </div>
 
       <h1 class="title">{{ page.title }}</h1>
@@ -25,6 +25,41 @@ page-class: page--post
     </header>
 
     <section class="content-block__body">
+
+
+
+      {% capture pub_date %}
+        {{ page.date | date: "%B %d %Y" }}
+      {% endcapture %}
+
+      {% capture lastmod %}
+        {% if page.lastmod %}
+          {{ page.lastmod }}
+        {% else %}
+          {{ page.date }}
+        {% endif %}
+      {% endcapture %}
+
+      {% capture mod_date %}
+        {{ lastmod | date: "%B %d %Y" }}
+      {% endcapture %}
+
+      {% capture formatted_date %}
+        {% assign d = lastmod | date: "%-d"  %}
+        {% case d %}
+          {% when '1' or '21' or '31' %}{{ d }}st
+          {% when '2' or '22' %}{{ d }}nd
+          {% when '3' or '23' %}{{ d }}rd
+          {% else %}{{ d }}th
+          {% endcase %}
+          {{ lastmod | date: "%B" }},
+        {{ lastmod | date: "%Y" }}
+      {% endcapture %}
+
+      {% if mod_date != pub_date %}
+      <p><em>Last updated on the <strong><time datetime="{{ page.date | date_to_xmlschema }}">{{ formatted_date }}</time></strong>.</em></p>
+      {% endif %}
+
       {{ content }}
     </section>
 

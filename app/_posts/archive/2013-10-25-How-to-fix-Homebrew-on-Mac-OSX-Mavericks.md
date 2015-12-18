@@ -1,10 +1,11 @@
 ---
 title: How to fix Homebrew on Mac OS X Mavericks
 subtitle: How to fix Homebrew on the newly released Apple operating system, Mac OS X Mavericks.
-lastmod: 2013-10-25
 ---
 
 I’ve had lots of problems with homebrew since upgrading to Mavericks. The same problems also existed when trying to rbenv install and really anything else that compiles. The root cause of the issue ended up being a conflict Mountain Lion Command Line Tools and the ones provided by Maverick.
+
+<!--more-->
 
 There's a chance you might be having various issues with homebrew after upgrading to OS X Mavericks. The root cause of the issue is a conflict with Mountain Lion Command Line Tools and the ones provided by Mavericks.
 

@@ -2,11 +2,11 @@
 title: How to install Ruby 2.0.0 with RVM on OSX 10.8 Mountain Lion
 subtitle:
 lastmod: 2013-03-11
-
-excerpt: If you've come across the any of the following errors while trying to install Ruby 2.0.0, you've come to the right place!
 ---
 
 If you've come across the any of the following errors while trying to install Ruby 2.0.0, you've come to the right place!
+
+<!--more-->
 
 {% highlight bash %}
 apple-gcc42 is not available in PATH
