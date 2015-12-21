@@ -327,7 +327,7 @@ gulp.task('watch', function() {
     // 'app/pages/*.html',
     'app/_pages/**/*.md',
     'app/assets/css/*.css',
-    'app/assets/images/*.{svg,png,jpg}',
+    'app/images/**/*.{svg,png,jpg}',
     'app/assets/svg/*.svg',
     'app/_posts/**/*.md',
     'app/_drafts/**/*.md',
