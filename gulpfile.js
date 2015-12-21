@@ -312,7 +312,7 @@ gulp.task('assets:production', ['sass:production', 'js:production']);
 // WATCH TASKS
 //
 
-gulp.task('watch', function() {
+gulp.task('watch', ['sass:development', 'js:development'], function() {
 
   gulp.watch('app/assets/_scss/**/*.scss', ['sass:development']);
   gulp.watch('app/assets/_js/**/*.js', ['js:development']);
