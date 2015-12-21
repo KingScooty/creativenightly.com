@@ -10,11 +10,16 @@ body {
   padding-top: 80px;
   padding-top: 5rem;
   overflow-x: hidden;
+  color: #5a5a5a;
 }
 
 
 a {
   color: #2077b2;
+
+  &:active {
+    background-color: #FFFF66;
+  }
 }
 
 img {
@@ -29,4 +34,9 @@ img {
     max-width: 100%;
     width: auto;
   }
+}
+
+b, strong, .bold {
+  color: #2e2e2e;
+  // color: #222;
 }

@@ -14,7 +14,6 @@ body {
   font-style: normal;
   font-weight: map-get($bodytype, regular);
   line-height: 2rem;
-
   @include fontsize(zeta, all);
 }
 
