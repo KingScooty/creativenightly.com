@@ -6,7 +6,8 @@ cover_image: server-rack.jpg
 cover_copyright: 'Photo Credit: <a href="https://www.flickr.com/photos/traftery/4773457853/">Tom Raftery</a> via <a href="http://compfight.com">Compfight</a> <a href="https://creativecommons.org/licenses/by-sa/2.0/">cc</a>'
 tags: software
 
-excerpt: "A guide on how to setup and secure a VPS on a clean install of Ubuntu 13.10 x64"
+excerpt:
+  <p>A guide on how to setup and secure a VPS on a clean install of Ubuntu 13.10 x64</p>
 ---
 
 ***This is a work in progress post, as i'm short on time to dabble with security. I'll add to it as i get time to set up my VPS***

@@ -4,7 +4,8 @@ subtitle: Here's two pretty interesting things you can do to optimise Typekit fo
 
 cover_image: article-images/2015-02-09-page_insights.png
 
-excerpt: "Here's two pretty interesting things you can do to optimise Typekit for mobile and improve your page insight score"
+excerpt:
+  <p>Here's two pretty interesting things you can do to optimise Typekit for mobile and improve your page insight score.</p>
 ---
 
 [Google Page Insights](https://developers.google.com/speed/pagespeed/insights/) is a really neat tool from Google that grabs a page of your site and reports back statistics on load performance and user experience. However, if you're using Typekit, Google Page Insights can be pretty mean &ndash; this is due to Typekit typically loading in as a render blocking script in the head.

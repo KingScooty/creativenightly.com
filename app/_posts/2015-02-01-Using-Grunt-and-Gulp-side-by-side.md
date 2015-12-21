@@ -2,7 +2,8 @@
 title: Using Grunt and Gulp together on the same project
 subtitle: Sometimes, just sometimes, you need the power of both in the same project.
 
-excerpt: "Sometimes, just sometimes,you need the power of both in the same project..."
+excerpt:
+  <p>Sometimes, just sometimes,you need the power of both in the same project...</p>
 ---
 
 ***Disclaimer**: There are purists out there that will argue that [npm is perfectly capable doing what Grunt and Gulp do](http://blog.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/) (which I do agree with &ndash; to a point). Grunt and Gulp (and their plugins wrappers) are <s>fairly</s> very bloaty, but there's no denying what Grunt and Gulp provide in terms of ease of use and configuration.*

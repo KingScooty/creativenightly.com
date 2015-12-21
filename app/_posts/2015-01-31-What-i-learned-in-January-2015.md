@@ -1,11 +1,11 @@
 ---
 title: What I learned in January 2015
 subtitle: This is the first of a monthly retrospective that looks back on the month for better or for worse.
-
-excerpt: "This is the first of a monthly retrospective that looks back on the month for better or for worse."
 ---
 
 As part of my [New Year plans for self improvement](/2014/12/Farewell-2014-hello-2015/), I'm going to take up a monthly retrospective. It's something I got used to doing while working with the BBC Taster team, and I quite like it. Essentially it's a look back on a given time period; you jot down what went well, what went bad, and what made you angry. The good is celebrated, while the rest is actioned for improvement during the next time block. At the BBC, we had retrospectives every 2 weeks, but since it's just me, a month will do fine.
+
+<!--more-->
 
 I'll probably tinker with the format of this as the year goes on, but for now, here goes...
 

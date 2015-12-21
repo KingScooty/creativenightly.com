@@ -3,7 +3,8 @@
 title: Why I've started setting rules for organising my iPhone apps
 subtitle: Reduce the distractions, improve page visual appeal and enhance productivity.
 
-excerpt: "Reduce the distractions, improve page visual appeal and enhance productivity."
+excerpt:
+  <p>Reduce the distractions, improve page visual appeal and enhance productivity.</p>
 ---
 
 At the beginning of 2015, [I promised myself I'd get more organised](/2014/12/Farewell-2014-hello-2015/). I coined 2015 as the year of automation and productivity, so each day this year, I've been trying to improve on the previous day by just 1%.

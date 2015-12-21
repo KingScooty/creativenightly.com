@@ -2,7 +2,8 @@
 title: What I learned in February 2015
 subtitle: "The monthly retrospective that looks back on the month for better or for worse."
 
-excerpt: "The monthly retrospective that looks back on the month for better or for worse."
+excerpt:
+  <p>The monthly retrospective that looks back on the month for better or for worse.</p>
 ---
 
 
