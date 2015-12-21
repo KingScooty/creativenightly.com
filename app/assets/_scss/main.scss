@@ -20,7 +20,7 @@ caption, th, td { text-align: left; font-weight: normal; vertical-align: middle;
 @import "../_bower_components/sass-mediaqueries/media-queries";
 
 *, *:before, *:after {
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 
 /* IMPORT CSS FILES */
@@ -44,7 +44,7 @@ caption, th, td { text-align: left; font-weight: normal; vertical-align: middle;
 @import "modules/list";
 
 // Media Window
-// Used 
+// Used
 @import "modules/media-window";
 @import "modules/content-block";
 @import "modules/meta";
@@ -78,7 +78,7 @@ caption, th, td { text-align: left; font-weight: normal; vertical-align: middle;
 html * {
   color-profile: sRGB;
   rendering-intent: auto;
-  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
 }
 
 // $base03:    #002b36;
@@ -97,7 +97,7 @@ html * {
 // $blue:      #268bd2;
 // $cyan:      #2aa198;
 // $green:     #859900;
-// @mixin rebase($rebase03,$rebase02,$rebase01,$rebase00,$rebase0,$rebase1,$rebase2,$rebase3) 
+// @mixin rebase($rebase03,$rebase02,$rebase01,$rebase00,$rebase0,$rebase1,$rebase2,$rebase3)
 // {
 //     background-color:$rebase03;
 //     color:$rebase0;

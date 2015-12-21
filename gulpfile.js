@@ -7,6 +7,8 @@ plugins.spawn       = child_process.spawn;
 
 // var plumber = require('gulp-plumber');
 // var prefix = require('gulp-autoprefixer');
+var postcss = require('postcss');
+var autoprefixer = require('gulp-autoprefixer')
 // var sass = require('gulp-sass');
 // var watch = require('gulp-watch');
 // var gutil = require('gulp-util');
@@ -193,7 +195,9 @@ gulp.task('clean:production', function () {
 // });
 //
 
-
+var autoprefixer_config = {
+  browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1', 'Android >= 2.3']
+}
 
 var sass_development = function sass_development() {
   var task = gulp
@@ -202,6 +206,8 @@ var sass_development = function sass_development() {
 
     .pipe(plugins.sourcemaps.init())
     .pipe(plugins.sass.sync().on('error', plugins.sass.logError))
+    // .pipe(postcss([ autoprefixer(autoprefixer_config)] ))
+    .pipe(autoprefixer(autoprefixer_config))
     .pipe(plugins.sourcemaps.write())
 
     .pipe(plugins.browserSync.reload({ stream: true }))
@@ -212,9 +218,7 @@ var sass_development = function sass_development() {
 
 var sass_production = function sass_production() {
   var nano_options = {
-    autoprefixer: {
-      browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1', 'Android >= 2.3']
-    },
+    autoprefixer: autoprefixer_config,
     discardComments: { removeAll: true }
   };
 

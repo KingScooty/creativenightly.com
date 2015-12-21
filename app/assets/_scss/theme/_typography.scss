@@ -3,8 +3,7 @@
 
 // Setting root sizes and base styles.
 html {
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 
   @include rootsize;
 }
@@ -21,10 +20,6 @@ body {
 
 // Links.
 a {
-  -webkit-transition: color .1s, background-color .1s;
-  -moz-transition: color .1s, background-color .1s;
-  -ms-transition: color .1s, background-color .1s;
-  -o-transition: color .1s, background-color .1s;
   transition: color .1s, background-color .1s;
 
   color: $linkColour;
@@ -183,7 +178,7 @@ a {
 
   @include min-screen(640px) {
     .meta + h1 {
-    // .meta + h1, 
+    // .meta + h1,
     // h1 + .subtitle {
       margin-top: -1rem;
     }
