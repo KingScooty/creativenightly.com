@@ -5,7 +5,7 @@ subtitle: The following notes will cover how to set up a fresh Mac &ndash; on OS
 lastmod: 2013-02-16
 ---
 
-Originally, these were the notes I took down when setting up the development environment on my new MacBook Air in June 2012, but it's now become a step by step guide to setting up a full development stack on Mac OS X 10.8 Mountain Lion. I'll aim to keep this post up to date with the latest dev environments / workflows as new tools are released in order to setup the leanest / efficient development machine possible.
+Originally, these were the notes I took down when setting up the development environment on my new MacBook Air in June 2012, but it's now become a step by step guide to setting up a full development stack on Mac OS X 10.8 Mountain Lion. I'll aim to keep this post up to date with the latest dev environments/workflows as new tools are released in order to setup the leanest/efficient development machine possible.
 
 <!--more-->
 

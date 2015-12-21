@@ -38,7 +38,7 @@ sitemap:
 
         {% assign content = post.excerpt | strip_newlines %}
         {% unless content == ""  %}
-        <p>{{ post.excerpt }}</p>
+        {{ post.excerpt }}
         {% endunless %}
 
         <!--
