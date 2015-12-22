@@ -7,6 +7,8 @@ function initCreativeNightly() {
   require('./modules/core.state').initPageState();
 
   var checkPage = require('./modules/core.current_page_is');
+
+  // Send init request for page on first page load.
   checkPage.init('init');
 
   require('./modules/core.page_loader');

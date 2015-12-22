@@ -26,5 +26,5 @@ function destroy () {
 
 module.exports = {
   init: init,
-  destroy: destroy 
+  destroy: destroy
 }

@@ -5,10 +5,10 @@ function init (value) {
 
   // console.log('INIT POST!!!');
 
-  if (value === 'init') {
-    fixRhythm();
-    return true;
-  }
+  // if (value === 'init') {
+  //   fixRhythm();
+  //   return true;
+  // }
 
   fixRhythm();
 
@@ -20,7 +20,7 @@ function init (value) {
     if ($('.social').visible(true) && !page_state.social_widgets) {
       widgets.initFacebookLikes();
       // widgets.initTwitterWidgets();
-      widgets.initGoogleWidgets(); 
+      widgets.initGoogleWidgets();
       page_state.social_widgets = true;
       console.log('scrolling social widgets');
     }
