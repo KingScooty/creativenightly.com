@@ -36,11 +36,6 @@ var critical = require('critical');
 
 // var manifest = require('gulp-manifest');
 
-// var basePaths = {
-//   src:    'app/assets/',
-//   dest:   'app/static/'
-// };
-
 
 
 
@@ -51,12 +46,6 @@ var critical = require('critical');
 
 // JEKYLL
 //
-
-
-// current
-// gulp.task('jekyll', plugins.shell.task([
-//   'jekyll build'
-// ]));
 
 
 
@@ -170,29 +159,6 @@ gulp.task('clean:production', function () {
 
 
 // SASS
-//
-
-
-// gulp.task('sass', function () {
-//   gulp.src('./assets/_scss/main.scss')
-//
-//     //Plumb pipe breaks incase of errors
-//     .pipe(plugins.plumber())
-//
-//     .pipe(plugins.sass({
-//       style: 'compact'
-//     }))
-//
-//     //Autoprefixer
-//     .pipe(prefix({
-//       browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1'],
-//       cascade: false
-//     }))
-//
-//     .pipe(cssmin())
-//
-//     .pipe(gulp.dest('./assets/stylesheets'));
-// });
 //
 
 var autoprefixer_config = {
@@ -344,16 +310,6 @@ gulp.task('watch', ['sass:development', 'js:development'], function() {
 });
 
 
-// gulp.task('watch', ['sass', 'js-compile'], function(){
-//   plugins.watch(['./assets/_scss/**/*.scss'], function() {
-//       gulp.start('sass');
-//   });
-//
-//   plugins.watch(['./assets/_js/**/*.js'], function() {
-//       gulp.start('js-compile');
-//   });
-//
-// });
 
 
 
@@ -608,7 +564,7 @@ gulp.task('production', function(callback) {
               'assets:production',
               'optimise:critical-path',
               'jekyll:production:post',
-              // 'cleanup:post-production',
+              'cleanup:post-production',
               //'manifest',
               callback);
 });
@@ -643,19 +599,6 @@ gulp.task('production:test', function() {
   );
 
 })
-
-// gulp.task('finalise', ['optimise:critical-path:generate', 'optimise:critical-path:post'], function() {
-//   jekyllBuild(jekyllEnv.production, done);
-// })
-
-// gulp.task('jekyll:production:pre', function( done ) {
-//   jekyllBuild(jekyllEnv.production, done);
-// });
-
-
-// gulp.task('sass:production', ['jekyll:production:pre'], function() {
-//   return compileSass();
-// });
 
 
 
