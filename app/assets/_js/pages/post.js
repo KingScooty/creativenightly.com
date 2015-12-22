@@ -11,9 +11,7 @@ function init (value) {
   // }
 
   fixRhythm();
-
   widgets.initTwitterWidgets();
-  widgets.initGists();
 
   $(window).scroll(function() {
 
@@ -31,6 +29,11 @@ function init (value) {
     }
 
   });
+
+  if (value !== 'init') {
+    widgets.initGists();
+    return true;
+  }
 
 }
 
