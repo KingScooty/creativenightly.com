@@ -5,9 +5,9 @@
     <link>http://www.creativenightly.com</link>
     <atom:link href="http://www.creativenightly.com/feed.xml" rel="self" type="application/rss+xml" />
     <description></description>
-    <language>en-us</language>
-    <pubDate>Tue, 22 Dec 2015 18:06:55 +0000</pubDate>
-    <lastBuildDate>Tue, 22 Dec 2015 18:06:55 +0000</lastBuildDate>
+    <language>en-gb</language>
+    <pubDate>Tue, 22 Dec 2015 18:13:30 +0000</pubDate>
+    <lastBuildDate>Tue, 22 Dec 2015 18:13:30 +0000</lastBuildDate>
 
     
     
@@ -17,50 +17,50 @@
       <pubDate>Thu, 30 Apr 2015 00:00:00 +0100</pubDate>
       <author></author>
       <guid>http://www.creativenightly.com/2015/04/What-i-learned-in-April-2015</guid>
-      <description>&lt;h3 id=&quot;the-good&quot;&gt;The good&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Productivity on steroids&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;This month’s been a really productive one. I’m really happy with the number of topics I’ve managed to cover and learn. I’ve listed them below.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Docker&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Finally got round to learning Docker, and, wow, it’s amazing. I’ve always had a gripe with having to use vagrant, as you need a new image for each project you work on, and that very quickly adds up. With Docker, you can spin up an instance of a base image, and add layers on top of it, meaning that resources can be shared across containers. Awesome!&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Topics I learned about this month:&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://www.docker.com/&quot;&gt;Docker&lt;/a&gt; - Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications.&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;http://redis.io/&quot;&gt;Redis&lt;/a&gt; - High performance data persistence.&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Test-driven_development&quot;&gt;TDD&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;http://sinonjs.org/&quot;&gt;SinonJS&lt;/a&gt; - Standalone test spies, stubs and mocks for JavaScript.&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://github.com/jhnns/rewire&quot;&gt;RewireJS&lt;/a&gt; - Easy dependency injection for node.js unit testing.&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://github.com/petkaantonov/bluebird&quot;&gt;Promises&lt;/a&gt; - Bluebird is a full featured promise library with unmatched performance.&lt;/li&gt;
-      &lt;li&gt;Continuous delivery (CI, Docker, automation via web hooks)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+      <description><h3 id="the-good">The good</h3>
+<ul>
+  <li><strong>Productivity on steroids</strong>
+    <ul>
+      <li>This month’s been a really productive one. I’m really happy with the number of topics I’ve managed to cover and learn. I’ve listed them below.</li>
+    </ul>
+  </li>
+  <li><strong>Docker</strong>
+    <ul>
+      <li>Finally got round to learning Docker, and, wow, it’s amazing. I’ve always had a gripe with having to use vagrant, as you need a new image for each project you work on, and that very quickly adds up. With Docker, you can spin up an instance of a base image, and add layers on top of it, meaning that resources can be shared across containers. Awesome!</li>
+    </ul>
+  </li>
+  <li><strong>Topics I learned about this month:</strong>
+    <ul>
+      <li><a href="https://www.docker.com/">Docker</a> - Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications.</li>
+      <li><a href="http://redis.io/">Redis</a> - High performance data persistence.</li>
+      <li><a href="http://en.wikipedia.org/wiki/Test-driven_development">TDD</a></li>
+      <li><a href="http://sinonjs.org/">SinonJS</a> - Standalone test spies, stubs and mocks for JavaScript.</li>
+      <li><a href="https://github.com/jhnns/rewire">RewireJS</a> - Easy dependency injection for node.js unit testing.</li>
+      <li><a href="https://github.com/petkaantonov/bluebird">Promises</a> - Bluebird is a full featured promise library with unmatched performance.</li>
+      <li>Continuous delivery (CI, Docker, automation via web hooks)</li>
+    </ul>
+  </li>
+</ul>
 
-&lt;h3 id=&quot;the-bad&quot;&gt;The bad&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Slowed down on exercise&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Unnecessary stress&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Still attempting to improve by much more than 1% on the previous day. Leading to unnecessary stress.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Email&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Email has a tendency to get on top of me. That clean inbox that Dropbox Mailbox tries to force on you can get near to 100 sometimes. (It’s on 140 at the moment.)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Not finding time to blog&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;There’s 4 or 5 articles I want to write, and that number isn’t going down.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+<h3 id="the-bad">The bad</h3>
+<ul>
+  <li><strong>Slowed down on exercise</strong></li>
+  <li><strong>Unnecessary stress</strong>
+    <ul>
+      <li>Still attempting to improve by much more than 1% on the previous day. Leading to unnecessary stress.</li>
+    </ul>
+  </li>
+  <li><strong>Email</strong>
+    <ul>
+      <li>Email has a tendency to get on top of me. That clean inbox that Dropbox Mailbox tries to force on you can get near to 100 sometimes. (It’s on 140 at the moment.)</li>
+    </ul>
+  </li>
+  <li><strong>Not finding time to blog</strong>
+    <ul>
+      <li>There’s 4 or 5 articles I want to write, and that number isn’t going down.</li>
+    </ul>
+  </li>
+</ul>
 </description>
     </item>
     
@@ -72,40 +72,40 @@
       <pubDate>Thu, 05 Mar 2015 00:00:00 +0000</pubDate>
       <author></author>
       <guid>http://www.creativenightly.com/2015/03/Using-bower-install-hooks-to-prep-CSS-components-for-SASS-workflows</guid>
-      <description>&lt;p&gt;Have you ever tried to import a vanilla CSS bower component into your SASS/SCSS workflow, with the intention of physically importing the contents of that file in to your main.scss file; only to find that the file is linked/referenced and ignored during the build process?&lt;/p&gt;
+      <description><p>Have you ever tried to import a vanilla CSS bower component into your SASS/SCSS workflow, with the intention of physically importing the contents of that file in to your main.scss file; only to find that the file is linked/referenced and ignored during the build process?</p>
 
-&lt;!--more--&gt;
+<!--more-->
 
-&lt;p&gt;&lt;strong&gt;Yes, &lt;em&gt;me too&lt;/em&gt;.&lt;/strong&gt;&lt;/p&gt;
+<p><strong>Yes, <em>me too</em>.</strong></p>
 
-&lt;p&gt;The CSS file in question was Nicolas Gallagher’s &lt;a href=&quot;http://necolas.github.io/normalize.css/&quot;&gt;normalize.css&lt;/a&gt;. Now there are plenty of SCSS versions out there, but they normally try and do too much. I’d much rather just physically import the vanilla CSS version into my main.scss file!&lt;/p&gt;
+<p>The CSS file in question was Nicolas Gallagher’s <a href="http://necolas.github.io/normalize.css/">normalize.css</a>. Now there are plenty of SCSS versions out there, but they normally try and do too much. I’d much rather just physically import the vanilla CSS version into my main.scss file!</p>
 
-&lt;p&gt;Of course we can just &lt;em&gt;rename&lt;/em&gt; the offending CSS file so that it now imitates an SCSS file, but we don’t want to have to do that each and every time someone clones the project, or integration builds the project!&lt;/p&gt;
+<p>Of course we can just <em>rename</em> the offending CSS file so that it now imitates an SCSS file, but we don’t want to have to do that each and every time someone clones the project, or integration builds the project!</p>
 
-&lt;p&gt;&lt;strong&gt;So &lt;em&gt;what&lt;/em&gt; can we do to automate this?&lt;/strong&gt;&lt;/p&gt;
+<p><strong>So <em>what</em> can we do to automate this?</strong></p>
 
-&lt;h2 id=&quot;say-hello-to-bower-install-hooks&quot;&gt;Say hello to Bower install hooks!&lt;/h2&gt;
+<h2 id="say-hello-to-bower-install-hooks">Say hello to Bower install hooks!</h2>
 
-&lt;p&gt;Having a little read of the Bower documentation, I came across their &lt;a href=&quot;https://github.com/bower/bower/blob/master/HOOKS.md&quot;&gt;hook docs&lt;/a&gt;. They’re nifty little hooks that can run &lt;em&gt;before&lt;/em&gt; or &lt;em&gt;after&lt;/em&gt; an install, and &lt;em&gt;before&lt;/em&gt; an uninstall. &lt;strong&gt;&lt;em&gt;Awesome!&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+<p>Having a little read of the Bower documentation, I came across their <a href="https://github.com/bower/bower/blob/master/HOOKS.md">hook docs</a>. They’re nifty little hooks that can run <em>before</em> or <em>after</em> an install, and <em>before</em> an uninstall. <strong><em>Awesome!</em></strong></p>
 
-&lt;p&gt;What we can do with these hooks is &lt;em&gt;rename&lt;/em&gt; the CSS file to an SCSS file after the component has installed, and boom! It’s ready to work in our build pipeline!&lt;/p&gt;
+<p>What we can do with these hooks is <em>rename</em> the CSS file to an SCSS file after the component has installed, and boom! It’s ready to work in our build pipeline!</p>
 
-&lt;h3 id=&quot;example&quot;&gt;Example:&lt;/h3&gt;
-&lt;p&gt;Checkout the following example. What we’re doing here, is setting up a reference to a &lt;em&gt;postinstall&lt;/em&gt; script in the &lt;em&gt;.bowerrc&lt;/em&gt; file. In the &lt;em&gt;.bower-postinstall&lt;/em&gt; file, we tell bower to rename normalize.css to normalize.scss. And this script will run after each install/upgrade!&lt;/p&gt;
+<h3 id="example">Example:</h3>
+<p>Checkout the following example. What we’re doing here, is setting up a reference to a <em>postinstall</em> script in the <em>.bowerrc</em> file. In the <em>.bower-postinstall</em> file, we tell bower to rename normalize.css to normalize.scss. And this script will run after each install/upgrade!</p>
 
-&lt;noscript&gt;&lt;pre&gt;400: Invalid request
-&lt;/pre&gt;&lt;/noscript&gt;
-&lt;script src=&quot;https://gist.github.com/0022988332d617cf6098.js&quot;&gt; &lt;/script&gt;
+<noscript><pre>400: Invalid request
+</pre></noscript>
+<script src="https://gist.github.com/0022988332d617cf6098.js"> </script>
 
-&lt;p&gt;This is really neat, becuase it means you can upgrade your components, and you can use them on an integration server without having to rename them each time, or include them in your repository!&lt;/p&gt;
+<p>This is really neat, becuase it means you can upgrade your components, and you can use them on an integration server without having to rename them each time, or include them in your repository!</p>
 
-&lt;p&gt;All that’s left to do now, is import the component into your main.scss file, and you’re away!&lt;/p&gt;
+<p>All that’s left to do now, is import the component into your main.scss file, and you’re away!</p>
 
-&lt;p&gt;&lt;strong&gt;Update 1:&lt;/strong&gt; If you’re having any issues, make sure to run the following command in the terminal to ensure the file has the right permissions to run.&lt;/p&gt;
+<p><strong>Update 1:</strong> If you’re having any issues, make sure to run the following command in the terminal to ensure the file has the right permissions to run.</p>
 
-&lt;p&gt;&lt;code&gt;
+<p><code>
  chmod +x .bower-postinstall.sh
-&lt;/code&gt;&lt;/p&gt;
+</code></p>
 </description>
     </item>
     
@@ -117,34 +117,34 @@
       <pubDate>Fri, 27 Feb 2015 00:00:00 +0000</pubDate>
       <author></author>
       <guid>http://www.creativenightly.com/2015/02/What-i-learned-in-February-2015</guid>
-      <description>&lt;h3 id=&quot;the-good&quot;&gt;The good&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Free time&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;After finishing up my work on the BBC Taster project, I booked some time off to have some down time, and work on my own projects, and a few R&amp;amp;D things for my company &lt;a href=&quot;http://wildflame.co.uk&quot;&gt;Wildflame Studios&lt;/a&gt;.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Raspberry Pi 2 is released&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;I bought 3. And they’re awesome. I put a touch screen on one; made another a retro games machine; and the last, a &lt;a href=&quot;https://hubot.github.com/&quot;&gt;company bot (named Wildbot)&lt;/a&gt; for &lt;a href=&quot;http://slack.com&quot;&gt;Slack&lt;/a&gt;. &lt;em&gt;(I’ll try and do a write up on this at some point)&lt;/em&gt;.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Topics I learned about this month&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;/2015/02/Optimising-Typekit-for-mobile-devices/&quot;&gt;Async Typekit optimisation&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://github.com/addyosmani/critical&quot;&gt;Inlining critical CSS&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+      <description><h3 id="the-good">The good</h3>
+<ul>
+  <li><strong>Free time</strong>
+    <ul>
+      <li>After finishing up my work on the BBC Taster project, I booked some time off to have some down time, and work on my own projects, and a few R&amp;D things for my company <a href="http://wildflame.co.uk">Wildflame Studios</a>.</li>
+    </ul>
+  </li>
+  <li><strong>Raspberry Pi 2 is released</strong>
+    <ul>
+      <li>I bought 3. And they’re awesome. I put a touch screen on one; made another a retro games machine; and the last, a <a href="https://hubot.github.com/">company bot (named Wildbot)</a> for <a href="http://slack.com">Slack</a>. <em>(I’ll try and do a write up on this at some point)</em>.</li>
+    </ul>
+  </li>
+  <li><strong>Topics I learned about this month</strong>
+    <ul>
+      <li><a href="/2015/02/Optimising-Typekit-for-mobile-devices/">Async Typekit optimisation</a></li>
+      <li><a href="https://github.com/addyosmani/critical">Inlining critical CSS</a></li>
+    </ul>
+  </li>
+</ul>
 
-&lt;h3 id=&quot;the-bad&quot;&gt;The bad&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Lazy&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;The lack of a commute means I’ve gotten a bit lazy again, which is a shame. I was a big fan of the morning and evening power walk across town, followed by 10 flights of stairs.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+<h3 id="the-bad">The bad</h3>
+<ul>
+  <li><strong>Lazy</strong>
+    <ul>
+      <li>The lack of a commute means I’ve gotten a bit lazy again, which is a shame. I was a big fan of the morning and evening power walk across town, followed by 10 flights of stairs.</li>
+    </ul>
+  </li>
+</ul>
 </description>
     </item>
     
@@ -156,55 +156,55 @@
       <pubDate>Sat, 14 Feb 2015 00:00:00 +0000</pubDate>
       <author></author>
       <guid>http://www.creativenightly.com/2015/02/Optimising-Typekit-for-mobile-devices</guid>
-      <description>&lt;p&gt;&lt;a href=&quot;https://developers.google.com/speed/pagespeed/insights/&quot;&gt;Google Page Insights&lt;/a&gt; is a really neat tool from Google that grabs a page of your site and reports back statistics on load performance and user experience. However, if you’re using Typekit, Google Page Insights can be pretty mean – this is due to Typekit typically loading in as a render blocking script in the head.&lt;/p&gt;
+      <description><p><a href="https://developers.google.com/speed/pagespeed/insights/">Google Page Insights</a> is a really neat tool from Google that grabs a page of your site and reports back statistics on load performance and user experience. However, if you’re using Typekit, Google Page Insights can be pretty mean – this is due to Typekit typically loading in as a render blocking script in the head.</p>
 
-&lt;p&gt;So how can we speed up Typekit for mobile users, while preserving the rich flashless experience on desktop?&lt;/p&gt;
+<p>So how can we speed up Typekit for mobile users, while preserving the rich flashless experience on desktop?</p>
 
-&lt;h3 id=&quot;asynchronous-font-loading&quot;&gt;Asynchronous font loading&lt;/h3&gt;
+<h3 id="asynchronous-font-loading">Asynchronous font loading</h3>
 
-&lt;p&gt;Font libraries like Typekit offer a method to load in their fonts asynchronously, thus allowing the rest of the page to render while the fonts download. &lt;strong&gt;However, the downside to this is that annoying flash of unstyled text.&lt;/strong&gt; In some cases a well formed font stack can prevent this flash of text from being drastic – or even noticeable – but what if that’s not an option?&lt;/p&gt;
+<p>Font libraries like Typekit offer a method to load in their fonts asynchronously, thus allowing the rest of the page to render while the fonts download. <strong>However, the downside to this is that annoying flash of unstyled text.</strong> In some cases a well formed font stack can prevent this flash of text from being drastic – or even noticeable – but what if that’s not an option?</p>
 
-&lt;h3 id=&quot;stop-render-blocking-just-for-mobile&quot;&gt;1. Stop render blocking &lt;em&gt;just for mobile&lt;/em&gt;&lt;/h3&gt;
+<h3 id="stop-render-blocking-just-for-mobile">1. Stop render blocking <em>just for mobile</em></h3>
 
-&lt;p&gt;&lt;strong&gt;The aim of the game for mobile is speed.&lt;/strong&gt; I don’t care what anyone else has to say on the matter. If you’re a designer designing for mobile and thinking about anything else other than speed/performance, you’re wrong! It’s perfectly acceptable for the flash of unstyled fonts on mobile – chances are mobile visitors are here purely for the content, not the bells and whistles.&lt;/p&gt;
+<p><strong>The aim of the game for mobile is speed.</strong> I don’t care what anyone else has to say on the matter. If you’re a designer designing for mobile and thinking about anything else other than speed/performance, you’re wrong! It’s perfectly acceptable for the flash of unstyled fonts on mobile – chances are mobile visitors are here purely for the content, not the bells and whistles.</p>
 
-&lt;p&gt;The trick here is to wrap the Typekit load script in a little if statement that detects what conditions to swap render blocking to async mode, before writing the required load script elements to the DOM.&lt;/p&gt;
+<p>The trick here is to wrap the Typekit load script in a little if statement that detects what conditions to swap render blocking to async mode, before writing the required load script elements to the DOM.</p>
 
-&lt;p&gt;In the example below, I’ve got for a simple browser width detction. Any browser &lt;em&gt;below&lt;/em&gt; 800px wide on page load will get the async non-render blocking treatment.&lt;/p&gt;
+<p>In the example below, I’ve got for a simple browser width detction. Any browser <em>below</em> 800px wide on page load will get the async non-render blocking treatment.</p>
 
-&lt;noscript&gt;&lt;pre&gt;400: Invalid request
-&lt;/pre&gt;&lt;/noscript&gt;
-&lt;script src=&quot;https://gist.github.com/a419eb8a4f820b5f60f2.js&quot;&gt; &lt;/script&gt;
+<noscript><pre>400: Invalid request
+</pre></noscript>
+<script src="https://gist.github.com/a419eb8a4f820b5f60f2.js"> </script>
 
-&lt;h3 id=&quot;vend-a-seperate-kit-with-opentype-features-disabled&quot;&gt;2. Vend a seperate kit with OpenType features disabled&lt;/h3&gt;
+<h3 id="vend-a-seperate-kit-with-opentype-features-disabled">2. Vend a seperate kit with OpenType features disabled</h3>
 
-&lt;p&gt;TypeKit now comes with OpenType features enabled for the majority of its fonts.&lt;/p&gt;
+<p>TypeKit now comes with OpenType features enabled for the majority of its fonts.</p>
 
-&lt;blockquote&gt;
-  &lt;p&gt;OpenType layout features are typographic extras built into fonts, involving substituting different glyphs or repositioning glyphs to achieve better typography. OpenType features include things such as kerning, ligatures, small caps, oldstyle figures, and many more things. Support for such goodies is part of CSS3.&lt;/p&gt;
-&lt;/blockquote&gt;
+<blockquote>
+  <p>OpenType layout features are typographic extras built into fonts, involving substituting different glyphs or repositioning glyphs to achieve better typography. OpenType features include things such as kerning, ligatures, small caps, oldstyle figures, and many more things. Support for such goodies is part of CSS3.</p>
+</blockquote>
 
-&lt;p&gt;This is all great news, &lt;strong&gt;but these features come at a cost&lt;/strong&gt;, typically 20 kb+ &lt;em&gt;per font&lt;/em&gt;. An overhead you can probably do without for smaller screens.&lt;/p&gt;
+<p>This is all great news, <strong>but these features come at a cost</strong>, typically 20 kb+ <em>per font</em>. An overhead you can probably do without for smaller screens.</p>
 
-&lt;p&gt;The trick here is create &lt;strong&gt;2 different kits for mobile and desktop&lt;/strong&gt;. If we use the snippet above, all we need to do it add the kit code inside the if statements so that any mobile visitors will get the smaller Typekit file, and desktop users will get the larger file with all the extra features.&lt;/p&gt;
+<p>The trick here is create <strong>2 different kits for mobile and desktop</strong>. If we use the snippet above, all we need to do it add the kit code inside the if statements so that any mobile visitors will get the smaller Typekit file, and desktop users will get the larger file with all the extra features.</p>
 
-&lt;noscript&gt;&lt;pre&gt;400: Invalid request
-&lt;/pre&gt;&lt;/noscript&gt;
-&lt;script src=&quot;https://gist.github.com/f8eb664f2ad02cab003d.js&quot;&gt; &lt;/script&gt;
+<noscript><pre>400: Invalid request
+</pre></noscript>
+<script src="https://gist.github.com/f8eb664f2ad02cab003d.js"> </script>
 
-&lt;h3 id=&quot;remove-typekit-from-mobile-all-together&quot;&gt;3. Remove Typekit from mobile all together&lt;/h3&gt;
+<h3 id="remove-typekit-from-mobile-all-together">3. Remove Typekit from mobile all together</h3>
 
-&lt;p&gt;Bit drastic, but if you’re happy with your font stack, why not remove Typekit from mobile devices all together?  After all, the fastest HTTP request is the one not made at all.&lt;/p&gt;
+<p>Bit drastic, but if you’re happy with your font stack, why not remove Typekit from mobile devices all together?  After all, the fastest HTTP request is the one not made at all.</p>
 
-&lt;p&gt;Here’s the above snippet adjusted for this scenario.&lt;/p&gt;
+<p>Here’s the above snippet adjusted for this scenario.</p>
 
-&lt;noscript&gt;&lt;pre&gt;400: Invalid request
-&lt;/pre&gt;&lt;/noscript&gt;
-&lt;script src=&quot;https://gist.github.com/2bf2ddbd3054c76b5c7a.js&quot;&gt; &lt;/script&gt;
+<noscript><pre>400: Invalid request
+</pre></noscript>
+<script src="https://gist.github.com/2bf2ddbd3054c76b5c7a.js"> </script>
 
-&lt;h3 id=&quot;bask-in-the-glory-of-your-improved-score&quot;&gt;4. Bask in the glory of your improved score&lt;/h3&gt;
+<h3 id="bask-in-the-glory-of-your-improved-score">4. Bask in the glory of your improved score</h3>
 
-&lt;p&gt;Now all that’s left to do is bask in the glory of your improved Page Insights score! Creative Nightly scores a whopping 95/100 for mobile and 84/100 for desktop. &lt;strong&gt;&lt;em&gt;That’s the difference async typekit makes!&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+<p>Now all that’s left to do is bask in the glory of your improved Page Insights score! Creative Nightly scores a whopping 95/100 for mobile and 84/100 for desktop. <strong><em>That’s the difference async typekit makes!</em></strong></p>
 </description>
     </item>
     
@@ -216,36 +216,36 @@
       <pubDate>Sun, 01 Feb 2015 00:00:00 +0000</pubDate>
       <author></author>
       <guid>http://www.creativenightly.com/2015/02/Using-Grunt-and-Gulp-side-by-side</guid>
-      <description>&lt;p&gt;&lt;em&gt;&lt;strong&gt;Disclaimer&lt;/strong&gt;: There are purists out there that will argue that &lt;a href=&quot;http://blog.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/&quot;&gt;npm is perfectly capable doing what Grunt and Gulp do&lt;/a&gt; (which I do agree with – to a point). Grunt and Gulp (and their plugins wrappers) are &lt;s&gt;fairly&lt;/s&gt; very bloaty, but there’s no denying what Grunt and Gulp provide in terms of ease of use and configuration.&lt;/em&gt;&lt;/p&gt;
+      <description><p><em><strong>Disclaimer</strong>: There are purists out there that will argue that <a href="http://blog.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/">npm is perfectly capable doing what Grunt and Gulp do</a> (which I do agree with – to a point). Grunt and Gulp (and their plugins wrappers) are <s>fairly</s> very bloaty, but there’s no denying what Grunt and Gulp provide in terms of ease of use and configuration.</em></p>
 
-&lt;p&gt;I’m a big fan of Gulp. It’s much faster than Grunt (thanks to the use of streams to manipulate the data before outputting it to a file). Grunt, on the other hand, relies on a .tmp folder as a dumping place for files as they get transformed from plugin to plugin.&lt;/p&gt;
+<p>I’m a big fan of Gulp. It’s much faster than Grunt (thanks to the use of streams to manipulate the data before outputting it to a file). Grunt, on the other hand, relies on a .tmp folder as a dumping place for files as they get transformed from plugin to plugin.</p>
 
-&lt;p&gt;&lt;strong&gt;However, due to this fact that Gulp is faster, I’ve fallen into the rather bad habbit of trying to do &lt;em&gt;everything&lt;/em&gt; in Gulp, even if plugins have no support for it.&lt;/strong&gt;&lt;/p&gt;
+<p><strong>However, due to this fact that Gulp is faster, I’ve fallen into the rather bad habbit of trying to do <em>everything</em> in Gulp, even if plugins have no support for it.</strong></p>
 
-&lt;h2 id=&quot;why-not-use-both-together&quot;&gt;Why not use both together?&lt;/h2&gt;
+<h2 id="why-not-use-both-together">Why not use both together?</h2>
 
-&lt;p&gt;&lt;a href=&quot;http://assemble.io&quot;&gt;Assemble&lt;/a&gt; is a pretty rad static site generator – it follows similar principles to Ruby’s Jekyll. The only problem is, the &lt;em&gt;stable&lt;/em&gt; build only supports Grunt, &lt;em&gt;not Gulp&lt;/em&gt;. The devs have an alpha build (&lt;a href=&quot;https://github.com/assemble/assemble/tree/v0.5.0&quot;&gt;v0.5&lt;/a&gt;, and &lt;a href=&quot;https://github.com/assemble/assemble/tree/v0.6.0&quot;&gt;v0.6&lt;/a&gt;) that support Gulp, but it’s unstable and still has &lt;em&gt;a lot&lt;/em&gt; of features that aren’t wired up.&lt;/p&gt;
+<p><a href="http://assemble.io">Assemble</a> is a pretty rad static site generator – it follows similar principles to Ruby’s Jekyll. The only problem is, the <em>stable</em> build only supports Grunt, <em>not Gulp</em>. The devs have an alpha build (<a href="https://github.com/assemble/assemble/tree/v0.5.0">v0.5</a>, and <a href="https://github.com/assemble/assemble/tree/v0.6.0">v0.6</a>) that support Gulp, but it’s unstable and still has <em>a lot</em> of features that aren’t wired up.</p>
 
-&lt;p&gt;So after about 2 months of struggling to get Assemble configured to behave &lt;em&gt;properly&lt;/em&gt; with Gulp on various projects, I decided to just go back to using it with Grunt, and already, it’s made &lt;strong&gt;such a difference&lt;/strong&gt;!&lt;/p&gt;
+<p>So after about 2 months of struggling to get Assemble configured to behave <em>properly</em> with Gulp on various projects, I decided to just go back to using it with Grunt, and already, it’s made <strong>such a difference</strong>!</p>
 
-&lt;h3 id=&quot;using-assemble-with-gulp-the-proper-way&quot;&gt;Using Assemble with Gulp (&lt;em&gt;the proper way&lt;/em&gt;)&lt;/h3&gt;
+<h3 id="using-assemble-with-gulp-the-proper-way">Using Assemble with Gulp (<em>the proper way</em>)</h3>
 
-&lt;p&gt;As you’ve probably guessed by this point, all of my tasks and watch tasks are wired up using Gulp. This poses a tricky situation when it comes to getting my Assemble Grunt task wired up nicely with the rest of my Gulp watch tasks; and since configuring Assemble directly in Gulp is not an option, we need a new solution.&lt;/p&gt;
+<p>As you’ve probably guessed by this point, all of my tasks and watch tasks are wired up using Gulp. This poses a tricky situation when it comes to getting my Assemble Grunt task wired up nicely with the rest of my Gulp watch tasks; and since configuring Assemble directly in Gulp is not an option, we need a new solution.</p>
 
-&lt;h4 id=&quot;introducing-gulp-grunt&quot;&gt;Introducing gulp-grunt&lt;/h4&gt;
+<h4 id="introducing-gulp-grunt">Introducing gulp-grunt</h4>
 
-&lt;p&gt;Not wanting to spend too much time getting everything wired up, I started searching for something that would help me link the two build tools together. Introducing &lt;a href=&quot;https://github.com/gratimax/gulp-grunt&quot;&gt;gulp-grunt&lt;/a&gt; a tool that will allow for running grunt tasks from gulp.&lt;/p&gt;
+<p>Not wanting to spend too much time getting everything wired up, I started searching for something that would help me link the two build tools together. Introducing <a href="https://github.com/gratimax/gulp-grunt">gulp-grunt</a> a tool that will allow for running grunt tasks from gulp.</p>
 
-&lt;h4 id=&quot;so-far-so-good&quot;&gt;So far so good!&lt;/h4&gt;
+<h4 id="so-far-so-good">So far so good!</h4>
 
-&lt;p&gt;I’ve only been testing this workflow out for a few hours, but it’s definitely an improvement – especially when working with Assemble or any other plugin that doesn’t support Gulp (&lt;em&gt;e.g. rsync&lt;/em&gt;).&lt;/p&gt;
+<p>I’ve only been testing this workflow out for a few hours, but it’s definitely an improvement – especially when working with Assemble or any other plugin that doesn’t support Gulp (<em>e.g. rsync</em>).</p>
 
-&lt;p&gt;&lt;strong&gt;Here’s an example of getting a Grunt Assemble task wired into Gulp&lt;/strong&gt;: this task watches the assemble files for changes in Gulp, compiles the changes using the assemble task in Grunt, and updates the browser on any change with browsersync. Neat!
-(&lt;em&gt;You’ll notice that I’ve namespaced my Grunt tasks to avoid them clashing with anything in Gulp, so my Assemble task is &lt;strong&gt;grunt-assemble&lt;/strong&gt;&lt;/em&gt;):&lt;/p&gt;
+<p><strong>Here’s an example of getting a Grunt Assemble task wired into Gulp</strong>: this task watches the assemble files for changes in Gulp, compiles the changes using the assemble task in Grunt, and updates the browser on any change with browsersync. Neat!
+(<em>You’ll notice that I’ve namespaced my Grunt tasks to avoid them clashing with anything in Gulp, so my Assemble task is <strong>grunt-assemble</strong></em>):</p>
 
-&lt;noscript&gt;&lt;pre&gt;400: Invalid request
-&lt;/pre&gt;&lt;/noscript&gt;
-&lt;script src=&quot;https://gist.github.com/ffa08f15ab087d84d79d.js&quot;&gt; &lt;/script&gt;
+<noscript><pre>400: Invalid request
+</pre></noscript>
+<script src="https://gist.github.com/ffa08f15ab087d84d79d.js"> </script>
 
 </description>
     </item>
@@ -258,80 +258,80 @@
       <pubDate>Sat, 31 Jan 2015 00:00:00 +0000</pubDate>
       <author></author>
       <guid>http://www.creativenightly.com/2015/01/What-i-learned-in-January-2015</guid>
-      <description>&lt;p&gt;As part of my &lt;a href=&quot;/2014/12/Farewell-2014-hello-2015/&quot;&gt;New Year plans for self improvement&lt;/a&gt;, I’m going to take up a monthly retrospective. It’s something I got used to doing while working with the BBC Taster team, and I quite like it. Essentially it’s a look back on a given time period; you jot down what went well, what went bad, and what made you angry. The good is celebrated, while the rest is actioned for improvement during the next time block. At the BBC, we had retrospectives every 2 weeks, but since it’s just me, a month will do fine.&lt;/p&gt;
+      <description><p>As part of my <a href="/2014/12/Farewell-2014-hello-2015/">New Year plans for self improvement</a>, I’m going to take up a monthly retrospective. It’s something I got used to doing while working with the BBC Taster team, and I quite like it. Essentially it’s a look back on a given time period; you jot down what went well, what went bad, and what made you angry. The good is celebrated, while the rest is actioned for improvement during the next time block. At the BBC, we had retrospectives every 2 weeks, but since it’s just me, a month will do fine.</p>
 
-&lt;!--more--&gt;
+<!--more-->
 
-&lt;p&gt;I’ll probably tinker with the format of this as the year goes on, but for now, here goes…&lt;/p&gt;
+<p>I’ll probably tinker with the format of this as the year goes on, but for now, here goes…</p>
 
-&lt;h3 id=&quot;the-good&quot;&gt;The good&lt;/h3&gt;
+<h3 id="the-good">The good</h3>
 
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Launched BBC Taster!&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Massive news. Last week’s launch was the culmination of 10 months of hard work. I’m very proud of what myself and the rest of the team managed to achieve. The journey has just begun for the rest of the team, and I wish them luck!&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Writing is good for you!&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;I’m really enjoying it. Especially when I spend a few days isolated in an empty office with no social interaction. It definitely helps to keep that part of your brain working!&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;I’ve been 1000% more productive this month.&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Really. This may be due to all the little things like &lt;a href=&quot;&quot;&gt;clearing out the apps on my iPhone&lt;/a&gt;, and automating tasks with Hazel (which I must write about at some point!), but I’m definitely staying much more focused for longer periods of time!&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Incorporated more exercise into my daily commute&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;I’ve been taking the scenic route to work – walking from the Northern Quarter through the city centre, past Albert Square, through the AMC Complex, and to Deansgate tram stop. Once I get to the office, I skip the lift and take 10 flights of stairs. It’s done wonders, and properly gets me awake for the day. It’s going to be a struggle maintaining this when I’m based in my Northern Quarter office next month.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Things I covered/learned about this month:&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://github.com/assetgraph/assetgraph&quot;&gt;Assetgraph&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;http://www.thedotpost.com/2014/11/nicolas-gallagher-thinking-beyond-scalable-css&quot;&gt;Thinking beyond scalable CSS&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://github.com/addyosmani/critical&quot;&gt;Inlining critical CSS&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;http://susy.oddbird.net/&quot;&gt;Susy SASS&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;http://alistapart.com/article/responsive-images-in-practice&quot;&gt;Responsive Images&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+<ul>
+  <li><strong>Launched BBC Taster!</strong>
+    <ul>
+      <li>Massive news. Last week’s launch was the culmination of 10 months of hard work. I’m very proud of what myself and the rest of the team managed to achieve. The journey has just begun for the rest of the team, and I wish them luck!</li>
+    </ul>
+  </li>
+  <li><strong>Writing is good for you!</strong>
+    <ul>
+      <li>I’m really enjoying it. Especially when I spend a few days isolated in an empty office with no social interaction. It definitely helps to keep that part of your brain working!</li>
+    </ul>
+  </li>
+  <li><strong>I’ve been 1000% more productive this month.</strong>
+    <ul>
+      <li>Really. This may be due to all the little things like <a href="">clearing out the apps on my iPhone</a>, and automating tasks with Hazel (which I must write about at some point!), but I’m definitely staying much more focused for longer periods of time!</li>
+    </ul>
+  </li>
+  <li><strong>Incorporated more exercise into my daily commute</strong>
+    <ul>
+      <li>I’ve been taking the scenic route to work – walking from the Northern Quarter through the city centre, past Albert Square, through the AMC Complex, and to Deansgate tram stop. Once I get to the office, I skip the lift and take 10 flights of stairs. It’s done wonders, and properly gets me awake for the day. It’s going to be a struggle maintaining this when I’m based in my Northern Quarter office next month.</li>
+    </ul>
+  </li>
+  <li><strong>Things I covered/learned about this month:</strong>
+    <ul>
+      <li><a href="https://github.com/assetgraph/assetgraph">Assetgraph</a></li>
+      <li><a href="http://www.thedotpost.com/2014/11/nicolas-gallagher-thinking-beyond-scalable-css">Thinking beyond scalable CSS</a></li>
+      <li><a href="https://github.com/addyosmani/critical">Inlining critical CSS</a></li>
+      <li><a href="http://susy.oddbird.net/">Susy SASS</a></li>
+      <li><a href="http://alistapart.com/article/responsive-images-in-practice">Responsive Images</a></li>
+    </ul>
+  </li>
+</ul>
 
-&lt;h3 id=&quot;the-bad&quot;&gt;The bad&lt;/h3&gt;
+<h3 id="the-bad">The bad</h3>
 
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;I now have the urge to write about &lt;em&gt;everything&lt;/em&gt;&lt;/strong&gt;.
-    &lt;ul&gt;
-      &lt;li&gt;I probably need to reign this in a bit, ha.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;The improved productivity has led to me working from dawn till dusk.&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Again, I need to reign this in. I’ve definitely gone to bed a few times this month with an overactive brain. Not really too sure how to action this – perhaps things will settle down once I’ve gotten up to speed with the huge backlog of stuff I wanted to work on after finishing with BBC Taster. &lt;strong&gt;&lt;em&gt;Revisit next month&lt;/em&gt;&lt;/strong&gt;.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;There’s just &lt;em&gt;too&lt;/em&gt; much to learn&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;The industry moves at such a fast pace, it’s almost impossible to stay on top of everything – even when working from dusk till dawn. I need to stop letting this get to me and focus on improving &lt;em&gt;just one thing&lt;/em&gt; by 1% a day.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+<ul>
+  <li><strong>I now have the urge to write about <em>everything</em></strong>.
+    <ul>
+      <li>I probably need to reign this in a bit, ha.</li>
+    </ul>
+  </li>
+  <li><strong>The improved productivity has led to me working from dawn till dusk.</strong>
+    <ul>
+      <li>Again, I need to reign this in. I’ve definitely gone to bed a few times this month with an overactive brain. Not really too sure how to action this – perhaps things will settle down once I’ve gotten up to speed with the huge backlog of stuff I wanted to work on after finishing with BBC Taster. <strong><em>Revisit next month</em></strong>.</li>
+    </ul>
+  </li>
+  <li><strong>There’s just <em>too</em> much to learn</strong>
+    <ul>
+      <li>The industry moves at such a fast pace, it’s almost impossible to stay on top of everything – even when working from dusk till dawn. I need to stop letting this get to me and focus on improving <em>just one thing</em> by 1% a day.</li>
+    </ul>
+  </li>
+</ul>
 
-&lt;h3 id=&quot;the-angry&quot;&gt;The angry&lt;/h3&gt;
+<h3 id="the-angry">The angry</h3>
 
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;I hate advertising and click bait&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Goes without saying, really. It’s particularly bothered me this month, especially since &lt;a href=&quot;http://www.extremetech.com/computing/182428-ironic-iframes-adblock-plus-is-probably-the-reason-firefox-and-chrome-are-such-memory-hogs&quot;&gt;AdBlock is probably the reason why Firefox and Chrome are such memory hogs&lt;/a&gt; these days. &lt;em&gt;Rawr!&lt;/em&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;It’s too damn cold!&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;I’m so over Winter already, and in desperate need for some warmth and sunlight.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+<ul>
+  <li><strong>I hate advertising and click bait</strong>
+    <ul>
+      <li>Goes without saying, really. It’s particularly bothered me this month, especially since <a href="http://www.extremetech.com/computing/182428-ironic-iframes-adblock-plus-is-probably-the-reason-firefox-and-chrome-are-such-memory-hogs">AdBlock is probably the reason why Firefox and Chrome are such memory hogs</a> these days. <em>Rawr!</em></li>
+    </ul>
+  </li>
+  <li><strong>It’s too damn cold!</strong>
+    <ul>
+      <li>I’m so over Winter already, and in desperate need for some warmth and sunlight.</li>
+    </ul>
+  </li>
+</ul>
 </description>
     </item>
     
@@ -343,35 +343,35 @@
       <pubDate>Tue, 27 Jan 2015 00:00:00 +0000</pubDate>
       <author></author>
       <guid>http://www.creativenightly.com/2015/01/Announcing-BBC-Taster</guid>
-      <description>&lt;p&gt;As a digital supplier for the BBC, I’ve been fortunate enough to work on a few BBC projects over the last 2 years.&lt;/p&gt;
+      <description><p>As a digital supplier for the BBC, I’ve been fortunate enough to work on a few BBC projects over the last 2 years.</p>
 
-&lt;!--more--&gt;
+<!--more-->
 
-&lt;ul&gt;
-  &lt;li&gt;I helped BBC Homepage in 2013 with early UX prototypes of what is now becoming their vision for a new personalised Homepage.&lt;/li&gt;
-  &lt;li&gt;I helped BBC Sport shape Live into the &lt;a href=&quot;http://www.bbc.co.uk/sport/live/football/30517006&quot;&gt;product it is today&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;I’ve also helped BBC R&amp;amp;D with creating early prototypes of a vision for an interactive children’s app based on Sarah &amp;amp; Duck, which is now a &lt;a href=&quot;https://itunes.apple.com/gb/app/sarah-duck-day-at-the-park/id942926747&quot;&gt;fully fledged app in the app store&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
+<ul>
+  <li>I helped BBC Homepage in 2013 with early UX prototypes of what is now becoming their vision for a new personalised Homepage.</li>
+  <li>I helped BBC Sport shape Live into the <a href="http://www.bbc.co.uk/sport/live/football/30517006">product it is today</a>.</li>
+  <li>I’ve also helped BBC R&amp;D with creating early prototypes of a vision for an interactive children’s app based on Sarah &amp; Duck, which is now a <a href="https://itunes.apple.com/gb/app/sarah-duck-day-at-the-park/id942926747">fully fledged app in the app store</a>.</li>
+</ul>
 
-&lt;p&gt;&lt;em&gt;However&lt;/em&gt;, the latest project that I’ve been working on is turning into something really special.&lt;/p&gt;
+<p><em>However</em>, the latest project that I’ve been working on is turning into something really special.</p>
 
-&lt;h2 id=&quot;say-hello-to-bbc-taster&quot;&gt;Say hello to BBC Taster&lt;/h2&gt;
+<h2 id="say-hello-to-bbc-taster">Say hello to BBC Taster</h2>
 
-&lt;p&gt;For the last 10 months, I’ve been working with BBC Connected Studio developing a new online product called &lt;a href=&quot;http://bbc.co.uk/taster&quot;&gt;BBC Taster&lt;/a&gt;.&lt;/p&gt;
+<p>For the last 10 months, I’ve been working with BBC Connected Studio developing a new online product called <a href="http://bbc.co.uk/taster">BBC Taster</a>.</p>
 
-&lt;blockquote class=&quot;twitter-tweet&quot; lang=&quot;en&quot;&gt;&lt;p&gt;We are beyond excited to share something with you. &lt;a href=&quot;https://twitter.com/BBCTaster&quot;&gt;@BBCTaster&lt;/a&gt; is a home for new ideas from the BBC&amp;#10;&lt;a href=&quot;https://t.co/dZOaal4E6H&quot;&gt;https://t.co/dZOaal4E6H&lt;/a&gt;&lt;/p&gt;&amp;mdash; BBC Taster (@BBCTaster) &lt;a href=&quot;https://twitter.com/BBCTaster/status/559644934056079360&quot;&gt;January 26, 2015&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async=&quot;&quot; src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+<blockquote class="twitter-tweet" lang="en"><p>We are beyond excited to share something with you. <a href="https://twitter.com/BBCTaster">@BBCTaster</a> is a home for new ideas from the BBC&#10;<a href="https://t.co/dZOaal4E6H">https://t.co/dZOaal4E6H</a></p>&mdash; BBC Taster (@BBCTaster) <a href="https://twitter.com/BBCTaster/status/559644934056079360">January 26, 2015</a></blockquote>
+<script async="" src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-&lt;p&gt;The product started off as a vision from BBC Connected Studio to show off experiments that are developed across the BBC to the general public. Initially, I worked with a bare bones team at BBC Connected Studio to create and develop rapid prototypes for stakeholders in order to get backing and acquire funding for a fully fledged product. After achieving funding, development transitioned from prototyping to production grade continuous delivery and the team bolstered. All in all, the turnaround from concept to fully funded live product was just 10 months.&lt;/p&gt;
+<p>The product started off as a vision from BBC Connected Studio to show off experiments that are developed across the BBC to the general public. Initially, I worked with a bare bones team at BBC Connected Studio to create and develop rapid prototypes for stakeholders in order to get backing and acquire funding for a fully fledged product. After achieving funding, development transitioned from prototyping to production grade continuous delivery and the team bolstered. All in all, the turnaround from concept to fully funded live product was just 10 months.</p>
 
-&lt;p&gt;The BBC announced the new product at their Future is Now event &lt;s&gt;yesterday&lt;/s&gt; Monday 26&lt;sup&gt;th&lt;/sup&gt; Jan 2015, and the press and reception from the general public has been very positive. Here’s a few links to some of the articles:&lt;/p&gt;
+<p>The BBC announced the new product at their Future is Now event <s>yesterday</s> Monday 26<sup>th</sup> Jan 2015, and the press and reception from the general public has been very positive. Here’s a few links to some of the articles:</p>
 
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Engadget&lt;/strong&gt; - &lt;a href=&quot;http://www.engadget.com/2015/01/26/bbc-taster/&quot;&gt;http://www.engadget.com/2015/01/26/bbc-taster/&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Guardian&lt;/strong&gt; - &lt;a href=&quot;http://www.theguardian.com/media/2015/jan/26/bbc-taster-launch-users-shape-content&quot;&gt;http://www.theguardian.com/media/2015/jan/26/bbc-taster-launch-users-shape-content&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Wired&lt;/strong&gt; - &lt;a href=&quot;http://www.wired.co.uk/news/archive/2015-01/26/bbc-taster&quot;&gt;http://www.wired.co.uk/news/archive/2015-01/26/bbc-taster&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;The Next Web&lt;/strong&gt; - &lt;a href=&quot;http://thenextweb.com/media/2015/01/26/bbc-launches-taster-showcase-new-digital-ideas-get-feedback/&quot;&gt;http://thenextweb.com/media/2015/01/26/bbc-launches-taster-showcase-new-digital-ideas-get-feedback/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+<ul>
+  <li><strong>Engadget</strong> - <a href="http://www.engadget.com/2015/01/26/bbc-taster/">http://www.engadget.com/2015/01/26/bbc-taster/</a></li>
+  <li><strong>Guardian</strong> - <a href="http://www.theguardian.com/media/2015/jan/26/bbc-taster-launch-users-shape-content">http://www.theguardian.com/media/2015/jan/26/bbc-taster-launch-users-shape-content</a></li>
+  <li><strong>Wired</strong> - <a href="http://www.wired.co.uk/news/archive/2015-01/26/bbc-taster">http://www.wired.co.uk/news/archive/2015-01/26/bbc-taster</a></li>
+  <li><strong>The Next Web</strong> - <a href="http://thenextweb.com/media/2015/01/26/bbc-launches-taster-showcase-new-digital-ideas-get-feedback/">http://thenextweb.com/media/2015/01/26/bbc-launches-taster-showcase-new-digital-ideas-get-feedback/</a></li>
+</ul>
 </description>
     </item>
     
@@ -383,63 +383,63 @@
       <pubDate>Sat, 24 Jan 2015 00:00:00 +0000</pubDate>
       <author></author>
       <guid>http://www.creativenightly.com/2015/01/A-few-simple-rules-to-keep-your-smartphone-apps-organised</guid>
-      <description>&lt;p&gt;At the beginning of 2015, &lt;a href=&quot;/2014/12/Farewell-2014-hello-2015/&quot;&gt;I promised myself I’d get more organised&lt;/a&gt;. I coined 2015 as the year of automation and productivity, so each day this year, I’ve been trying to improve on the previous day by just 1%.&lt;/p&gt;
+      <description><p>At the beginning of 2015, <a href="/2014/12/Farewell-2014-hello-2015/">I promised myself I’d get more organised</a>. I coined 2015 as the year of automation and productivity, so each day this year, I’ve been trying to improve on the previous day by just 1%.</p>
 
-&lt;h3 id=&quot;the-best-apps-do-one-thing-and-one-thing-well&quot;&gt;The best apps do one thing, and one thing well&lt;/h3&gt;
-&lt;p&gt;The big problem with most apps is that they try to do &lt;em&gt;too much&lt;/em&gt;. The best apps do &lt;em&gt;one thing&lt;/em&gt;, and one thing &lt;em&gt;well&lt;/em&gt;. Until recently, my iPhone suffered from serious app clutter; I had several apps installed, all competing to solve the same problem. The reason for this is partly fuelled by the fact Apple force a collection of apps on you that you can’t remove, and my reluctance to pick a standard for each of the major use categories. The outcome is I ended up using none of the apps the way they were intended and often struggling to find the apps I actually wanted to use.&lt;/p&gt;
+<h3 id="the-best-apps-do-one-thing-and-one-thing-well">The best apps do one thing, and one thing well</h3>
+<p>The big problem with most apps is that they try to do <em>too much</em>. The best apps do <em>one thing</em>, and one thing <em>well</em>. Until recently, my iPhone suffered from serious app clutter; I had several apps installed, all competing to solve the same problem. The reason for this is partly fuelled by the fact Apple force a collection of apps on you that you can’t remove, and my reluctance to pick a standard for each of the major use categories. The outcome is I ended up using none of the apps the way they were intended and often struggling to find the apps I actually wanted to use.</p>
 
-&lt;p&gt;At the beginning of the year, I decided to lock down an app for each of the major use categories (&lt;em&gt;mail, photos, tasks, notes etc&lt;/em&gt;). And remove the rest / hide the redundant Apple apps. A big requirement for me was the ability to synchonise the data in the cloud for access on multiple devices. For anyone that’s interested, these are apps I’ve picked to do one thing, and one thing well:&lt;/p&gt;
+<p>At the beginning of the year, I decided to lock down an app for each of the major use categories (<em>mail, photos, tasks, notes etc</em>). And remove the rest / hide the redundant Apple apps. A big requirement for me was the ability to synchonise the data in the cloud for access on multiple devices. For anyone that’s interested, these are apps I’ve picked to do one thing, and one thing well:</p>
 
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Mail&lt;/strong&gt; - &lt;a href=&quot;https://itunes.apple.com/gb/app/mailbox/id576502633&quot;&gt;Mailbox&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Tasks&lt;/strong&gt; - &lt;a href=&quot;https://itunes.apple.com/gb/app/things/id284971781&quot;&gt;Things&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Photos&lt;/strong&gt; - &lt;a href=&quot;https://itunes.apple.com/gb/app/carousel-by-dropbox/id825931374&quot;&gt;Carousel&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Notes&lt;/strong&gt; - &lt;a href=&quot;https://itunes.apple.com/gb/app/evernote/id281796108&quot;&gt;Evernote&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Cloud&lt;/strong&gt; - &lt;a href=&quot;https://itunes.apple.com/gb/app/dropbox/id327630330&quot;&gt;Dropbox&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Weather&lt;/strong&gt; - &lt;a href=&quot;https://itunes.apple.com/gb/app/dark-sky-weather-radar-hyperlocal/id517329357&quot;&gt;Dark Sky&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Music&lt;/strong&gt; - &lt;a href=&quot;https://itunes.apple.com/gb/app/spotify-music/id324684580&quot;&gt;Spotify&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Read Later&lt;/strong&gt; - &lt;a href=&quot;https://itunes.apple.com/gb/app/pocket-save-articles-videos/id309601447&quot;&gt;Pocket&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;RSS Reader&lt;/strong&gt; - &lt;a href=&quot;https://itunes.apple.com/gb/app/flipboard-your-social-news/id358801284&quot;&gt;Flipboard&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;2 Factor Auth&lt;/strong&gt; - &lt;a href=&quot;https://itunes.apple.com/gb/app/authy/id494168017&quot;&gt;Authy&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Password Management&lt;/strong&gt; - &lt;a href=&quot;https://itunes.apple.com/gb/app/1password-password-manager/id568903335&quot;&gt;1Password&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+<ul>
+  <li><strong>Mail</strong> - <a href="https://itunes.apple.com/gb/app/mailbox/id576502633">Mailbox</a></li>
+  <li><strong>Tasks</strong> - <a href="https://itunes.apple.com/gb/app/things/id284971781">Things</a></li>
+  <li><strong>Photos</strong> - <a href="https://itunes.apple.com/gb/app/carousel-by-dropbox/id825931374">Carousel</a></li>
+  <li><strong>Notes</strong> - <a href="https://itunes.apple.com/gb/app/evernote/id281796108">Evernote</a></li>
+  <li><strong>Cloud</strong> - <a href="https://itunes.apple.com/gb/app/dropbox/id327630330">Dropbox</a></li>
+  <li><strong>Weather</strong> - <a href="https://itunes.apple.com/gb/app/dark-sky-weather-radar-hyperlocal/id517329357">Dark Sky</a></li>
+  <li><strong>Music</strong> - <a href="https://itunes.apple.com/gb/app/spotify-music/id324684580">Spotify</a></li>
+  <li><strong>Read Later</strong> - <a href="https://itunes.apple.com/gb/app/pocket-save-articles-videos/id309601447">Pocket</a></li>
+  <li><strong>RSS Reader</strong> - <a href="https://itunes.apple.com/gb/app/flipboard-your-social-news/id358801284">Flipboard</a></li>
+  <li><strong>2 Factor Auth</strong> - <a href="https://itunes.apple.com/gb/app/authy/id494168017">Authy</a></li>
+  <li><strong>Password Management</strong> - <a href="https://itunes.apple.com/gb/app/1password-password-manager/id568903335">1Password</a></li>
+</ul>
 
-&lt;h3 id=&quot;app-page-organisation-rules&quot;&gt;App page organisation rules&lt;/h3&gt;
-&lt;p&gt;So I’ve figured out what apps I want to use, but now I need to define some rules for actually organising them on my phone. Here are some of the rules I’ve formulated to help keep me productive when using my iPhone.&lt;/p&gt;
+<h3 id="app-page-organisation-rules">App page organisation rules</h3>
+<p>So I’ve figured out what apps I want to use, but now I need to define some rules for actually organising them on my phone. Here are some of the rules I’ve formulated to help keep me productive when using my iPhone.</p>
 
-&lt;ol&gt;
-  &lt;li&gt;Allow no more than 12 apps per page. That’s 3 full rows. (I’m using an iPhone 5) Any more than that clutters the page.&lt;/li&gt;
-  &lt;li&gt;Allow no more than 4 pages of apps.&lt;/li&gt;
-  &lt;li&gt;Keep folders to a minimum on the first 2 pages. Folders aren’t very visually appealling, and increase the amount of presses to get to important items. iPhones are beautiful, and so should navigating them.&lt;/li&gt;
-  &lt;li&gt;Reduce app overlap - don’t…
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;Hide all Apple apps you’re not using&lt;/strong&gt; in an ‘Apple’ folder.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Don’t install apps for the sake of it&lt;/li&gt;
-  &lt;li&gt;Clear out and delete all old apps that haven’t been used in the last 2 months.&lt;/li&gt;
-  &lt;li&gt;Put all apps you don’t use on a regular basis in folders.&lt;/li&gt;
-  &lt;li&gt;Use search to get to all apps not on pages 1 or 2.&lt;/li&gt;
-&lt;/ol&gt;
+<ol>
+  <li>Allow no more than 12 apps per page. That’s 3 full rows. (I’m using an iPhone 5) Any more than that clutters the page.</li>
+  <li>Allow no more than 4 pages of apps.</li>
+  <li>Keep folders to a minimum on the first 2 pages. Folders aren’t very visually appealling, and increase the amount of presses to get to important items. iPhones are beautiful, and so should navigating them.</li>
+  <li>Reduce app overlap - don’t…
+    <ul>
+      <li><strong>Hide all Apple apps you’re not using</strong> in an ‘Apple’ folder.</li>
+    </ul>
+  </li>
+  <li>Don’t install apps for the sake of it</li>
+  <li>Clear out and delete all old apps that haven’t been used in the last 2 months.</li>
+  <li>Put all apps you don’t use on a regular basis in folders.</li>
+  <li>Use search to get to all apps not on pages 1 or 2.</li>
+</ol>
 
-&lt;h5 id=&quot;what-apps-do-you-use-more-than-1-3-times-a-day&quot;&gt;What apps do you use more than 1-3 times a day?&lt;/h5&gt;
-&lt;p&gt;These apps should probably go in your dock. I had a few contenders. Mailbox, Safari and Things are all apps I use fairly regularly throughout the day, and oddly, the Phone app wasn’t one of them. However, I only tend to use them &lt;em&gt;during&lt;/em&gt; the day, and not really in the evenings. Where as messaging apps, social apps, and music were apps I’d dip into irrespective of time. The key part of the dock mechanism is that apps are made accessible from any page you’re on.&lt;/p&gt;
+<h5 id="what-apps-do-you-use-more-than-1-3-times-a-day">What apps do you use more than 1-3 times a day?</h5>
+<p>These apps should probably go in your dock. I had a few contenders. Mailbox, Safari and Things are all apps I use fairly regularly throughout the day, and oddly, the Phone app wasn’t one of them. However, I only tend to use them <em>during</em> the day, and not really in the evenings. Where as messaging apps, social apps, and music were apps I’d dip into irrespective of time. The key part of the dock mechanism is that apps are made accessible from any page you’re on.</p>
 
-&lt;h5 id=&quot;what-apps-do-you-use-at-least-once-a-day&quot;&gt;What apps do you use at least once a day?&lt;/h5&gt;
+<h5 id="what-apps-do-you-use-at-least-once-a-day">What apps do you use at least once a day?</h5>
 
-&lt;p&gt;These apps go on the &lt;em&gt;frontpage&lt;/em&gt;. Don’t allow for any more than &lt;strong&gt;3 rows&lt;/strong&gt; of apps. Less is more, plus I refuse to believe you use more than 12 apps at least once a day.&lt;/p&gt;
+<p>These apps go on the <em>frontpage</em>. Don’t allow for any more than <strong>3 rows</strong> of apps. Less is more, plus I refuse to believe you use more than 12 apps at least once a day.</p>
 
-&lt;h5 id=&quot;what-apps-do-you-use-less-than-once-a-day-but-more-than-once-a-week&quot;&gt;What apps do you use less than once a day, but more than once a week?&lt;/h5&gt;
+<h5 id="what-apps-do-you-use-less-than-once-a-day-but-more-than-once-a-week">What apps do you use less than once a day, but more than once a week?</h5>
 
-&lt;p&gt;These apps go on page 2.&lt;/p&gt;
+<p>These apps go on page 2.</p>
 
-&lt;h5 id=&quot;and-the-rest-folders-search-is-your-friend&quot;&gt;And the rest? Folders. Search is your friend!&lt;/h5&gt;
+<h5 id="and-the-rest-folders-search-is-your-friend">And the rest? Folders. Search is your friend!</h5>
 
-&lt;p&gt;A page full of folders isn’t pretty. It’s a nightmare to navigate, and not visually appealing. I have friends who’s frontpages are like this! Pages like this should be reserved &lt;em&gt;only&lt;/em&gt; for apps you use once in a blue moon. I think I’m going to try and clear up many of the apps on this page that I haven’t used in over 2 months.&lt;/p&gt;
+<p>A page full of folders isn’t pretty. It’s a nightmare to navigate, and not visually appealing. I have friends who’s frontpages are like this! Pages like this should be reserved <em>only</em> for apps you use once in a blue moon. I think I’m going to try and clear up many of the apps on this page that I haven’t used in over 2 months.</p>
 
-&lt;h5 id=&quot;what-about-games&quot;&gt;What about games?&lt;/h5&gt;
+<h5 id="what-about-games">What about games?</h5>
 
-&lt;p&gt;They go on the last page, page 4. Keep the distractions hidden away on the final page. I don’t care if they’re the best games on the planet, they should be hidden away. It’s all about reducing distraction and improving productivity. They’ll still be there on page 4 when you &lt;em&gt;want&lt;/em&gt; them.&lt;/p&gt;
+<p>They go on the last page, page 4. Keep the distractions hidden away on the final page. I don’t care if they’re the best games on the planet, they should be hidden away. It’s all about reducing distraction and improving productivity. They’ll still be there on page 4 when you <em>want</em> them.</p>
 </description>
     </item>
     
@@ -451,44 +451,44 @@
       <pubDate>Tue, 30 Dec 2014 18:31:45 +0000</pubDate>
       <author></author>
       <guid>http://www.creativenightly.com/2014/12/Farewell-2014-hello-2015</guid>
-      <description>&lt;p&gt;Well, it’s that time again; another year has come to a close. This year’s been pretty good to me. I’ve been to New York and Barcelona, dabbled with Rails backend development, taken a Raspberry Pi project from concept to centre stage of my living room, and helped develop a new product for the BBC called BBC Taster (&lt;em&gt;which &lt;s&gt;should go live early next year&lt;/s&gt; went &lt;a href=&quot;http://bbc.co.uk/taster&quot;&gt;live on the 26th January 2015&lt;/a&gt;&lt;/em&gt;).&lt;/p&gt;
+      <description><p>Well, it’s that time again; another year has come to a close. This year’s been pretty good to me. I’ve been to New York and Barcelona, dabbled with Rails backend development, taken a Raspberry Pi project from concept to centre stage of my living room, and helped develop a new product for the BBC called BBC Taster (<em>which <s>should go live early next year</s> went <a href="http://bbc.co.uk/taster">live on the 26th January 2015</a></em>).</p>
 
-&lt;p&gt;All in all, &lt;strong&gt;2014’s been a good year&lt;/strong&gt;.&lt;/p&gt;
+<p>All in all, <strong>2014’s been a good year</strong>.</p>
 
-&lt;p&gt;&lt;em&gt;But it could have been even better.&lt;/em&gt;&lt;/p&gt;
+<p><em>But it could have been even better.</em></p>
 
-&lt;h2 id=&quot;distraction-is-all-around-us&quot;&gt;Distraction is all around us&lt;/h2&gt;
+<h2 id="distraction-is-all-around-us">Distraction is all around us</h2>
 
-&lt;p&gt;Distraction is all around us. From cluttered desktops (&lt;em&gt;both physical and non physical&lt;/em&gt;), smatphones overcrowded with useless apps, to the ever increasing click bait that surrounds us online. I wonder just how much more productive I would have been this year if I’d have put a foot down on the distraction that surrounds me[?].&lt;/p&gt;
+<p>Distraction is all around us. From cluttered desktops (<em>both physical and non physical</em>), smatphones overcrowded with useless apps, to the ever increasing click bait that surrounds us online. I wonder just how much more productive I would have been this year if I’d have put a foot down on the distraction that surrounds me[?].</p>
 
-&lt;h3 id=&quot;distraction-no-more&quot;&gt;Distraction no more&lt;/h3&gt;
+<h3 id="distraction-no-more">Distraction no more</h3>
 
-&lt;p&gt;The one &lt;strong&gt;big&lt;/strong&gt; thing I want to change going into 2015 is remove the amount of distraction that’s in my life. Right now, I only have a vague idea &lt;em&gt;how&lt;/em&gt; I’m going to do it, but I know what areas I need to focus on:&lt;/p&gt;
+<p>The one <strong>big</strong> thing I want to change going into 2015 is remove the amount of distraction that’s in my life. Right now, I only have a vague idea <em>how</em> I’m going to do it, but I know what areas I need to focus on:</p>
 
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Clear out all the useless apps on my phone&lt;/strong&gt;. No excuses. If it hasn’t been used in a month, &lt;strong&gt;delete it&lt;/strong&gt;.&lt;/li&gt;
-  &lt;li&gt;Keep both my physical and non physical desktops completely clean at all times.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Stop using my laptop while watching TV&lt;/strong&gt; - I end up not remembering what I’ve just watched, and not doing &lt;em&gt;anything&lt;/em&gt; productive on my laptop.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Cut out how often I tend to email&lt;/strong&gt;. It’s massively counterproductive.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Swap lifts for stairs&lt;/strong&gt;. This month I started taking the 10 flights of stairs up to the office I’m currently working from. It’s paying benefits already. I need to continue this.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Stop putting things off&lt;/strong&gt; - if it needs doing, do it &lt;strong&gt;immediately&lt;/strong&gt;, or &lt;strong&gt;schedule it properly&lt;/strong&gt;.&lt;/li&gt;
-  &lt;li&gt;Automate anything repetitive that can be done by a machine.&lt;/li&gt;
-&lt;/ul&gt;
+<ul>
+  <li><strong>Clear out all the useless apps on my phone</strong>. No excuses. If it hasn’t been used in a month, <strong>delete it</strong>.</li>
+  <li>Keep both my physical and non physical desktops completely clean at all times.</li>
+  <li><strong>Stop using my laptop while watching TV</strong> - I end up not remembering what I’ve just watched, and not doing <em>anything</em> productive on my laptop.</li>
+  <li><strong>Cut out how often I tend to email</strong>. It’s massively counterproductive.</li>
+  <li><strong>Swap lifts for stairs</strong>. This month I started taking the 10 flights of stairs up to the office I’m currently working from. It’s paying benefits already. I need to continue this.</li>
+  <li><strong>Stop putting things off</strong> - if it needs doing, do it <strong>immediately</strong>, or <strong>schedule it properly</strong>.</li>
+  <li>Automate anything repetitive that can be done by a machine.</li>
+</ul>
 
-&lt;h2 id=&quot;targets-for-2015&quot;&gt;Targets for 2015&lt;/h2&gt;
+<h2 id="targets-for-2015">Targets for 2015</h2>
 
-&lt;ul&gt;
-  &lt;li&gt;I want to learn more about continuous delivery.&lt;/li&gt;
-  &lt;li&gt;Use Rails and Meteor a lot more for back end projects.&lt;/li&gt;
-  &lt;li&gt;Develop the Wildflame brand further.&lt;/li&gt;
-  &lt;li&gt;Incorporate electronics into more projects.&lt;/li&gt;
-  &lt;li&gt;Blog more. I’d like to write about &lt;em&gt;something&lt;/em&gt; at least twice a month.&lt;/li&gt;
-  &lt;li&gt;Exercise more by incorporating more into my daily commute.&lt;/li&gt;
-  &lt;li&gt;Improve one thing by &lt;a href=&quot;http://jamesclear.com/marginal-gains&quot;&gt;1% each and every day&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Reduce the amount of distraction&lt;/strong&gt;.&lt;/li&gt;
-&lt;/ul&gt;
+<ul>
+  <li>I want to learn more about continuous delivery.</li>
+  <li>Use Rails and Meteor a lot more for back end projects.</li>
+  <li>Develop the Wildflame brand further.</li>
+  <li>Incorporate electronics into more projects.</li>
+  <li>Blog more. I’d like to write about <em>something</em> at least twice a month.</li>
+  <li>Exercise more by incorporating more into my daily commute.</li>
+  <li>Improve one thing by <a href="http://jamesclear.com/marginal-gains">1% each and every day</a>.</li>
+  <li><strong>Reduce the amount of distraction</strong>.</li>
+</ul>
 
-&lt;p&gt;I want 2015 to be the &lt;strong&gt;year of less distraction, more automation and increased productivity&lt;/strong&gt;. Let’s see where this takes me, and I’ll report back on any improvements I make.&lt;/p&gt;
+<p>I want 2015 to be the <strong>year of less distraction, more automation and increased productivity</strong>. Let’s see where this takes me, and I’ll report back on any improvements I make.</p>
 </description>
     </item>
     
@@ -500,31 +500,31 @@
       <pubDate>Tue, 22 Jul 2014 00:00:00 +0100</pubDate>
       <author></author>
       <guid>http://www.creativenightly.com/2014/07/setting-up-hyperion-on-a-raspberry-pi-for-use-with-lightpack</guid>
-      <description>&lt;h2 id=&quot;installing-hyperion&quot;&gt;Installing Hyperion&lt;/h2&gt;
+      <description><h2 id="installing-hyperion">Installing Hyperion</h2>
 
-&lt;p&gt;Install the following prerequisites first using apt-get.&lt;/p&gt;
+<p>Install the following prerequisites first using apt-get.</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;apt-get update
-apt-get install libqtcore4 libqtgui4 libqt4-network libusb-1.0-0 libprotobuf7 ca-certificates&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-sh" data-lang="sh">apt-get update
+apt-get install libqtcore4 libqtgui4 libqt4-network libusb-1.0-0 libprotobuf7 ca-certificates</code></pre></figure>
 
-&lt;p&gt;Next grab the install hyperion script from the hyprion github repo.&lt;/p&gt;
+<p>Next grab the install hyperion script from the hyprion github repo.</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;wget -N https://raw.github.com/tvdzwan/hyperion/master/bin/install_hyperion.sh&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-sh" data-lang="sh">wget -N https://raw.github.com/tvdzwan/hyperion/master/bin/install_hyperion.sh</code></pre></figure>
 
-&lt;p&gt;Installing hyperion is as simple as running the following command.&lt;/p&gt;
+<p>Installing hyperion is as simple as running the following command.</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;sh ./install_hyperion.sh&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-sh" data-lang="sh">sh ./install_hyperion.sh</code></pre></figure>
 
-&lt;p&gt;To get it working with Lightpack, you’ll want to edit the default hyperion config file located at &lt;code&gt;/etc/hyperion.config.json&lt;/code&gt; and change the &lt;strong&gt;type&lt;/strong&gt; to “Lightpack”.&lt;/p&gt;
+<p>To get it working with Lightpack, you’ll want to edit the default hyperion config file located at <code>/etc/hyperion.config.json</code> and change the <strong>type</strong> to “Lightpack”.</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;nano /etc/hyperion.config.json
+<figure class="highlight"><pre><code class="language-sh" data-lang="sh">nano /etc/hyperion.config.json
 
- &lt;span class=&quot;s2&quot;&gt;&amp;quot;type&amp;quot;&lt;/span&gt;       : &lt;span class=&quot;s2&quot;&gt;&amp;quot;lightpack&amp;quot;&lt;/span&gt;,
- &lt;span class=&quot;s2&quot;&gt;&amp;quot;output&amp;quot;&lt;/span&gt;     : “&lt;span class=&quot;err&quot;&gt;&amp;quot;&lt;/span&gt;,&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+ <span class="s2">&quot;type&quot;</span>       : <span class="s2">&quot;lightpack&quot;</span>,
+ <span class="s2">&quot;output&quot;</span>     : “<span class="err">&quot;</span>,</code></pre></figure>
 
-&lt;p&gt;Next restart the server with the following command. If all goes well, you should see your Lightpack light up with rainbow colours, before mimicking the colours of your screen.&lt;/p&gt;
+<p>Next restart the server with the following command. If all goes well, you should see your Lightpack light up with rainbow colours, before mimicking the colours of your screen.</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;service hyperion restart&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-sh" data-lang="sh">service hyperion restart</code></pre></figure>
 
 </description>
     </item>
@@ -537,76 +537,76 @@ apt-get install libqtcore4 libqtgui4 libqt4-network libusb-1.0-0 libprotobuf7 ca
       <pubDate>Sun, 03 Nov 2013 00:00:00 +0000</pubDate>
       <author></author>
       <guid>http://www.creativenightly.com/2013/11/Setting-up-and-securing-a-VPS-on-Ubuntu-13-10-x64</guid>
-      <description>&lt;p&gt;&lt;strong&gt;&lt;em&gt;This is a work in progress post, as i’m short on time to dabble with security. I’ll add to it as i get time to set up my VPS&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+      <description><p><strong><em>This is a work in progress post, as i’m short on time to dabble with security. I’ll add to it as i get time to set up my VPS</em></strong></p>
 
-&lt;h2 id=&quot;basic-security&quot;&gt;Basic Security&lt;/h2&gt;
+<h2 id="basic-security">Basic Security</h2>
 
-&lt;p&gt;This part is extensive, and for good reason. Security is the most important part of configuring a web server. Below are several measures to make sure you’ve got a good foundation in place to safeguard your server.&lt;/p&gt;
+<p>This part is extensive, and for good reason. Security is the most important part of configuring a web server. Below are several measures to make sure you’ve got a good foundation in place to safeguard your server.</p>
 
-&lt;h3 id=&quot;change-root-password&quot;&gt;Change root password&lt;/h3&gt;
+<h3 id="change-root-password">Change root password</h3>
 
-&lt;p&gt;Currently your root password is the default one that was sent to you when you registered your VPS. The first thing to do is change it to one of your choice.&lt;/p&gt;
+<p>Currently your root password is the default one that was sent to you when you registered your VPS. The first thing to do is change it to one of your choice.</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;passwd&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">passwd</code></pre></figure>
 
-&lt;h3 id=&quot;create-a-new-user&quot;&gt;Create a new user&lt;/h3&gt;
+<h3 id="create-a-new-user">Create a new user</h3>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;adduser &amp;lt;your username&amp;gt;
-visudo&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">adduser &lt;your username&gt;
+visudo</code></pre></figure>
 
-&lt;p&gt;Add the following line and save:&lt;/p&gt;
+<p>Add the following line and save:</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&amp;lt;your username&amp;gt; &lt;span class=&quot;nv&quot;&gt;ALL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=(&lt;/span&gt;ALL:ALL&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; ALL&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">&lt;your username&gt; <span class="nv">ALL</span><span class="o">=(</span>ALL:ALL<span class="o">)</span> ALL</code></pre></figure>
 
-&lt;h3 id=&quot;configure-ssh&quot;&gt;Configure SSH&lt;/h3&gt;
+<h3 id="configure-ssh">Configure SSH</h3>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;nano /etc/ssh/sshd_config&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">nano /etc/ssh/sshd_config</code></pre></figure>
 
-&lt;p&gt;Edit the following lines and save:&lt;/p&gt;
+<p>Edit the following lines and save:</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;Port &amp;lt;your port number&amp;gt;
+<figure class="highlight"><pre><code class="language-sh" data-lang="sh">Port &lt;your port number&gt;
 Protocol 2
 PermitRootLogin no
 PermitEmptyPasswords no
 UseDNS no
-AllowUsers yourusername&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+AllowUsers yourusername</code></pre></figure>
 
-&lt;p&gt;You should choose a port number that is less than 1024, and not 22. Here’s why.&lt;/p&gt;
+<p>You should choose a port number that is less than 1024, and not 22. Here’s why.</p>
 
-&lt;p&gt;reload ssh&lt;/p&gt;
+<p>reload ssh</p>
 
-&lt;p&gt;Exit and login as new user:&lt;/p&gt;
+<p>Exit and login as new user:</p>
 
-&lt;p&gt;exit
-ssh -p &lt;your port=&quot;&quot; number=&quot;&quot;&gt; &lt;your username=&quot;&quot;&gt;@&lt;yourdomain.com&gt;&lt;/yourdomain.com&gt;&lt;/your&gt;&lt;/your&gt;&lt;/p&gt;
+<p>exit
+ssh -p <your port="" number=""> <your username="">@<yourdomain.com></yourdomain.com></your></your></p>
 
-&lt;h3 id=&quot;update-ubuntu&quot;&gt;Update Ubuntu:&lt;/h3&gt;
+<h3 id="update-ubuntu">Update Ubuntu:</h3>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;sudo apt-get update &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo apt-get upgrade --show-upgraded&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-sh" data-lang="sh">sudo apt-get update <span class="o">&amp;&amp;</span> sudo apt-get upgrade --show-upgraded</code></pre></figure>
 
-&lt;h3 id=&quot;enable-automatic-security-updates&quot;&gt;Enable automatic security updates:&lt;/h3&gt;
+<h3 id="enable-automatic-security-updates">Enable automatic security updates:</h3>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;sudo apt-get install unattended-upgrades
-sudo nano /etc/apt/apt.conf.d/10periodic&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-sh" data-lang="sh">sudo apt-get install unattended-upgrades
+sudo nano /etc/apt/apt.conf.d/10periodic</code></pre></figure>
 
-&lt;h3 id=&quot;harden-security-of-git-user&quot;&gt;Harden security of git user&lt;/h3&gt;
+<h3 id="harden-security-of-git-user">Harden security of git user</h3>
 
-&lt;p&gt;Switch to git-shell for git user.&lt;/p&gt;
+<p>Switch to git-shell for git user.</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;sudo chsh -s /usr/bin/git-shell git&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-sh" data-lang="sh">sudo chsh -s /usr/bin/git-shell git</code></pre></figure>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;sudo mkdir /home/git/git-shell-commands
+<figure class="highlight"><pre><code class="language-sh" data-lang="sh">sudo mkdir /home/git/git-shell-commands
 sudo cp /usr/share/doc/git/contrib/git-shell-commands/list /home/git/git-shell-commands/
 sudo cp /usr/share/doc/git/contrib/git-shell-commands/help /home/git/git-shell-commands/
 sudo chown -R gituser /home/git/git-shell-commands
-sudo chmod -R u+x /home/git/git-shell-commands&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+sudo chmod -R u+x /home/git/git-shell-commands</code></pre></figure>
 
-&lt;h3 id=&quot;install-nmap&quot;&gt;Install nmap&lt;/h3&gt;
+<h3 id="install-nmap">Install nmap</h3>
 
-&lt;p&gt;Nmap is a utility for network exploration or security auditing. It supports ping scanning (determine which hosts are up), many port scanning techniques, version detection (determine service protocols and application versions listening behind ports), and TCP/IP fingerprinting (remote host OS or device identification).&lt;/p&gt;
+<p>Nmap is a utility for network exploration or security auditing. It supports ping scanning (determine which hosts are up), many port scanning techniques, version detection (determine service protocols and application versions listening behind ports), and TCP/IP fingerprinting (remote host OS or device identification).</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;sudo apt-get install nmap
-nmap -v -sT localhost&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-sh" data-lang="sh">sudo apt-get install nmap
+nmap -v -sT localhost</code></pre></figure>
 
 </description>
     </item>
@@ -619,19 +619,19 @@ nmap -v -sT localhost&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
       <pubDate>Fri, 25 Oct 2013 00:00:00 +0100</pubDate>
       <author></author>
       <guid>http://www.creativenightly.com/2013/10/How-to-fix-Homebrew-on-Mac-OSX-Mavericks</guid>
-      <description>&lt;p&gt;I’ve had lots of problems with homebrew since upgrading to Mavericks. The same problems also existed when trying to rbenv install and really anything else that compiles. The root cause of the issue ended up being a conflict Mountain Lion Command Line Tools and the ones provided by Maverick.&lt;/p&gt;
+      <description><p>I’ve had lots of problems with homebrew since upgrading to Mavericks. The same problems also existed when trying to rbenv install and really anything else that compiles. The root cause of the issue ended up being a conflict Mountain Lion Command Line Tools and the ones provided by Maverick.</p>
 
-&lt;!--more--&gt;
+<!--more-->
 
-&lt;p&gt;There’s a chance you might be having various issues with homebrew after upgrading to OS X Mavericks. The root cause of the issue is a conflict with Mountain Lion Command Line Tools and the ones provided by Mavericks.&lt;/p&gt;
+<p>There’s a chance you might be having various issues with homebrew after upgrading to OS X Mavericks. The root cause of the issue is a conflict with Mountain Lion Command Line Tools and the ones provided by Mavericks.</p>
 
-&lt;p&gt;There is an simple solution to this. By running &lt;code&gt;xcode-select&lt;/code&gt; (a tool that changes the path of the current active developer directory) it will fix the issue.&lt;/p&gt;
+<p>There is an simple solution to this. By running <code>xcode-select</code> (a tool that changes the path of the current active developer directory) it will fix the issue.</p>
 
-&lt;p&gt;Open up the terminal and run:&lt;/p&gt;
+<p>Open up the terminal and run:</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;xcode-select --install&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">xcode-select --install</code></pre></figure>
 
-&lt;p&gt;This will bring up a dialog to install the Command Line Tools (which you will have to type in your password) and your Homebrew issues shall be fixed!&lt;/p&gt;
+<p>This will bring up a dialog to install the Command Line Tools (which you will have to type in your password) and your Homebrew issues shall be fixed!</p>
 </description>
     </item>
     
@@ -643,22 +643,22 @@ nmap -v -sT localhost&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
       <pubDate>Mon, 11 Mar 2013 00:00:00 +0000</pubDate>
       <author></author>
       <guid>http://www.creativenightly.com/2013/03/How-to-install-ruby-2-0-0-on-OSX-Mountain-Lion</guid>
-      <description>&lt;p&gt;If you’ve come across the any of the following errors while trying to install Ruby 2.0.0, you’ve come to the right place!&lt;/p&gt;
+      <description><p>If you’ve come across the any of the following errors while trying to install Ruby 2.0.0, you’ve come to the right place!</p>
 
-&lt;!--more--&gt;
+<!--more-->
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;apple-gcc42 is not available in PATH
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">apple-gcc42 is not available in PATH
 
-Error running &lt;span class=&quot;s1&quot;&gt;&amp;#39;env GEM_PATH=/Users/KingScooty/.rvm/gems/ruby-2.0.0-p0:/Users/KingScooty/.rvm/gems/ruby-2.0.0-p0@global:/Users/KingScooty/.rvm/gems/ruby-2.0.0-p0:/Users/KingScooty/.rvm/gems/ruby-2.0.0-p0@global GEM_HOME=/Users/KingScooty/.rvm/gems/ruby-2.0.0-p0 /Users/KingScooty/.rvm/rubies/ruby-2.0.0-p0/bin/ruby /Users/KingScooty/.rvm/src/rubygems-2.0.2/setup.rb&amp;#39;&lt;/span&gt;, please &lt;span class=&quot;nb&quot;&gt;read&lt;/span&gt; /Users/KingScooty/.rvm/log/ruby-2.0.0-p0/rubygems.install.log
+Error running <span class="s1">&#39;env GEM_PATH=/Users/KingScooty/.rvm/gems/ruby-2.0.0-p0:/Users/KingScooty/.rvm/gems/ruby-2.0.0-p0@global:/Users/KingScooty/.rvm/gems/ruby-2.0.0-p0:/Users/KingScooty/.rvm/gems/ruby-2.0.0-p0@global GEM_HOME=/Users/KingScooty/.rvm/gems/ruby-2.0.0-p0 /Users/KingScooty/.rvm/rubies/ruby-2.0.0-p0/bin/ruby /Users/KingScooty/.rvm/src/rubygems-2.0.2/setup.rb&#39;</span>, please <span class="nb">read</span> /Users/KingScooty/.rvm/log/ruby-2.0.0-p0/rubygems.install.log
 
- ERROR:  Could not find a valid gem &lt;span class=&quot;s1&quot;&gt;&amp;#39;sass&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&amp;gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 0&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;, here is why:
-      Unable to download data from https://rubygems.org/ - SSL_connect &lt;span class=&quot;nv&quot;&gt;returned&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;errno&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;      &lt;span class=&quot;nv&quot;&gt;state&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;SSLv3 &lt;span class=&quot;nb&quot;&gt;read &lt;/span&gt;server key exchange B: bad ecpoint &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;https://rubygems.org/latest_specs.4.8.gz&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+ ERROR:  Could not find a valid gem <span class="s1">&#39;sass&#39;</span> <span class="o">(</span>&gt;<span class="o">=</span> 0<span class="o">)</span>, here is why:
+      Unable to download data from https://rubygems.org/ - SSL_connect <span class="nv">returned</span><span class="o">=</span><span class="m">1</span> <span class="nv">errno</span><span class="o">=</span><span class="m">0</span>      <span class="nv">state</span><span class="o">=</span>SSLv3 <span class="nb">read </span>server key exchange B: bad ecpoint <span class="o">(</span>https://rubygems.org/latest_specs.4.8.gz<span class="o">)</span></code></pre></figure>
 
-&lt;p&gt;The following should get you up and running with Ruby 2.0.0 in less than 5minutes!&lt;/p&gt;
+<p>The following should get you up and running with Ruby 2.0.0 in less than 5minutes!</p>
 
-&lt;p&gt;You &lt;em&gt;must&lt;/em&gt; install &lt;strong&gt;libyaml&lt;/strong&gt; because Ruby 2.0.0 deprecated syck in favor of psych. I found that i also needed a variety of other packages during the install, so grab them too.&lt;/p&gt;
+<p>You <em>must</em> install <strong>libyaml</strong> because Ruby 2.0.0 deprecated syck in favor of psych. I found that i also needed a variety of other packages during the install, so grab them too.</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;rvm get stable
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">rvm get stable
 
 brew update
 
@@ -674,9 +674,9 @@ brew install sqlite
 
 brew install apple-gcc42
 
-rvm install 2.0.0 --with-gcc&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;gcc-4.2&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+rvm install 2.0.0 --with-gcc<span class="o">=</span>gcc-4.2</code></pre></figure>
 
-&lt;h1 id=&quot;boom-&quot;&gt;boom! :)&lt;/h1&gt;
+<h1 id="boom-">boom! :)</h1>
 </description>
     </item>
     
@@ -688,67 +688,67 @@ rvm install 2.0.0 --with-gcc&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;gcc-4.
       <pubDate>Tue, 18 Sep 2012 00:00:00 +0100</pubDate>
       <author></author>
       <guid>http://www.creativenightly.com/2012/09/Visual-tweaks-to-improve-Sublime-Text-2-workflow</guid>
-      <description>&lt;p&gt;Sublime Text is my editor of choice for an abundance of reasons, but one key reason is it’s customisability. I’m constantly tweaking settings to tailor Sublime Text to suit my personal taste. The following settings are my favourite ones.&lt;/p&gt;
+      <description><p>Sublime Text is my editor of choice for an abundance of reasons, but one key reason is it’s customisability. I’m constantly tweaking settings to tailor Sublime Text to suit my personal taste. The following settings are my favourite ones.</p>
 
-&lt;!--more--&gt;
+<!--more-->
 
-&lt;h3 id=&quot;improved-sidebar-with-sidebar-enhancements&quot;&gt;1. Improved sidebar with Sidebar Enhancements&lt;/h3&gt;
+<h3 id="improved-sidebar-with-sidebar-enhancements">1. Improved sidebar with Sidebar Enhancements</h3>
 
-&lt;p&gt;&lt;a href=&quot;https://github.com/titoBouzout/SideBarEnhancements/&quot;&gt;Sidebar Enhancements&lt;/a&gt; enables various enhancements and right click options in the Sublime Text sidebar. Most notably, ‘&lt;strong&gt;move to trash&lt;/strong&gt;’, ‘&lt;strong&gt;move&lt;/strong&gt;’, ‘&lt;strong&gt;reveal&lt;/strong&gt;’, ‘open with’.&lt;/p&gt;
+<p><a href="https://github.com/titoBouzout/SideBarEnhancements/">Sidebar Enhancements</a> enables various enhancements and right click options in the Sublime Text sidebar. Most notably, ‘<strong>move to trash</strong>’, ‘<strong>move</strong>’, ‘<strong>reveal</strong>’, ‘open with’.</p>
 
-&lt;p&gt;Download the package &lt;a href=&quot;https://github.com/titoBouzout/SideBarEnhancements/&quot;&gt;here&lt;/a&gt; and install it.&lt;/p&gt;
+<p>Download the package <a href="https://github.com/titoBouzout/SideBarEnhancements/">here</a> and install it.</p>
 
-&lt;h3 id=&quot;see-git-diff-in-sublime-text-gutter-with-gitgutter&quot;&gt;2. See git diff in Sublime Text gutter with GitGutter&lt;/h3&gt;
+<h3 id="see-git-diff-in-sublime-text-gutter-with-gitgutter">2. See git diff in Sublime Text gutter with GitGutter</h3>
 
-&lt;p&gt;I only recently came across this plugin. Originally, i had to resort to &lt;strong&gt;git difftool&lt;/strong&gt; everytime i wanted to inspect any changes to staged files – a rather cumbersome process.&lt;/p&gt;
+<p>I only recently came across this plugin. Originally, i had to resort to <strong>git difftool</strong> everytime i wanted to inspect any changes to staged files – a rather cumbersome process.</p>
 
-&lt;p&gt;&lt;img src=&quot;https://raw.github.com/jisaacks/GitGutter/master/screenshot.png&quot; alt=&quot;screenshot&quot; /&gt;&lt;/p&gt;
+<p><img src="https://raw.github.com/jisaacks/GitGutter/master/screenshot.png" alt="screenshot" /></p>
 
-&lt;p&gt;With &lt;a href=&quot;https://github.com/jisaacks/GitGutter&quot;&gt;GitGutter&lt;/a&gt;, new lines, modified lines, and deleted lines all show up in the gutter of Sublime Text.&lt;/p&gt;
+<p>With <a href="https://github.com/jisaacks/GitGutter">GitGutter</a>, new lines, modified lines, and deleted lines all show up in the gutter of Sublime Text.</p>
 
-&lt;h3 id=&quot;change-the-caret-cursor-style&quot;&gt;3. Change the caret (cursor) style&lt;/h3&gt;
+<h3 id="change-the-caret-cursor-style">3. Change the caret (cursor) style</h3>
 
-&lt;p&gt;There’s a few hidden settings for altering the caret style in Sublime Text 2. The default is &lt;strong&gt;blink&lt;/strong&gt;, but we can make it gently fade in and out by entering the following into your config file (CMD + ,):&lt;/p&gt;
+<p>There’s a few hidden settings for altering the caret style in Sublime Text 2. The default is <strong>blink</strong>, but we can make it gently fade in and out by entering the following into your config file (CMD + ,):</p>
 
-&lt;p&gt;&lt;code&gt;
-&quot;caret_style&quot;: &quot;phase&quot;
-&lt;/code&gt;&lt;/p&gt;
+<p><code>
+"caret_style": "phase"
+</code></p>
 
-&lt;p&gt;There’s also a setting for making the caret wider, this is quite a useful feature when taking screenshots.&lt;/p&gt;
+<p>There’s also a setting for making the caret wider, this is quite a useful feature when taking screenshots.</p>
 
-&lt;p&gt;&lt;code&gt;
-&quot;caret_style&quot;: &quot;wide&quot;
-&lt;/code&gt;&lt;/p&gt;
+<p><code>
+"caret_style": "wide"
+</code></p>
 
-&lt;h3 id=&quot;highlight-current-line&quot;&gt;4. Highlight current line&lt;/h3&gt;
+<h3 id="highlight-current-line">4. Highlight current line</h3>
 
-&lt;p&gt;I’m a little surprised Sublime Text doesn’t enable this one by default – as i’m always losing my current position in a file when switching files – but nevertheless, to highlight the current line, enter the following into your config file:&lt;/p&gt;
+<p>I’m a little surprised Sublime Text doesn’t enable this one by default – as i’m always losing my current position in a file when switching files – but nevertheless, to highlight the current line, enter the following into your config file:</p>
 
-&lt;p&gt;&lt;code&gt;
-&quot;highlight_line&quot;: true
-&lt;/code&gt;&lt;/p&gt;
+<p><code>
+"highlight_line": true
+</code></p>
 
-&lt;h3 id=&quot;show-folding-arrows&quot;&gt;5. Show folding arrows&lt;/h3&gt;
+<h3 id="show-folding-arrows">5. Show folding arrows</h3>
 
-&lt;p&gt;Code folding is great, but half the time i forget the feature is even there! Not to mention i hate the time wasted waiting for the arrows to show up when i hover over the gutter.&lt;/p&gt;
+<p>Code folding is great, but half the time i forget the feature is even there! Not to mention i hate the time wasted waiting for the arrows to show up when i hover over the gutter.</p>
 
-&lt;p&gt;To have the gutter arrows permanently visible, enter the following into your config file:&lt;/p&gt;
+<p>To have the gutter arrows permanently visible, enter the following into your config file:</p>
 
-&lt;p&gt;&lt;code&gt;
-&quot;fade_fold_buttons&quot;: false
-&lt;/code&gt;&lt;/p&gt;
+<p><code>
+"fade_fold_buttons": false
+</code></p>
 
-&lt;h3 id=&quot;bold-folder-labels&quot;&gt;6. Bold folder labels&lt;/h3&gt;
+<h3 id="bold-folder-labels">6. Bold folder labels</h3>
 
-&lt;p&gt;This is another visual cue that should be enabled by default. I find navigating the sidebar &lt;strong&gt;much&lt;/strong&gt; easier when the folders are bold.&lt;/p&gt;
+<p>This is another visual cue that should be enabled by default. I find navigating the sidebar <strong>much</strong> easier when the folders are bold.</p>
 
-&lt;p&gt;&lt;code&gt;
-&quot;bold_folder_labels&quot;: true
-&lt;/code&gt;&lt;/p&gt;
+<p><code>
+"bold_folder_labels": true
+</code></p>
 
-&lt;hr /&gt;
+<hr />
 
-&lt;p&gt;Sound off in the comments if you know of any other tricks to improving user workflow in Sublime Text 2 :)&lt;/p&gt;
+<p>Sound off in the comments if you know of any other tricks to improving user workflow in Sublime Text 2 :)</p>
 </description>
     </item>
     
@@ -760,300 +760,300 @@ rvm install 2.0.0 --with-gcc&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;gcc-4.
       <pubDate>Mon, 30 Jul 2012 00:00:00 +0100</pubDate>
       <author></author>
       <guid>http://www.creativenightly.com/2012/07/Shopify-for-Designers-a-Workshop-by-Keir-Whitaker</guid>
-      <description>&lt;p&gt;These are the notes i took from the Shopify for Designers workshop by &lt;a href=&quot;http://twitter.com/keir&quot;&gt;Keir Whitaker&lt;/a&gt; in Birmingham on the 30th July 2012.&lt;/p&gt;
+      <description><p>These are the notes i took from the Shopify for Designers workshop by <a href="http://twitter.com/keir">Keir Whitaker</a> in Birmingham on the 30th July 2012.</p>
 
-&lt;p&gt;&lt;em&gt;Apologies if they’re a bit of an incoherent mess, i was trying to type fast and listen simultaenously :)&lt;/em&gt;&lt;/p&gt;
+<p><em>Apologies if they’re a bit of an incoherent mess, i was trying to type fast and listen simultaenously :)</em></p>
 
-&lt;!--more--&gt;
+<!--more-->
 
-&lt;p&gt;Keir was aproached to do some outreach for Shopify in the UK. &lt;em&gt;This workshop was free&lt;/em&gt;, which was quite a nice touch, and also good advertising for the platform.&lt;/p&gt;
+<p>Keir was aproached to do some outreach for Shopify in the UK. <em>This workshop was free</em>, which was quite a nice touch, and also good advertising for the platform.</p>
 
-&lt;p&gt;The following notes cover Shopify’s main features, what Shopify is good for, and what it’s bad for, Shopify’s file structure, the Liquid templating engine and some examples / helpful code snippets for various scenarios.&lt;/p&gt;
+<p>The following notes cover Shopify’s main features, what Shopify is good for, and what it’s bad for, Shopify’s file structure, the Liquid templating engine and some examples / helpful code snippets for various scenarios.</p>
 
-&lt;h4 id=&quot;shopify-site-examples&quot;&gt;Shopify Site Examples:&lt;/h4&gt;
+<h4 id="shopify-site-examples">Shopify Site Examples:</h4>
 
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://abookapart.com&quot;&gt;A Book Apart&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://unitedpixelworkers.com&quot;&gt;United Pixel Workers&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Great custom checkout styles to override the ‘not so great’ Shopify default styles.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://hardgraft.com&quot;&gt;Hard Graft&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Custom JavaScript interactive browsing experience.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://dodocase.com&quot;&gt;Dodo Case&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+<ul>
+  <li><a href="http://abookapart.com">A Book Apart</a></li>
+  <li><a href="http://unitedpixelworkers.com">United Pixel Workers</a>
+    <ul>
+      <li>Great custom checkout styles to override the ‘not so great’ Shopify default styles.</li>
+    </ul>
+  </li>
+  <li><a href="http://hardgraft.com">Hard Graft</a>
+    <ul>
+      <li>Custom JavaScript interactive browsing experience.</li>
+    </ul>
+  </li>
+  <li><a href="http://dodocase.com">Dodo Case</a></li>
+</ul>
 
-&lt;p&gt;&lt;strong&gt;Slug&lt;/strong&gt; term in Wordpress === &lt;strong&gt;Handle&lt;/strong&gt; term in Shopify&lt;/p&gt;
+<p><strong>Slug</strong> term in Wordpress === <strong>Handle</strong> term in Shopify</p>
 
-&lt;p&gt;Handles can allow for customised templates to be used to alter the experience on different pages.&lt;/p&gt;
+<p>Handles can allow for customised templates to be used to alter the experience on different pages.</p>
 
-&lt;h4 id=&quot;reserves-words&quot;&gt;Reserves words:&lt;/h4&gt;
+<h4 id="reserves-words">Reserves words:</h4>
 
-&lt;ul&gt;
-  &lt;li&gt;Products&lt;/li&gt;
-  &lt;li&gt;Collections&lt;/li&gt;
-  &lt;li&gt;Carts&lt;/li&gt;
-&lt;/ul&gt;
+<ul>
+  <li>Products</li>
+  <li>Collections</li>
+  <li>Carts</li>
+</ul>
 
-&lt;p&gt;Image handling: Max size is 1024x1024.&lt;/p&gt;
+<p>Image handling: Max size is 1024x1024.</p>
 
-&lt;h4 id=&quot;shopify-restrictions&quot;&gt;Shopify Restrictions&lt;/h4&gt;
+<h4 id="shopify-restrictions">Shopify Restrictions</h4>
 
-&lt;p&gt;The only restriction is the &lt;strong&gt;Add to cart&lt;/strong&gt; form location.&lt;/p&gt;
+<p>The only restriction is the <strong>Add to cart</strong> form location.</p>
 
-&lt;h4 id=&quot;product-variant-options&quot;&gt;Product Variant Options&lt;/h4&gt;
+<h4 id="product-variant-options">Product Variant Options</h4>
 
-&lt;p&gt;Options for variants of the same product. e.g. T-shirts.&lt;/p&gt;
+<p>Options for variants of the same product. e.g. T-shirts.</p>
 
-&lt;ul&gt;
-  &lt;li&gt;Colour&lt;/li&gt;
-  &lt;li&gt;Sizes&lt;/li&gt;
-&lt;/ul&gt;
+<ul>
+  <li>Colour</li>
+  <li>Sizes</li>
+</ul>
 
-&lt;h4 id=&quot;shopify-as-a-blogging-tool&quot;&gt;Shopify as a Blogging Tool&lt;/h4&gt;
+<h4 id="shopify-as-a-blogging-tool">Shopify as a Blogging Tool</h4>
 
-&lt;p&gt;Shopify is not that great for blogging - it offers &lt;em&gt;basic&lt;/em&gt; functionality for blogging. Best example of its use is for a Press page - small snippets of text explaining what’s new.&lt;/p&gt;
-
-&lt;h4 id=&quot;javascript-customisation&quot;&gt;JavaScript Customisation&lt;/h4&gt;
-
-&lt;p&gt;Powerful API tools to allow for customisating the browser experience e.g. Variant options, Collection sorting etc.&lt;/p&gt;
-
-&lt;h4 id=&quot;collections&quot;&gt;Collections&lt;/h4&gt;
+<p>Shopify is not that great for blogging - it offers <em>basic</em> functionality for blogging. Best example of its use is for a Press page - small snippets of text explaining what’s new.</p>
+
+<h4 id="javascript-customisation">JavaScript Customisation</h4>
+
+<p>Powerful API tools to allow for customisating the browser experience e.g. Variant options, Collection sorting etc.</p>
+
+<h4 id="collections">Collections</h4>
 
-&lt;ul&gt;
-  &lt;li&gt;Smart Collections - price, in stock, sold out (but a shipment is coming in)&lt;/li&gt;
-&lt;/ul&gt;
+<ul>
+  <li>Smart Collections - price, in stock, sold out (but a shipment is coming in)</li>
+</ul>
 
-&lt;h4 id=&quot;partners-test-section&quot;&gt;Partners Test Section&lt;/h4&gt;
+<h4 id="partners-test-section">Partners Test Section</h4>
 
-&lt;p&gt;Throws in all the functionality one would ever need from a shop. Allows users to start fiddling about with the platform without having to pay for a license.&lt;/p&gt;
+<p>Throws in all the functionality one would ever need from a shop. Allows users to start fiddling about with the platform without having to pay for a license.</p>
 
-&lt;h4 id=&quot;product-features--fields&quot;&gt;Product features / fields&lt;/h4&gt;
+<h4 id="product-features--fields">Product features / fields</h4>
 
-&lt;ul&gt;
-  &lt;li&gt;Title&lt;/li&gt;
-  &lt;li&gt;URL &amp;amp; Handle - &lt;em&gt;Similar to the permalink field in Wordpress&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;WYSIWYG Editor&lt;/li&gt;
-  &lt;li&gt;Product properties / options
-    &lt;ul&gt;
-      &lt;li&gt;Product Type&lt;/li&gt;
-      &lt;li&gt;Vendor&lt;/li&gt;
-      &lt;li&gt;Size&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Tags
-    &lt;ul&gt;
-      &lt;li&gt;Custom Collections
-        &lt;ul&gt;
-          &lt;li&gt;Year for Music (1999)&lt;/li&gt;
-          &lt;li&gt;Logical groupings for T-shirts
-Collections&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;Front page collection to throw a product on the homepage.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Inventory
-    &lt;ul&gt;
-      &lt;li&gt;SKUS&lt;/li&gt;
-      &lt;li&gt;Weight&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+<ul>
+  <li>Title</li>
+  <li>URL &amp; Handle - <em>Similar to the permalink field in Wordpress</em></li>
+  <li>WYSIWYG Editor</li>
+  <li>Product properties / options
+    <ul>
+      <li>Product Type</li>
+      <li>Vendor</li>
+      <li>Size</li>
+    </ul>
+  </li>
+  <li>Tags
+    <ul>
+      <li>Custom Collections
+        <ul>
+          <li>Year for Music (1999)</li>
+          <li>Logical groupings for T-shirts
+Collections</li>
+        </ul>
+      </li>
+      <li>Front page collection to throw a product on the homepage.</li>
+    </ul>
+  </li>
+  <li>Inventory
+    <ul>
+      <li>SKUS</li>
+      <li>Weight</li>
+    </ul>
+  </li>
+</ul>
 
-&lt;h4 id=&quot;collections-1&quot;&gt;Collections&lt;/h4&gt;
+<h4 id="collections-1">Collections</h4>
 
-&lt;ul&gt;
-  &lt;li&gt;Title&lt;/li&gt;
-  &lt;li&gt;Description&lt;/li&gt;
-&lt;/ul&gt;
+<ul>
+  <li>Title</li>
+  <li>Description</li>
+</ul>
 
-&lt;p&gt;&lt;em&gt;0-Many relationship - Products can be in as many or as little as 0 collections.&lt;/em&gt;&lt;/p&gt;
+<p><em>0-Many relationship - Products can be in as many or as little as 0 collections.</em></p>
 
-&lt;h4 id=&quot;smart-collections&quot;&gt;Smart Collections&lt;/h4&gt;
+<h4 id="smart-collections">Smart Collections</h4>
 
-&lt;p&gt;Filters to determine what’s in the selection - everything on sale in 1999 (product == sale in 1999).&lt;/p&gt;
+<p>Filters to determine what’s in the selection - everything on sale in 1999 (product == sale in 1999).</p>
 
-&lt;h4 id=&quot;page&quot;&gt;Page&lt;/h4&gt;
+<h4 id="page">Page</h4>
 
-&lt;ul&gt;
-  &lt;li&gt;Template - page.FAQ, page.contact etc.&lt;/li&gt;
-&lt;/ul&gt;
+<ul>
+  <li>Template - page.FAQ, page.contact etc.</li>
+</ul>
 
-&lt;h4 id=&quot;navigation&quot;&gt;Navigation&lt;/h4&gt;
+<h4 id="navigation">Navigation</h4>
 
-&lt;p&gt;Custom nav lists equivalent to menus in Wordpress.&lt;/p&gt;
+<p>Custom nav lists equivalent to menus in Wordpress.</p>
 
-&lt;h4 id=&quot;bundles&quot;&gt;Bundles&lt;/h4&gt;
+<h4 id="bundles">Bundles</h4>
 
-&lt;ul&gt;
-  &lt;li&gt;Shopify Textmate Bundle - Allows you to edit and sync template files.&lt;/li&gt;
-  &lt;li&gt;Shopify Theme Tool - &lt;em&gt;In Beta so not available yet.&lt;/em&gt;&lt;/li&gt;
-&lt;/ul&gt;
+<ul>
+  <li>Shopify Textmate Bundle - Allows you to edit and sync template files.</li>
+  <li>Shopify Theme Tool - <em>In Beta so not available yet.</em></li>
+</ul>
 
-&lt;h4 id=&quot;theme-structures&quot;&gt;Theme Structures&lt;/h4&gt;
+<h4 id="theme-structures">Theme Structures</h4>
 
-&lt;ul&gt;
-  &lt;li&gt;assets - &lt;em&gt;Basic dumping folder for stuff - &lt;strong&gt;No nesting folders acceptable&lt;/strong&gt;.&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;config - &lt;em&gt;Used to offer more control to client in admin section.&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;layout
-    &lt;ul&gt;
-      &lt;li&gt;theme.liquid - &lt;em&gt;layout file - outerskin of the site e.g. base.html etc.&lt;/em&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;snippets - &lt;em&gt;include useful code snippets.&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;templates
-    &lt;ul&gt;
-      &lt;li&gt;404.liquid&lt;/li&gt;
-      &lt;li&gt;article.liquid - &lt;em&gt;blog detail page&lt;/em&gt;&lt;/li&gt;
-      &lt;li&gt;blog.liquid&lt;/li&gt;
-      &lt;li&gt;cart.liquid&lt;/li&gt;
-      &lt;li&gt;collection.liquid&lt;/li&gt;
-      &lt;li&gt;index.liquid - &lt;em&gt;shop homepage&lt;/em&gt;&lt;/li&gt;
-      &lt;li&gt;page.liquid&lt;/li&gt;
-      &lt;li&gt;product.liquid&lt;/li&gt;
-      &lt;li&gt;search.liquid&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+<ul>
+  <li>assets - <em>Basic dumping folder for stuff - <strong>No nesting folders acceptable</strong>.</em></li>
+  <li>config - <em>Used to offer more control to client in admin section.</em></li>
+  <li>layout
+    <ul>
+      <li>theme.liquid - <em>layout file - outerskin of the site e.g. base.html etc.</em></li>
+    </ul>
+  </li>
+  <li>snippets - <em>include useful code snippets.</em></li>
+  <li>templates
+    <ul>
+      <li>404.liquid</li>
+      <li>article.liquid - <em>blog detail page</em></li>
+      <li>blog.liquid</li>
+      <li>cart.liquid</li>
+      <li>collection.liquid</li>
+      <li>index.liquid - <em>shop homepage</em></li>
+      <li>page.liquid</li>
+      <li>product.liquid</li>
+      <li>search.liquid</li>
+    </ul>
+  </li>
+</ul>
 
-&lt;h4 id=&quot;layouts&quot;&gt;Layouts&lt;/h4&gt;
+<h4 id="layouts">Layouts</h4>
 
-&lt;p&gt;Useful for injecting content into a base template that contains default elements used site-wide like, header and footer.&lt;/p&gt;
+<p>Useful for injecting content into a base template that contains default elements used site-wide like, header and footer.</p>
 
-&lt;p&gt;&lt;code&gt;important hook for header.
-&lt;/code&gt; injects content into base layout.&lt;/p&gt;
+<p><code>important hook for header.
+</code> injects content into base layout.</p>
 
-&lt;h2 id=&quot;liquid-templating-engine&quot;&gt;Liquid Templating Engine&lt;/h2&gt;
+<h2 id="liquid-templating-engine">Liquid Templating Engine</h2>
 
-&lt;h4 id=&quot;output&quot;&gt;Output&lt;/h4&gt;
+<h4 id="output">Output</h4>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-django&quot; data-lang=&quot;django&quot;&gt;&lt;span class=&quot;cp&quot;&gt;{{&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;product.title&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;}}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;{{&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;product.price&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;}}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-django" data-lang="django"><span class="cp">{{</span> <span class="nv">product.title</span> <span class="cp">}}</span><span class="x"></span>
+<span class="cp">{{</span> <span class="nv">product.price</span> <span class="cp">}}</span><span class="x"></span></code></pre></figure>
 
-&lt;h4 id=&quot;filters&quot;&gt;Filters&lt;/h4&gt;
+<h4 id="filters">Filters</h4>
 
-&lt;p&gt;&lt;em&gt;What goes in at the beginning, comes out altered at the end.&lt;/em&gt;&lt;/p&gt;
+<p><em>What goes in at the beginning, comes out altered at the end.</em></p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-django&quot; data-lang=&quot;django&quot;&gt;&lt;span class=&quot;cp&quot;&gt;{{&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;product.title&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;upcase&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;}}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;//Comes out as a string, turned into uppercase.&lt;/span&gt;
+<figure class="highlight"><pre><code class="language-django" data-lang="django"><span class="cp">{{</span> <span class="nv">product.title</span> <span class="o">|</span> <span class="nf">upcase</span> <span class="cp">}}</span><span class="x"></span>
+<span class="x">//Comes out as a string, turned into uppercase.</span>
 
-&lt;span class=&quot;cp&quot;&gt;{{&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;logo.png&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;asset_url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;img_tag&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Site Logo&amp;#39;&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;}}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;{{&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;style.css&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;asset_url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;stylesheet_tag&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;}}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<span class="cp">{{</span> <span class="s1">&#39;logo.png&#39;</span> <span class="o">|</span> <span class="nf">asset_url</span> <span class="o">|</span> <span class="nf">img_tag</span><span class="o">:</span> <span class="s1">&#39;Site Logo&#39;</span> <span class="cp">}}</span><span class="x"></span>
+<span class="cp">{{</span> <span class="s1">&#39;style.css&#39;</span> <span class="o">|</span> <span class="nf">asset_url</span> <span class="o">|</span> <span class="nf">stylesheet_tag</span> <span class="cp">}}</span><span class="x"></span></code></pre></figure>
 
-&lt;h4 id=&quot;logic&quot;&gt;Logic&lt;/h4&gt;
+<h4 id="logic">Logic</h4>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-django&quot; data-lang=&quot;django&quot;&gt;&lt;span class=&quot;cp&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;product.available&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;Show Add to cart button here&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;Display message about when the product will be next available&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;endif&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+<figure class="highlight"><pre><code class="language-django" data-lang="django"><span class="cp">{%</span> <span class="k">if</span> <span class="nv">product.available</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">Show Add to cart button here</span>
+<span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">Display message about when the product will be next available</span>
+<span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
 
-&lt;span class=&quot;cp&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;cycle&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;one&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;two&amp;#39;&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;cycle&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;one&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;two&amp;#39;&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;cycle&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;one&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;two&amp;#39;&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+<span class="cp">{%</span> <span class="k">cycle</span> <span class="s1">&#39;one&#39;</span><span class="o">,</span> <span class="s1">&#39;two&#39;</span> <span class="cp">%}</span><span class="x"></span>
+<span class="cp">{%</span> <span class="k">cycle</span> <span class="s1">&#39;one&#39;</span><span class="o">,</span> <span class="s1">&#39;two&#39;</span> <span class="cp">%}</span><span class="x"></span>
+<span class="cp">{%</span> <span class="k">cycle</span> <span class="s1">&#39;one&#39;</span><span class="o">,</span> <span class="s1">&#39;two&#39;</span> <span class="cp">%}</span><span class="x"></span>
 
-&lt;span class=&quot;x&quot;&gt;// one&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;// two&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;// one&lt;/span&gt;
+<span class="x">// one</span>
+<span class="x">// two</span>
+<span class="x">// one</span>
 
-&lt;span class=&quot;x&quot;&gt;// Operators == != &amp;gt; &amp;lt; &amp;gt;= &amp;lt;= or and&lt;/span&gt;
+<span class="x">// Operators == != &gt; &lt; &gt;= &lt;= or and</span>
 
-&lt;span class=&quot;cp&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;handle&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;when&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;cake&amp;#39;&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;This is a cake&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;This is not a cake&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;endcase&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<span class="cp">{%</span> <span class="k">case</span> <span class="nv">handle</span> <span class="cp">%}</span><span class="x"></span>
+<span class="cp">{%</span> <span class="k">when</span> <span class="s1">&#39;cake&#39;</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">This is a cake</span>
+<span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">This is not a cake</span>
+<span class="cp">{%</span> <span class="k">endcase</span> <span class="cp">%}</span><span class="x"></span></code></pre></figure>
 
-&lt;h4 id=&quot;loops&quot;&gt;Loops&lt;/h4&gt;
+<h4 id="loops">Loops</h4>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-django&quot; data-lang=&quot;django&quot;&gt;&lt;span class=&quot;cp&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;image&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;product.images&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+<figure class="highlight"><pre><code class="language-django" data-lang="django"><span class="cp">{%</span> <span class="k">for</span> <span class="nv">image</span> <span class="k">in</span> <span class="nv">product.images</span> <span class="cp">%}</span><span class="x"></span>
 
-&lt;span class=&quot;cp&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;forloop&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;.first&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+<span class="cp">{%</span> <span class="k">if</span> <span class="nb">forloop</span><span class="nv">.first</span> <span class="cp">%}</span><span class="x"></span>
 
-&lt;span class=&quot;x&quot;&gt;//Large first image.&lt;/span&gt;
+<span class="x">//Large first image.</span>
 
-&lt;span class=&quot;cp&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+<span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span><span class="x"></span>
 
-&lt;span class=&quot;x&quot;&gt;//Small images for remaining items.&lt;/span&gt;
+<span class="x">//Small images for remaining items.</span>
 
-&lt;span class=&quot;cp&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;endif&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;endfor&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
+<span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span><span class="x"></span></code></pre></figure>
 
-&lt;h2 id=&quot;templates&quot;&gt;Templates&lt;/h2&gt;
+<h2 id="templates">Templates</h2>
 
-&lt;h4 id=&quot;variables&quot;&gt;Variables&lt;/h4&gt;
+<h4 id="variables">Variables</h4>
 
-&lt;p&gt;List of variables here on the &lt;a href=&quot;http://wiki.shopify.com/Product.variables&quot;&gt;wiki page&lt;/a&gt;.&lt;/p&gt;
+<p>List of variables here on the <a href="http://wiki.shopify.com/Product.variables">wiki page</a>.</p>
 
-&lt;h4 id=&quot;collection-pagination&quot;&gt;Collection pagination&lt;/h4&gt;
+<h4 id="collection-pagination">Collection pagination</h4>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-django&quot; data-lang=&quot;django&quot;&gt;&lt;span class=&quot;cp&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;paginate&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;collection.products&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;12&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+<figure class="highlight"><pre><code class="language-django" data-lang="django"><span class="cp">{%</span> <span class="k">paginate</span> <span class="nv">collection.products</span> <span class="nv">by</span> <span class="m">12</span> <span class="cp">%}</span><span class="x"></span>
 
-&lt;span class=&quot;cp&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;collection.products.size&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+<span class="cp">{%</span> <span class="k">if</span> <span class="nv">collection.products.size</span> <span class="o">==</span> <span class="m">0</span> <span class="cp">%}</span><span class="x"></span>
 
-&lt;span class=&quot;x&quot;&gt;	&amp;lt;h1&amp;gt;No products, baby!&amp;lt;/h1&amp;gt;&lt;/span&gt;
+<span class="x">	&lt;h1&gt;No products, baby!&lt;/h1&gt;</span>
 
-&lt;span class=&quot;cp&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+<span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span><span class="x"></span>
 
-&lt;span class=&quot;x&quot;&gt;//Show products&lt;/span&gt;
+<span class="x">//Show products</span>
 
-&lt;span class=&quot;cp&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;paginate.pages&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+<span class="cp">{%</span> <span class="k">if</span> <span class="nv">paginate.pages</span> <span class="o">&gt;</span> <span class="m">1</span> <span class="cp">%}</span><span class="x"></span>
 
-&lt;span class=&quot;x&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;{{&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;paginate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;default_pagination&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;}}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+<span class="x">	</span><span class="cp">{{</span> <span class="nv">paginate</span> <span class="o">|</span> <span class="nf">default_pagination</span> <span class="cp">}}</span><span class="x"></span>
 
-&lt;span class=&quot;cp&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;endif&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span></code></pre></figure>
 
-&lt;h4 id=&quot;feature-collections&quot;&gt;Feature Collections&lt;/h4&gt;
+<h4 id="feature-collections">Feature Collections</h4>
 
-&lt;p&gt;Show products on homepage:&lt;/p&gt;
+<p>Show products on homepage:</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-django&quot; data-lang=&quot;django&quot;&gt;&lt;span class=&quot;cp&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;product&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;collections.frontpage.products&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;limit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;	//Show some products&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;endfor&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-django" data-lang="django"><span class="cp">{%</span> <span class="k">for</span> <span class="nv">product</span> <span class="k">in</span> <span class="nv">collections.frontpage.products</span> <span class="nv">limit</span><span class="o">:</span><span class="m">3</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">	//Show some products</span>
+<span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span><span class="x"></span></code></pre></figure>
 
-&lt;p&gt;Special offers:&lt;/p&gt;
+<p>Special offers:</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-django&quot; data-lang=&quot;django&quot;&gt;&lt;span class=&quot;cp&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;assign&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;pages.frontpage&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; //Assign variable by grabbing data from a page&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;article.content&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;#39;&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;	//Show some front page articles by injecting page data&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;endif&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-django" data-lang="django"><span class="cp">{%</span> <span class="k">assign</span> <span class="nv">article</span> <span class="o">=</span> <span class="nv">pages.frontpage</span> <span class="cp">%}</span><span class="x"> //Assign variable by grabbing data from a page</span>
+<span class="cp">{%</span> <span class="k">if</span> <span class="nv">article.content</span> <span class="p">!</span><span class="o">=</span> <span class="s1">&#39;&#39;</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">	//Show some front page articles by injecting page data</span>
+<span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span></code></pre></figure>
 
-&lt;h4 id=&quot;theme-settings&quot;&gt;Theme Settings&lt;/h4&gt;
+<h4 id="theme-settings">Theme Settings</h4>
 
-&lt;p&gt;Done by assiging variables to to name parameter on markup.&lt;/p&gt;
+<p>Done by assiging variables to to name parameter on markup.</p>
 
-&lt;p&gt;&lt;code&gt;name=&quot;text_color&quot;&lt;/code&gt;&lt;/p&gt;
+<p><code>name="text_color"</code></p>
 
-&lt;h4 id=&quot;cssliquid---dynamic-css&quot;&gt;CSS.liquid - Dynamic CSS&lt;/h4&gt;
+<h4 id="cssliquid---dynamic-css">CSS.liquid - Dynamic CSS</h4>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-django&quot; data-lang=&quot;django&quot;&gt;&lt;span class=&quot;x&quot;&gt;body {&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;	color: &lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;{{&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;settings.text_color&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;}}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;	background-color: &lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;{{&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;settings.bg_color&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;}}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-django" data-lang="django"><span class="x">body {</span>
+<span class="x">	color: </span><span class="cp">{{</span> <span class="nv">settings.text_color</span> <span class="cp">}}</span><span class="x">;</span>
+<span class="x">	background-color: </span><span class="cp">{{</span> <span class="nv">settings.bg_color</span> <span class="cp">}}</span><span class="x">;</span>
+<span class="x">}</span></code></pre></figure>
 
-&lt;h4 id=&quot;alternate-layouts&quot;&gt;Alternate Layouts&lt;/h4&gt;
+<h4 id="alternate-layouts">Alternate Layouts</h4>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-django&quot; data-lang=&quot;django&quot;&gt;&lt;span class=&quot;cp&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;layout&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;bacon.liquid&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-django" data-lang="django"><span class="cp">{%</span> <span class="k">layout</span> <span class="nv">bacon.liquid</span> <span class="cp">%}</span><span class="x"></span></code></pre></figure>
 
-&lt;h4 id=&quot;cartjs---cart-json-for-sweet-js-customisation&quot;&gt;Cart.js - cart JSON for sweet JS customisation&lt;/h4&gt;
+<h4 id="cartjs---cart-json-for-sweet-js-customisation">Cart.js - cart JSON for sweet JS customisation</h4>
 
-&lt;p&gt;Going to &lt;code&gt;/cart.js&lt;/code&gt; on a Shopify front end will give you access to a JSON file of the clients cart - nice for JavaScript dev customisation.&lt;/p&gt;
+<p>Going to <code>/cart.js</code> on a Shopify front end will give you access to a JSON file of the clients cart - nice for JavaScript dev customisation.</p>
 
-&lt;h4 id=&quot;alternate-add-to-cart-methods&quot;&gt;Alternate “Add to Cart” methods&lt;/h4&gt;
+<h4 id="alternate-add-to-cart-methods">Alternate “Add to Cart” methods</h4>
 
-&lt;p&gt;Cart Permalinks - use URLS to add items to a cart.&lt;/p&gt;
+<p>Cart Permalinks - use URLS to add items to a cart.</p>
 
-&lt;h2 id=&quot;the-shopify-cheat-sheet&quot;&gt;The Shopify cheat sheet&lt;/h2&gt;
+<h2 id="the-shopify-cheat-sheet">The Shopify cheat sheet</h2>
 
-&lt;p&gt;The shopify cheat sheet is a fantastic little resource to have open when using Shopify’s liquid templating engine.&lt;/p&gt;
+<p>The shopify cheat sheet is a fantastic little resource to have open when using Shopify’s liquid templating engine.</p>
 
-&lt;p&gt;&lt;a href=&quot;http://cheat.markdunkley.com&quot;&gt;Shopify Cheat Sheet&lt;/a&gt;&lt;/p&gt;
+<p><a href="http://cheat.markdunkley.com">Shopify Cheat Sheet</a></p>
 </description>
     </item>
     
@@ -1065,35 +1065,35 @@ Collections&lt;/li&gt;
       <pubDate>Thu, 12 Jul 2012 00:00:00 +0100</pubDate>
       <author></author>
       <guid>http://www.creativenightly.com/2012/07/Sublime-Text-2-Theme-Package-Management</guid>
-      <description>&lt;p&gt;Most devs are familiar with installing software packages on their systems via package managers, but did you know, if you’re using &lt;a href=&quot;http://www.sublimetext.com/2&quot;&gt;Sublime Text 2&lt;/a&gt;, you can do the same with your text editor too?&lt;/p&gt;
+      <description><p>Most devs are familiar with installing software packages on their systems via package managers, but did you know, if you’re using <a href="http://www.sublimetext.com/2">Sublime Text 2</a>, you can do the same with your text editor too?</p>
 
-&lt;!--more--&gt;
+<!--more-->
 
-&lt;h2 id=&quot;sublime-package-control&quot;&gt;Sublime Package Control&lt;/h2&gt;
+<h2 id="sublime-package-control">Sublime Package Control</h2>
 
-&lt;p&gt;&lt;a href=&quot;http://twitter.com/wbond&quot;&gt;Will Bond&lt;/a&gt; has created a delightful tool for managing packages; packages can include syntax highlighters for preprocessors such as LESS.&lt;/p&gt;
+<p><a href="http://twitter.com/wbond">Will Bond</a> has created a delightful tool for managing packages; packages can include syntax highlighters for preprocessors such as LESS.</p>
 
-&lt;h3 id=&quot;installation&quot;&gt;Installation&lt;/h3&gt;
+<h3 id="installation">Installation</h3>
 
-&lt;p&gt;Installation of the Sublime Text 2 Package Manager is done through the Sublime Text console. This is accessed via the &lt;strong&gt;ctrl+`&lt;/strong&gt; shortcut. Once open, paste the following command into the console:&lt;/p&gt;
+<p>Installation of the Sublime Text 2 Package Manager is done through the Sublime Text console. This is accessed via the <strong>ctrl+`</strong> shortcut. Once open, paste the following command into the console:</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;import urllib2,os&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;pf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Package Control.sublime-package&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;ipp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;sublime.installed_packages_path&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; os.makedirs&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ipp&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; not os.path.exists&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ipp&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; None&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; urllib2.install_opener&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;urllib2.build_opener&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;urllib2.ProxyHandler&lt;span class=&quot;o&quot;&gt;()))&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; open&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;os.path.join&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ipp,pf&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;,&lt;span class=&quot;s1&quot;&gt;&amp;#39;wb&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;.write&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;urllib2.urlopen&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;http://sublime.wbond.net/&amp;#39;&lt;/span&gt;+pf.replace&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39; &amp;#39;&lt;/span&gt;,&lt;span class=&quot;s1&quot;&gt;&amp;#39;%20&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;.read&lt;span class=&quot;o&quot;&gt;())&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; print &lt;span class=&quot;s1&quot;&gt;&amp;#39;Please restart Sublime Text to finish installation&amp;#39;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">import urllib2,os<span class="p">;</span> <span class="nv">pf</span><span class="o">=</span><span class="s1">&#39;Package Control.sublime-package&#39;</span><span class="p">;</span> <span class="nv">ipp</span><span class="o">=</span>sublime.installed_packages_path<span class="o">()</span><span class="p">;</span> os.makedirs<span class="o">(</span>ipp<span class="o">)</span> <span class="k">if</span> not os.path.exists<span class="o">(</span>ipp<span class="o">)</span> <span class="k">else</span> None<span class="p">;</span> urllib2.install_opener<span class="o">(</span>urllib2.build_opener<span class="o">(</span>urllib2.ProxyHandler<span class="o">()))</span><span class="p">;</span> open<span class="o">(</span>os.path.join<span class="o">(</span>ipp,pf<span class="o">)</span>,<span class="s1">&#39;wb&#39;</span><span class="o">)</span>.write<span class="o">(</span>urllib2.urlopen<span class="o">(</span><span class="s1">&#39;http://sublime.wbond.net/&#39;</span>+pf.replace<span class="o">(</span><span class="s1">&#39; &#39;</span>,<span class="s1">&#39;%20&#39;</span><span class="o">))</span>.read<span class="o">())</span><span class="p">;</span> print <span class="s1">&#39;Please restart Sublime Text to finish installation&#39;</span></code></pre></figure>
 
-&lt;h2 id=&quot;installing-a-package&quot;&gt;Installing a package&lt;/h2&gt;
+<h2 id="installing-a-package">Installing a package</h2>
 
-&lt;p&gt;Let’s go ahead and install a package or two to demonstrate just how easy it is.&lt;/p&gt;
+<p>Let’s go ahead and install a package or two to demonstrate just how easy it is.</p>
 
-&lt;h3 id=&quot;less-syntax-highlighter&quot;&gt;LESS syntax highlighter&lt;/h3&gt;
+<h3 id="less-syntax-highlighter">LESS syntax highlighter</h3>
 
-&lt;p&gt;After you have installed Package Control, restart Sublime Text 2 and bring up the Command Palette (&lt;code&gt;Command+Shift+p&lt;/code&gt; on OS X, &lt;code&gt;Control+Shift+p&lt;/code&gt; on Linux/Windows). Select Package Control: Install Package; wait while Package Control fetches the latest package list; type in LESS when the list appears, then hit enter to install.&lt;/p&gt;
+<p>After you have installed Package Control, restart Sublime Text 2 and bring up the Command Palette (<code>Command+Shift+p</code> on OS X, <code>Control+Shift+p</code> on Linux/Windows). Select Package Control: Install Package; wait while Package Control fetches the latest package list; type in LESS when the list appears, then hit enter to install.</p>
 
-&lt;h3 id=&quot;sublime-text-themes--colour-schemes&quot;&gt;Sublime Text Themes / Colour Schemes&lt;/h3&gt;
+<h3 id="sublime-text-themes--colour-schemes">Sublime Text Themes / Colour Schemes</h3>
 
-&lt;p&gt;Bring up the Command Palette again (&lt;code&gt;Command+Shift+p&lt;/code&gt; &lt;em&gt;or&lt;/em&gt; &lt;code&gt;Control+Shift+p&lt;/code&gt;) and goto Install Package. Search for &lt;strong&gt;Dayle Rees Color Schemes&lt;/strong&gt; and hit enter to install.&lt;/p&gt;
+<p>Bring up the Command Palette again (<code>Command+Shift+p</code> <em>or</em> <code>Control+Shift+p</code>) and goto Install Package. Search for <strong>Dayle Rees Color Schemes</strong> and hit enter to install.</p>
 
-&lt;p&gt;Goto &lt;strong&gt;Preferences -&amp;gt; Color Scheme&lt;/strong&gt; to select your new colour scheme.&lt;/p&gt;
+<p>Goto <strong>Preferences -&gt; Color Scheme</strong> to select your new colour scheme.</p>
 
-&lt;p&gt;Simples!&lt;/p&gt;
+<p>Simples!</p>
 
 </description>
     </item>
@@ -1106,305 +1106,305 @@ Collections&lt;/li&gt;
       <pubDate>Fri, 29 Jun 2012 00:00:00 +0100</pubDate>
       <author></author>
       <guid>http://www.creativenightly.com/2012/06/Setting-up-a-mac-as-a-dev-machine</guid>
-      <description>&lt;p&gt;Originally, these were the notes I took down when setting up the development environment on my new MacBook Air in June 2012, but it’s now become a step by step guide to setting up a full development stack on Mac OS X 10.8 Mountain Lion. I’ll aim to keep this post up to date with the latest dev environments/workflows as new tools are released in order to setup the leanest/efficient development machine possible.&lt;/p&gt;
+      <description><p>Originally, these were the notes I took down when setting up the development environment on my new MacBook Air in June 2012, but it’s now become a step by step guide to setting up a full development stack on Mac OS X 10.8 Mountain Lion. I’ll aim to keep this post up to date with the latest dev environments/workflows as new tools are released in order to setup the leanest/efficient development machine possible.</p>
 
-&lt;!--more--&gt;
+<!--more-->
 
-&lt;p&gt;The only prerequisite is an &lt;strong&gt;up-to-date install of OS X 10.8 Mountain Lion&lt;/strong&gt;.&lt;/p&gt;
+<p>The only prerequisite is an <strong>up-to-date install of OS X 10.8 Mountain Lion</strong>.</p>
 
-&lt;hr /&gt;
+<hr />
 
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;#1&quot;&gt;Install Homebrew&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#2&quot;&gt;Install Git&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#3&quot;&gt;Install RVM&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#3.2&quot;&gt;Install Ruby&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#3.3&quot;&gt;Install Sass&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#3.3&quot;&gt;Install Compass&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#4&quot;&gt;Install Node&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#4.1&quot;&gt;Install Yeoman&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#5&quot;&gt;Install MySQL&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#6&quot;&gt;Install CouchDB&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#7&quot;&gt;Configure Apache&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#7.2&quot;&gt;Setup Virtual Hosts&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
+<ol>
+  <li><a href="#1">Install Homebrew</a></li>
+  <li><a href="#2">Install Git</a></li>
+  <li><a href="#3">Install RVM</a>
+    <ul>
+      <li><a href="#3.2">Install Ruby</a></li>
+      <li><a href="#3.3">Install Sass</a></li>
+      <li><a href="#3.3">Install Compass</a></li>
+    </ul>
+  </li>
+  <li><a href="#4">Install Node</a>
+    <ul>
+      <li><a href="#4.1">Install Yeoman</a></li>
+    </ul>
+  </li>
+  <li><a href="#5">Install MySQL</a></li>
+  <li><a href="#6">Install CouchDB</a></li>
+  <li><a href="#7">Configure Apache</a>
+    <ul>
+      <li><a href="#7.2">Setup Virtual Hosts</a></li>
+    </ul>
+  </li>
+</ol>
 
-&lt;hr /&gt;
+<hr />
 
-&lt;h5 id=&quot;using-sublime-text-2-from-the-command-line&quot;&gt;Using Sublime Text 2 from the Command Line&lt;/h5&gt;
-&lt;p&gt;Before we begin, i’d recommend enabling Sublime Text 2 Command Line support as, for some reason, this isn’t available out of the box.&lt;/p&gt;
+<h5 id="using-sublime-text-2-from-the-command-line">Using Sublime Text 2 from the Command Line</h5>
+<p>Before we begin, i’d recommend enabling Sublime Text 2 Command Line support as, for some reason, this isn’t available out of the box.</p>
 
-&lt;p&gt;To setup the command line functionality, type the following into the terminal.&lt;/p&gt;
+<p>To setup the command line functionality, type the following into the terminal.</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo ln -s &lt;span class=&quot;s2&quot;&gt;&amp;quot;/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl&amp;quot;&lt;/span&gt; /usr/bin/subl&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo ln -s <span class="s2">&quot;/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl&quot;</span> /usr/bin/subl</code></pre></figure>
 
-&lt;hr /&gt;
+<hr />
 
-&lt;h2 id=&quot;a-id1a-1-homebrew&quot;&gt;&lt;a id=&quot;1&quot;&gt;&lt;/a&gt; 1. Homebrew:&lt;/h2&gt;
+<h2 id="a-id1a-1-homebrew"><a id="1"></a> 1. Homebrew:</h2>
 
-&lt;h3 id=&quot;requirements&quot;&gt;1.1 Requirements:&lt;/h3&gt;
+<h3 id="requirements">1.1 Requirements:</h3>
 
-&lt;p&gt;Homebrew has two dependencies: &lt;strong&gt;XQuartz&lt;/strong&gt;, and &lt;strong&gt;Xcode&lt;/strong&gt;*.&lt;/p&gt;
+<p>Homebrew has two dependencies: <strong>XQuartz</strong>, and <strong>Xcode</strong>*.</p>
 
-&lt;p&gt;&lt;em&gt;It’s a common delusion that the entire 2.8gb install of Xcode is required, however, the only part of Xcode Homebrew requires, is the &lt;strong&gt;Command Line Tools&lt;/strong&gt;.&lt;/em&gt;&lt;/p&gt;
+<p><em>It’s a common delusion that the entire 2.8gb install of Xcode is required, however, the only part of Xcode Homebrew requires, is the <strong>Command Line Tools</strong>.</em></p>
 
-&lt;h4 id=&quot;xquartz&quot;&gt;XQuartz&lt;/h4&gt;
+<h4 id="xquartz">XQuartz</h4>
 
-&lt;p&gt;As of the 26th July 2012, Apple has dropped X11 from its OS. OS X Mountain Lion does not come bundled with X11, and instead, Apple recommend developers install the more up to date open source XQuartz project, which it will continue to support.&lt;/p&gt;
+<p>As of the 26th July 2012, Apple has dropped X11 from its OS. OS X Mountain Lion does not come bundled with X11, and instead, Apple recommend developers install the more up to date open source XQuartz project, which it will continue to support.</p>
 
-&lt;p&gt;&lt;a href=&quot;http://xquartz.macosforge.org/landing/&quot;&gt;Download XQuartz here&lt;/a&gt; then install it, log out, then log back in.&lt;/p&gt;
+<p><a href="http://xquartz.macosforge.org/landing/">Download XQuartz here</a> then install it, log out, then log back in.</p>
 
-&lt;h4 id=&quot;command-line-tools&quot;&gt;Command Line Tools&lt;/h4&gt;
+<h4 id="command-line-tools">Command Line Tools</h4>
 
-&lt;p&gt;Homebrew requires Xcode to be installed in order to work, but Xcode is massively bloated for what is actually required by homebrew to build apps.&lt;/p&gt;
+<p>Homebrew requires Xcode to be installed in order to work, but Xcode is massively bloated for what is actually required by homebrew to build apps.</p>
 
-&lt;p&gt;&lt;a href=&quot;https://github.com/kennethreitz/osx-gcc-installer/&quot;&gt;OSX-GCC-Installer&lt;/a&gt; by &lt;a href=&quot;http://kennethreitz.com/&quot;&gt;Kenneth Reitz&lt;/a&gt; was a way round this bloat, but lacked the 10.6/7 SDKs due to licensing restrictions. Apple, however, took interest in this project and were keen to ship something official.&lt;/p&gt;
+<p><a href="https://github.com/kennethreitz/osx-gcc-installer/">OSX-GCC-Installer</a> by <a href="http://kennethreitz.com/">Kenneth Reitz</a> was a way round this bloat, but lacked the 10.6/7 SDKs due to licensing restrictions. Apple, however, took interest in this project and were keen to ship something official.</p>
 
-&lt;p&gt;Thus, Apple announced the &lt;strong&gt;Command Line Tools for Xcode&lt;/strong&gt;. It’s a 171 MB download that includes all of the tools Homebrew should ever need. Plus, Homebrew officially supports this package.&lt;/p&gt;
+<p>Thus, Apple announced the <strong>Command Line Tools for Xcode</strong>. It’s a 171 MB download that includes all of the tools Homebrew should ever need. Plus, Homebrew officially supports this package.</p>
 
-&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;http://developer.apple.com/downloads&quot;&gt;Download the Command Line Tools for Xcode here&lt;/a&gt; and install it.&lt;/strong&gt;&lt;/p&gt;
+<p><strong><a href="http://developer.apple.com/downloads">Download the Command Line Tools for Xcode here</a> and install it.</strong></p>
 
-&lt;h3 id=&quot;installing-homebrew&quot;&gt;1.2 Installing Homebrew:&lt;/h3&gt;
+<h3 id="installing-homebrew">1.2 Installing Homebrew:</h3>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;ruby -e &lt;span class=&quot;s2&quot;&gt;&amp;quot;$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">ruby -e <span class="s2">&quot;$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)&quot;</span></code></pre></figure>
 
-&lt;p&gt;The script installs Homebrew to &lt;code&gt;/usr/local&lt;/code&gt; so that you don’t need sudo when you brew install.&lt;/p&gt;
+<p>The script installs Homebrew to <code>/usr/local</code> so that you don’t need sudo when you brew install.</p>
 
-&lt;p&gt;It’s bad practice to install packages using sudo.&lt;/p&gt;
+<p>It’s bad practice to install packages using sudo.</p>
 
-&lt;hr /&gt;
+<hr />
 
-&lt;blockquote&gt;
-  &lt;p&gt;Packages can run arbitrary scripts, which makes sudoing a package manager command as safe as a chainsaw haircut. Sure, it’s fast and definitely going to cut through any obstacles, but you might actually want that obstacle to stay there. &lt;a href=&quot;http://howtonode.org/introduction-to-npm&quot;&gt;— Isaac Z. Schlueter&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+<blockquote>
+  <p>Packages can run arbitrary scripts, which makes sudoing a package manager command as safe as a chainsaw haircut. Sure, it’s fast and definitely going to cut through any obstacles, but you might actually want that obstacle to stay there. <a href="http://howtonode.org/introduction-to-npm">— Isaac Z. Schlueter</a></p>
+</blockquote>
 
-&lt;hr /&gt;
+<hr />
 
-&lt;h3 id=&quot;changing-ownership-of-usrlocal&quot;&gt;1.3 Changing ownership of usr/local:&lt;/h3&gt;
+<h3 id="changing-ownership-of-usrlocal">1.3 Changing ownership of usr/local:</h3>
 
-&lt;p&gt;This step isn’t required for brew, but since we’re on the subject of sudo, i recommend changing ownership of &lt;code&gt;/usr/local&lt;/code&gt; from &lt;code&gt;root&lt;/code&gt; to &lt;code&gt;$user&lt;/code&gt;. This will benefit you when using node’s package manager, and will mean you won’t have to use sudo when installing into &lt;code&gt;/usr/local&lt;/code&gt;:&lt;/p&gt;
+<p>This step isn’t required for brew, but since we’re on the subject of sudo, i recommend changing ownership of <code>/usr/local</code> from <code>root</code> to <code>$user</code>. This will benefit you when using node’s package manager, and will mean you won’t have to use sudo when installing into <code>/usr/local</code>:</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo chown -R &lt;span class=&quot;nv&quot;&gt;$USER&lt;/span&gt; /usr/local&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo chown -R <span class="nv">$USER</span> /usr/local</code></pre></figure>
 
-&lt;p&gt;There is a massive debate about chown-ing &lt;code&gt;/usr/local&lt;/code&gt;, and i agree with &lt;a href=&quot;https://gist.github.com/579814#gistcomment-28563&quot;&gt;Isaacs comments here&lt;/a&gt;.&lt;/p&gt;
+<p>There is a massive debate about chown-ing <code>/usr/local</code>, and i agree with <a href="https://gist.github.com/579814#gistcomment-28563">Isaacs comments here</a>.</p>
 
-&lt;hr /&gt;
+<hr />
 
-&lt;h2 id=&quot;a-id2a-20-git&quot;&gt;&lt;a id=&quot;2&quot;&gt;&lt;/a&gt; 2.0 Git:&lt;/h2&gt;
+<h2 id="a-id2a-20-git"><a id="2"></a> 2.0 Git:</h2>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;brew install git&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">brew install git</code></pre></figure>
 
-&lt;p&gt;Next, to setup git. Run the following commands in the Terminal.&lt;/p&gt;
+<p>Next, to setup git. Run the following commands in the Terminal.</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;git config --global user.name &lt;span class=&quot;s2&quot;&gt;&amp;quot;Your Full Name&amp;quot;&lt;/span&gt;
-git config --global user.email &lt;span class=&quot;s2&quot;&gt;&amp;quot;Your Email Address&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git config --global user.name <span class="s2">&quot;Your Full Name&quot;</span>
+git config --global user.email <span class="s2">&quot;Your Email Address&quot;</span></code></pre></figure>
 
-&lt;p&gt;Make sure you use the same email address for Git, GitHub, and Heroku.&lt;/p&gt;
+<p>Make sure you use the same email address for Git, GitHub, and Heroku.</p>
 
-&lt;hr /&gt;
+<hr />
 
-&lt;h2 id=&quot;a-id3a-30-rvm&quot;&gt;&lt;a id=&quot;3&quot;&gt;&lt;/a&gt; 3.0 RVM:&lt;/h2&gt;
+<h2 id="a-id3a-30-rvm"><a id="3"></a> 3.0 RVM:</h2>
 
-&lt;p&gt;RVM stands for Ruby Version Manager. It’s a command line tool which allows you to easily install, manage, and work with multiple ruby environments from interpreters to sets of gems. It also installs gems to your &lt;code&gt;~/&lt;/code&gt; &lt;strong&gt;home&lt;/strong&gt; directory, instead of using the global root of your machine.&lt;/p&gt;
+<p>RVM stands for Ruby Version Manager. It’s a command line tool which allows you to easily install, manage, and work with multiple ruby environments from interpreters to sets of gems. It also installs gems to your <code>~/</code> <strong>home</strong> directory, instead of using the global root of your machine.</p>
 
-&lt;h4 id=&quot;rvm-helps-improve-security&quot;&gt;RVM helps improve security&lt;/h4&gt;
+<h4 id="rvm-helps-improve-security">RVM helps improve security</h4>
 
-&lt;p&gt;RVM helps ensure that all aspects of Ruby are completely contained within user space, strongly encouraging safer, non-root use. Use of RVM rubies thus provides a higher level of system security, and therefore reduces risk and cuts overall system downtime. Additionally, since all processes run at the user level, a compromised ruby process cannot compromise the entire system.&lt;/p&gt;
+<p>RVM helps ensure that all aspects of Ruby are completely contained within user space, strongly encouraging safer, non-root use. Use of RVM rubies thus provides a higher level of system security, and therefore reduces risk and cuts overall system downtime. Additionally, since all processes run at the user level, a compromised ruby process cannot compromise the entire system.</p>
 
-&lt;h4 id=&quot;say-goodbye-to-sudo-gem-installs&quot;&gt;Say goodbye to sudo gem installs&lt;/h4&gt;
+<h4 id="say-goodbye-to-sudo-gem-installs">Say goodbye to sudo gem installs</h4>
 
-&lt;p&gt;Yep, that’s right! By using RVM, you won’t have to &lt;code&gt;sudo&lt;/code&gt; to install gems on your machine.&lt;/p&gt;
+<p>Yep, that’s right! By using RVM, you won’t have to <code>sudo</code> to install gems on your machine.</p>
 
-&lt;h3 id=&quot;install-the-stable-release-version&quot;&gt;3.1 Install the stable release version:&lt;/h3&gt;
+<h3 id="install-the-stable-release-version">3.1 Install the stable release version:</h3>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;curl -L https://get.rvm.io &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; bash -s stable&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">curl -L https://get.rvm.io <span class="p">|</span> bash -s stable</code></pre></figure>
 
-&lt;p&gt;Finish the installation by either running the following command, or closing all shell windows.&lt;/p&gt;
+<p>Finish the installation by either running the following command, or closing all shell windows.</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; /Users/USERNAME/.rvm/scripts/rvm&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">source</span> /Users/USERNAME/.rvm/scripts/rvm</code></pre></figure>
 
-&lt;p&gt;&lt;em&gt;Replace &lt;strong&gt;username&lt;/strong&gt; with your Mac username.&lt;/em&gt;&lt;/p&gt;
+<p><em>Replace <strong>username</strong> with your Mac username.</em></p>
 
-&lt;p&gt;Before installing the latest version of ruby with rvm, we need to install &lt;code&gt;libksba&lt;/code&gt;.&lt;/p&gt;
+<p>Before installing the latest version of ruby with rvm, we need to install <code>libksba</code>.</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;brew install libksba&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">brew install libksba</code></pre></figure>
 
-&lt;h3 id=&quot;a-id32a-32-then-install-ruby-193-with&quot;&gt;&lt;a id=&quot;3.2&quot;&gt;&lt;/a&gt; 3.2 Then install Ruby 1.9.3 with:&lt;/h3&gt;
+<h3 id="a-id32a-32-then-install-ruby-193-with"><a id="3.2"></a> 3.2 Then install Ruby 1.9.3 with:</h3>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;rvm install 1.9.3&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">rvm install 1.9.3</code></pre></figure>
 
-&lt;h3 id=&quot;a-id33a-now-install-sass-and-compass&quot;&gt;&lt;a id=&quot;3.3&quot;&gt;&lt;/a&gt; Now install &lt;strong&gt;Sass&lt;/strong&gt; and &lt;strong&gt;Compass&lt;/strong&gt;.&lt;/h3&gt;
+<h3 id="a-id33a-now-install-sass-and-compass"><a id="3.3"></a> Now install <strong>Sass</strong> and <strong>Compass</strong>.</h3>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;gem install sass
-gem install compass&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">gem install sass
+gem install compass</code></pre></figure>
 
-&lt;hr /&gt;
+<hr />
 
-&lt;h2 id=&quot;a-id4a-40-node&quot;&gt;&lt;a id=&quot;4&quot;&gt;&lt;/a&gt; 4.0 Node:&lt;/h2&gt;
+<h2 id="a-id4a-40-node"><a id="4"></a> 4.0 Node:</h2>
 
-&lt;p&gt;According to the node docs, Brew installs of node are known to be buggy, the node package manager is not included in the install etiher, so the node devs themselves reccommend using the Macintosh package installer:&lt;/p&gt;
+<p>According to the node docs, Brew installs of node are known to be buggy, the node package manager is not included in the install etiher, so the node devs themselves reccommend using the Macintosh package installer:</p>
 
-&lt;p&gt;&lt;a href=&quot;http://nodejs.org/#download&quot;&gt;Download the Node Macintosh package installer&lt;/a&gt;&lt;/p&gt;
+<p><a href="http://nodejs.org/#download">Download the Node Macintosh package installer</a></p>
 
-&lt;h5 id=&quot;note-8th-feb-2013&quot;&gt;Note (8th Feb 2013):&lt;/h5&gt;
+<h5 id="note-8th-feb-2013">Note (8th Feb 2013):</h5>
 
-&lt;p&gt;Node devs recently made some changes so that Node no longer installs on OS X via homebrew if Xcode is &lt;strong&gt;not&lt;/strong&gt; installed. We haven’t installed Node via homebrew, however this issue &lt;em&gt;still&lt;/em&gt; affects us.&lt;/p&gt;
+<p>Node devs recently made some changes so that Node no longer installs on OS X via homebrew if Xcode is <strong>not</strong> installed. We haven’t installed Node via homebrew, however this issue <em>still</em> affects us.</p>
 
-&lt;p&gt;Next time you run &lt;strong&gt;npm install&lt;/strong&gt; you may come across the following error:&lt;/p&gt;
+<p>Next time you run <strong>npm install</strong> you may come across the following error:</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;xcode-select: Error: No Xcode is selected. Use xcode-select -switch &amp;lt;path-to-xcode&amp;gt;, or see the xcode-select manpage &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;man xcode-select&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; further information.&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">xcode-select: Error: No Xcode is selected. Use xcode-select -switch &lt;path-to-xcode&gt;, or see the xcode-select manpage <span class="o">(</span>man xcode-select<span class="o">)</span> <span class="k">for</span> further information.</code></pre></figure>
 
-&lt;p&gt;To fix this, all you need to do is:&lt;/p&gt;
+<p>To fix this, all you need to do is:</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo xcode-select --switch /usr/bin&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo xcode-select --switch /usr/bin</code></pre></figure>
 
-&lt;h3 id=&quot;a-id41a-41-yeoman&quot;&gt;&lt;a id=&quot;4.1&quot;&gt;&lt;/a&gt; 4.1 Yeoman&lt;/h3&gt;
+<h3 id="a-id41a-41-yeoman"><a id="4.1"></a> 4.1 Yeoman</h3>
 
-&lt;p&gt;Yeoman is a robust and opinionated set of tools, libraries, and a workflow that can help developers quickly build beautiful, compelling web apps. Tools included are, &lt;strong&gt;Yo&lt;/strong&gt; (a scaffolding tool), &lt;strong&gt;Grunt&lt;/strong&gt;, &lt;strong&gt;Bower&lt;/strong&gt; and more.&lt;/p&gt;
+<p>Yeoman is a robust and opinionated set of tools, libraries, and a workflow that can help developers quickly build beautiful, compelling web apps. Tools included are, <strong>Yo</strong> (a scaffolding tool), <strong>Grunt</strong>, <strong>Bower</strong> and more.</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;npm install -g yo grunt-cli bower&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">npm install -g yo grunt-cli bower</code></pre></figure>
 
-&lt;hr /&gt;
+<hr />
 
-&lt;h2 id=&quot;a-id5a-50-mysql&quot;&gt;&lt;a id=&quot;5&quot;&gt;&lt;/a&gt; 5.0 MySQL:&lt;/h2&gt;
+<h2 id="a-id5a-50-mysql"><a id="5"></a> 5.0 MySQL:</h2>
 
-&lt;h4 id=&quot;sidenote---debugging--path-issues&quot;&gt;Sidenote - Debugging / $PATH issues&lt;/h4&gt;
+<h4 id="sidenote---debugging--path-issues">Sidenote - Debugging / $PATH issues</h4>
 
-&lt;p&gt;I actually had a few issues at this point with my new MacBook air and had to roll back the install of MySQL in order to fix a few issues…&lt;/p&gt;
+<p>I actually had a few issues at this point with my new MacBook air and had to roll back the install of MySQL in order to fix a few issues…</p>
 
-&lt;p&gt;I ran &lt;code&gt;brew doctor&lt;/code&gt; to discover that &lt;code&gt;/usr/bin&lt;/code&gt; was ahead of &lt;code&gt;/usr/local/bin&lt;/code&gt; in my $PATH.&lt;/p&gt;
+<p>I ran <code>brew doctor</code> to discover that <code>/usr/bin</code> was ahead of <code>/usr/local/bin</code> in my $PATH.</p>
 
-&lt;p&gt;In order to get round this, i needed to edit &lt;code&gt;/etc/paths&lt;/code&gt; to fix the order.&lt;/p&gt;
+<p>In order to get round this, i needed to edit <code>/etc/paths</code> to fix the order.</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;subl /etc/paths&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">subl /etc/paths</code></pre></figure>
 
-&lt;p&gt;&lt;em&gt;This isn’t a file i recommend playing with often. However, i’ve mentioned it here, as it might come in handy to people needing to do a little DIY machine debugging.&lt;/em&gt;&lt;/p&gt;
+<p><em>This isn’t a file i recommend playing with often. However, i’ve mentioned it here, as it might come in handy to people needing to do a little DIY machine debugging.</em></p>
 
-&lt;p&gt;Opening a new terminal window and running &lt;code&gt;brew doctor&lt;/code&gt; again should confirm this.&lt;/p&gt;
+<p>Opening a new terminal window and running <code>brew doctor</code> again should confirm this.</p>
 
-&lt;hr /&gt;
+<hr />
 
-&lt;h3 id=&quot;install&quot;&gt;5.1 Install&lt;/h3&gt;
+<h3 id="install">5.1 Install</h3>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;brew install mysql&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">brew install mysql</code></pre></figure>
 
-&lt;p&gt;You’re then requried to setup a few things. Run the following commands:&lt;/p&gt;
+<p>You’re then requried to setup a few things. Run the following commands:</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;unset &lt;/span&gt;TMPDIR
-mysql_install_db --verbose --user&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;whoami&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt; --basedir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;$(brew --prefix mysql)&amp;quot;&lt;/span&gt; --datadir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/usr/local/var/mysql --tmpdir&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/tmp&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">unset </span>TMPDIR
+mysql_install_db --verbose --user<span class="o">=</span><span class="sb">`</span>whoami<span class="sb">`</span> --basedir<span class="o">=</span><span class="s2">&quot;$(brew --prefix mysql)&quot;</span> --datadir<span class="o">=</span>/usr/local/var/mysql --tmpdir<span class="o">=</span>/tmp</code></pre></figure>
 
-&lt;p&gt;Followed by the following: &lt;strong&gt;&lt;em&gt;(you might also need to restart your machine to fix a conflict with Lion’s copy of MySQL.)&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+<p>Followed by the following: <strong><em>(you might also need to restart your machine to fix a conflict with Lion’s copy of MySQL.)</em></strong></p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;mysql.server start&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">mysql.server start</code></pre></figure>
 
-&lt;p&gt;Then use the alternative security script:&lt;/p&gt;
+<p>Then use the alternative security script:</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;/usr/local/Cellar/mysql/5.5.25a/bin/mysql_secure_installation&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">/usr/local/Cellar/mysql/5.5.25a/bin/mysql_secure_installation</code></pre></figure>
 
-&lt;p&gt;Boom!&lt;/p&gt;
+<p>Boom!</p>
 
-&lt;hr /&gt;
+<hr />
 
-&lt;h2 id=&quot;a-id6a-60-couchdb&quot;&gt;&lt;a id=&quot;6&quot;&gt;&lt;/a&gt; 6.0 CouchDB:&lt;/h2&gt;
+<h2 id="a-id6a-60-couchdb"><a id="6"></a> 6.0 CouchDB:</h2>
 
-&lt;p&gt;CouchDB is a popular NoSQL database.&lt;/p&gt;
+<p>CouchDB is a popular NoSQL database.</p>
 
-&lt;p&gt;&lt;em&gt;If you’re not planning on developing node apps with persistent storate, &lt;strong&gt;you can skip this step&lt;/strong&gt;.&lt;/em&gt;&lt;/p&gt;
+<p><em>If you’re not planning on developing node apps with persistent storate, <strong>you can skip this step</strong>.</em></p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;brew install couchdb&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">brew install couchdb</code></pre></figure>
 
-&lt;hr /&gt;
+<hr />
 
-&lt;h2 id=&quot;a-id7a-70-configuring-apache-and-virtual-hosts&quot;&gt;&lt;a id=&quot;7&quot;&gt;&lt;/a&gt; 7.0 Configuring Apache and Virtual Hosts:&lt;/h2&gt;
+<h2 id="a-id7a-70-configuring-apache-and-virtual-hosts"><a id="7"></a> 7.0 Configuring Apache and Virtual Hosts:</h2>
 
-&lt;p&gt;Type the following command in to edit the &lt;code&gt;httpd.conf&lt;/code&gt; file in Sublime Text.&lt;/p&gt;
+<p>Type the following command in to edit the <code>httpd.conf</code> file in Sublime Text.</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;subl /etc/apache2/httpd.conf&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">subl /etc/apache2/httpd.conf</code></pre></figure>
 
-&lt;h3 id=&quot;enable-php5&quot;&gt;7.1 Enable PHP5&lt;/h3&gt;
+<h3 id="enable-php5">7.1 Enable PHP5</h3>
 
-&lt;p&gt;Find &lt;code&gt;line 111&lt;/code&gt; and un-comment:&lt;/p&gt;
+<p>Find <code>line 111</code> and un-comment:</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-apacheconf&quot; data-lang=&quot;apacheconf&quot;&gt;&lt;span class=&quot;nb&quot;&gt;LoadModule&lt;/span&gt; php5_module libexec/apache2/libphp5.so&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-apacheconf" data-lang="apacheconf"><span class="nb">LoadModule</span> php5_module libexec/apache2/libphp5.so</code></pre></figure>
 
-&lt;h3 id=&quot;a-id72a-72-enable-virtual-hosts&quot;&gt;&lt;a id=&quot;7.2&quot;&gt;&lt;/a&gt; 7.2 Enable Virtual Hosts&lt;/h3&gt;
+<h3 id="a-id72a-72-enable-virtual-hosts"><a id="7.2"></a> 7.2 Enable Virtual Hosts</h3>
 
-&lt;p&gt;Find and uncomment the following line. It can be found around &lt;code&gt;line 623&lt;/code&gt;.&lt;/p&gt;
+<p>Find and uncomment the following line. It can be found around <code>line 623</code>.</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-apacheconf&quot; data-lang=&quot;apacheconf&quot;&gt;&lt;span class=&quot;nb&quot;&gt;Include&lt;/span&gt; &lt;span class=&quot;sx&quot;&gt;/private/etc/apache2/extra/httpd-vhosts.conf&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-apacheconf" data-lang="apacheconf"><span class="nb">Include</span> <span class="sx">/private/etc/apache2/extra/httpd-vhosts.conf</span></code></pre></figure>
 
-&lt;h3 id=&quot;creating-a-virtual-hosts-file&quot;&gt;7.3 Creating a Virtual Hosts File&lt;/h3&gt;
+<h3 id="creating-a-virtual-hosts-file">7.3 Creating a Virtual Hosts File</h3>
 
-&lt;p&gt;You then want to create a vhosts file, to store all your virtual hosts in. So enter the following commands in the Terminal.&lt;/p&gt;
+<p>You then want to create a vhosts file, to store all your virtual hosts in. So enter the following commands in the Terminal.</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;touch /etc/apache2/other/vhosts.conf
-subl /etc/apache2/other/vhosts.conf&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">touch /etc/apache2/other/vhosts.conf
+subl /etc/apache2/other/vhosts.conf</code></pre></figure>
 
-&lt;p&gt;And enter the following:&lt;/p&gt;
+<p>And enter the following:</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-apacheconf&quot; data-lang=&quot;apacheconf&quot;&gt;&lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# Virtual Hosts&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;NameVirtualHost&lt;/span&gt; *:80
+<figure class="highlight"><pre><code class="language-apacheconf" data-lang="apacheconf"><span class="c">#</span>
+<span class="c"># Virtual Hosts</span>
+<span class="c">#</span>
+<span class="nb">NameVirtualHost</span> *:80
 
-&lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# VirtualHost example:&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# Almost any Apache directive may go into a VirtualHost container.&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# The first VirtualHost section is used for all requests that do not&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# match a ServerName or ServerAlias in any &amp;lt;VirtualHost&amp;gt; block.&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;VirtualHost&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;*:80&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;DocumentRoot&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;/Users/USERNAME/Sites/SITENAME&amp;quot;&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;ServerAlias&lt;/span&gt; dev.*.xip.io
-    &lt;span class=&quot;nb&quot;&gt;ServerName&lt;/span&gt; dev.foo
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/VirtualHost&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<span class="c">#</span>
+<span class="c"># VirtualHost example:</span>
+<span class="c"># Almost any Apache directive may go into a VirtualHost container.</span>
+<span class="c"># The first VirtualHost section is used for all requests that do not</span>
+<span class="c"># match a ServerName or ServerAlias in any &lt;VirtualHost&gt; block.</span>
+<span class="c">#</span>
+<span class="nt">&lt;VirtualHost</span> <span class="s">*:80</span><span class="nt">&gt;</span>
+    <span class="nb">DocumentRoot</span> <span class="s2">&quot;/Users/USERNAME/Sites/SITENAME&quot;</span>
+    <span class="nb">ServerAlias</span> dev.*.xip.io
+    <span class="nb">ServerName</span> dev.foo
+<span class="nt">&lt;/VirtualHost&gt;</span></code></pre></figure>
 
-&lt;p&gt;Change &lt;strong&gt;username&lt;/strong&gt;, &lt;strong&gt;sitename&lt;/strong&gt;, &lt;strong&gt;dev&lt;/strong&gt;, and &lt;strong&gt;dev.foo&lt;/strong&gt; accordingly, and save the file.&lt;/p&gt;
+<p>Change <strong>username</strong>, <strong>sitename</strong>, <strong>dev</strong>, and <strong>dev.foo</strong> accordingly, and save the file.</p>
 
-&lt;h3 id=&quot;pointing-localhost-to-a-virtual-host-server-name&quot;&gt;7.4 Pointing Localhost to a Virtual Host Server Name&lt;/h3&gt;
+<h3 id="pointing-localhost-to-a-virtual-host-server-name">7.4 Pointing Localhost to a Virtual Host Server Name</h3>
 
-&lt;p&gt;Now we need to point localhost to the server name, in order to enable the virtual host.&lt;/p&gt;
+<p>Now we need to point localhost to the server name, in order to enable the virtual host.</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;subl /etc/hosts&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">subl /etc/hosts</code></pre></figure>
 
-&lt;p&gt;And enter the following on a new line and save:&lt;/p&gt;
+<p>And enter the following on a new line and save:</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-apacheconf&quot; data-lang=&quot;apacheconf&quot;&gt;&lt;span class=&quot;c&quot;&gt;#servername to match that in the vhosts.conf file&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt;127&lt;/span&gt;.&lt;span class=&quot;err&quot;&gt;0&lt;/span&gt;.&lt;span class=&quot;err&quot;&gt;0&lt;/span&gt;.&lt;span class=&quot;err&quot;&gt;1&lt;/span&gt;   &lt;span class=&quot;err&quot;&gt;dev&lt;/span&gt;.&lt;span class=&quot;nb&quot;&gt;foo&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-apacheconf" data-lang="apacheconf"><span class="c">#servername to match that in the vhosts.conf file</span>
+<span class="err">127</span>.<span class="err">0</span>.<span class="err">0</span>.<span class="err">1</span>   <span class="err">dev</span>.<span class="nb">foo</span></code></pre></figure>
 
-&lt;h3 id=&quot;restart-apache-and-lock-n-load&quot;&gt;7.5 Restart Apache, and Lock ‘N’ Load!&lt;/h3&gt;
+<h3 id="restart-apache-and-lock-n-load">7.5 Restart Apache, and Lock ‘N’ Load!</h3>
 
-&lt;p&gt;Lastly in &lt;code&gt;System Settings&lt;/code&gt; disable and re-enable &lt;code&gt;Web Sharing&lt;/code&gt; in the &lt;code&gt;Sharing&lt;/code&gt; panel.&lt;/p&gt;
+<p>Lastly in <code>System Settings</code> disable and re-enable <code>Web Sharing</code> in the <code>Sharing</code> panel.</p>
 
-&lt;p&gt;Fire up your favourite web browser and enter the servername, you should be pointed to the doc root you entered in your vhosts file!&lt;/p&gt;
+<p>Fire up your favourite web browser and enter the servername, you should be pointed to the doc root you entered in your vhosts file!</p>
 
-&lt;p&gt;Neat, eh!&lt;/p&gt;
+<p>Neat, eh!</p>
 
-&lt;p&gt;Now, there are plenty more options you can set for logs etc, but i’ll leave that out as not to over complicate this article.&lt;/p&gt;
+<p>Now, there are plenty more options you can set for logs etc, but i’ll leave that out as not to over complicate this article.</p>
 
-&lt;hr /&gt;
+<hr />
 
-&lt;h2 id=&quot;remaining-packages&quot;&gt;8.0 Remaining packages:&lt;/h2&gt;
+<h2 id="remaining-packages">8.0 Remaining packages:</h2>
 
-&lt;p&gt;There are a lot more packages that can be installed, and need less configuration than the ones mentioned above. I’ve put these in a .dotfile you can &lt;a href=&quot;https://raw.github.com/KingScooty/dotfiles/master/.brew&quot;&gt;download here&lt;/a&gt;, and can be batch executed calling:&lt;/p&gt;
+<p>There are a lot more packages that can be installed, and need less configuration than the ones mentioned above. I’ve put these in a .dotfile you can <a href="https://raw.github.com/KingScooty/dotfiles/master/.brew">download here</a>, and can be batch executed calling:</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;./.brew&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">./.brew</code></pre></figure>
 
-&lt;hr /&gt;
+<hr />
 
 </description>
     </item>
     
     
 
-  </channel> 
+  </channel>
 </rss>
