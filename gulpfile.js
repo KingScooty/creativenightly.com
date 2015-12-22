@@ -184,7 +184,8 @@ var sass_development = function sass_development() {
 
 var sass_production = function sass_production() {
   var nano_options = {
-    autoprefixer: autoprefixer_config,
+    // autoprefixer: autoprefixer_config,
+    autoprefixer: false,
     discardComments: { removeAll: true }
   };
 
@@ -194,6 +195,7 @@ var sass_production = function sass_production() {
 
     .pipe(plugins.sass.sync().on('error', plugins.sass.logError))
     .pipe(plugins.cssnano(nano_options))
+    .pipe(autoprefixer(autoprefixer_config))
   // Output to both _site and temp for crticial path
     // .pipe( gulp.dest( '_site/assets/css' ) )
     .pipe( gulp.dest( '.temp/production/assets/css' ) );
