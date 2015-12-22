@@ -5,7 +5,7 @@ subtitle:
 
 permalink: /contact/
 
-cover_image: contact.jpg
+cover_image: base-images/contact.jpg
 ---
 
 *Creative Nightly is lovingly crafted in Manchester, England. It is the personal blog of <a href="http://twitter.com/KingScooty">Scotty Vernon</a>, a creative technologist and director of <a href="http://wildflame.co.uk">Wildflame Studios</a>.*

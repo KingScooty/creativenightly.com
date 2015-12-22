@@ -5,7 +5,7 @@ subtitle: 10 months of hard work comes to fruition with a new product for the BB
 sitemap:
   priority: 0.6
 
-cover_image: "taster.jpg"
+cover_image: "article-images/taster.jpg"
 ---
 
 As a digital supplier for the BBC, I've been fortunate enough to work on a few BBC projects over the last 2 years.

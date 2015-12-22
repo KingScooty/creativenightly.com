@@ -2,7 +2,7 @@
 title: Setting up Hyperion on a Raspberry Pi for use with Lightpack
 subtitle: Get Lightpack working with a Raspberry Pi on Linux and take advantage of insanely low power useage.
 
-cover_image: hyperion-raspberry-pi-lightpack.jpg
+cover_image: article-images/hyperion-raspberry-pi-lightpack.jpg
 
 excerpt:
   <p>Get Lightpack working with a Raspberry Pi on Linux and take advantage of insanely low power useage.</p>
