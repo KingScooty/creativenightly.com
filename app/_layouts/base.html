@@ -1,0 +1,25 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html>
+<head>
+
+  {% include _head.html %}
+  <!-- JEKYLL ENV: {{ jekyll.environment }} -->
+</head>
+<body class="show-grid typeset page page--all {{ layout.page-class }}">
+
+  {% include _site-header.html %}
+
+  <div class="site-body">
+    {{ content }}
+  </div>
+
+  {% include _site-footer.html %}
+
+  {% include _scripts.html %}
+
+</body>
+</html>

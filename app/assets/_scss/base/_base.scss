@@ -1,0 +1,42 @@
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+body {
+  padding-top: 80px;
+  padding-top: 5rem;
+  overflow-x: hidden;
+  color: #5a5a5a;
+}
+
+
+a {
+  color: #2077b2;
+
+  &:active {
+    background-color: #FFFF66;
+  }
+}
+
+img {
+  -ms-interpolation-mode: bicubic;
+
+  height: auto;
+  vertical-align: middle;
+  width: 100%;
+
+  @include breakpoint(break-1) {
+    margin: 0 auto;
+    max-width: 100%;
+    width: auto;
+  }
+}
+
+b, strong, .bold {
+  color: #2e2e2e;
+  // color: #222;
+}

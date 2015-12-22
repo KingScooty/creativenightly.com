@@ -1,0 +1,101 @@
+---
+layout: base
+page-class: page--post
+---
+{% if page.cover_image %}
+<div class="media-window media-window--large is-full-width" style="background-image: url(/images/{{ page.cover_image }})">
+</div>
+{% endif %}
+<article class="content-block shift-down">
+
+  <div class="container">
+    <header class="content-block__header {% if page.subtitle %} content-block__header--group {% endif %}">
+
+      <div class="meta">
+        By <address><a rel="author" href="http://twitter.com/kingscooty" title="{{ page.author.name }}" target="_blank">{{ page.author.name }}</a></address> &mdash;
+        <time pubdate datetime="{{ page.date | date_to_xmlschema }}" title="{{ page.date | date: "%B %d, %Y" }}">{{ page.date | date: "%B %d, %Y" }}</time>
+      </div>
+
+      <h1 class="title">{{ page.title }}</h1>
+
+      {% if page.subtitle %}
+      <h2 class="subtitle">{{ page.subtitle }}</h2>
+      {% endif %}
+
+    </header>
+
+    <section class="content-block__body">
+
+
+
+      {% capture pub_date %}
+        {{ page.date | date: "%B %d %Y" }}
+      {% endcapture %}
+
+      {% capture lastmod %}
+        {% if page.lastmod %}
+          {{ page.lastmod }}
+        {% else %}
+          {{ page.date }}
+        {% endif %}
+      {% endcapture %}
+
+      {% capture mod_date %}
+        {{ lastmod | date: "%B %d %Y" }}
+      {% endcapture %}
+
+      {% capture formatted_date %}
+        {% assign d = lastmod | date: "%-d"  %}
+        {% case d %}
+          {% when '1' or '21' or '31' %}{{ d }}st
+          {% when '2' or '22' %}{{ d }}nd
+          {% when '3' or '23' %}{{ d }}rd
+          {% else %}{{ d }}th
+          {% endcase %}
+          {{ lastmod | date: "%B" }},
+        {{ lastmod | date: "%Y" }}
+      {% endcapture %}
+
+      {% if mod_date != pub_date %}
+      <p><em>Last updated on the <strong><time datetime="{{ page.date | date_to_xmlschema }}">{{ formatted_date }}</time></strong>.</em></p>
+      {% endif %}
+
+      {{ content }}
+    </section>
+
+    <aside class="content-block__aside">
+      <hr>
+      {% include _social.html %}
+      <hr>
+    </aside>
+
+    <footer class="content-block__footer">
+      <address class="content-block__author media-object">
+        <hr class="dark seperator seperator--tight">
+        {% if page.author.image %}
+          <img src="/images/gravatar.png" alt="Scotty Vernon" class="media-object__image">
+        {% endif %}
+        <div class="type-p">
+          Written by <strong><a rel="author" href="https://twitter.com/{{ page.author.twitter }}" title="{{ page.author_name }}" target="_blank">{{ page.author.name }}</a></strong>
+        </div>
+        <div class="muted fine-print">{{ page.author.bio }}</div>
+
+        {% include _follow_button.html %}
+
+        <hr class="dark seperator seperator--tight">
+      </address>
+    </footer>
+
+    {% if page.cover_copyright %}
+    <section class="content-block__aside">
+      <p class="muted fine-print cover-copyright">{{ page.cover_copyright }}</p>
+    </section>
+    {% endif %}
+
+    {% if site.inc.disqus.shortname %}
+    <section class="comments content-block__aside">
+      {% include _disqus.html %}
+    </section>
+    {% endif %}
+  </div>
+</article>

@@ -1,0 +1,31 @@
+.masthead {
+  position: fixed;
+
+  // height: 70px;
+  height: 5rem;
+  left: 0;
+  right: 0;
+  top: 0;
+
+  // padding-left: 10%;
+
+  background: #fff;
+
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.1);
+  backface-visibility: hidden;
+  perspective: 1000;
+
+  transition: all 0.35s ease;
+  z-index: 100;
+
+  .container {
+    max-width: none;
+  }
+}
+
+.brand {
+  // font-family: futura-pt;
+  font-family: 'source-sans-pro';
+  font-weight: bold;
+  text-transform: uppercase;
+}

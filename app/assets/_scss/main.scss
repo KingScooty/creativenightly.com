@@ -1,0 +1,116 @@
+
+@import "config";
+// Move above into a config file?
+
+// Import componenets
+
+
+// @import "../_bower_components/normalize-scss/normalize";
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+html, body { height: 100%; }
+a img { border: none; }
+blockquote { quotes: none; }
+blockquote:before, blockquote:after { content: ''; content: none; }
+table { border-collapse: collapse; border-spacing: 0; }
+caption, th, td { text-align: left; font-weight: normal; vertical-align: middle; }
+
+@import "../_bower_components/susy/sass/susy";
+@import "../_bower_components/sass-mediaqueries/media-queries";
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+/* IMPORT CSS FILES */
+
+@import "plugins/sassline/variables";
+@import "plugins/sassline/modular-scale";
+@import "plugins/sassline/mixins";
+@import "theme/typography";
+
+.show-grid {
+  background-image: linear-gradient(to bottom, rgba(150,150,150,0.1) 0, rgba(255,255,255,0) 1px);
+  // background-image: linear-gradient(to bottom, cyan 0, rgba(255,255,255,0) 1px);
+  background-repeat: repeat-y;
+  background-size: 100% 1rem;
+}
+
+@import "base/base";
+@import "layouts/layouts";
+@import "modules/navigation";
+@import "modules/button";
+@import "modules/list";
+
+// Media Window
+// Used
+@import "modules/media-window";
+@import "modules/content-block";
+@import "modules/meta";
+// Media object
+// Currently only used for the author footer on blog posts
+@import "modules/media-object";
+// Social Sharing
+// Used in footer of post detail pages
+@import "modules/social";
+// Posts
+// Used on archive.
+@import "modules/posts";
+
+// Global modulde/layout (needs defining)
+@import "modules/masthead";
+@import "modules/site-footer";
+
+// Syntax
+@import "theme/pygments";
+
+// States
+@import "states/states";
+
+@import "modules/comments";
+@import "modules/twitter_tweet";
+@import "modules/gist";
+
+/**
+ * Solarized colors by Ethan Schoonover
+ */
+// html * {
+//   color-profile: sRGB;
+//   rendering-intent: auto;
+//   font-smoothing: antialiased;
+// }
+
+// $base03:    #002b36;
+// $base02:    #073642;
+// $base01:    #586e75;
+// $base00:    #657b83;
+// $base0:     #839496;
+// $base1:     #93a1a1;
+// $base2:     #eee8d5;
+// $base3:     #fdf6e3;
+// $yellow:    #b58900;
+// $orange:    #cb4b16;
+// $red:       #dc322f;
+// $magenta:   #d33682;
+// $violet:    #6c71c4;
+// $blue:      #268bd2;
+// $cyan:      #2aa198;
+// $green:     #859900;
+// @mixin rebase($rebase03,$rebase02,$rebase01,$rebase00,$rebase0,$rebase1,$rebase2,$rebase3)
+// {
+//     background-color:$rebase03;
+//     color:$rebase0;
+//     * { color:$rebase0; }
+//     h1,h2,h3,h4,h5,h6 { color:$rebase1; border-color: $rebase0; }
+//     a, a:active, a:visited { color: $rebase1; }
+// }
+// @mixin accentize($accent) {
+//     a, a:active, a:visited, code.url { color: $accent; }
+//     h1,h2,h3,h4,h5,h6 {color:$accent}
+// }
+
+// .light { @include rebase($base3,$base2,$base1,$base0,$base00,$base01,$base02,$base03)
+// }
+// .dark  { @include rebase($base03,$base02,$base01,$base00,$base0,$base1,$base2,$base3)
+// }

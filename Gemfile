@@ -1,4 +1,19 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
-gem 'github-pages'
-gem 'jekyll-redirect-from'
+gem "jekyll"
+
+# converters
+gem "kramdown"
+gem "redcarpet"
+
+# highlighters
+gem "pygments.rb"
+
+# plugins
+gem "jemoji"
+gem "jekyll-mentions"
+gem "jekyll-redirect-from"
+gem "jekyll-sitemap"
+gem "jekyll-feed"
+gem "jekyll-gist"
+gem "jekyll-paginate"

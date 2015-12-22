@@ -2,11 +2,12 @@
   "name": "creative-nightly",
   "private": true,
   "dependencies": {
-    "jquery-pjax": "git@github.com:falsandtru/jquery-pjax.git#~2.36.0",
-    "jquery.pjax": "https://github.com/falsandtru/jquery-pjax/releases/download/v2.36.0/jquery.pjax.js",
-    "jquery": "~2.1.3"
+    "jquery-pjax": "git@github.com:falsandtru/jquery-pjax.git#~2.40.0",
+    "jquery.pjax": "https://github.com/falsandtru/jquery-pjax/releases/download/v2.40.0/jquery.pjax.js",
+    "jquery": "~2.1.4"
   },
   "devDependencies": {
+    "minifyHTML":"https://github.com/penibelst/jekyll-compress-html/releases/download/v2.1.0/compress.html.zip",
     "susy": "~2.2.1",
     "normalize-scss": "git://github.com/appleboy/normalize.scss.git#~3.0.2",
     "sass-mediaqueries": "~1.4.0"

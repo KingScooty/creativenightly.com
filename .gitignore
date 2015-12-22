@@ -5,5 +5,13 @@ _assets
 _site
 _bower_components/
 node_modules/
+app/_includes/.temp/
+.temp/
+app/assets/javascripts/
+app/assets/stylesheets/
+app/assets/css/
+app/assets/js/
+
+.publish/
 
 /assets/stylesheets/main.css
