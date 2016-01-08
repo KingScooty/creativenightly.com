@@ -8,7 +8,23 @@ excerpt:
   <p>Get Lightpack working with a Raspberry Pi on Linux and take advantage of insanely low power useage.</p>
 ---
 
-##Installing Hyperion
+###Introduction
+
+I've tried quite a few different controllers for controlling LEDs on a Raspberry Pi. Most require a lot of resources, and don't scale well will an increase in LED numbers. I needed a controller that could handle 300+ LEDs without breaking a sweat. This is where Hyperion comes in.
+
+Hyperion is an opensource 'AmbiLight' implementation. It's main selling points are:
+
+* Low CPU load. For a led string of 50 leds the CPU usage will typically be below 2% on a non-overclocked Pi.
+* Json interface which allows easy integration into scripts.
+* A command line utility allows easy testing and configuration of the color transforms.
+* Priority channels are not coupled to a specific led data provider which means that a provider can post led data and leave without the need to maintain a connection to Hyperion.
+* HyperCon. A tool which helps generate a Hyperion configuration file. The tool will also remember your settings from the previous run.
+* Black border detector.
+* A scriptable effect engine.
+* Boblight server interface to enable the use of clients written for Boblight.
+* Generic software architecture to support new devices and new algorithms easily.
+
+###Installing Hyperion
 
 Install the following prerequisites first using apt-get.
 
@@ -43,3 +59,14 @@ Next restart the server with the following command. If all goes well, you should
 {% highlight sh %}
 service hyperion restart
 {% endhighlight %}
+
+That's pretty much it for the software side of things. Now you just need to get some WS2801 LEDs and wire them up!
+
+####My Setup
+
+My hardware setup from a wiring perspective is fairly complex, but it allows me to switch sources by simply turning a new device on, and the lights will automically switch over to the new source. Here's a few live examples of mysetup for anyone that's interested:
+
+
+<iframe src="https://vine.co/v/izpiA1tebtm/embed/simple" width="600" height="600" frameborder="0"></iframe><script src="https://platform.vine.co/static/scripts/embed.js"></script>
+
+<iframe src="https://vine.co/v/izvprFTBYHw/embed/simple" width="600" height="600" frameborder="0"></iframe><script src="https://platform.vine.co/static/scripts/embed.js"></script>
