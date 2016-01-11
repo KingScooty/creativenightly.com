@@ -35,13 +35,13 @@ apt-get update
 apt-get install libqtcore4 libqtgui4 libqt4-network libusb-1.0-0 libprotobuf7 ca-certificates
 {% endhighlight %}
 
-Next grab the install hyperion script from the hyprion github repo.
+Next grab the install Hyperion script from the Hyperion github repo.
 
 {% highlight sh %}
 wget -N https://raw.github.com/tvdzwan/hyperion/master/bin/install_hyperion.sh
 {% endhighlight %}
 
-Installing hyperion is as simple as running the following command.
+Installing Hyperion is as simple as running the following command.
 
 {% highlight sh %}
 sh ./install_hyperion.sh
@@ -62,12 +62,13 @@ Next restart the server with the following command. If all goes well, you should
 service hyperion restart
 {% endhighlight %}
 
-That's pretty much it for the software side of things. Now you just need to get some WS2801 LEDs and wire them up!
+That's pretty much it for the software side of things. Now if you haven't already, you just need to get some WS2801 LEDs and wire them up!
 
 ####My Setup
 
-My hardware setup from a wiring perspective is fairly complex, but it allows me to switch sources by simply turning a new device on, and the lights will automically switch over to the new source. Here's a few live examples of mysetup for anyone that's interested:
+My hardware setup from a wiring perspective is fairly complex, but if anyone wants to me post a write up, tweet me at [@KingScooty](http://twitter.com/kingscooty) and let me know!
 
+Amongst other things, it allows me to switch sources by simply turning a new device on, and the lights will automatically switch over to the new source. Here's a few live examples of my setup for anyone that's interested:
 
 <iframe src="https://vine.co/v/izpiA1tebtm/embed/simple" width="600" height="600" frameborder="0"></iframe><script src="https://platform.vine.co/static/scripts/embed.js"></script>
 
