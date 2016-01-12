@@ -10,16 +10,52 @@
 }
 
 
-.large-gutter {
-  margin: 0 6rem;
-}
+// .large-gutter {
+//   margin: 0 6rem;
+// }
 
-@include max-screen(1000px) {
-  .large-gutter {
-    padding: 0;
-    margin: 1rem 10%;
+// @include max-screen(1000px) {
+//   .large-gutter {
+//     padding: 0;
+//     margin: 1rem 10%;
+//   }
+// }
+
+
+@media screen and (min-width: 40em) {
+  .container {
+    max-width: 39.28571rem;
   }
 }
+@media screen and (min-width: 50em) {
+  .container {
+    max-width: 40rem;
+  }
+}
+@media screen and (min-width: 64em) {
+  .container {
+    max-width: 48rem;
+  }
+}
+@media screen and (min-width: 100em) {
+  .container {
+    max-width: 51.66667rem;
+  }
+}
+@media screen and (min-width: 64em) {
+  .container {
+    padding-left: 8rem;
+  }
+}
+@media screen and (min-width: 100em) {
+  .container {
+    padding-left: 10rem;
+  }
+}
+
+/**
+ * Shifts down container on archive, post and page templates
+ */
 
 .shift-down {
   padding: 3rem 0;
@@ -45,4 +81,3 @@
 //     @include maxwidth(4);
 //   }
 // }
-

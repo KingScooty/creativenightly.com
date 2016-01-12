@@ -4,7 +4,7 @@
 
 .content-block__header,
 .content-block__body,
-.content-block__footer, 
+.content-block__footer,
 .content-block__aside {
   // @extend .section;
   // @include breakpoint(break-2) {
@@ -71,10 +71,29 @@
   // margin-top: 1rem;
 }
 
+.content-block__caption {
+  position: absolute;
+  left: 0;
+  margin-top: 1rem;
+  // line-height: 1rem;
+  top: 0;
+
+  font-family: unquote(map-get($headingtype, font-family));
+  font-style: normal;
+  font-weight: map-get($headingtype, regular);
+
+  @include fontsize(theta, all);
+  @include baseline(theta, $headingtype, 1, 2, all);
+
+  @extend .upper;
+  @extend .small-upper;
+  // padding-top: 0;
+}
+
 .content-block__author {
   .seperator {
-    &:last-child { 
-      margin-bottom: 2rem; 
+    &:last-child {
+      margin-bottom: 2rem;
     }
     @include min-screen(640px) {
       padding-top: 1rem;
