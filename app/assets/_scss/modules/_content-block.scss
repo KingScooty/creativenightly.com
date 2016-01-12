@@ -76,7 +76,6 @@
   position: absolute;
   left: 0;
   margin-top: 1rem;
-  // line-height: 1rem;
   top: 0;
 
   font-family: unquote(map-get($headingtype, font-family));
@@ -87,8 +86,10 @@
   @include baseline(theta, $headingtype, 1, 2, all);
 
   @extend .upper;
-  @extend .small-upper;
-  // padding-top: 0;
+  // @extend .small-caps;
+  // @extend .fine-print;
+  font-weight: bold;
+  letter-spacing: 0.05rem;
 }
 
 .content-block__author {
