@@ -21,7 +21,7 @@ page-class: page--post
 
     <div class="content-block__caption">
       <!-- By <address><a rel="author" href="http://twitter.com/kingscooty" title="{{ page.author.name }}" target="_blank">{{ page.author.name }}</a></address> &mdash; -->
-      <time pubdate datetime="{{ page.date | date_to_xmlschema }}" title="{{ page.date | date: "%B %d, %Y" }}">{{ page.date | date: "%B %d" }} <br> {{ page.date | date: "%Y" }}</time>
+      <time class="content-block__date" pubdate datetime="{{ page.date | date_to_xmlschema }}" title="{{ page.date | date: "%B %d, %Y" }}"><span class="content-block__date__day">{{ page.date | date: "%d" }}</span> <span class="content-block__date__month">{{ page.date | date: "%B" }}</span> <span class="content-block__date__year">{{ page.date | date: "%Y" }}<span></time>
     </div>
 
     <section class="content-block__body">

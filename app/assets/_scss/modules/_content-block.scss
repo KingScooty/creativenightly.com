@@ -73,22 +73,49 @@
 }
 
 .content-block__caption {
-  position: absolute;
-  left: 0;
-  margin-top: 1rem;
-  top: 0;
+  @media screen and (min-width: 64em) {
+    position: absolute;
+    left: 0;
+    margin-top: 1rem;
+    top: 0;
+  }
+}
 
+.content-block__date {
   font-family: unquote(map-get($headingtype, font-family));
   font-style: normal;
   font-weight: map-get($headingtype, regular);
 
+  font-weight:bold;
+
+  span {
+    @media screen and (min-width: 64em) {
+      display: block;
+    }
+  }
+}
+
+.content-block__date__day {
+  @media screen and (max-width: 64em) {
+    @include fontsize(theta, all);
+    @include baseline(theta, $headingtype, 1,0, all);
+  }
+  @media screen and (min-width: 64em) {
+    font-size: 4rem;
+    line-height: 3rem;
+    // @include fontsize(theta, all);
+    // @include baseline(theta, $headingtype, 3, 2, all);
+  }
+}
+.content-block__date__month,
+.content-block__date__year {
   @include fontsize(theta, all);
-  @include baseline(theta, $headingtype, 1, 2, all);
+  @include baseline(theta, $headingtype, 1,0, all);
 
   @extend .upper;
   // @extend .small-caps;
   // @extend .fine-print;
-  font-weight: bold;
+  // font-weight: bold;
   letter-spacing: 0.05rem;
 }
 
