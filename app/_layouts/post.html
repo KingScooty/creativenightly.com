@@ -8,12 +8,12 @@ page-class: page--post
 {% endif %}
 <article class="content-block shift-down">
 
-  <div class="container">
-    <header class="content-block__header {% if page.subtitle %} content-block__header--group {% endif %}">
+  <div class="container container--2col">
+    <header class="content-block__header {% if page.subtitles %} content-block__header--group {% endif %}">
 
       <h1 class="title">{{ page.title }}</h1>
 
-      {% if page.subtitle %}
+      {% if page.subtitles %}
       <h2 class="subtitle">{{ page.subtitle }}</h2>
       {% endif %}
 
