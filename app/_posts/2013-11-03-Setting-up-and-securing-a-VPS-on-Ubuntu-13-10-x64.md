@@ -3,7 +3,7 @@ title: Setting up and securing an Ubuntu VPS on Digital Ocean
 subtitle: A guide on how to setup and secure a VPS on a clean install of Ubuntu 13.10 x64
 
 cover_image: article-images/server-rack.jpg
-cover_copyright: 'Photo Credit: <a href="https://www.flickr.com/photos/traftery/4773457853/">Tom Raftery</a> via <a href="http://compfight.com">Compfight</a> <a href="https://creativecommons.org/licenses/by-sa/2.0/">cc</a>'
+cover_copyright: '<a href="https://www.flickr.com/photos/traftery/4773457853/">Tom Raftery</a> via <a href="http://compfight.com">Compfight</a> <a href="https://creativecommons.org/licenses/by-sa/2.0/">cc</a>'
 tags: software
 
 excerpt:
