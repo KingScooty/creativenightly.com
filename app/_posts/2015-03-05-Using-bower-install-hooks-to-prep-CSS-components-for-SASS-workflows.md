@@ -1,6 +1,8 @@
 ---
 title: "Using Bower install hooks to automate changing CSS files into SASS files after installing them"
 subtitle: "An upgrade, and integration server safe method to include vanilla CSS components in your SASS workflow and build pipeline."
+
+lastmod: 2016-01-17
 ---
 
 Have you ever tried to import a *CSS* bower component into your SASS/SCSS workflow, with the intention of physically importing the contents of that file in to your main.scss file; only to find that the file is linked/referenced and ignored during the build process?
