@@ -62,14 +62,14 @@
 
 .shift-down {
   padding-top: 3rem;
-  padding-bottom: 3rem;
+  // padding-bottom: 3rem;
   // padding: 3rem 0;
 }
 
 @include max-screen(720px) {
   .shift-down {
     padding-top: 2rem;
-    padding-bottom: 2rem;
+    // padding-bottom: 2rem;
     // padding: 2rem 0;
   }
 }
