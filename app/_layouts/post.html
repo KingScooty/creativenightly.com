@@ -9,62 +9,62 @@ page-class: page--post
 {% endif %}
 
 <article class="content-block shift-down">
+  <div class="article">
+    <div class="container container--2col">
+      <header class="content-block__header {% if page.subtitles %} content-block__header--group {% endif %}">
 
-  <div class="container container--2col">
-    <header class="content-block__header {% if page.subtitles %} content-block__header--group {% endif %}">
+        <h1 class="title">{{ page.title }}</h1>
 
-      <h1 class="title">{{ page.title }}</h1>
-
-      {% if page.subtitles %}
-      <h2 class="subtitle">{{ page.subtitle }}</h2>
-      {% endif %}
-
-    </header>
-
-    <div class="inline-pullout">
-      <time class="date" pubdate datetime="{{ page.date | date_to_xmlschema }}" title="{{ page.date | date: "%B %d, %Y" }}"><span class="inline-pullout__el inline-pullout__el--large date__day">{{ page.date | date: "%d" }}</span> <span class="inline-pullout__el date__month">{{ page.date | date: "%B" }}</span> <span class="inline-pullout__el date__year">{{ page.date | date: "%Y" }}<span></time>
-    </div>
-
-    <section class="content-block__body">
-
-
-
-      {% capture pub_date %}
-        {{ page.date | date: "%B %d %Y" }}
-      {% endcapture %}
-
-      {% capture lastmod %}
-        {% if page.lastmod %}
-          {{ page.lastmod }}
-        {% else %}
-          {{ page.date }}
+        {% if page.subtitles %}
+        <h2 class="subtitle">{{ page.subtitle }}</h2>
         {% endif %}
-      {% endcapture %}
 
-      {% capture mod_date %}
-        {{ lastmod | date: "%B %d %Y" }}
-      {% endcapture %}
+      </header>
 
-      {% capture formatted_date %}
-        {% assign d = lastmod | date: "%-d"  %}
-        {% case d %}
-          {% when '1' or '21' or '31' %}{{ d }}st
-          {% when '2' or '22' %}{{ d }}nd
-          {% when '3' or '23' %}{{ d }}rd
-          {% else %}{{ d }}th
-          {% endcase %}
-          {{ lastmod | date: "%B" }},
-        {{ lastmod | date: "%Y" }}
-      {% endcapture %}
+      <div class="inline-pullout">
+        <time class="date" pubdate datetime="{{ page.date | date_to_xmlschema }}" title="{{ page.date | date: "%B %d, %Y" }}"><span class="inline-pullout__el inline-pullout__el--large date__day">{{ page.date | date: "%d" }}</span> <span class="inline-pullout__el date__month">{{ page.date | date: "%B" }}</span> <span class="inline-pullout__el date__year">{{ page.date | date: "%Y" }}<span></time>
+      </div>
 
-      {% if mod_date != pub_date %}
-      <p><em>Last updated on the <strong><time datetime="{{ page.date | date_to_xmlschema }}">{{ formatted_date }}</time></strong>.</em></p>
-      {% endif %}
-
-      {{ content }}
-    </section>
+      <section class="content-block__body">
 
 
+
+        {% capture pub_date %}
+          {{ page.date | date: "%B %d %Y" }}
+        {% endcapture %}
+
+        {% capture lastmod %}
+          {% if page.lastmod %}
+            {{ page.lastmod }}
+          {% else %}
+            {{ page.date }}
+          {% endif %}
+        {% endcapture %}
+
+        {% capture mod_date %}
+          {{ lastmod | date: "%B %d %Y" }}
+        {% endcapture %}
+
+        {% capture formatted_date %}
+          {% assign d = lastmod | date: "%-d"  %}
+          {% case d %}
+            {% when '1' or '21' or '31' %}{{ d }}st
+            {% when '2' or '22' %}{{ d }}nd
+            {% when '3' or '23' %}{{ d }}rd
+            {% else %}{{ d }}th
+            {% endcase %}
+            {{ lastmod | date: "%B" }},
+          {{ lastmod | date: "%Y" }}
+        {% endcapture %}
+
+        {% if mod_date != pub_date %}
+        <p><em>Last updated on the <strong><time datetime="{{ page.date | date_to_xmlschema }}">{{ formatted_date }}</time></strong>.</em></p>
+        {% endif %}
+
+        {{ content }}
+      </section>
+
+    </div>
   </div>
 
 <!--
@@ -84,10 +84,12 @@ page-class: page--post
       <div class="container container--2col">
 
         {% if page.author.image %}
+        <a href="http://twitter.com/kingscooty" target="_blank">
           <img src="/images/base-images/gravatar.png" alt="Scotty Vernon" class="">
+        </a>
         {% endif %}
 
-        <p>Scotty Vernon is a creative developer, and director at <a href="http://wildflame.co.uk">Wildflame Studios</a>. <!--and is based in Manchester, UK.--> <!--He is passionate about creative UI &amp; solving engineering problems on the Web.--> He's worked with the likes of <a href="#">BBC Sport</a>, <a href="#">BBC R&amp;D</a>, and England cricketer, <a href="#">James Anderson</a>. <!-- Perfectionist; LFC follower; Massive gamer; Nerd.--> He is never far from twitter, likes German beer, gaming, and occasionally writing in the third person.</p>
+        <p>Scotty Vernon is a Creative Developer, and director of <a href="http://wildflame.co.uk" target="_blank">Wildflame Studios</a>. <!--and is based in Manchester, UK.--> <!--He is passionate about creative UI &amp; solving engineering problems on the Web.--> He's worked with the likes of <a href="http://www.bbc.co.uk/sport" target="_blank">BBC Sport</a>, <a href="http://www.bbc.co.uk/rd" target="_blank">BBC R&amp;D</a>, and England cricketer, <a href="http://jamesanderson613.com" target="_blank">James Anderson</a>. <!-- Perfectionist; LFC follower; Massive gamer; Nerd.--> He is never far from twitter, likes German beer, gaming, and occasionally writing in the third person.</p>
 <!--
         <div class="type-p">
           Written by <strong><a rel="author" href="https://twitter.com/{{ page.author.twitter }}" title="{{ page.author_name }}" target="_blank">{{ page.author.name }}</a></strong>

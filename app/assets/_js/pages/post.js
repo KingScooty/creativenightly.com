@@ -13,6 +13,12 @@ function init (value) {
   fixRhythm();
   widgets.initTwitterWidgets();
 
+  var applyImageWrapperClass = function applyImageWrapperClass() {
+    $('.article img').closest('p').addClass('image-container');
+  }
+
+  applyImageWrapperClass();
+
   $(window).scroll(function() {
 
     if ($('.social').visible(true) && !page_state.social_widgets) {
