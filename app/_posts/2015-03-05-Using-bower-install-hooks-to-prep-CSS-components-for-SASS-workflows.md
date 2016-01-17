@@ -1,9 +1,9 @@
 ---
-title: "Using Bower install hooks to prep vanilla CSS components for SASS workflows"
+title: "Using Bower install hooks to change / rename CSS files to SASS files after installing them"
 subtitle: "An upgrade, and integration server safe method to include vanilla CSS components in your SASS workflow and build pipeline."
 ---
 
-Have you ever tried to import a vanilla CSS bower component into your SASS/SCSS workflow, with the intention of physically importing the contents of that file in to your main.scss file; only to find that the file is linked/referenced and ignored during the build process?
+Have you ever tried to import a *CSS* bower component into your SASS/SCSS workflow, with the intention of physically importing the contents of that file in to your main.scss file; only to find that the file is linked/referenced and ignored during the build process?
 
 <!--more-->
 
@@ -11,7 +11,7 @@ Have you ever tried to import a vanilla CSS bower component into your SASS/SCSS 
 
 The CSS file in question was Nicolas Gallagher's [normalize.css](http://necolas.github.io/normalize.css/). Now there are plenty of SCSS versions out there, but they normally try and do too much. I'd much rather just physically import the vanilla CSS version into my main.scss file!
 
-Of course we can just *rename* the offending CSS file so that it now imitates an SCSS file, but we don't want to have to do that each and every time someone clones the project, or integration builds the project!
+Of course we can just *rename* the offending CSS file so that it now imitates an SCSS file, but we don't want to have to do that each and every time someone clones the project, or integration builds the project, now do we?
 
 **So *what* can we do to automate this?**
 
