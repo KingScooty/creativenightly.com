@@ -1,5 +1,5 @@
 ---
-title: "Using Bower install hooks to change / rename CSS files to SASS files after installing them"
+title: "Using Bower install hooks to automate changing CSS files into SASS files after installing them"
 subtitle: "An upgrade, and integration server safe method to include vanilla CSS components in your SASS workflow and build pipeline."
 ---
 
