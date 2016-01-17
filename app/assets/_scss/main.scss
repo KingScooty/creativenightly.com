@@ -55,6 +55,9 @@ caption, th, td { text-align: left; font-weight: normal; vertical-align: middle;
 // Social Sharing
 // Used in footer of post detail pages
 @import "modules/social";
+
+@import "modules/pagination";
+
 // Posts
 // Used on archive.
 @import "modules/posts";
