@@ -6,9 +6,65 @@
     <atom:link href="http://www.creativenightly.com/feed.xml" rel="self" type="application/rss+xml" />
     <description></description>
     <language>en-gb</language>
-    <pubDate>Fri, 08 Jan 2016 09:03:24 +0000</pubDate>
-    <lastBuildDate>Fri, 08 Jan 2016 09:03:24 +0000</lastBuildDate>
+    <pubDate>Sun, 17 Jan 2016 18:33:04 +0000</pubDate>
+    <lastBuildDate>Sun, 17 Jan 2016 18:33:04 +0000</lastBuildDate>
 
+    
+    
+    <item>
+      <title>Year Review 2015</title>
+      <link>http://www.creativenightly.com/2015/12/Year-Review-2015/</link>
+      <pubDate>Wed, 30 Dec 2015 20:43:12 +0000</pubDate>
+      <author></author>
+      <guid>http://www.creativenightly.com/2015/12/Year-Review-2015</guid>
+      <description><p>Wow, it’s been a while since I’ve written anything on here. I’ve been so caught up with commissioned work, that I really let a lot of things slip in the second half of this year. Last year, I set myself a fair number of <a href="/2014/12/Farewell-2014-hello-2015/">goals to complete this year</a>, and the big question is — did I achieve them?</p>
+
+<!--more-->
+
+<p>The short answer is, no, not really. Nearly all of my time this year ended up being spent on commissioned work. However, I did still achieved <em>stuff</em> this year.</p>
+
+<p>Let’s review the targets I set myself for this year first, and then look at what else I achieved this year.</p>
+
+<h2 id="the-goals-i-set-myself-for-2015">The goals I set myself for 2015</h2>
+
+<p><strong>Learn more about continuous delivery</strong> — I really wanted to learn more about <a href="https://www.thoughtworks.com/continuous-delivery">continuous delivery</a> and understand how I could incorporate more of this into my workflows. I think I’m closer to where I want to be after this year; I’ve had a tendency to work on projects in secrecy; not releasing them to the world until I felt I’d perfected them, and this is <em>totally</em> the wrong way to develop things. It doesn’t matter how perfect I think something is, if my user base can’t use it. Get the product out early, and iterate on it <em>frequently</em> based on user feedback. There’s still a long way to go, but I’m really enjoying the benefits that continuous delivery brings.</p>
+
+<p><strong>Use Rails and Meteor a lot more for back end projects</strong> — I didn’t get to use Rails and Meteor in projects, but I did use Node a lot more in projects. Meteor still feels like a closed ecosystem; it’s essentially a lot of magic that sits on top of Node. Meteor does still appeal to me, but I think I’ll only use it for projects that require quite a lot of database magic. Perhaps 2016 is the year? Perhaps not.</p>
+
+<p><strong>Develop the Wildflame brand further</strong> — As far as developing the Wildflame brand, I had to put some of the bigger tasks on the back-burner this year. I got some really nice business cards created for <a href="https://medium.com/@kingscooty/web-summit-2015-a-developer-s-perspective-c490c0048ad4">my trip to Web Summit 2015</a>, but everything else got put on hold.</p>
+
+<p><img src="https://s3.amazonaws.com/f.cl.ly/items/393c3A2P023n0M3v1P0e/business-cards.jpg?v=0cbaed64" alt="Business cards" /></p>
+
+<p>I’m really hoping I can completely revamp the website, and reposition the brand a bit in 2016.</p>
+
+<p><strong>Incorporate electronics into more projects</strong> — This goal went horribly wrong. I barely touched any hardware this year, which is rather upsetting. Again this comes down to not having any down time from paid work. I really want to make time for this in 2016. There’s a backlog of things I’d like to make, including an LED ticker, and a Nuka Cola Quantum light from the Fallout game series, and a number of Internet of Things devices.</p>
+
+<p><strong>Blog more</strong> — Ha! Again, this one went horribly wrong. I haven’t blogged an article since April, and the articles I did write, are rather uninspiring. I need to make amends this year; I’d like to make this site more of a resource in 2016, and blog more frequently, with more inspiring content. Watch this space!</p>
+
+<p><strong>Exercise more by incorporating more into my daily commute</strong> — I’m still power walking the 3–4 tram stops across town when I head into the office, and taking the stairs instead of the elevator. My biggest blocker, is when I work from home…</p>
+
+<p><strong>Improve one thing by 1% each and every day</strong> — This is pretty hard to do <em>each and every day</em>, but this has now become part of my philosophy, and I can only get better at it.</p>
+
+<p><strong>Reduce the amount of distraction</strong> — Out of all the goals I set myself, I think I accomplished this one the best. Distraction comes in many different forms, and my biggest distraction is clutter — cluttered mind, and cluttered surroundings. I never took notes, which meant my brain was always trying to remember things, I also constantly allowed my desk space (both physical and virtual) to get cluttered. I now use <a href="https://culturedcode.com/things/">Things</a> and <a href="https://www.evernote.com/referral/Registration.action?sig=8053eeceed7c9c8951f1c6da01fddd71&amp;uid=50553">Evernote</a> religiously, and use <a href="https://www.noodlesoft.com/hazel.php">Hazel</a> to automate <em>all</em> of the cleanup tasks on my computer. Sadly I can’t use Hazel to clean my physical space, but I’ve got better at this too, and it’s really helped keep me focused on the important tasks. I’m even using <a href="http://receipt-bank.com/">Receipt Bank</a> to handle my expenses. I’m definitely going to try and automate even more things in 2016.</p>
+
+<h2 id="looking-forward-to-2016">Looking forward to 2016</h2>
+
+<p>So I guess it’s that time again. Time to set myself more tasks / goals for the year ahead.</p>
+
+<ol>
+  <li><strong>Go paperless</strong> — I started my path towards this maybe about a month ago. I want to get to 95% paperless by the end of 2016. That means, receipts, invoices, letters, statements all electronically stored in a well organised digital catalogue.</li>
+  <li><strong>Start investing in the stock market</strong> — I’ve toyed with this notion for a while now, but never had the courage to actually do it. Interest rates are at an all time low, which is great for borrowers, but not so great for savers. I’d really like to learn more about investing in stocks, and pick 1–2 funds / trusts to invest some of my savings in.</li>
+  <li><strong>Electronics</strong> — I need to make up for the lack of this in 2015. I’ve got a few things on the backlog that I’d like to implement: LED ticker with data feed; Nuka Cola Quantum light; Arcade Machine; and programmable Christmas tree lights. I’m hoping I can make at <em>least</em> 2 of these by the end of 2016.</li>
+  <li><strong>New websites for wildflame.co.uk and kingscooty.com</strong> — I never found the time to properly invest in revamping these two sites in 2015. Kingscooty.com will be 5 years old this year, and wildflame.co.uk is getting on for 2 years old. I’ve gotta say, I’m still impressed with how well both of these sites stand up against the test of time! But I’d really like to flex my muscle and mind this year and create something truly modern for both of these domains.</li>
+  <li><strong>Visit Germany and sample all their glorious wheat beers</strong> — I’m a huge, <em>huge</em> fan of German wheat beers — or weisse beers. Germany is a beautiful country, and I’m really keen to get a visit in this coming year. I’d love to visit all the breweries too - Erdinger, Schneider Weisse, Hacker-Pschorr, Maisel Weisse. Mmmm.</li>
+</ol>
+
+<p>I think that’s it. I’ll maybe revisit this and add more if anything stands out. Here’s hoping for a fruitful and productive 2016!</p>
+
+<p>Happy New Year!</p>
+</description>
+    </item>
+    
     
     
     <item>
@@ -67,20 +123,20 @@
     
     
     <item>
-      <title>Using Bower install hooks to prep vanilla CSS components for SASS workflows</title>
+      <title>Using Bower install hooks to automate changing CSS files into SASS files after installing them</title>
       <link>http://www.creativenightly.com/2015/03/Using-bower-install-hooks-to-prep-CSS-components-for-SASS-workflows/</link>
       <pubDate>Thu, 05 Mar 2015 00:00:00 +0000</pubDate>
       <author></author>
       <guid>http://www.creativenightly.com/2015/03/Using-bower-install-hooks-to-prep-CSS-components-for-SASS-workflows</guid>
-      <description><p>Have you ever tried to import a vanilla CSS bower component into your SASS/SCSS workflow, with the intention of physically importing the contents of that file in to your main.scss file; only to find that the file is linked/referenced and ignored during the build process?</p>
+      <description><p>Have you ever tried to import a <em>CSS</em> bower component into your SASS/SCSS workflow, with the intention of physically importing the contents of that file in to your main.scss file; only to find that the file is linked/referenced and ignored during the build process?</p>
 
 <!--more-->
 
 <p><strong>Yes, <em>me too</em>.</strong></p>
 
-<p>The CSS file in question was Nicolas Gallagher’s <a href="http://necolas.github.io/normalize.css/">normalize.css</a>. Now there are plenty of SCSS versions out there, but they normally try and do too much. I’d much rather just physically import the vanilla CSS version into my main.scss file!</p>
+<p>The CSS file in question was Nicolas Gallagher’s <a href="http://necolas.github.io/normalize.css/">normalize.css</a>. I know there are plenty of SCSS versions out there, but they normally try to do too much — like set baselines etc. I’d much rather just physically import the plain old CSS version into my main.scss file!</p>
 
-<p>Of course we can just <em>rename</em> the offending CSS file so that it now imitates an SCSS file, but we don’t want to have to do that each and every time someone clones the project, or integration builds the project!</p>
+<p>Of course we can just <em>rename</em> the offending CSS file so that it now imitates an SCSS file, but we don’t want to have to do that each and every time someone clones the project, or integration builds the project, now do we?</p>
 
 <p><strong>So <em>what</em> can we do to automate this?</strong></p>
 
@@ -525,11 +581,11 @@
 <figure class="highlight"><pre><code class="language-sh" data-lang="sh">apt-get update
 apt-get install libqtcore4 libqtgui4 libqt4-network libusb-1.0-0 libprotobuf7 ca-certificates</code></pre></figure>
 
-<p>Next grab the install hyperion script from the hyprion github repo.</p>
+<p>Next grab the install Hyperion script from the Hyperion github repo.</p>
 
 <figure class="highlight"><pre><code class="language-sh" data-lang="sh">wget -N https://raw.github.com/tvdzwan/hyperion/master/bin/install_hyperion.sh</code></pre></figure>
 
-<p>Installing hyperion is as simple as running the following command.</p>
+<p>Installing Hyperion is as simple as running the following command.</p>
 
 <figure class="highlight"><pre><code class="language-sh" data-lang="sh">sh ./install_hyperion.sh</code></pre></figure>
 
@@ -544,11 +600,13 @@ apt-get install libqtcore4 libqtgui4 libqt4-network libusb-1.0-0 libprotobuf7 ca
 
 <figure class="highlight"><pre><code class="language-sh" data-lang="sh">service hyperion restart</code></pre></figure>
 
-<p>That’s pretty much it for the software side of things. Now you just need to get some WS2801 LEDs and wire them up!</p>
+<p>That’s pretty much it for the software side of things. Now if you haven’t already, you just need to get some WS2801 LEDs and wire them up!</p>
 
 <h4 id="my-setup">My Setup</h4>
 
-<p>My hardware setup from a wiring perspective is fairly complex, but it allows me to switch sources by simply turning a new device on, and the lights will automically switch over to the new source. Here’s a few live examples of mysetup for anyone that’s interested:</p>
+<p>My hardware setup from a wiring perspective is fairly complex, but if anyone wants to me post a write up, tweet me at <a href="http://twitter.com/kingscooty">@KingScooty</a> and let me know!</p>
+
+<p>Amongst other things, it allows me to switch sources by simply turning a new device on, and the lights will automatically switch over to the new source. Here’s a few live examples of my setup for anyone that’s interested:</p>
 
 <iframe src="https://vine.co/v/izpiA1tebtm/embed/simple" width="600" height="600" frameborder="0"></iframe>
 <script src="https://platform.vine.co/static/scripts/embed.js"></script>
