@@ -11,7 +11,7 @@ Have you ever tried to import a *CSS* bower component into your SASS/SCSS workfl
 
 **Yes, *me too*.**
 
-The CSS file in question was Nicolas Gallagher's [normalize.css](http://necolas.github.io/normalize.css/). Now there are plenty of SCSS versions out there, but they normally try and do too much. I'd much rather just physically import the plain old CSS version into my main.scss file!
+The CSS file in question was Nicolas Gallagher's [normalize.css](http://necolas.github.io/normalize.css/). I know there are plenty of SCSS versions out there, but they normally try to do too much &mdash; like set baselines etc. I'd much rather just physically import the plain old CSS version into my main.scss file!
 
 Of course we can just *rename* the offending CSS file so that it now imitates an SCSS file, but we don't want to have to do that each and every time someone clones the project, or integration builds the project, now do we?
 
