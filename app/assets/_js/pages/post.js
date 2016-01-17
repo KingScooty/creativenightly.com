@@ -16,6 +16,7 @@ function init (value) {
   $(window).scroll(function() {
 
     if ($('.social').visible(true) && !page_state.social_widgets) {
+      console.log('Initialising widgets.');
       widgets.initFacebookLikes();
       // widgets.initTwitterWidgets();
       widgets.initGoogleWidgets();
