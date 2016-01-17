@@ -1,0 +1,24 @@
+.cover-copyright {
+  font-size: 9px;
+  font-size: 0.5625rem;
+  line-height: 1;
+  margin: 0;
+  background: rgba(0,0,0,0.6);
+  bottom: 0;
+  color: #ececec;
+  letter-spacing: .25px;
+  padding: 3px 8px 1px;
+  position: absolute;
+  right: 0;
+  font-family: Helvetica;
+  text-transform: uppercase;
+  a {
+    color: inherit;
+    text-shadow: none;
+    text-decoration: none;
+    background: 0;
+    &:hover{
+      background: 0;
+    }
+  }
+}

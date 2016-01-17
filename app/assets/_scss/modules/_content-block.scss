@@ -4,7 +4,7 @@
 
 .content-block__header,
 .content-block__body,
-.content-block__footer, 
+.content-block__footer,
 .content-block__aside {
   // @extend .section;
   // @include breakpoint(break-2) {
@@ -20,7 +20,8 @@
     content: "";
     position: absolute;
     // bottom: 0.4rem;
-    bottom: -.15rem;
+    // bottom: -.15rem;
+    bottom: 0rem;
     display: block;
     width: 1.5em;
     height: 0.2rem;
@@ -44,6 +45,7 @@
 }
 
 .content-block__footer {
+  background-color: #eeeeee;
   // border-top: .1rem solid #ddd;
   // border-bottom: .1rem solid #ddd;
   // box-shadow: inset 0 0 1px -1px #000000;
@@ -71,10 +73,123 @@
   // margin-top: 1rem;
 }
 
+.inline-pullout {
+  font-family: unquote(map-get($headingtype, font-family));
+  font-style: normal;
+  font-weight: map-get($headingtype, regular);
+
+  font-weight:bold;
+
+  @include fontsize(theta, all);
+
+  @media screen and (max-width: 63.99em) {
+    @include baseline(theta, $headingtype, 2,1, all);
+  }
+
+  span {
+    @media screen and (min-width: 64em) {
+      display: block;
+    }
+  }
+
+  @media screen and (min-width: 64em) {
+    position: absolute;
+    left: 0;
+    margin-top: 1rem;
+    top: 0;
+  }
+}
+
+
+.inline-pullout__el {
+  display: inline-block;
+  @include baseline(theta, $headingtype, 1,0, all);
+
+  @extend .upper;
+  // @extend .small-caps;
+  // @extend .fine-print;
+  // font-weight: bold;
+  // letter-spacing: 0.05rem;
+  letter-spacing: 0rem;
+
+  @media screen and (min-width: 64em) {
+    display: block;
+  }
+}
+
+.inline-pullout__el--large {
+  @media screen and (min-width: 64em) {
+
+    @include fontsize(alpha, all);
+    @include baseline(alpha, $headingtype, 2,0, all);
+
+    // font-size: 4rem;
+    // line-height: 3rem;
+  }
+}
+
 .content-block__author {
+
+  padding: 2rem 0 3rem;
+
+  a {
+      text-shadow: none;
+  }
+
+  p {
+    font-family: unquote(map-get($headingtype, font-family));
+    @include fontsize(eta, all);
+    @include baseline(eta, $headingtype, 2,0, all);
+    max-width: 32rem;
+
+    @media screen and (min-width: 40em) {
+      max-width: 30rem;
+    }
+    @media screen and (min-width: 50em) {
+      max-width: 30rem;
+    }
+    @media screen and (min-width: 64em) {
+      max-width: 31rem;
+    }
+
+    // @media screen and (min-width: 64em) {
+    //   max-width: auto;
+    // }
+  }
+
+  .follow {
+    position: relative;
+    top: 1rem;
+  }
+
+  img {
+    display: none;
+    // display: block;
+    width: 6rem;
+    border-radius: 100%;
+    margin: 0 auto 1rem;
+
+    @media screen and (min-width: 35em) {
+      display: block;
+      top: 1.75rem;
+      // top: 0.75rem;
+
+
+      position: absolute;
+      right: 0;
+    }
+
+    @media screen and (min-width: 64em) {
+      right: auto;
+      left: 0;
+    }
+  }
+
   .seperator {
-    &:last-child { 
-      margin-bottom: 2rem; 
+    &:last-child {
+      // margin-bottom: 2rem;
+      margin-bottom: 0;
+      margin-top: 1rem;
     }
     @include min-screen(640px) {
       padding-top: 1rem;

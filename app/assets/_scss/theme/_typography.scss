@@ -80,6 +80,13 @@ a {
   // Heading level 1.
   h1, .alpha {
     @include sassline($fontsize: alpha, $font: $headingtype, $lineheight: 3, $below: 1, $breakpoint: all);
+    // @include sassline($fontsize: alpha, $font: $headingtype, $lineheight: 2, $below: 1, $breakpoint: all);
+
+    // @media screen and (min-width: 64em) {
+    //   @include sassline($fontsize: alpha, $font: $headingtype, $lineheight: 2, $below: 0, $breakpoint: all);
+    // }
+
+    // text-transform: uppercase;
   }
 
   // Heading level 2.
@@ -289,7 +296,10 @@ a {
   }
 
   .subtitle {
+    // display: none;
     @include sassline(epsilon, $headingtype, 2, 0, all);
+    // color: $captionColour;
+    font-weight: 500;
     // padding-bottom: 2rem;
   }
 

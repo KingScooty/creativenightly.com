@@ -1,7 +1,9 @@
 {
   "name": "creative-nightly",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "instafeed.js": "^1.4.1"
+  },
   "devDependencies": {
     "bower": "^1.7.1",
     "browser-sync": "^2.10.0",

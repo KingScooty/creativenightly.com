@@ -1,3 +1,11 @@
+
+.index-item {
+    position: relative;
+    .inline-pullout {
+      left: -8rem;
+    }
+}
+
 .posts {
   &, ul { @extend %clearfix; }
   ul { list-style: none; }
