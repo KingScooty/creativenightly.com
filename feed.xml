@@ -6,8 +6,8 @@
     <atom:link href="http://www.creativenightly.com/feed.xml" rel="self" type="application/rss+xml" />
     <description></description>
     <language>en-gb</language>
-    <pubDate>Mon, 18 Jan 2016 10:39:10 +0000</pubDate>
-    <lastBuildDate>Mon, 18 Jan 2016 10:39:10 +0000</lastBuildDate>
+    <pubDate>Mon, 18 Jan 2016 10:43:00 +0000</pubDate>
+    <lastBuildDate>Mon, 18 Jan 2016 10:43:00 +0000</lastBuildDate>
 
     
     
@@ -600,7 +600,7 @@ apt-get install libqtcore4 libqtgui4 libqt4-network libusb-1.0-0 libprotobuf7 ca
 
 <figure class="highlight"><pre><code class="language-sh" data-lang="sh">service hyperion restart</code></pre></figure>
 
-<p><strong>Edit 8th January 2016</strong> — I’ve since moved away from using Lightpack. The cable mess it created along with the fact that despite being marketed as having 30 LEDs, you can only individually address 10 of them (rubbish!) resulted in me researching into alternate solutions.</p>
+<p><strong><em>Edit 8th January 2016</em></strong> — I’ve since moved away from using Lightpack. The cable mess it created along with the fact that despite being marketed as having 30 LEDs, you can only individually address 10 of them (rubbish!) resulted in me researching into alternate solutions.</p>
 
 <p>I’m now running a fully custom setup using 300+ WS2801 LEDs — all individually addressable!</p>
 
