@@ -62,7 +62,7 @@ Next restart the server with the following command. If all goes well, you should
 service hyperion restart
 {% endhighlight %}
 
-**Edit 8th January 2016** &mdash; I've since moved away from using Lightpack. The cable mess it created along with the fact that despite being marketed as having 30 LEDs, you can only individually address 10 of them (rubbish!) resulted in me researching into alternate solutions.
+***Edit 8th January 2016*** &mdash; I've since moved away from using Lightpack. The cable mess it created along with the fact that despite being marketed as having 30 LEDs, you can only individually address 10 of them (rubbish!) resulted in me researching into alternate solutions.
 
 I'm now running a fully custom setup using 300+ WS2801 LEDs &mdash; all individually addressable!
 
