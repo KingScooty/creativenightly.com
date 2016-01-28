@@ -6,8 +6,8 @@
     <atom:link href="http://www.creativenightly.com/feed.xml" rel="self" type="application/rss+xml" />
     <description></description>
     <language>en-gb</language>
-    <pubDate>Mon, 18 Jan 2016 10:46:06 +0000</pubDate>
-    <lastBuildDate>Mon, 18 Jan 2016 10:46:06 +0000</lastBuildDate>
+    <pubDate>Thu, 28 Jan 2016 14:40:35 +0000</pubDate>
+    <lastBuildDate>Thu, 28 Jan 2016 14:40:35 +0000</lastBuildDate>
 
     
     
@@ -558,9 +558,9 @@
       <guid>http://www.creativenightly.com/2014/07/setting-up-hyperion-on-a-raspberry-pi-for-use-with-lightpack</guid>
       <description><h3 id="introduction">Introduction</h3>
 
-<p>I’ve tried quite a few different controllers for controlling LEDs on a Raspberry Pi. Most require a lot of resources, and don’t scale well will an increase in LED numbers. I needed a controller that could handle 300+ LEDs without breaking a sweat. This is where Hyperion comes in.</p>
+<p>I’ve tried quite a few different controllers for controlling LEDs on a Raspberry Pi. Most require a lot of resources, and don’t scale well with an increase in LED numbers. I wanted a controller that could handle 300+ LEDs without breaking a sweat incase I ever decided to move away from Lightpack to a more custom solution. This is where Hyperion comes in.</p>
 
-<p>Hyperion is an opensource ‘AmbiLight’ implementation. It’s main selling points are:</p>
+<p>Hyperion is an open source ‘AmbiLight’ implementation. It’s main selling points are:</p>
 
 <ul>
   <li>Low CPU load. For a led string of 50 leds the CPU usage will typically be below 2% on a non-overclocked Pi.</li>
