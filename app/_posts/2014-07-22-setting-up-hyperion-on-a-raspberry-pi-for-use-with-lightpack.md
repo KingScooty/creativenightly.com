@@ -7,14 +7,14 @@ cover_image: article-images/hyperion-raspberry-pi-lightpack.jpg
 lastmod: 2016-01-08
 
 excerpt:
-  <p>Get Lightpack working with a Raspberry Pi on Linux and take advantage of insanely low power useage.</p>
+  <p>Get Lightpack working with a Raspberry Pi on Linux and take advantage of insanely low power usage.</p>
 ---
 
 ###Introduction
 
-I've tried quite a few different controllers for controlling LEDs on a Raspberry Pi. Most require a lot of resources, and don't scale well will an increase in LED numbers. I needed a controller that could handle 300+ LEDs without breaking a sweat. This is where Hyperion comes in.
+I've tried quite a few different controllers for controlling LEDs on a Raspberry Pi. Most require a lot of resources, and don't scale well with an increase in LED numbers. I wanted a controller that could handle 300+ LEDs without breaking a sweat incase I ever decided to move away from Lightpack to a more custom solution. This is where Hyperion comes in.
 
-Hyperion is an opensource 'AmbiLight' implementation. It's main selling points are:
+Hyperion is an open source 'AmbiLight' implementation. It's main selling points are:
 
 * Low CPU load. For a led string of 50 leds the CPU usage will typically be below 2% on a non-overclocked Pi.
 * Json interface which allows easy integration into scripts.
