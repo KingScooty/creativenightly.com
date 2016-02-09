@@ -12,6 +12,7 @@ app/assets/stylesheets/
 app/assets/css/
 app/assets/js/
 
+Gemfile.lock
 .publish/
 
 /assets/stylesheets/main.css
