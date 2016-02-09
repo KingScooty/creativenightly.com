@@ -28,7 +28,7 @@ Checkout the following example. What we're doing here, is setting up a reference
 
 {% gist 0022988332d617cf6098 %}
 
-This is really neat, becuase it means you can upgrade your components, and you can use them on an integration server without having to rename them each time, or include them in your repository!
+This is really neat, because it means you can upgrade your components, and you can use them on an integration server without having to rename them each time, or include them in your repository!
 
 All that's left to do now, is import the component into your main.scss file, and you're away!
 

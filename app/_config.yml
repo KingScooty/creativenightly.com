@@ -70,7 +70,7 @@ future:      false
 show_drafts: false
 limit_posts: 0
 # highlighter: pygments
-highlighter: rouge
+# highlighter: rouge
 
 # relative_permalinks: true
 relative_permalinks: false
@@ -91,12 +91,12 @@ port:        4000
 #baseurl:     /
 lsi:         false
 
-maruku:
-  use_tex:    false
-  use_divs:   false
-  png_engine: blahtex
-  png_dir:    images/latex
-  png_url:    /images/latex
+# maruku:
+#   use_tex:    false
+#   use_divs:   false
+#   png_engine: blahtex
+#   png_dir:    images/latex
+#   png_url:    /images/latex
 
 # rdiscount:
 #   extensions: []
@@ -106,20 +106,21 @@ maruku:
 
 kramdown:
   input: GFM
+  syntax_highlighter: rouge
   auto_ids: true
   footnote_nr: 1
   entity_output: as_char
   toc_levels: 1..6
   smart_quotes: lsquo,rsquo,ldquo,rdquo
-  enable_coderay: false
-
-  coderay:
-    coderay_wrap: div
-    coderay_line_numbers: inline
-    coderay_line_numbers_start: 1
-    coderay_tab_width: 4
-    coderay_bold_every: 10
-    coderay_css: style
+  # enable_coderay: false
+  #
+  # coderay:
+  #   coderay_wrap: div
+  #   coderay_line_numbers: inline
+  #   coderay_line_numbers_start: 1
+  #   coderay_tab_width: 4
+  #   coderay_bold_every: 10
+  #   coderay_css: style
 
 # redcloth:
 #   hard_breaks: true
