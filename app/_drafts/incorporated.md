@@ -1,18 +1,9 @@
 ---
-layout: post
-
 title: Jekyll Incorporated Features
 subtitle: "What's in the box"
 cover_image: blog-cover.jpg
 
 excerpt: "Incorporated provides a great typography, responsive design, author details, semantic markup and more."
-
-author:
-  name: Scotty Vernon
-  twitter: KingScooty
-  gplus: +ScottyVernon 
-  bio: Co-founder, Design
-  image: ks.png
 ---
 
 Incorporated provides a great typography, responsive design, author details, semantic markup and more.
@@ -34,10 +25,10 @@ excerpt: "Incorporated provides a great typography, responsive design, author de
 author:
   name: Karri Saarinen
   twitter: karrisaarinen
-  gplus: 100687498195339762535 
+  gplus: 100687498195339762535
   bio: Co-founder, Design
   image: ks.jpg
-  
+
 # Keep it as draft, not published in index.html or feed.xml
 draft: false
 {% endhighlight %}
@@ -45,7 +36,7 @@ draft: false
 
 1. First ordered list item
 2. Another item
-  * Unordered sub-list. 
+  * Unordered sub-list.
 1. Actual numbers don't matter, just that it's a number
   1. Ordered sub-list
 
@@ -99,35 +90,35 @@ inc:
   title:        "Jekyll Incorporated"
   subtitle:     "Modern Jekyll based blog for companies"
   cover_image:  blog-cover.jpg
-  
+
   # Company information
   company:      Incorporated
   url:          http://incorporated.sendtoinc.com/
   facebook:     sendtoinc
   twitter:      sendtoinc
   about_link:   https://sendtoinc.com/about/
-  
+
   # Product Information
   product_link: http://incorporated.sendtoinc.com/
   tagline:      "Get a modern blog for your company"
-  
+
   # Comments
   disqus:
     # Eg. "exampleblog" Set to false to disable comments
     shortname:  false
-  
-  
+
+
   # Sharing settings
   sharing:
     twitter:    false
     facebook:   false
     gplus:      false
     hn:         false
-    
-  
+
+
  # Analytics     
   analytics:
-    google: 
+    google:
       # eg. 'UA-123-12'
       id:       false    
 {% endhighlight %}
