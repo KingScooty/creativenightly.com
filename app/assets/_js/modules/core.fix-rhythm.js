@@ -17,12 +17,12 @@ function fixRhythm($el, height) {
 
   if ($el.is('iframe')) {
     args = {
-      'margin-bottom': invertRemainder + "px"
+      'margin-bottom': (invertRemainder + baseline) + "px"
     }
   } else {
     args = {
       'padding-bottom': invertRemainder + "px"
-    }  
+    }
   }
 
   if (remainder > 0) {
@@ -62,5 +62,3 @@ function initMonitorRhythm() {
 }
 
 module.exports = initMonitorRhythm;
-
-
