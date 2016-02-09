@@ -23,6 +23,8 @@ A Lint or a Linter is a program or tool that supports linting (verifying code qu
 
 There are many reasons to lint stylesheets. It keeps consistency in the codebase, it highlights errors in the codebase, it helps reduce unnecessary code, and it also helps prevent lazy coding.
 
+Let's take a look at a couple of examples.
+
 ~~~css
 .no-space {
     display:block;
