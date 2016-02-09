@@ -70,19 +70,30 @@ var jekyllBuild = function jekyllBuild(jekyllEnv, done, destination) {
   var environment_variables = Object.create(process.env);
   environment_variables.JEKYLL_ENV = jekyllEnv.env;
 
+  var jekyllArgs = [
+    'build',
+    '--source', 'app',
+    '--destination', destination,
+    '--plugins', 'plugins',
+    '--config', jekyllEnv.config
+  ]
+
+  if ((jekyllEnv.env === 'development')) {
+    jekyllArgs.push('--drafts');
+    jekyllArgs.push('--profile');
+    console.log(jekyllArgs);
+  }
+
   return plugins.spawn(
-    //'bundle',
     'jekyll',
-    [
-      // 'exec',
-      // 'JEKYLL_ENV=' + jekyllEnv.env,
-      //'jekyll',
-      'build',
-      '--source', 'app',
-      '--destination', destination,
-      '--plugins', 'plugins',
-      '--config', jekyllEnv.config
-    ],
+    // [
+    //   'build',
+    //   '--source', 'app',
+    //   '--destination', destination,
+    //   '--plugins', 'plugins',
+    //   '--config', jekyllEnv.config
+    // ],
+    jekyllArgs,
     {
       env: environment_variables,
       stdio: 'inherit'

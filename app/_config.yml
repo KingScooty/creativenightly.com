@@ -69,7 +69,8 @@ timezone:    Europe/London
 future:      false
 show_drafts: false
 limit_posts: 0
-highlighter: pygments
+# highlighter: pygments
+highlighter: rouge
 
 # relative_permalinks: true
 relative_permalinks: false
@@ -80,7 +81,7 @@ paginate: 10
 
 markdown:      kramdown
 markdown_ext:  markdown,mkd,mkdn,md
-textile_ext:   textile
+# textile_ext:   textile
 
 excerpt_separator: "<!-- more -->"
 
@@ -97,13 +98,14 @@ maruku:
   png_dir:    images/latex
   png_url:    /images/latex
 
-rdiscount:
-  extensions: []
+# rdiscount:
+#   extensions: []
 
-redcarpet:
-  extensions: ["strikethrough"]
+# redcarpet:
+#   extensions: ["strikethrough"]
 
 kramdown:
+  input: GFM
   auto_ids: true
   footnote_nr: 1
   entity_output: as_char
@@ -119,8 +121,8 @@ kramdown:
     coderay_bold_every: 10
     coderay_css: style
 
-redcloth:
-  hard_breaks: true
+# redcloth:
+#   hard_breaks: true
 
 
 
