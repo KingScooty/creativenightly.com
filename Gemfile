@@ -4,10 +4,11 @@ gem "jekyll"
 
 # converters
 gem "kramdown"
-gem "redcarpet"
+# gem "redcarpet"
 
 # highlighters
 gem "pygments.rb"
+gem "rouge"
 
 # plugins
 gem "jemoji"
