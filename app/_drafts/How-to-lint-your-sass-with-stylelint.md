@@ -6,21 +6,20 @@ draft: true
 
 Similarly to how there's more than one way to skin a cat\*, there's also many different ways to lint your stylesheets, and some of the methods are much better than others. But first, let's cover what linting actually is, and some reasons *why* we should lint our stylesheets.
 
-*\*No cats were harmed writing this article.*
+*\*No cats were harmed in the writing of this article.*
 
 <!--more-->
 
------
-
 Table of contents:
 
-- [What is linting?](#what-is-linting)
-- [Why should we lint our stylesheets?](#why-should-we-lint-our-stylesheets)
-- [Introducing Stylelint](#introducing-stylelint)
-- [How to lint your CSS](#how-to-lint-your-css)
-- [How to lint your Sass](#how-to-lint-your-sass)
-- [Extending Stylelint with plugins](#extending-stylelint-with-plugins)
-- [Case study: Linting in practice](#case-study-linting-in-practice)
+1. [Introduction](#introduction)
+    1. [What is linting?](#what-is-linting)
+    2. [Why should we lint our stylesheets?](#why-should-we-lint-our-stylesheets)
+2. [Introducing Stylelint](#introducing-stylelint)
+    1. [How to lint your CSS](#how-to-lint-your-css)
+    2. [How to lint your Sass](#how-to-lint-your-sass)
+3. [Extending Stylelint with plugins](#extending-stylelint-with-plugins)
+    1. [Case study: Linting in practice](#case-study-linting-in-practice)
 
 -----
 
@@ -336,4 +335,4 @@ Lovely! Without the build pipeline linting our stylesheets, and prompting for a 
 
 Hopefully by now I've convinced you that linting your stylesheets is a worthwhile investment. Linting is your friend. The investment is cheap, and it protects teams from the technical debt of a poorly written codebase.
 
-Hence forth and lint!
+Henceforth and lint!
