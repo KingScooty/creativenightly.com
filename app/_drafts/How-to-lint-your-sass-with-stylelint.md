@@ -47,7 +47,7 @@ Let's take a look at a couple of examples.
 }
 ~~~
 
-Linters are very good a spotting stylistic issues like these. Stylistic rules aren't essential, but they help keep the code consistent. Also, these 2 stylistic errors above are a pet peeve of mine.
+Linters are very good at spotting stylistic issues like these. Setting up stylistic linting rules aren't essential, but they help keep the code consistent. Also, I don't know about you, but these 2 stylistic errors above are a pet peeve of mine.
 
 ~~~css
 .invalid-hex {
@@ -71,9 +71,9 @@ There are a fair few CSS3 rules that don't need to be prefixed anymore in order 
 .duplicate-rule {
     display: block;
     transition: opacity .2s;
-    color: #f90;
-    background-color: 333;
-    transition: background-color .3s; ⬅
+    color: #444;
+    background-color: #eee;
+    transition: background-color .4s; ⬅
 }
 ~~~
 
@@ -252,9 +252,7 @@ Yuck!
 
 ####Selector nesting in Sass is bad---use a linter!
 
-***Fix section to refer to new example***.
-
-Selector nesting is a root evil when using Sass; it's a one way trip to specificity hell if abused. Nesting is normally the result of lazy coding---and lazy coding results in code that is hard to read, and poorly written. The first `&:hover{...}` rule could be 10 lines below the parent component definition, making it really hard to decipher what it belongs to. There is also absolutely no need for any of this nesting.
+Selector nesting is a necessary evil when developing using Sass; it's really useful when used properly, and a one way trip to [specificity](https://css-tricks.com/specifics-on-css-specificity/){:target="\_blank"} hell if abused. Nesting is normally the result of lazy coding---and lazy coding results in code that is hard to read, and poorly written. The first `&:hover{...}` rule could be 10 lines below the parent component definition, making it really hard to decipher what it belongs to. However, more importantly, there nesting here is completely unnecessary.
 
 This the CSS that the above rule compiles to:
 
@@ -265,9 +263,9 @@ This the CSS that the above rule compiles to:
 
 If I worked on a team, and someone contributed something like this to the codebase, I'd be having serious, *serious* words.
 
-The next dev that comes a long and wants to override this cascading rule is going to have a tough time. With that in mind, I would advise against using nesting at all costs---unless you know what you're doing.
+The next dev that comes along and wants to override this cascading rule is going to have a tough time. With that in mind, I would advise against using nesting at all costs---unless you know what you're doing.
 
-Lucky for us, there's a plugin for that! With Stylelint, we can set a max nesting limit to help swat away any nesting abuse.
+Lucky for us, there's a plugin for this! With Stylelint, we can set a max nesting limit to help swat away any nesting abuse.
 
 ~~~sh
 npm install stylelint-statement-max-nesting-depth --save-dev
@@ -289,7 +287,7 @@ gulp.task("scss-lint", function() {
 });
 ~~~
 
-For teams that know what they're doing, i'd set the max limit to 3. (*Set it lower for inexperienced teams*).
+For teams that know what they're doing, i'd set the max limit to **3**. *(Set it lower for inexperienced teams)*.
 
 With a max nesting limit set to 3, Stylelint would prompt the project manager to refactor the above code.
 
