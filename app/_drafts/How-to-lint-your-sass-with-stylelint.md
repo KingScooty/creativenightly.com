@@ -80,7 +80,93 @@ The mantra of PostCSS is do one thing, and one thing well; so it's all about plu
 
 Let's start with linting vanilla CSS stylesheets.
 
+~~~javascript
+gulp.task("css-lint", function() {
+  var stylelintConfig = {
+    "rules": {
+      "block-no-empty": true,
+      "color-no-invalid-hex": true,
+      "declaration-colon-space-after": "always",
+      "declaration-colon-space-before": "never",
+      "function-comma-space-after": "always",
+      "function-url-quotes": "double",
+      "media-feature-colon-space-after": "always",
+      "media-feature-colon-space-before": "never",
+      "media-feature-name-no-vendor-prefix": true,
+      "max-empty-lines": 5,
+      "number-leading-zero": "never",
+      "number-no-trailing-zeros": true,
+      "property-no-vendor-prefix": true,
+      "rule-no-duplicate-properties": true,
+      "declaration-block-no-single-line": true,
+      "rule-trailing-semicolon": "always",
+      "selector-list-comma-newline-after": "always-multi-line",
+      "selector-no-id": true,
+      "string-quotes": "double",
+      "value-no-vendor-prefix": true
+    }
+  }
+
+  var processors = [
+    stylelint(stylelintConfig),
+    reporter({
+      clearMessages: true
+    })
+  ];
+
+  return gulp.src(
+      ['app/assets/css/**/*.css',
+      '!app/assets/css/vendor/**/*.css']
+    )
+    .pipe(postcss(processors))
+    .pipe(.failOnError());
+});
+~~~
+
 ##Linting your Sass
+
+~~~javascript
+gulp.task("css-lint", function() {
+  var stylelintConfig = {
+    "rules": {
+      "block-no-empty": true,
+      "color-no-invalid-hex": true,
+      "declaration-colon-space-after": "always",
+      "declaration-colon-space-before": "never",
+      "function-comma-space-after": "always",
+      "function-url-quotes": "double",
+      "media-feature-colon-space-after": "always",
+      "media-feature-colon-space-before": "never",
+      "media-feature-name-no-vendor-prefix": true,
+      "max-empty-lines": 5,
+      "number-leading-zero": "never",
+      "number-no-trailing-zeros": true,
+      "property-no-vendor-prefix": true,
+      "rule-no-duplicate-properties": true,
+      "declaration-block-no-single-line": true,
+      "rule-trailing-semicolon": "always",
+      "selector-list-comma-newline-after": "always-multi-line",
+      "selector-no-id": true,
+      "string-quotes": "double",
+      "value-no-vendor-prefix": true
+    }
+  }
+
+  var processors = [
+    stylelint(stylelintConfig),
+    reporter({
+      clearMessages: true
+    })
+  ];
+
+  return gulp.src(
+      ['app/assets/css/**/*.css',
+      '!app/assets/css/vendor/**/*.css']
+    )
+    .pipe(postcss(processors), {syntax: syntax_scss})
+    .pipe(.failOnError());
+});
+~~~
 
 ##Extending Stylelint with plugins
 
@@ -90,11 +176,9 @@ Let's run through a quick scenario where linting would help improve code readabi
 
 ###Case Study
 
-####Selector nesting in Sass is bad---use a linter!
+####The project manager who likes to code
 
-Selector nesting is a root evil when using Sass; it's a one way trip to specificity hell if abused. I would advise against using nesting at all costs---unless you know what you're doing. Lucky for us, there's a plugin for that! With Stylelint, we can set a max nesting limit to help swat away any misuse.
-
-How about this for a scenario. A project manager decides---in order to free up some valuable time on the project---to have a go at adding a feature. The feature is to add a hover state to a link on a component.
+How about this for a scenario. A project manager decides---in order to free up some valuable time on the project---to have a go at adding a feature. The feature is to add a box shadow to the hover state of a component, and to also add a hover state to the links of a child component.
 
 *What's the worst that could happen?*
 
@@ -116,22 +200,74 @@ Here is the code that the project manager adds to the project:
 }
 ~~~
 
-Not awful, but nesting is normally the result of lazy coding---and lazy coding results in code that is hard to read. That hover rule could be 10 lines below the parent component definition, making it really hard to read. With a max nesting limit set to 3, Stylelint would prompt the project manager to refactor the above code.
+
+~~~sass
+.component {
+  position: relative;
+  //[...]
+
+  &:hover { ⬅
+    box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+
+    .component__child { ⬅
+      li { ⬅
+        a { ⬅
+          &:hover { ⬅
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+~~~
+
+Yuck!
+
+####Selector nesting in Sass is bad---use a linter!
+
+***Fix section to refer to new example***.
+
+Nesting is normally the result of lazy coding---and lazy coding results in code that is hard to read. ***insert specificity here***. That hover rule could be 10 lines below the parent component definition, making it really hard to read. With a max nesting limit set to 3, Stylelint would prompt the project manager to refactor the above code.
+
+Selector nesting is a root evil when using Sass; it's a one way trip to specificity hell if abused. I would advise against using nesting at all costs---unless you know what you're doing. Lucky for us, there's a plugin for that! With Stylelint, we can set a max nesting limit to help swat away any misuse.
 
 ~~~sass
 .component:hover {
+  box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+
   .component__child {
-    a {}
+    li {
+      a:hover {
+        text-decoration: underline;
+      }
+    }
   }  
 }
 ~~~
 
-This refactored version is much more readable. If we set the max nesting limit to 2, the project manager would be forced to think even harder, and add a class to the anchor tag to remove even more nesting.
+This refactored version is much more readable, but still unacceptable. There is absolutely no need for any of this nesting! The linter knows this and forces the project manager to rethink their implementation in order to fix the build.
 
 ~~~sass
 .component:hover {
-  .component__link {}
+  box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
 }
+
+.component__child {
+  a:hover {
+    text-decoration: underline;
+  }
+}  
+~~~
+
+If we set the max nesting limit to 2, the project manager would be forced to think even harder, and add a class to the anchor tag to remove even more nesting.
+
+~~~sass
+.component:hover {
+  box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+}
+
+.component__link:hover {}
 ~~~
 
 Lovely! Without the build pipeline linting our code, and prompting for a refactor, this would never have been caught, and the codebase would gradually degrade in quality.
