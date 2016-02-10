@@ -17,7 +17,9 @@ function fixRhythm($el, height) {
 
   if ($el.is('iframe')) {
     args = {
-      'margin-bottom': (invertRemainder + baseline) + "px"
+      // + 1 seems to be required to force the text after the iframe
+      // to stay on the line.
+      'margin-bottom': (invertRemainder + baseline + 1) + "px"
     }
   } else {
     args = {

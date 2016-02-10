@@ -16,10 +16,22 @@ cyan      #2aa198  strings, numbers
 green     #859900  operators, other keywords
 */
 
+.highlighter-rouge {
+  // @include baseline($fontsize: zeta, $font: $bodytype, $lineheight: 2, $below: 2, $breakpoint: all);
+  @include sassline(theta, $monospacetype, 2, 2, all);
+}
+
+p > code {
+  background-color: #FFFF66;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
 .highlight {
   //background-color: #fdf6e3;
   // background-color: #F2F2F2;
-  background-color: white;
+
+  // background-color: white;
   color: #586e75
 }
 .highlight .lineno { color: #93a1a1 } /* Line Numbers */
