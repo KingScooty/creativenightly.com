@@ -1,6 +1,6 @@
 ---
 title: How to lint your Sass/CSS properly with Stylelint
-subtitle: Linting helps reduce silly errors in codebases, and improves coding quality by enforcing good coding rules, and practices.
+subtitle: What is linting? Why should we lint our stylesheets? Linting helps reduce silly errors in codebases, and improves coding quality by enforcing good coding rules, and practices.
 draft: true
 ---
 
@@ -8,14 +8,27 @@ Similarly to how there's more than one way to skin a cat\*, there's also many di
 
 *\*No cats were harmed writing this article.*
 
-
 <!--more-->
+
+-----
+
+Table of contents:
+
+- [What is linting?](#what-is-linting)
+- [Why should we lint our stylesheets?](#why-should-we-lint-our-stylesheets)
+- [Introducing Stylelint](#introducing-stylelint)
+- [How to lint your CSS](#how-to-lint-your-css)
+- [How to lint your Sass](#how-to-lint-your-sass)
+- [Extending Stylelint with plugins](#extending-stylelint-with-plugins)
+- [Case study: Linting in practice](#case-study-linting-in-practice)
+
+-----
 
 ##Introduction
 
 ###What is linting?
 
-Linting is the process of checking the source code for Programmatic as well as Stylistic errors. This is most helpful in identifying some common and uncommon mistakes that are made during coding. While linting is useful when working alone, they really pay dividends when working in teams: where many (careless) hands touch the code.
+Linting is the process of checking the source code for Programmatic as well as Stylistic errors. This is most helpful in identifying some common and uncommon mistakes that are made during coding. They're essentially a spell checker for programming languages. While linting is useful when working alone, they really pay dividends when working in teams: where many (careless) hands touch the code.
 
 A Lint or a Linter is a program or tool that supports linting (verifying code quality). They are available for most languages like C, Python, JavaScript, CSS,  etc.
 
@@ -29,13 +42,13 @@ Let's take a look at a couple of examples.
 .no-space {
     display:block;
 }           ⬆
-~~~
 
-~~~css
 .no-semicolon {
     position: relative ⬅
 }
 ~~~
+
+Linters are very good a spotting stylistic issues like these. Stylistic rules aren't essential, but they help keep the code consistent. Also, these 2 stylistic errors above are a pet peeve of mine.
 
 ~~~css
 .invalid-hex {
@@ -43,14 +56,17 @@ Let's take a look at a couple of examples.
 }                ⬆
 ~~~
 
+They're also very good at spotting errors like invalid hex colours, which may have resulted from a type error. Errors like this are capable of breaking important visual styling if not caught.
 
 ~~~css
 .unnecessary-prefixes {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
 }
 ~~~
+
+There are a fair few CSS3 rules that don't need to be prefixed anymore in order to work. Linting spots these rules and helps to remove unnecessary and deprecated code. Linting prefixes is especially useful when paired with [Autoprefixer](https://github.com/postcss/autoprefixer){:target="\_blank"}---this lets you remove all prefixes, and only insert the ones you require for your target audience.
 
 ~~~css
 .duplicate-rule {
@@ -61,6 +77,10 @@ Let's take a look at a couple of examples.
     transition: background-color .3s; ⬅
 }
 ~~~
+
+Duplicate rules are a common form of erroneous code. What if the developer meant for both opacity *and* background-colour to be transitioned? In the case above, the opacity transition is lost. Linting would highlight this error.
+
+Convinced yet? If you are, great! Let's get you setup in the next section. If you're not, keep reading, and I'm sure I can convince you.
 
 
 ##Introducing Stylelint
@@ -76,11 +96,21 @@ It can handle both Sass and vanilla CSS linting, thanks to its [PostCSS](https:/
 The mantra of PostCSS is do one thing, and one thing well; so it's all about plugins. There's currently more than 200 plugins available for PostCSS, and because they're all written in JavaScript, they run *rapid fast*!
 
 
-##Linting your CSS
+###How to lint your CSS
 
 Let's start with linting vanilla CSS stylesheets.
 
+~~~sh
+npm install gulp-postcss postcss-reporter stylelint --save-dev
+~~~
+
 ~~~javascript
+var gulp        = require('gulp');
+
+var postcss     = require('gulp-postcss');
+var reporter    = require('postcss-reporter');
+var stylelint   = require('stylelint');
+
 gulp.task("css-lint", function() {
   var stylelintConfig = {
     "rules": {
@@ -123,10 +153,21 @@ gulp.task("css-lint", function() {
 });
 ~~~
 
-##Linting your Sass
+###How to lint your Sass
+
+~~~sh
+npm install gulp-postcss postcss-reporter stylelint postcss-scss --save-dev
+~~~
 
 ~~~javascript
-gulp.task("css-lint", function() {
+var gulp        = require('gulp');
+
+var postcss     = require('gulp-postcss');
+var reporter    = require('postcss-reporter');
+var syntax_scss = require('postcss-scss');
+var stylelint   = require('stylelint');
+
+gulp.task("scss-lint", function() {
   var stylelintConfig = {
     "rules": {
       "block-no-empty": true,
@@ -174,11 +215,11 @@ Just like PostCSS, Stylelint is extendable via plugins, which is awesome!
 
 Let's run through a quick scenario where linting would help improve code readability, and help kick lazy devs up the butt when they try and hack an easy win into the codebase.
 
-###Case Study
+###Case Study: Linting in practice
 
 ####The project manager who likes to code
 
-How about this for a scenario. A project manager decides---in order to free up some valuable time on the project---to have a go at adding a feature. The feature is to add a box shadow to the hover state of a component, and to also add a hover state to the links of a child component.
+How about this for a scenario. A project manager is managing a new web app that's in development, and decides---in order to free up some valuable dev time on the project---to have a go at adding a feature. The feature is to add a box shadow to the hover state of a component, and to also add a hover state to the links of a child component.
 
 *What's the worst that could happen?*
 
@@ -186,20 +227,6 @@ How about this for a scenario. A project manager decides---in order to free up s
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 Here is the code that the project manager adds to the project:
-
-~~~sass
-.component {
-  position: relative;
-  //[...]
-
-  &:hover { ⬅
-    .component__child { ⬅
-      a {} ⬅
-    }  
-  }
-}
-~~~
-
 
 ~~~sass
 .component {
@@ -228,13 +255,48 @@ Yuck!
 
 ***Fix section to refer to new example***.
 
-Nesting is normally the result of lazy coding---and lazy coding results in code that is hard to read. ***insert specificity here***. That hover rule could be 10 lines below the parent component definition, making it really hard to read. With a max nesting limit set to 3, Stylelint would prompt the project manager to refactor the above code.
+Selector nesting is a root evil when using Sass; it's a one way trip to specificity hell if abused. Nesting is normally the result of lazy coding---and lazy coding results in code that is hard to read, and poorly written. The first `&:hover{...}` rule could be 10 lines below the parent component definition, making it really hard to decipher what it belongs to. There is also absolutely no need for any of this nesting.
 
-Selector nesting is a root evil when using Sass; it's a one way trip to specificity hell if abused. I would advise against using nesting at all costs---unless you know what you're doing. Lucky for us, there's a plugin for that! With Stylelint, we can set a max nesting limit to help swat away any misuse.
+This the CSS that the above rule compiles to:
+
+~~~css
+/* What the heck is this?! */
+.component:hover .component_child li a:hover {}
+~~~
+
+If I worked on a team, and someone contributed something like this to the codebase, I'd be having serious, *serious* words.
+
+The next dev that comes a long and wants to override this cascading rule is going to have a tough time. With that in mind, I would advise against using nesting at all costs---unless you know what you're doing.
+
+Lucky for us, there's a plugin for that! With Stylelint, we can set a max nesting limit to help swat away any nesting abuse.
+
+~~~sh
+npm install stylelint-statement-max-nesting-depth --save-dev
+~~~
+
+~~~javascript
+gulp.task("scss-lint", function() {
+  var stylelintConfig = {
+    "plugins": [
+      "stylelint-statement-max-nesting-depth"
+    ],
+    "rules": {
+      //[...]
+      "statement-max-nesting-depth": [3, { countAtRules: false }],
+    }
+  }
+
+  //[..]
+});
+~~~
+
+For teams that know what they're doing, i'd set the max limit to 3. (*Set it lower for inexperienced teams*).
+
+With a max nesting limit set to 3, Stylelint would prompt the project manager to refactor the above code.
 
 ~~~sass
 .component:hover {
-  box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
 
   .component__child {
     li {
@@ -250,7 +312,7 @@ This refactored version is much more readable, but still unacceptable. There is 
 
 ~~~sass
 .component:hover {
-  box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 .component__child {
@@ -264,12 +326,14 @@ If we set the max nesting limit to 2, the project manager would be forced to thi
 
 ~~~sass
 .component:hover {
-  box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 .component__link:hover {}
 ~~~
 
-Lovely! Without the build pipeline linting our code, and prompting for a refactor, this would never have been caught, and the codebase would gradually degrade in quality.
+Lovely! Without the build pipeline linting our stylesheets, and prompting for a refactor, this would never have been caught, and the codebase would gradually degrade in quality.
 
-Linting is your friend. It protects teams from the technical debt of a poorly written codebase. Hence forth and lint!
+Hopefully by now I've convinced you that linting your stylesheets is a worthwhile investment. Linting is your friend. The investment is cheap, and it protects teams from the technical debt of a poorly written codebase.
+
+Hence forth and lint!
