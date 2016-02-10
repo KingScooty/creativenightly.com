@@ -4,9 +4,9 @@ subtitle: What is linting? Why should we lint our stylesheets? Linting helps red
 draft: true
 ---
 
-Similarly to how there's more than one way to skin a cat\*, there's also many different ways to lint your stylesheets, and some of the methods are much better than others. But first, let's cover what linting actually is, and some reasons *why* we should lint our stylesheets.
+Stylesheet linting. Not many people do it. Many more people should---especially diverse teams that have a lot of hands touching the codebase.
 
-*\*No cats were harmed in the writing of this article.*
+In this article I'm going to talk about *why* we should lint our stylesheets, and *how* to implement stylesheet linting into our build pipelines for both vanilla CSS and Sass.
 
 <!--more-->
 
