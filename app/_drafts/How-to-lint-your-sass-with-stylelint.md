@@ -30,11 +30,11 @@ Table of contents:
 
 Linting is the process of checking the source code for Programmatic as well as Stylistic errors. This is most helpful in identifying some common and uncommon mistakes that are made during coding. They're essentially a spell checker for programming languages. While linting is useful when working alone, they really pay dividends when working in teams: where many (careless) hands touch the code.
 
-A Lint or a Linter is a program or tool that supports linting (verifying code quality). They are available for most languages like C, Python, JavaScript, CSS,  etc.
+A Lint---or a Linter---is a program or tool that supports linting (verifying code quality). They are available for most languages like C, Python, JavaScript, CSS,  etc.
 
 ###Why should we lint our stylesheets?
 
-There are many reasons to lint stylesheets. It keeps consistency in the codebase, it highlights errors in the codebase, it helps reduce unnecessary code, and it also helps prevent lazy coding.
+There are many reasons to lint stylesheets. It maintains code consistency, it highlights errors in the codebase, it helps reduce unnecessary code, and it also helps prevent lazy coding.
 
 Let's take a look at a couple of examples.
 
@@ -101,11 +101,13 @@ PostCSS and Stylelint are what we'll be using to lint our stylesheets in the nex
 
 ###How to lint your CSS
 
-Let's start with linting vanilla CSS stylesheets.
+Let's start with linting vanilla CSS stylesheets. You'll need to install `gulp-postcss`, `postcss-reporter`, and `stylelint`. Let's do that now.
 
 ~~~sh
 npm install gulp-postcss postcss-reporter stylelint --save-dev
 ~~~
+
+The
 
 ~~~javascript
 var gulp        = require('gulp');
@@ -115,6 +117,8 @@ var reporter    = require('postcss-reporter');
 var stylelint   = require('stylelint');
 
 gulp.task("css-lint", function() {
+
+  // Stylelint config rules
   var stylelintConfig = {
     "rules": {
       "block-no-empty": true,
@@ -143,7 +147,8 @@ gulp.task("css-lint", function() {
   var processors = [
     stylelint(stylelintConfig),
     reporter({
-      clearMessages: true
+      clearMessages: true,
+      throwError: true
     })
   ];
 
@@ -151,12 +156,30 @@ gulp.task("css-lint", function() {
       ['app/assets/css/**/*.css',
       '!app/assets/css/vendor/**/*.css']
     )
-    .pipe(postcss(processors))
-    .pipe(.failOnError());
+    .pipe(postcss(processors));
 });
 ~~~
 
 ###How to lint your Sass
+
+Linting Sass files is super easy with PostCSS. The only difference between linting CSS and Scss, is you need to make PostCSS understand the `.Scss` syntax, and that's as easy as installing `postcss-scss`, and changing one line in the task above.
+
+~~~sh
+npm install postcss-scss --save-dev
+~~~
+
+~~~javascript
+  //[...]
+
+  return gulp.src(
+      ['app/assets/css/**/*.css',
+      '!app/assets/css/vendor/**/*.css']
+    )
+    .pipe(postcss(processors), {syntax: syntax_scss});
+});
+~~~
+
+Here's the setup in full:
 
 ~~~sh
 npm install gulp-postcss postcss-reporter stylelint postcss-scss --save-dev
@@ -171,6 +194,8 @@ var syntax_scss = require('postcss-scss');
 var stylelint   = require('stylelint');
 
 gulp.task("scss-lint", function() {
+
+  // Stylelint config rules
   var stylelintConfig = {
     "rules": {
       "block-no-empty": true,
@@ -199,7 +224,8 @@ gulp.task("scss-lint", function() {
   var processors = [
     stylelint(stylelintConfig),
     reporter({
-      clearMessages: true
+      clearMessages: true,
+      throwError: true
     })
   ];
 
@@ -207,8 +233,7 @@ gulp.task("scss-lint", function() {
       ['app/assets/css/**/*.css',
       '!app/assets/css/vendor/**/*.css']
     )
-    .pipe(postcss(processors), {syntax: syntax_scss})
-    .pipe(.failOnError());
+    .pipe(postcss(processors), {syntax: syntax_scss});
 });
 ~~~
 
