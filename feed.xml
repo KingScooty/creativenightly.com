@@ -6,9 +6,446 @@
     <atom:link href="http://www.creativenightly.com/feed.xml" rel="self" type="application/rss+xml" />
     <description></description>
     <language>en-gb</language>
-    <pubDate>Thu, 28 Jan 2016 14:40:35 +0000</pubDate>
-    <lastBuildDate>Thu, 28 Jan 2016 14:40:35 +0000</lastBuildDate>
+    <pubDate>Fri, 12 Feb 2016 18:13:45 +0000</pubDate>
+    <lastBuildDate>Fri, 12 Feb 2016 18:13:45 +0000</lastBuildDate>
 
+    
+    
+    <item>
+      <title>How to lint your Sass/CSS properly with Stylelint</title>
+      <link>http://www.creativenightly.com/2016/02/How-to-lint-your-css-with-stylelint/</link>
+      <pubDate>Fri, 12 Feb 2016 00:00:00 +0000</pubDate>
+      <author></author>
+      <guid>http://www.creativenightly.com/2016/02/How-to-lint-your-css-with-stylelint</guid>
+      <description><p>Stylesheet linting. Not many people do it. Many more people should—especially diverse teams that have a lot of hands touching the codebase.</p>
+
+<p>In this article I’m going to talk about <em>why</em> we should lint our stylesheets, and <em>how</em> to implement stylesheet linting into our build pipelines for both vanilla CSS and Sass.</p>
+
+<!--more-->
+
+<p>Table of contents:</p>
+
+<ol>
+  <li><a href="#introduction">Introduction</a>
+    <ol>
+      <li><a href="#what-is-linting">What is linting?</a></li>
+      <li><a href="#why-should-we-lint-our-stylesheets">Why should we lint our stylesheets?</a></li>
+      <li><a href="#introducing-stylelint">Introducing Stylelint</a></li>
+    </ol>
+  </li>
+  <li><a href="#setup">Setup</a>
+    <ol>
+      <li><a href="#how-to-lint-your-css">How to lint your CSS</a></li>
+      <li><a href="#how-to-lint-your-sass">How to lint your Sass</a></li>
+    </ol>
+  </li>
+  <li><a href="#extending-stylelint-with-plugins">Extending Stylelint with plugins</a>
+    <ol>
+      <li><a href="#case-study-linting-in-practice">Case study: Linting in practice</a></li>
+    </ol>
+  </li>
+</ol>
+
+<hr />
+
+<h2 id="introduction">Introduction</h2>
+
+<h3 id="what-is-linting">What is linting?</h3>
+
+<p>Linting is the process of checking the source code for Programmatic as well as Stylistic errors. This is most helpful in identifying some common and uncommon mistakes that are made during coding. They’re essentially a spell checker for programming languages. While linting is useful when working alone, they really pay dividends when working in teams: where many (careless) hands touch the code.</p>
+
+<p>A Lint—or a Linter—is a program or tool that supports linting (verifying code quality). They are available for most languages like C, Python, JavaScript, CSS,  etc.</p>
+
+<h3 id="why-should-we-lint-our-stylesheets">Why should we lint our stylesheets?</h3>
+
+<p>There are many reasons to lint stylesheets. It maintains code consistency, it highlights errors in the codebase, it helps reduce unnecessary code, and it also helps prevent lazy coding.</p>
+
+<p>Let’s take a look at a couple of examples.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nc">.no-space-after-colon</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span><span class="nb">block</span><span class="p">;</span>
+<span class="p">}</span>           <span class="err">⬆</span>
+
+<span class="nc">.no-semicolon</span> <span class="p">{</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span> <span class="err">⬅</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>Linters are very good at spotting stylistic issues like these. Setting up stylistic linting rules aren’t essential, but they help keep the code consistent. Also, I don’t know about you, but these 2 stylistic errors above are a pet peeve of mine.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nc">.invalid-hex</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="m">#FFF00</span><span class="n">G</span><span class="p">;</span>
+<span class="p">}</span>                <span class="err">⬆</span>
+</code></pre>
+</div>
+
+<p>They’re also very good at spotting errors like invalid hex colours, which may have resulted from a type error. Errors like this are capable of breaking important visual styling if not caught.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nc">.unnecessary-prefixes</span> <span class="p">{</span>
+    <span class="nl">-webkit-border-radius</span><span class="p">:</span> <span class="m">5px</span><span class="p">;</span>
+    <span class="nl">-moz-border-radius</span><span class="p">:</span> <span class="m">5px</span><span class="p">;</span>
+    <span class="nl">border-radius</span><span class="p">:</span> <span class="m">5px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>There are a fair few CSS3 rules that don’t need to be prefixed anymore in order to work. Linting spots these rules and helps to remove unnecessary and deprecated code. Linting prefixes is especially useful when paired with <a href="https://github.com/postcss/autoprefixer" target="\_blank">Autoprefixer</a>—this lets you remove all prefixes, and only insert the ones you require for your target audience.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nc">.duplicate-rule</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span>
+    <span class="nl">transition</span><span class="p">:</span> <span class="n">opacity</span> <span class="m">.2s</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="m">#444</span><span class="p">;</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="m">#eee</span><span class="p">;</span>
+    <span class="nl">transition</span><span class="p">:</span> <span class="n">background-color</span> <span class="m">.4s</span><span class="p">;</span> <span class="err">⬅</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>Duplicate rules are a common form of erroneous code. What if the developer meant for both opacity <em>and</em> background-colour to be transitioned? In the case above, the opacity transition is lost. Linting would highlight this error.</p>
+
+<p>Convinced yet? If you’re not, keep reading…</p>
+
+<h3 id="introducing-stylelint">Introducing Stylelint</h3>
+
+<p><a href="http://stylelint.io/" target="\_blank">Stylelint</a> is a super extendable, and unopinionated CSS linter written in JavaScript. It’s the latest and greatest in CSS linting. It supports the latest CSS syntax, understands <em>CSS-like</em> syntaxes, and is extendable with plugins. What’s more, because it’s powered by JavaScript instead of Ruby, it’s much, <em>much</em> faster than <a href="https://github.com/brigade/scss-lint" target="\_blank">scss-lint</a>.</p>
+
+<blockquote>
+  <p>Stylelint is a mighty, modern CSS linter that helps you enforce consistent conventions and avoid errors in your stylesheets.</p>
+</blockquote>
+
+<p>The linter is powered by <a href="https://github.com/postcss/postcss" target="\_blank">PostCSS</a>, so it understands any syntax that PostCSS can parse, including SCSS.</p>
+
+<blockquote>
+  <p>PostCSS is a tool for transforming styles with JS plugins. These plugins can lint your CSS, support variables and mixins, transpile future CSS syntax, inline images, and more.</p>
+</blockquote>
+
+<p>The mantra of PostCSS is do one thing, and one thing well; so it’s all about plugins. There’s currently more than 200 plugins available for PostCSS, and because they’re all written in JavaScript, they run <em>rapid fast</em>!</p>
+
+<p>PostCSS and Stylelint are what we’ll be using to lint our stylesheets in the next section.</p>
+
+<h2 id="setup">Setup</h2>
+
+<h3 id="stylelint-config-files">Stylelint config files</h3>
+
+<p>The beauty of Stylelint is how unopinionated it is. You build your own ruleset from the ground up, so it can be as opinionated or unopinionated as you choose—you don’t have to</p>
+
+<p>The <a href="https://github.com/stylelint/stylelint/blob/master/docs/user-guide/rules.md" target="\_blank">Stylelint rule documentation</a> is a good primer for getting started. They also provide a <a href="https://github.com/stylelint/stylelint-config-standard/blob/master/index.js" target="\_blank">stylelint standard config file</a> for you to use in your projects that is rather well thought out.</p>
+
+<p>For us getting started though, we’re going to use a nice and compact config file that covers the bare essentials. Personally, I think it’s a better starting config than the one Stylelint provide, as it gives you space to build on top of it, rather than having to disable the rules you don’t want.</p>
+
+<p>It looks something like this:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="s2">"rules"</span><span class="err">:</span> <span class="p">{</span>
+  <span class="s2">"block-no-empty"</span><span class="err">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"color-no-invalid-hex"</span><span class="err">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"declaration-colon-space-after"</span><span class="err">:</span> <span class="s2">"always"</span><span class="p">,</span>
+  <span class="s2">"declaration-colon-space-before"</span><span class="err">:</span> <span class="s2">"never"</span><span class="p">,</span>
+  <span class="s2">"function-comma-space-after"</span><span class="err">:</span> <span class="s2">"always"</span><span class="p">,</span>
+  <span class="s2">"function-url-quotes"</span><span class="err">:</span> <span class="s2">"double"</span><span class="p">,</span>
+  <span class="s2">"media-feature-colon-space-after"</span><span class="err">:</span> <span class="s2">"always"</span><span class="p">,</span>
+  <span class="s2">"media-feature-colon-space-before"</span><span class="err">:</span> <span class="s2">"never"</span><span class="p">,</span>
+  <span class="s2">"media-feature-name-no-vendor-prefix"</span><span class="err">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"max-empty-lines"</span><span class="err">:</span> <span class="mi">5</span><span class="p">,</span>
+  <span class="s2">"number-leading-zero"</span><span class="err">:</span> <span class="s2">"never"</span><span class="p">,</span>
+  <span class="s2">"number-no-trailing-zeros"</span><span class="err">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"property-no-vendor-prefix"</span><span class="err">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"rule-no-duplicate-properties"</span><span class="err">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"declaration-block-no-single-line"</span><span class="err">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"rule-trailing-semicolon"</span><span class="err">:</span> <span class="s2">"always"</span><span class="p">,</span>
+  <span class="s2">"selector-list-comma-newline-after"</span><span class="err">:</span> <span class="s2">"always-multi-line"</span><span class="p">,</span>
+  <span class="s2">"selector-no-id"</span><span class="err">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"string-quotes"</span><span class="err">:</span> <span class="s2">"double"</span><span class="p">,</span>
+  <span class="s2">"value-no-vendor-prefix"</span><span class="err">:</span> <span class="kc">true</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>I recommend reading through the <a href="https://github.com/stylelint/stylelint/blob/master/docs/user-guide/rules.md" target="\_blank">Stylelint rule documentation</a> and building on this to create your ideal linting configuration. For now, let’s get into setting up our pipeline using these rules.</p>
+
+<h3 id="how-to-lint-your-css">How to lint your CSS</h3>
+
+<p>Let’s start with linting vanilla CSS stylesheets. You’ll be amazed at how easy it is to setup! The tools you’ll need to install <code class="highlighter-rouge">gulp-postcss</code>, <code class="highlighter-rouge">postcss-reporter</code>, and <code class="highlighter-rouge">stylelint</code>. Let’s do that now.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>npm install gulp-postcss postcss-reporter stylelint --save-dev
+</code></pre>
+</div>
+
+<p>And this is the gulpfile to wire it all together:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">gulp</span>        <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gulp'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">postcss</span>     <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gulp-postcss'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">reporter</span>    <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'postcss-reporter'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">stylelint</span>   <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'stylelint'</span><span class="p">);</span>
+
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s2">"css-lint"</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+
+  <span class="c1">// Stylelint config rules</span>
+  <span class="kd">var</span> <span class="nx">stylelintConfig</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"rules"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">"block-no-empty"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">"color-no-invalid-hex"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">"declaration-colon-space-after"</span><span class="p">:</span> <span class="s2">"always"</span><span class="p">,</span>
+      <span class="s2">"declaration-colon-space-before"</span><span class="p">:</span> <span class="s2">"never"</span><span class="p">,</span>
+      <span class="s2">"function-comma-space-after"</span><span class="p">:</span> <span class="s2">"always"</span><span class="p">,</span>
+      <span class="s2">"function-url-quotes"</span><span class="p">:</span> <span class="s2">"double"</span><span class="p">,</span>
+      <span class="s2">"media-feature-colon-space-after"</span><span class="p">:</span> <span class="s2">"always"</span><span class="p">,</span>
+      <span class="s2">"media-feature-colon-space-before"</span><span class="p">:</span> <span class="s2">"never"</span><span class="p">,</span>
+      <span class="s2">"media-feature-name-no-vendor-prefix"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">"max-empty-lines"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="s2">"number-leading-zero"</span><span class="p">:</span> <span class="s2">"never"</span><span class="p">,</span>
+      <span class="s2">"number-no-trailing-zeros"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">"property-no-vendor-prefix"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">"rule-no-duplicate-properties"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">"declaration-block-no-single-line"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">"rule-trailing-semicolon"</span><span class="p">:</span> <span class="s2">"always"</span><span class="p">,</span>
+      <span class="s2">"selector-list-comma-newline-after"</span><span class="p">:</span> <span class="s2">"always-multi-line"</span><span class="p">,</span>
+      <span class="s2">"selector-no-id"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">"string-quotes"</span><span class="p">:</span> <span class="s2">"double"</span><span class="p">,</span>
+      <span class="s2">"value-no-vendor-prefix"</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="kd">var</span> <span class="nx">processors</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="nx">stylelint</span><span class="p">(</span><span class="nx">stylelintConfig</span><span class="p">),</span>
+    <span class="c1">// Pretty reporting config</span>
+    <span class="nx">reporter</span><span class="p">({</span>
+      <span class="na">clearMessages</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="na">throwError</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">})</span>
+  <span class="p">];</span>
+
+  <span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span>
+      <span class="c1">// Stylesheet source:</span>
+      <span class="p">[</span><span class="s1">'app/assets/css/**/*.css'</span><span class="p">,</span>
+      <span class="c1">// Ignore linting vendor assets:</span>
+      <span class="c1">// (Useful if you have bower components)</span>
+      <span class="s1">'!app/assets/css/vendor/**/*.css'</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">postcss</span><span class="p">(</span><span class="nx">processors</span><span class="p">));</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+
+<p>How easy was that?! I make that 50 lines of code—including linting rules and imports. Make sure to update the source locations to match the ones in your project!</p>
+
+<p>What’s even more amazing, is only a single line of code needs to be modified in order to enable Sass support! Let’s cover that now…</p>
+
+<h3 id="how-to-lint-your-sass">How to lint your Sass</h3>
+
+<p>Linting Sass files is super easy with PostCSS. The only difference between linting CSS and Scss, is you need to make PostCSS understand the <code class="highlighter-rouge">.Scss</code> syntax, and that’s as easy as installing <code class="highlighter-rouge">postcss-scss</code>, and changing one line in the task above.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>npm install postcss-scss --save-dev
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="c1">//[...]</span>
+
+  <span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span>
+      <span class="p">[</span><span class="s1">'app/assets/css/**/*.css'</span><span class="p">,</span>
+      <span class="s1">'!app/assets/css/vendor/**/*.css'</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">postcss</span><span class="p">(</span><span class="nx">processors</span><span class="p">),</span> <span class="p">{</span><span class="na">syntax</span><span class="p">:</span> <span class="nx">syntax_scss</span><span class="p">});</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+
+<p>Here’s the gulpfile in full for linting Sass files:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>npm install gulp-postcss postcss-reporter stylelint postcss-scss --save-dev
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">gulp</span>        <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gulp'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">postcss</span>     <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gulp-postcss'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">reporter</span>    <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'postcss-reporter'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">syntax_scss</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'postcss-scss'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">stylelint</span>   <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'stylelint'</span><span class="p">);</span>
+
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s2">"scss-lint"</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+
+  <span class="c1">// Stylelint config rules</span>
+  <span class="kd">var</span> <span class="nx">stylelintConfig</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"rules"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">"block-no-empty"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">"color-no-invalid-hex"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">"declaration-colon-space-after"</span><span class="p">:</span> <span class="s2">"always"</span><span class="p">,</span>
+      <span class="s2">"declaration-colon-space-before"</span><span class="p">:</span> <span class="s2">"never"</span><span class="p">,</span>
+      <span class="s2">"function-comma-space-after"</span><span class="p">:</span> <span class="s2">"always"</span><span class="p">,</span>
+      <span class="s2">"function-url-quotes"</span><span class="p">:</span> <span class="s2">"double"</span><span class="p">,</span>
+      <span class="s2">"media-feature-colon-space-after"</span><span class="p">:</span> <span class="s2">"always"</span><span class="p">,</span>
+      <span class="s2">"media-feature-colon-space-before"</span><span class="p">:</span> <span class="s2">"never"</span><span class="p">,</span>
+      <span class="s2">"media-feature-name-no-vendor-prefix"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">"max-empty-lines"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="s2">"number-leading-zero"</span><span class="p">:</span> <span class="s2">"never"</span><span class="p">,</span>
+      <span class="s2">"number-no-trailing-zeros"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">"property-no-vendor-prefix"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">"rule-no-duplicate-properties"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">"declaration-block-no-single-line"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">"rule-trailing-semicolon"</span><span class="p">:</span> <span class="s2">"always"</span><span class="p">,</span>
+      <span class="s2">"selector-list-comma-newline-after"</span><span class="p">:</span> <span class="s2">"always-multi-line"</span><span class="p">,</span>
+      <span class="s2">"selector-no-id"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">"string-quotes"</span><span class="p">:</span> <span class="s2">"double"</span><span class="p">,</span>
+      <span class="s2">"value-no-vendor-prefix"</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="kd">var</span> <span class="nx">processors</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="nx">stylelint</span><span class="p">(</span><span class="nx">stylelintConfig</span><span class="p">),</span>
+    <span class="nx">reporter</span><span class="p">({</span>
+      <span class="na">clearMessages</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="na">throwError</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">})</span>
+  <span class="p">];</span>
+
+  <span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span>
+      <span class="p">[</span><span class="s1">'app/assets/css/**/*.css'</span><span class="p">,</span>
+      <span class="c1">// Ignore linting vendor assets</span>
+      <span class="c1">// Useful if you have bower components</span>
+      <span class="s1">'!app/assets/css/vendor/**/*.css'</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">postcss</span><span class="p">(</span><span class="nx">processors</span><span class="p">),</span> <span class="p">{</span><span class="na">syntax</span><span class="p">:</span> <span class="nx">syntax_scss</span><span class="p">});</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+
+<p>So, <em>so</em> easy! And that’s it! You can now lint both CSS and Sass files!</p>
+
+<h2 id="extending-stylelint-with-plugins">Extending Stylelint with plugins</h2>
+
+<p>Just like PostCSS, Stylelint is extendable via plugins, which is awesome!</p>
+
+<p>Let’s run through a quick scenario where linting would help improve code readability, and help kick lazy devs up the butt when they try and hack an easy win into the codebase.</p>
+
+<h3 id="case-study-linting-in-practice">Case Study: Linting in practice</h3>
+
+<h4 id="the-project-manager-who-likes-to-code">The project manager who likes to code</h4>
+
+<p>How about this for a scenario. A project manager is managing a new web app that’s in development, and decides—in order to free up some valuable dev time on the project—to have a go at adding a feature. The feature is to add a box shadow to the hover state of a component, and to also add a hover state to the links of a child component.</p>
+
+<p><em>What’s the worst that could happen?</em></p>
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">project manager: i know enough coding to be dangerous<br /><br />*winks*<br /><br />literally ruins entire codebase</p>&mdash; I Am Devloper (@iamdevloper) <a href="https://twitter.com/iamdevloper/status/696692323703336960">February 8, 2016</a></blockquote>
+<script async="" src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>Here is the code that the project manager adds to the project:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nc">.component</span> <span class="err">{</span>
+  <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="err">;</span>
+  <span class="c1">//[...]
+</span>
+  <span class="k">&amp;</span><span class="nd">:hover</span> <span class="err">{</span> <span class="err">⬅</span>
+    <span class="nl">box-shadow</span><span class="p">:</span> <span class="m">1px</span> <span class="m">1px</span> <span class="m">5px</span> <span class="m">0px</span> <span class="nf">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="mi">.75</span><span class="p">)</span><span class="err">;</span>
+
+    <span class="nc">.component__child</span> <span class="err">{</span> <span class="err">⬅</span>
+      <span class="nt">li</span> <span class="err">{</span> <span class="err">⬅</span>
+        <span class="nt">a</span> <span class="err">{</span> <span class="err">⬅</span>
+          <span class="k">&amp;</span><span class="nd">:hover</span> <span class="err">{</span> <span class="err">⬅</span>
+            <span class="nl">text-decoration</span><span class="p">:</span> <span class="nb">underline</span><span class="err">;</span>
+          <span class="err">}</span>
+        <span class="err">}</span>
+      <span class="err">}</span>
+    <span class="err">}</span>
+  <span class="err">}</span>
+<span class="err">}</span>
+</code></pre>
+</div>
+
+<p>Yuck!</p>
+
+<h4 id="selector-nesting-in-sass-is-bad---use-a-linter">Selector nesting in Sass is bad—use a linter!</h4>
+
+<p>Selector nesting is a necessary evil when developing using Sass; it’s really useful when used properly, and a one way trip to <a href="https://css-tricks.com/specifics-on-css-specificity/" target="\_blank">specificity</a> hell if abused. Nesting is normally the result of lazy coding—and lazy coding results in code that is hard to read, and poorly written. The first <code class="highlighter-rouge">&amp;:hover{...}</code> rule could be 10 lines below the parent component definition, making it really hard to decipher what it belongs to. However, more importantly, there nesting here is completely unnecessary.</p>
+
+<p>This the CSS that the above rule compiles to:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nc">.component</span><span class="nd">:hover</span> <span class="nc">.component_child</span> <span class="nt">li</span> <span class="nt">a</span><span class="nd">:hover</span> <span class="p">{}</span>
+<span class="c">/* What the heck is this?! */</span>
+</code></pre>
+</div>
+
+<p>If I worked on a team, and someone contributed something like this to the codebase, I’d be having serious, <em>serious</em> words.</p>
+
+<p>The next dev that comes along and wants to override this cascading rule is going to have a tough time. With that in mind, I would advise against using nesting at all costs—unless you know what you’re doing.</p>
+
+<p>Lucky for us, there’s a plugin for this! With Stylelint, we can install a plugin aptly named <code class="highlighter-rouge">stylelint-statement-max-nesting-depth</code>, and set a max nesting limit to help swat away any nesting abuse.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>npm install stylelint-statement-max-nesting-depth --save-dev
+</code></pre>
+</div>
+
+<p>And by simply adding the following to the scss-lint task in our gulpfile, it’s wired up:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s2">"scss-lint"</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">stylelintConfig</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"plugins"</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s2">"stylelint-statement-max-nesting-depth"</span>
+    <span class="p">],</span>
+    <span class="s2">"rules"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="c1">//[...]</span>
+      <span class="s2">"statement-max-nesting-depth"</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="p">{</span> <span class="na">countAtRules</span><span class="p">:</span> <span class="kc">false</span> <span class="p">}],</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="c1">//[..]</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+
+<p>For teams that know what they’re doing, i’d set the max limit to <strong>3</strong>. <em>(Set it lower for inexperienced teams)</em>.</p>
+
+<p>With a max nesting limit set to 3, Stylelint would prompt the project manager to refactor the above code. The project manager goes away, has a little think, and comes back with this:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nc">.component</span><span class="nd">:hover</span> <span class="err">{</span>
+  <span class="nl">box-shadow</span><span class="p">:</span> <span class="m">1px</span> <span class="m">1px</span> <span class="m">5px</span> <span class="m">0px</span> <span class="nf">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="mi">.75</span><span class="p">)</span><span class="err">;</span>
+
+  <span class="nc">.component__child</span> <span class="err">{</span>
+    <span class="nt">li</span> <span class="err">{</span>
+      <span class="nt">a</span><span class="nd">:hover</span> <span class="err">{</span>
+        <span class="nl">text-decoration</span><span class="p">:</span> <span class="nb">underline</span><span class="err">;</span>
+      <span class="err">}</span>
+    <span class="err">}</span>
+  <span class="err">}</span>  
+<span class="err">}</span>
+</code></pre>
+</div>
+
+<p>This refactored version is much more readable, but still unacceptable. There is still absolutely no need for any of this nesting! The linter knows this and forces the project manager to rethink their implementation in order to fix the build.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nc">.component</span><span class="nd">:hover</span> <span class="err">{</span>
+  <span class="nl">box-shadow</span><span class="p">:</span> <span class="m">1px</span> <span class="m">1px</span> <span class="m">5px</span> <span class="m">0px</span> <span class="nf">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="mi">.75</span><span class="p">)</span><span class="err">;</span>
+<span class="err">}</span>
+
+<span class="nc">.component__child</span> <span class="err">{</span>
+  <span class="nt">a</span><span class="nd">:hover</span> <span class="err">{</span>
+    <span class="nl">text-decoration</span><span class="p">:</span> <span class="nb">underline</span><span class="err">;</span>
+  <span class="err">}</span>
+<span class="err">}</span>  
+</code></pre>
+</div>
+
+<p>Now they’re getting somewhere! With a max nesting limit set to 3, this would now be accepted by the linter, and the build would pass. The code above isn’t bad, but it could always be better! If we set the max nesting limit to 2, the project manager would be forced to think even harder, and add a class to the anchor tag to remove even more nesting.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nc">.component</span><span class="nd">:hover</span> <span class="err">{</span>
+  <span class="nl">box-shadow</span><span class="p">:</span> <span class="m">1px</span> <span class="m">1px</span> <span class="m">5px</span> <span class="m">0px</span> <span class="nf">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="mi">.75</span><span class="p">)</span><span class="err">;</span>
+<span class="err">}</span>
+
+<span class="nc">.component__link</span><span class="nd">:hover</span> <span class="err">{}</span>
+</code></pre>
+</div>
+
+<p>Lovely! Without the build pipeline linting our stylesheets, and prompting for a refactor, this type of lazy coding would never have been caught, and the codebase would gradually degrade in quality.</p>
+
+<p>Hopefully by now I’ve convinced you that linting your stylesheets is a worthwhile investment. Linting is your friend. The investment is cheap, and it protects teams from the technical debt of a poorly written codebase.</p>
+
+<p>Now go, my developer and designer friends!</p>
+
+<p>Henceforth and lint!</p>
+</description>
+    </item>
+    
     
     
     <item>
@@ -153,13 +590,13 @@
 </pre></noscript>
 <script src="https://gist.github.com/0022988332d617cf6098.js"> </script>
 
-<p>This is really neat, becuase it means you can upgrade your components, and you can use them on an integration server without having to rename them each time, or include them in your repository!</p>
+<p>This is really neat, because it means you can upgrade your components, and you can use them on an integration server without having to rename them each time, or include them in your repository!</p>
 
 <p>All that’s left to do now, is import the component into your main.scss file, and you’re away!</p>
 
 <p><strong>Update 1:</strong> If you’re having any issues, make sure to run the following command in the terminal to ensure the file has the right permissions to run.</p>
 
-<p><code>
+<p><code class="highlighter-rouge">
  chmod +x .bower-postinstall.sh
 </code></p>
 </description>
@@ -589,12 +1026,12 @@ apt-get install libqtcore4 libqtgui4 libqt4-network libusb-1.0-0 libprotobuf7 ca
 
 <figure class="highlight"><pre><code class="language-sh" data-lang="sh">sh ./install_hyperion.sh</code></pre></figure>
 
-<p>To get it working with Lightpack, you’ll want to edit the default hyperion config file located at <code>/etc/hyperion.config.json</code> and change the <strong>type</strong> to “Lightpack”.</p>
+<p>To get it working with Lightpack, you’ll want to edit the default hyperion config file located at <code class="highlighter-rouge">/etc/hyperion.config.json</code> and change the <strong>type</strong> to “Lightpack”.</p>
 
 <figure class="highlight"><pre><code class="language-sh" data-lang="sh">nano /etc/hyperion.config.json
 
- <span class="s2">&quot;type&quot;</span>       : <span class="s2">&quot;lightpack&quot;</span>,
- <span class="s2">&quot;output&quot;</span>     : “<span class="err">&quot;</span>,</code></pre></figure>
+ <span class="s2">"type"</span>       : <span class="s2">"lightpack"</span>,
+ <span class="s2">"output"</span>     : “<span class="s2">",</span></code></pre></figure>
 
 <p>Next restart the server with the following command. If all goes well, you should see your Lightpack light up with rainbow colours, before mimicking the colours of your screen.</p>
 
@@ -715,7 +1152,7 @@ nmap -v -sT localhost</code></pre></figure>
 
 <p>There’s a chance you might be having various issues with homebrew after upgrading to OS X Mavericks. The root cause of the issue is a conflict with Mountain Lion Command Line Tools and the ones provided by Mavericks.</p>
 
-<p>There is an simple solution to this. By running <code>xcode-select</code> (a tool that changes the path of the current active developer directory) it will fix the issue.</p>
+<p>There is an simple solution to this. By running <code class="highlighter-rouge">xcode-select</code> (a tool that changes the path of the current active developer directory) it will fix the issue.</p>
 
 <p>Open up the terminal and run:</p>
 
@@ -737,12 +1174,12 @@ nmap -v -sT localhost</code></pre></figure>
 
 <!--more-->
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">apple-gcc42 is not available in PATH
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">apple-gcc42 is not available <span class="k">in </span>PATH
 
-Error running <span class="s1">&#39;env GEM_PATH=/Users/KingScooty/.rvm/gems/ruby-2.0.0-p0:/Users/KingScooty/.rvm/gems/ruby-2.0.0-p0@global:/Users/KingScooty/.rvm/gems/ruby-2.0.0-p0:/Users/KingScooty/.rvm/gems/ruby-2.0.0-p0@global GEM_HOME=/Users/KingScooty/.rvm/gems/ruby-2.0.0-p0 /Users/KingScooty/.rvm/rubies/ruby-2.0.0-p0/bin/ruby /Users/KingScooty/.rvm/src/rubygems-2.0.2/setup.rb&#39;</span>, please <span class="nb">read</span> /Users/KingScooty/.rvm/log/ruby-2.0.0-p0/rubygems.install.log
+Error running <span class="s1">'env GEM_PATH=/Users/KingScooty/.rvm/gems/ruby-2.0.0-p0:/Users/KingScooty/.rvm/gems/ruby-2.0.0-p0@global:/Users/KingScooty/.rvm/gems/ruby-2.0.0-p0:/Users/KingScooty/.rvm/gems/ruby-2.0.0-p0@global GEM_HOME=/Users/KingScooty/.rvm/gems/ruby-2.0.0-p0 /Users/KingScooty/.rvm/rubies/ruby-2.0.0-p0/bin/ruby /Users/KingScooty/.rvm/src/rubygems-2.0.2/setup.rb'</span>, please <span class="nb">read</span> /Users/KingScooty/.rvm/log/ruby-2.0.0-p0/rubygems.install.log
 
- ERROR:  Could not find a valid gem <span class="s1">&#39;sass&#39;</span> <span class="o">(</span>&gt;<span class="o">=</span> 0<span class="o">)</span>, here is why:
-      Unable to download data from https://rubygems.org/ - SSL_connect <span class="nv">returned</span><span class="o">=</span><span class="m">1</span> <span class="nv">errno</span><span class="o">=</span><span class="m">0</span>      <span class="nv">state</span><span class="o">=</span>SSLv3 <span class="nb">read </span>server key exchange B: bad ecpoint <span class="o">(</span>https://rubygems.org/latest_specs.4.8.gz<span class="o">)</span></code></pre></figure>
+ ERROR:  Could not find a valid gem <span class="s1">'sass'</span> <span class="o">(</span>&gt;<span class="o">=</span> 0<span class="o">)</span>, here is why:
+      Unable to download data from https://rubygems.org/ - SSL_connect <span class="nv">returned</span><span class="o">=</span>1 <span class="nv">errno</span><span class="o">=</span>0      <span class="nv">state</span><span class="o">=</span>SSLv3 <span class="nb">read </span>server key exchange B: bad ecpoint <span class="o">(</span>https://rubygems.org/latest_specs.4.8.gz<span class="o">)</span></code></pre></figure>
 
 <p>The following should get you up and running with Ruby 2.0.0 in less than 5minutes!</p>
 
@@ -800,13 +1237,13 @@ rvm install 2.0.0 --with-gcc<span class="o">=</span>gcc-4.2</code></pre></figure
 
 <p>There’s a few hidden settings for altering the caret style in Sublime Text 2. The default is <strong>blink</strong>, but we can make it gently fade in and out by entering the following into your config file (CMD + ,):</p>
 
-<p><code>
+<p><code class="highlighter-rouge">
 "caret_style": "phase"
 </code></p>
 
 <p>There’s also a setting for making the caret wider, this is quite a useful feature when taking screenshots.</p>
 
-<p><code>
+<p><code class="highlighter-rouge">
 "caret_style": "wide"
 </code></p>
 
@@ -814,7 +1251,7 @@ rvm install 2.0.0 --with-gcc<span class="o">=</span>gcc-4.2</code></pre></figure
 
 <p>I’m a little surprised Sublime Text doesn’t enable this one by default – as i’m always losing my current position in a file when switching files – but nevertheless, to highlight the current line, enter the following into your config file:</p>
 
-<p><code>
+<p><code class="highlighter-rouge">
 "highlight_line": true
 </code></p>
 
@@ -824,7 +1261,7 @@ rvm install 2.0.0 --with-gcc<span class="o">=</span>gcc-4.2</code></pre></figure
 
 <p>To have the gutter arrows permanently visible, enter the following into your config file:</p>
 
-<p><code>
+<p><code class="highlighter-rouge">
 "fade_fold_buttons": false
 </code></p>
 
@@ -832,7 +1269,7 @@ rvm install 2.0.0 --with-gcc<span class="o">=</span>gcc-4.2</code></pre></figure
 
 <p>This is another visual cue that should be enabled by default. I find navigating the sidebar <strong>much</strong> easier when the folders are bold.</p>
 
-<p><code>
+<p><code class="highlighter-rouge">
 "bold_folder_labels": true
 </code></p>
 
@@ -1015,65 +1452,65 @@ Collections</li>
 
 <p>Useful for injecting content into a base template that contains default elements used site-wide like, header and footer.</p>
 
-<p><code>important hook for header.
+<p><code class="highlighter-rouge">important hook for header.
 </code> injects content into base layout.</p>
 
 <h2 id="liquid-templating-engine">Liquid Templating Engine</h2>
 
 <h4 id="output">Output</h4>
 
-<figure class="highlight"><pre><code class="language-django" data-lang="django"><span class="cp">{{</span> <span class="nv">product.title</span> <span class="cp">}}</span><span class="x"></span>
-<span class="cp">{{</span> <span class="nv">product.price</span> <span class="cp">}}</span><span class="x"></span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-django" data-lang="django">{{ product.title }}
+{{ product.price }}</code></pre></figure>
 
 <h4 id="filters">Filters</h4>
 
 <p><em>What goes in at the beginning, comes out altered at the end.</em></p>
 
-<figure class="highlight"><pre><code class="language-django" data-lang="django"><span class="cp">{{</span> <span class="nv">product.title</span> <span class="o">|</span> <span class="nf">upcase</span> <span class="cp">}}</span><span class="x"></span>
-<span class="x">//Comes out as a string, turned into uppercase.</span>
+<figure class="highlight"><pre><code class="language-django" data-lang="django">{{ product.title | upcase }}
+//Comes out as a string, turned into uppercase.
 
-<span class="cp">{{</span> <span class="s1">&#39;logo.png&#39;</span> <span class="o">|</span> <span class="nf">asset_url</span> <span class="o">|</span> <span class="nf">img_tag</span><span class="o">:</span> <span class="s1">&#39;Site Logo&#39;</span> <span class="cp">}}</span><span class="x"></span>
-<span class="cp">{{</span> <span class="s1">&#39;style.css&#39;</span> <span class="o">|</span> <span class="nf">asset_url</span> <span class="o">|</span> <span class="nf">stylesheet_tag</span> <span class="cp">}}</span><span class="x"></span></code></pre></figure>
+{{ 'logo.png' | asset_url | img_tag: 'Site Logo' }}
+{{ 'style.css' | asset_url | stylesheet_tag }}</code></pre></figure>
 
 <h4 id="logic">Logic</h4>
 
-<figure class="highlight"><pre><code class="language-django" data-lang="django"><span class="cp">{%</span> <span class="k">if</span> <span class="nv">product.available</span> <span class="cp">%}</span><span class="x"></span>
-<span class="x">Show Add to cart button here</span>
-<span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span><span class="x"></span>
-<span class="x">Display message about when the product will be next available</span>
-<span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
+<figure class="highlight"><pre><code class="language-django" data-lang="django">{% if product.available %}
+Show Add to cart button here
+{% else %}
+Display message about when the product will be next available
+{% endif %}
 
-<span class="cp">{%</span> <span class="k">cycle</span> <span class="s1">&#39;one&#39;</span><span class="o">,</span> <span class="s1">&#39;two&#39;</span> <span class="cp">%}</span><span class="x"></span>
-<span class="cp">{%</span> <span class="k">cycle</span> <span class="s1">&#39;one&#39;</span><span class="o">,</span> <span class="s1">&#39;two&#39;</span> <span class="cp">%}</span><span class="x"></span>
-<span class="cp">{%</span> <span class="k">cycle</span> <span class="s1">&#39;one&#39;</span><span class="o">,</span> <span class="s1">&#39;two&#39;</span> <span class="cp">%}</span><span class="x"></span>
+{% cycle 'one', 'two' %}
+{% cycle 'one', 'two' %}
+{% cycle 'one', 'two' %}
 
-<span class="x">// one</span>
-<span class="x">// two</span>
-<span class="x">// one</span>
+// one
+// two
+// one
 
-<span class="x">// Operators == != &gt; &lt; &gt;= &lt;= or and</span>
+// Operators == != &gt; &lt; &gt;= &lt;= or and
 
-<span class="cp">{%</span> <span class="k">case</span> <span class="nv">handle</span> <span class="cp">%}</span><span class="x"></span>
-<span class="cp">{%</span> <span class="k">when</span> <span class="s1">&#39;cake&#39;</span> <span class="cp">%}</span><span class="x"></span>
-<span class="x">This is a cake</span>
-<span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span><span class="x"></span>
-<span class="x">This is not a cake</span>
-<span class="cp">{%</span> <span class="k">endcase</span> <span class="cp">%}</span><span class="x"></span></code></pre></figure>
+{% case handle %}
+{% when 'cake' %}
+This is a cake
+{% else %}
+This is not a cake
+{% endcase %}</code></pre></figure>
 
 <h4 id="loops">Loops</h4>
 
-<figure class="highlight"><pre><code class="language-django" data-lang="django"><span class="cp">{%</span> <span class="k">for</span> <span class="nv">image</span> <span class="k">in</span> <span class="nv">product.images</span> <span class="cp">%}</span><span class="x"></span>
+<figure class="highlight"><pre><code class="language-django" data-lang="django">{% for image in product.images %}
 
-<span class="cp">{%</span> <span class="k">if</span> <span class="nb">forloop</span><span class="nv">.first</span> <span class="cp">%}</span><span class="x"></span>
+{% if forloop.first %}
 
-<span class="x">//Large first image.</span>
+//Large first image.
 
-<span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span><span class="x"></span>
+{% else %}
 
-<span class="x">//Small images for remaining items.</span>
+//Small images for remaining items.
 
-<span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
-<span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span><span class="x"></span></code></pre></figure>
+{% endif %}
+{% endfor %}</code></pre></figure>
 
 <h2 id="templates">Templates</h2>
 
@@ -1083,57 +1520,57 @@ Collections</li>
 
 <h4 id="collection-pagination">Collection pagination</h4>
 
-<figure class="highlight"><pre><code class="language-django" data-lang="django"><span class="cp">{%</span> <span class="k">paginate</span> <span class="nv">collection.products</span> <span class="nv">by</span> <span class="m">12</span> <span class="cp">%}</span><span class="x"></span>
+<figure class="highlight"><pre><code class="language-django" data-lang="django">{% paginate collection.products by 12 %}
 
-<span class="cp">{%</span> <span class="k">if</span> <span class="nv">collection.products.size</span> <span class="o">==</span> <span class="m">0</span> <span class="cp">%}</span><span class="x"></span>
+{% if collection.products.size == 0 %}
 
-<span class="x">	&lt;h1&gt;No products, baby!&lt;/h1&gt;</span>
+	&lt;h1&gt;No products, baby!&lt;/h1&gt;
 
-<span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span><span class="x"></span>
+{% else %}
 
-<span class="x">//Show products</span>
+//Show products
 
-<span class="cp">{%</span> <span class="k">if</span> <span class="nv">paginate.pages</span> <span class="o">&gt;</span> <span class="m">1</span> <span class="cp">%}</span><span class="x"></span>
+{% if paginate.pages &gt; 1 %}
 
-<span class="x">	</span><span class="cp">{{</span> <span class="nv">paginate</span> <span class="o">|</span> <span class="nf">default_pagination</span> <span class="cp">}}</span><span class="x"></span>
+	{{ paginate | default_pagination }}
 
-<span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span></code></pre></figure>
+{% endif %}</code></pre></figure>
 
 <h4 id="feature-collections">Feature Collections</h4>
 
 <p>Show products on homepage:</p>
 
-<figure class="highlight"><pre><code class="language-django" data-lang="django"><span class="cp">{%</span> <span class="k">for</span> <span class="nv">product</span> <span class="k">in</span> <span class="nv">collections.frontpage.products</span> <span class="nv">limit</span><span class="o">:</span><span class="m">3</span> <span class="cp">%}</span><span class="x"></span>
-<span class="x">	//Show some products</span>
-<span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span><span class="x"></span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-django" data-lang="django">{% for product in collections.frontpage.products limit:3 %}
+	//Show some products
+{% endfor %}</code></pre></figure>
 
 <p>Special offers:</p>
 
-<figure class="highlight"><pre><code class="language-django" data-lang="django"><span class="cp">{%</span> <span class="k">assign</span> <span class="nv">article</span> <span class="o">=</span> <span class="nv">pages.frontpage</span> <span class="cp">%}</span><span class="x"> //Assign variable by grabbing data from a page</span>
-<span class="cp">{%</span> <span class="k">if</span> <span class="nv">article.content</span> <span class="p">!</span><span class="o">=</span> <span class="s1">&#39;&#39;</span> <span class="cp">%}</span><span class="x"></span>
-<span class="x">	//Show some front page articles by injecting page data</span>
-<span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-django" data-lang="django">{% assign article = pages.frontpage %} //Assign variable by grabbing data from a page
+{% if article.content != '' %}
+	//Show some front page articles by injecting page data
+{% endif %}</code></pre></figure>
 
 <h4 id="theme-settings">Theme Settings</h4>
 
 <p>Done by assiging variables to to name parameter on markup.</p>
 
-<p><code>name="text_color"</code></p>
+<p><code class="highlighter-rouge">name="text_color"</code></p>
 
 <h4 id="cssliquid---dynamic-css">CSS.liquid - Dynamic CSS</h4>
 
-<figure class="highlight"><pre><code class="language-django" data-lang="django"><span class="x">body {</span>
-<span class="x">	color: </span><span class="cp">{{</span> <span class="nv">settings.text_color</span> <span class="cp">}}</span><span class="x">;</span>
-<span class="x">	background-color: </span><span class="cp">{{</span> <span class="nv">settings.bg_color</span> <span class="cp">}}</span><span class="x">;</span>
-<span class="x">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-django" data-lang="django">body {
+	color: {{ settings.text_color }};
+	background-color: {{ settings.bg_color }};
+}</code></pre></figure>
 
 <h4 id="alternate-layouts">Alternate Layouts</h4>
 
-<figure class="highlight"><pre><code class="language-django" data-lang="django"><span class="cp">{%</span> <span class="k">layout</span> <span class="nv">bacon.liquid</span> <span class="cp">%}</span><span class="x"></span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-django" data-lang="django">{% layout bacon.liquid %}</code></pre></figure>
 
 <h4 id="cartjs---cart-json-for-sweet-js-customisation">Cart.js - cart JSON for sweet JS customisation</h4>
 
-<p>Going to <code>/cart.js</code> on a Shopify front end will give you access to a JSON file of the clients cart - nice for JavaScript dev customisation.</p>
+<p>Going to <code class="highlighter-rouge">/cart.js</code> on a Shopify front end will give you access to a JSON file of the clients cart - nice for JavaScript dev customisation.</p>
 
 <h4 id="alternate-add-to-cart-methods">Alternate “Add to Cart” methods</h4>
 
@@ -1167,7 +1604,7 @@ Collections</li>
 
 <p>Installation of the Sublime Text 2 Package Manager is done through the Sublime Text console. This is accessed via the <strong>ctrl+`</strong> shortcut. Once open, paste the following command into the console:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">import urllib2,os<span class="p">;</span> <span class="nv">pf</span><span class="o">=</span><span class="s1">&#39;Package Control.sublime-package&#39;</span><span class="p">;</span> <span class="nv">ipp</span><span class="o">=</span>sublime.installed_packages_path<span class="o">()</span><span class="p">;</span> os.makedirs<span class="o">(</span>ipp<span class="o">)</span> <span class="k">if</span> not os.path.exists<span class="o">(</span>ipp<span class="o">)</span> <span class="k">else</span> None<span class="p">;</span> urllib2.install_opener<span class="o">(</span>urllib2.build_opener<span class="o">(</span>urllib2.ProxyHandler<span class="o">()))</span><span class="p">;</span> open<span class="o">(</span>os.path.join<span class="o">(</span>ipp,pf<span class="o">)</span>,<span class="s1">&#39;wb&#39;</span><span class="o">)</span>.write<span class="o">(</span>urllib2.urlopen<span class="o">(</span><span class="s1">&#39;http://sublime.wbond.net/&#39;</span>+pf.replace<span class="o">(</span><span class="s1">&#39; &#39;</span>,<span class="s1">&#39;%20&#39;</span><span class="o">))</span>.read<span class="o">())</span><span class="p">;</span> print <span class="s1">&#39;Please restart Sublime Text to finish installation&#39;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">import urllib2,os; <span class="nv">pf</span><span class="o">=</span><span class="s1">'Package Control.sublime-package'</span>; <span class="nv">ipp</span><span class="o">=</span>sublime.installed_packages_path<span class="o">()</span>; os.makedirs<span class="o">(</span>ipp<span class="o">)</span> <span class="k">if </span>not os.path.exists<span class="o">(</span>ipp<span class="o">)</span> <span class="k">else </span>None; urllib2.install_opener<span class="o">(</span>urllib2.build_opener<span class="o">(</span>urllib2.ProxyHandler<span class="o">()))</span>; open<span class="o">(</span>os.path.join<span class="o">(</span>ipp,pf<span class="o">)</span>,<span class="s1">'wb'</span><span class="o">)</span>.write<span class="o">(</span>urllib2.urlopen<span class="o">(</span><span class="s1">'http://sublime.wbond.net/'</span>+pf.replace<span class="o">(</span><span class="s1">' '</span>,<span class="s1">'%20'</span><span class="o">))</span>.read<span class="o">())</span>; print <span class="s1">'Please restart Sublime Text to finish installation'</span></code></pre></figure>
 
 <h2 id="installing-a-package">Installing a package</h2>
 
@@ -1175,11 +1612,11 @@ Collections</li>
 
 <h3 id="less-syntax-highlighter">LESS syntax highlighter</h3>
 
-<p>After you have installed Package Control, restart Sublime Text 2 and bring up the Command Palette (<code>Command+Shift+p</code> on OS X, <code>Control+Shift+p</code> on Linux/Windows). Select Package Control: Install Package; wait while Package Control fetches the latest package list; type in LESS when the list appears, then hit enter to install.</p>
+<p>After you have installed Package Control, restart Sublime Text 2 and bring up the Command Palette (<code class="highlighter-rouge">Command+Shift+p</code> on OS X, <code class="highlighter-rouge">Control+Shift+p</code> on Linux/Windows). Select Package Control: Install Package; wait while Package Control fetches the latest package list; type in LESS when the list appears, then hit enter to install.</p>
 
 <h3 id="sublime-text-themes--colour-schemes">Sublime Text Themes / Colour Schemes</h3>
 
-<p>Bring up the Command Palette again (<code>Command+Shift+p</code> <em>or</em> <code>Control+Shift+p</code>) and goto Install Package. Search for <strong>Dayle Rees Color Schemes</strong> and hit enter to install.</p>
+<p>Bring up the Command Palette again (<code class="highlighter-rouge">Command+Shift+p</code> <em>or</em> <code class="highlighter-rouge">Control+Shift+p</code>) and goto Install Package. Search for <strong>Dayle Rees Color Schemes</strong> and hit enter to install.</p>
 
 <p>Goto <strong>Preferences -&gt; Color Scheme</strong> to select your new colour scheme.</p>
 
@@ -1235,7 +1672,7 @@ Collections</li>
 
 <p>To setup the command line functionality, type the following into the terminal.</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo ln -s <span class="s2">&quot;/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl&quot;</span> /usr/bin/subl</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo ln -s <span class="s2">"/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl"</span> /usr/bin/subl</code></pre></figure>
 
 <hr />
 
@@ -1265,9 +1702,9 @@ Collections</li>
 
 <h3 id="installing-homebrew">1.2 Installing Homebrew:</h3>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">ruby -e <span class="s2">&quot;$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)&quot;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">ruby -e <span class="s2">"</span><span class="k">$(</span>curl -fsSL https://raw.github.com/mxcl/homebrew/go<span class="k">)</span><span class="s2">"</span></code></pre></figure>
 
-<p>The script installs Homebrew to <code>/usr/local</code> so that you don’t need sudo when you brew install.</p>
+<p>The script installs Homebrew to <code class="highlighter-rouge">/usr/local</code> so that you don’t need sudo when you brew install.</p>
 
 <p>It’s bad practice to install packages using sudo.</p>
 
@@ -1281,11 +1718,11 @@ Collections</li>
 
 <h3 id="changing-ownership-of-usrlocal">1.3 Changing ownership of usr/local:</h3>
 
-<p>This step isn’t required for brew, but since we’re on the subject of sudo, i recommend changing ownership of <code>/usr/local</code> from <code>root</code> to <code>$user</code>. This will benefit you when using node’s package manager, and will mean you won’t have to use sudo when installing into <code>/usr/local</code>:</p>
+<p>This step isn’t required for brew, but since we’re on the subject of sudo, i recommend changing ownership of <code class="highlighter-rouge">/usr/local</code> from <code class="highlighter-rouge">root</code> to <code class="highlighter-rouge">$user</code>. This will benefit you when using node’s package manager, and will mean you won’t have to use sudo when installing into <code class="highlighter-rouge">/usr/local</code>:</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo chown -R <span class="nv">$USER</span> /usr/local</code></pre></figure>
 
-<p>There is a massive debate about chown-ing <code>/usr/local</code>, and i agree with <a href="https://gist.github.com/579814#gistcomment-28563">Isaacs comments here</a>.</p>
+<p>There is a massive debate about chown-ing <code class="highlighter-rouge">/usr/local</code>, and i agree with <a href="https://gist.github.com/579814#gistcomment-28563">Isaacs comments here</a>.</p>
 
 <hr />
 
@@ -1295,8 +1732,8 @@ Collections</li>
 
 <p>Next, to setup git. Run the following commands in the Terminal.</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git config --global user.name <span class="s2">&quot;Your Full Name&quot;</span>
-git config --global user.email <span class="s2">&quot;Your Email Address&quot;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git config --global user.name <span class="s2">"Your Full Name"</span>
+git config --global user.email <span class="s2">"Your Email Address"</span></code></pre></figure>
 
 <p>Make sure you use the same email address for Git, GitHub, and Heroku.</p>
 
@@ -1304,7 +1741,7 @@ git config --global user.email <span class="s2">&quot;Your Email Address&quot;</
 
 <h2 id="a-id3a-30-rvm"><a id="3"></a> 3.0 RVM:</h2>
 
-<p>RVM stands for Ruby Version Manager. It’s a command line tool which allows you to easily install, manage, and work with multiple ruby environments from interpreters to sets of gems. It also installs gems to your <code>~/</code> <strong>home</strong> directory, instead of using the global root of your machine.</p>
+<p>RVM stands for Ruby Version Manager. It’s a command line tool which allows you to easily install, manage, and work with multiple ruby environments from interpreters to sets of gems. It also installs gems to your <code class="highlighter-rouge">~/</code> <strong>home</strong> directory, instead of using the global root of your machine.</p>
 
 <h4 id="rvm-helps-improve-security">RVM helps improve security</h4>
 
@@ -1312,11 +1749,11 @@ git config --global user.email <span class="s2">&quot;Your Email Address&quot;</
 
 <h4 id="say-goodbye-to-sudo-gem-installs">Say goodbye to sudo gem installs</h4>
 
-<p>Yep, that’s right! By using RVM, you won’t have to <code>sudo</code> to install gems on your machine.</p>
+<p>Yep, that’s right! By using RVM, you won’t have to <code class="highlighter-rouge">sudo</code> to install gems on your machine.</p>
 
 <h3 id="install-the-stable-release-version">3.1 Install the stable release version:</h3>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">curl -L https://get.rvm.io <span class="p">|</span> bash -s stable</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">curl -L https://get.rvm.io | bash -s stable</code></pre></figure>
 
 <p>Finish the installation by either running the following command, or closing all shell windows.</p>
 
@@ -1324,7 +1761,7 @@ git config --global user.email <span class="s2">&quot;Your Email Address&quot;</
 
 <p><em>Replace <strong>username</strong> with your Mac username.</em></p>
 
-<p>Before installing the latest version of ruby with rvm, we need to install <code>libksba</code>.</p>
+<p>Before installing the latest version of ruby with rvm, we need to install <code class="highlighter-rouge">libksba</code>.</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">brew install libksba</code></pre></figure>
 
@@ -1351,7 +1788,7 @@ gem install compass</code></pre></figure>
 
 <p>Next time you run <strong>npm install</strong> you may come across the following error:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">xcode-select: Error: No Xcode is selected. Use xcode-select -switch &lt;path-to-xcode&gt;, or see the xcode-select manpage <span class="o">(</span>man xcode-select<span class="o">)</span> <span class="k">for</span> further information.</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">xcode-select: Error: No Xcode is selected. Use xcode-select -switch &lt;path-to-xcode&gt;, or see the xcode-select manpage <span class="o">(</span>man xcode-select<span class="o">)</span> <span class="k">for </span>further information.</code></pre></figure>
 
 <p>To fix this, all you need to do is:</p>
 
@@ -1371,15 +1808,15 @@ gem install compass</code></pre></figure>
 
 <p>I actually had a few issues at this point with my new MacBook air and had to roll back the install of MySQL in order to fix a few issues…</p>
 
-<p>I ran <code>brew doctor</code> to discover that <code>/usr/bin</code> was ahead of <code>/usr/local/bin</code> in my $PATH.</p>
+<p>I ran <code class="highlighter-rouge">brew doctor</code> to discover that <code class="highlighter-rouge">/usr/bin</code> was ahead of <code class="highlighter-rouge">/usr/local/bin</code> in my $PATH.</p>
 
-<p>In order to get round this, i needed to edit <code>/etc/paths</code> to fix the order.</p>
+<p>In order to get round this, i needed to edit <code class="highlighter-rouge">/etc/paths</code> to fix the order.</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">subl /etc/paths</code></pre></figure>
 
 <p><em>This isn’t a file i recommend playing with often. However, i’ve mentioned it here, as it might come in handy to people needing to do a little DIY machine debugging.</em></p>
 
-<p>Opening a new terminal window and running <code>brew doctor</code> again should confirm this.</p>
+<p>Opening a new terminal window and running <code class="highlighter-rouge">brew doctor</code> again should confirm this.</p>
 
 <hr />
 
@@ -1390,7 +1827,7 @@ gem install compass</code></pre></figure>
 <p>You’re then requried to setup a few things. Run the following commands:</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">unset </span>TMPDIR
-mysql_install_db --verbose --user<span class="o">=</span><span class="sb">`</span>whoami<span class="sb">`</span> --basedir<span class="o">=</span><span class="s2">&quot;$(brew --prefix mysql)&quot;</span> --datadir<span class="o">=</span>/usr/local/var/mysql --tmpdir<span class="o">=</span>/tmp</code></pre></figure>
+mysql_install_db --verbose --user<span class="o">=</span><span class="sb">`</span>whoami<span class="sb">`</span> --basedir<span class="o">=</span><span class="s2">"</span><span class="k">$(</span>brew --prefix mysql<span class="k">)</span><span class="s2">"</span> --datadir<span class="o">=</span>/usr/local/var/mysql --tmpdir<span class="o">=</span>/tmp</code></pre></figure>
 
 <p>Followed by the following: <strong><em>(you might also need to restart your machine to fix a conflict with Lion’s copy of MySQL.)</em></strong></p>
 
@@ -1416,21 +1853,21 @@ mysql_install_db --verbose --user<span class="o">=</span><span class="sb">`</spa
 
 <h2 id="a-id7a-70-configuring-apache-and-virtual-hosts"><a id="7"></a> 7.0 Configuring Apache and Virtual Hosts:</h2>
 
-<p>Type the following command in to edit the <code>httpd.conf</code> file in Sublime Text.</p>
+<p>Type the following command in to edit the <code class="highlighter-rouge">httpd.conf</code> file in Sublime Text.</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">subl /etc/apache2/httpd.conf</code></pre></figure>
 
 <h3 id="enable-php5">7.1 Enable PHP5</h3>
 
-<p>Find <code>line 111</code> and un-comment:</p>
+<p>Find <code class="highlighter-rouge">line 111</code> and un-comment:</p>
 
-<figure class="highlight"><pre><code class="language-apacheconf" data-lang="apacheconf"><span class="nb">LoadModule</span> php5_module libexec/apache2/libphp5.so</code></pre></figure>
+<figure class="highlight"><pre><code class="language-apacheconf" data-lang="apacheconf">LoadModule php5_module libexec/apache2/libphp5.so</code></pre></figure>
 
 <h3 id="a-id72a-72-enable-virtual-hosts"><a id="7.2"></a> 7.2 Enable Virtual Hosts</h3>
 
-<p>Find and uncomment the following line. It can be found around <code>line 623</code>.</p>
+<p>Find and uncomment the following line. It can be found around <code class="highlighter-rouge">line 623</code>.</p>
 
-<figure class="highlight"><pre><code class="language-apacheconf" data-lang="apacheconf"><span class="nb">Include</span> <span class="sx">/private/etc/apache2/extra/httpd-vhosts.conf</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-apacheconf" data-lang="apacheconf">Include /private/etc/apache2/extra/httpd-vhosts.conf</code></pre></figure>
 
 <h3 id="creating-a-virtual-hosts-file">7.3 Creating a Virtual Hosts File</h3>
 
@@ -1441,22 +1878,22 @@ subl /etc/apache2/other/vhosts.conf</code></pre></figure>
 
 <p>And enter the following:</p>
 
-<figure class="highlight"><pre><code class="language-apacheconf" data-lang="apacheconf"><span class="c">#</span>
-<span class="c"># Virtual Hosts</span>
-<span class="c">#</span>
-<span class="nb">NameVirtualHost</span> *:80
+<figure class="highlight"><pre><code class="language-apacheconf" data-lang="apacheconf">#
+# Virtual Hosts
+#
+NameVirtualHost *:80
 
-<span class="c">#</span>
-<span class="c"># VirtualHost example:</span>
-<span class="c"># Almost any Apache directive may go into a VirtualHost container.</span>
-<span class="c"># The first VirtualHost section is used for all requests that do not</span>
-<span class="c"># match a ServerName or ServerAlias in any &lt;VirtualHost&gt; block.</span>
-<span class="c">#</span>
-<span class="nt">&lt;VirtualHost</span> <span class="s">*:80</span><span class="nt">&gt;</span>
-    <span class="nb">DocumentRoot</span> <span class="s2">&quot;/Users/USERNAME/Sites/SITENAME&quot;</span>
-    <span class="nb">ServerAlias</span> dev.*.xip.io
-    <span class="nb">ServerName</span> dev.foo
-<span class="nt">&lt;/VirtualHost&gt;</span></code></pre></figure>
+#
+# VirtualHost example:
+# Almost any Apache directive may go into a VirtualHost container.
+# The first VirtualHost section is used for all requests that do not
+# match a ServerName or ServerAlias in any &lt;VirtualHost&gt; block.
+#
+&lt;VirtualHost *:80&gt;
+    DocumentRoot "/Users/USERNAME/Sites/SITENAME"
+    ServerAlias dev.*.xip.io
+    ServerName dev.foo
+&lt;/VirtualHost&gt;</code></pre></figure>
 
 <p>Change <strong>username</strong>, <strong>sitename</strong>, <strong>dev</strong>, and <strong>dev.foo</strong> accordingly, and save the file.</p>
 
@@ -1468,12 +1905,12 @@ subl /etc/apache2/other/vhosts.conf</code></pre></figure>
 
 <p>And enter the following on a new line and save:</p>
 
-<figure class="highlight"><pre><code class="language-apacheconf" data-lang="apacheconf"><span class="c">#servername to match that in the vhosts.conf file</span>
-<span class="err">127</span>.<span class="err">0</span>.<span class="err">0</span>.<span class="err">1</span>   <span class="err">dev</span>.<span class="nb">foo</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-apacheconf" data-lang="apacheconf">#servername to match that in the vhosts.conf file
+127.0.0.1   dev.foo</code></pre></figure>
 
 <h3 id="restart-apache-and-lock-n-load">7.5 Restart Apache, and Lock ‘N’ Load!</h3>
 
-<p>Lastly in <code>System Settings</code> disable and re-enable <code>Web Sharing</code> in the <code>Sharing</code> panel.</p>
+<p>Lastly in <code class="highlighter-rouge">System Settings</code> disable and re-enable <code class="highlighter-rouge">Web Sharing</code> in the <code class="highlighter-rouge">Sharing</code> panel.</p>
 
 <p>Fire up your favourite web browser and enter the servername, you should be pointed to the doc root you entered in your vhosts file!</p>
 
