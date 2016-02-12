@@ -413,4 +413,6 @@ Lovely! Without the build pipeline linting our stylesheets, and prompting for a 
 
 Hopefully by now I've convinced you that linting your stylesheets is a worthwhile investment. Linting is your friend. The investment is cheap, and it protects teams from the technical debt of a poorly written codebase.
 
+Now go, my developer and designer friends!
+
 Henceforth and lint!
