@@ -15,7 +15,8 @@ Table of contents:
 1. [Introduction](#introduction)
     1. [What is linting?](#what-is-linting)
     2. [Why should we lint our stylesheets?](#why-should-we-lint-our-stylesheets)
-2. [Introducing Stylelint](#introducing-stylelint)
+    3. [Introducing Stylelint](#introducing-stylelint)
+2. [Setup](#setup)
     1. [How to lint your CSS](#how-to-lint-your-css)
     2. [How to lint your Sass](#how-to-lint-your-sass)
 3. [Extending Stylelint with plugins](#extending-stylelint-with-plugins)
@@ -38,7 +39,7 @@ There are many reasons to lint stylesheets. It keeps consistency in the codebase
 Let's take a look at a couple of examples.
 
 ~~~css
-.no-space {
+.no-space-after-colon {
     display:block;
 }           ⬆
 
@@ -79,21 +80,24 @@ There are a fair few CSS3 rules that don't need to be prefixed anymore in order 
 
 Duplicate rules are a common form of erroneous code. What if the developer meant for both opacity *and* background-colour to be transitioned? In the case above, the opacity transition is lost. Linting would highlight this error.
 
-Convinced yet? If you are, great! Let's get you setup in the next section. If you're not, keep reading, and I'm sure I can convince you.
+Convinced yet? If you're not, keep reading...
 
 
-##Introducing Stylelint
+###Introducing Stylelint
 
-[Stylelint](http://stylelint.io/){:target="\_blank"} is the latest and greatest in CSS linting; what's more, because it's powered by JavaScript instead of Ruby, it's much, *much* faster than [scss-lint](https://github.com/brigade/scss-lint){:target="\_blank"}.
+[Stylelint](http://stylelint.io/){:target="\_blank"} is a super extendable, and unopinionated CSS linter written in JavaScript. It's the latest and greatest in CSS linting. It supports the latest CSS syntax, understands *CSS-like* syntaxes, and is extendable with plugins. What's more, because it's powered by JavaScript instead of Ruby, it's much, *much* faster than [scss-lint](https://github.com/brigade/scss-lint){:target="\_blank"}.
 
 > Stylelint is a mighty, modern CSS linter that helps you enforce consistent conventions and avoid errors in your stylesheets.
 
-It can handle both Sass and vanilla CSS linting, thanks to its [PostCSS](https://github.com/postcss/postcss){:target="\_blank"} underpinnings, and this is what makes it super cool.
+The linter is powered by [PostCSS](https://github.com/postcss/postcss){:target="\_blank"}, so it understands any syntax that PostCSS can parse, including SCSS.
 
 > PostCSS is a tool for transforming styles with JS plugins. These plugins can lint your CSS, support variables and mixins, transpile future CSS syntax, inline images, and more.
 
 The mantra of PostCSS is do one thing, and one thing well; so it's all about plugins. There's currently more than 200 plugins available for PostCSS, and because they're all written in JavaScript, they run *rapid fast*!
 
+PostCSS and Stylelint are what we'll be using to lint our stylesheets in the next section.
+
+##Setup
 
 ###How to lint your CSS
 
