@@ -1,7 +1,6 @@
 ---
 title: How to lint your Sass/CSS properly with Stylelint
 subtitle: What is linting? Why should we lint our stylesheets? Linting helps reduce silly errors in codebases, and improves coding quality by enforcing good coding rules, and practices.
-draft: true
 ---
 
 Stylesheet linting. Not many people do it. Many more people should---especially diverse teams that have a lot of hands touching the codebase.
