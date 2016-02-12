@@ -99,15 +99,52 @@ PostCSS and Stylelint are what we'll be using to lint our stylesheets in the nex
 
 ##Setup
 
+###Stylelint config files
+
+The beauty of Stylelint is how unopinionated it is. You build your own ruleset from the ground up, so it can be as opinionated or unopinionated as you choose---you don't have to
+
+The [Stylelint rule documentation](https://github.com/stylelint/stylelint/blob/master/docs/user-guide/rules.md){:target="\_blank"} is a good primer for getting started. They also provide a [stylelint standard config file](https://github.com/stylelint/stylelint-config-standard/blob/master/index.js){:target="\_blank"} for you to use in your projects that is rather well thought out.
+
+For us getting started though, we're going to use a nice and compact config file that covers the bare essentials. Personally, I think it's a better starting config than the one Stylelint provide, as it gives you space to build on top of it, rather than having to disable the rules you don't want.
+
+It looks something like this:
+
+~~~javascript
+"rules": {
+  "block-no-empty": true,
+  "color-no-invalid-hex": true,
+  "declaration-colon-space-after": "always",
+  "declaration-colon-space-before": "never",
+  "function-comma-space-after": "always",
+  "function-url-quotes": "double",
+  "media-feature-colon-space-after": "always",
+  "media-feature-colon-space-before": "never",
+  "media-feature-name-no-vendor-prefix": true,
+  "max-empty-lines": 5,
+  "number-leading-zero": "never",
+  "number-no-trailing-zeros": true,
+  "property-no-vendor-prefix": true,
+  "rule-no-duplicate-properties": true,
+  "declaration-block-no-single-line": true,
+  "rule-trailing-semicolon": "always",
+  "selector-list-comma-newline-after": "always-multi-line",
+  "selector-no-id": true,
+  "string-quotes": "double",
+  "value-no-vendor-prefix": true
+}
+~~~
+
+I recommend reading through the [Stylelint rule documentation](https://github.com/stylelint/stylelint/blob/master/docs/user-guide/rules.md){:target="\_blank"} and building on this to create your ideal linting configuration. For now, let's get into setting up our pipeline using these rules.
+
 ###How to lint your CSS
 
-Let's start with linting vanilla CSS stylesheets. You'll need to install `gulp-postcss`, `postcss-reporter`, and `stylelint`. Let's do that now.
+Let's start with linting vanilla CSS stylesheets. You'll be amazed at how easy it is to setup! The tools you'll need to install `gulp-postcss`, `postcss-reporter`, and `stylelint`. Let's do that now.
 
 ~~~sh
 npm install gulp-postcss postcss-reporter stylelint --save-dev
 ~~~
 
-The
+And this is the gulpfile to wire it all together:
 
 ~~~javascript
 var gulp        = require('gulp');
@@ -146,6 +183,7 @@ gulp.task("css-lint", function() {
 
   var processors = [
     stylelint(stylelintConfig),
+    // Pretty reporting config
     reporter({
       clearMessages: true,
       throwError: true
@@ -153,12 +191,19 @@ gulp.task("css-lint", function() {
   ];
 
   return gulp.src(
+      // Stylesheet source:
       ['app/assets/css/**/*.css',
+      // Ignore linting vendor assets:
+      // (Useful if you have bower components)
       '!app/assets/css/vendor/**/*.css']
     )
     .pipe(postcss(processors));
 });
 ~~~
+
+How easy was that?! I make that 50 lines of code---including linting rules and imports. Make sure to update the source locations to match the ones in your project!
+
+What's even more amazing, is only a single line of code needs to be modified in order to enable Sass support! Let's cover that now...
 
 ###How to lint your Sass
 
@@ -179,7 +224,7 @@ npm install postcss-scss --save-dev
 });
 ~~~
 
-Here's the setup in full:
+Here's the gulpfile in full for linting Sass files:
 
 ~~~sh
 npm install gulp-postcss postcss-reporter stylelint postcss-scss --save-dev
@@ -231,6 +276,8 @@ gulp.task("scss-lint", function() {
 
   return gulp.src(
       ['app/assets/css/**/*.css',
+      // Ignore linting vendor assets
+      // Useful if you have bower components
       '!app/assets/css/vendor/**/*.css']
     )
     .pipe(postcss(processors), {syntax: syntax_scss});
@@ -286,19 +333,21 @@ Selector nesting is a necessary evil when developing using Sass; it's really use
 This the CSS that the above rule compiles to:
 
 ~~~css
-/* What the heck is this?! */
 .component:hover .component_child li a:hover {}
+/* What the heck is this?! */
 ~~~
 
 If I worked on a team, and someone contributed something like this to the codebase, I'd be having serious, *serious* words.
 
 The next dev that comes along and wants to override this cascading rule is going to have a tough time. With that in mind, I would advise against using nesting at all costs---unless you know what you're doing.
 
-Lucky for us, there's a plugin for this! With Stylelint, we can set a max nesting limit to help swat away any nesting abuse.
+Lucky for us, there's a plugin for this! With Stylelint, we can install a plugin aptly named `stylelint-statement-max-nesting-depth`, and set a max nesting limit to help swat away any nesting abuse.
 
 ~~~sh
 npm install stylelint-statement-max-nesting-depth --save-dev
 ~~~
+
+And by simply adding the following to the scss-lint task in our gulpfile, it's wired up:
 
 ~~~javascript
 gulp.task("scss-lint", function() {
@@ -318,7 +367,7 @@ gulp.task("scss-lint", function() {
 
 For teams that know what they're doing, i'd set the max limit to **3**. *(Set it lower for inexperienced teams)*.
 
-With a max nesting limit set to 3, Stylelint would prompt the project manager to refactor the above code.
+With a max nesting limit set to 3, Stylelint would prompt the project manager to refactor the above code. The project manager goes away, has a little think, and comes back with this:
 
 ~~~sass
 .component:hover {
@@ -334,7 +383,7 @@ With a max nesting limit set to 3, Stylelint would prompt the project manager to
 }
 ~~~
 
-This refactored version is much more readable, but still unacceptable. There is absolutely no need for any of this nesting! The linter knows this and forces the project manager to rethink their implementation in order to fix the build.
+This refactored version is much more readable, but still unacceptable. There is still absolutely no need for any of this nesting! The linter knows this and forces the project manager to rethink their implementation in order to fix the build.
 
 ~~~sass
 .component:hover {
@@ -348,7 +397,7 @@ This refactored version is much more readable, but still unacceptable. There is 
 }  
 ~~~
 
-If we set the max nesting limit to 2, the project manager would be forced to think even harder, and add a class to the anchor tag to remove even more nesting.
+Now they're getting somewhere! With a max nesting limit set to 3, this would now be accepted by the linter, and the build would pass. The code above isn't bad, but it could always be better! If we set the max nesting limit to 2, the project manager would be forced to think even harder, and add a class to the anchor tag to remove even more nesting.
 
 ~~~sass
 .component:hover {
@@ -358,7 +407,7 @@ If we set the max nesting limit to 2, the project manager would be forced to thi
 .component__link:hover {}
 ~~~
 
-Lovely! Without the build pipeline linting our stylesheets, and prompting for a refactor, this would never have been caught, and the codebase would gradually degrade in quality.
+Lovely! Without the build pipeline linting our stylesheets, and prompting for a refactor, this type of lazy coding would never have been caught, and the codebase would gradually degrade in quality.
 
 Hopefully by now I've convinced you that linting your stylesheets is a worthwhile investment. Linting is your friend. The investment is cheap, and it protects teams from the technical debt of a poorly written codebase.
 
