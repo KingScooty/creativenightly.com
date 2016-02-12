@@ -284,6 +284,8 @@ gulp.task("scss-lint", function() {
 });
 ~~~
 
+So, *so* easy! And that's it! You can now lint both CSS and Sass files!
+
 ##Extending Stylelint with plugins
 
 Just like PostCSS, Stylelint is extendable via plugins, which is awesome!
