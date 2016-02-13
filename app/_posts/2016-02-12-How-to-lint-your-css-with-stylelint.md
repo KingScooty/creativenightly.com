@@ -313,10 +313,12 @@ Here is the code that the project manager adds to the project:
     box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
 
     .component__child { ⬅
-      li { ⬅
-        a { ⬅
-          &:hover { ⬅
-            text-decoration: underline;
+      ul { ⬅
+        li { ⬅
+          a { ⬅
+            &:hover { ⬅
+              text-decoration: underline;
+            }
           }
         }
       }
@@ -334,7 +336,7 @@ Selector nesting is a necessary evil when developing using Sass; it's really use
 This the CSS that the above rule compiles to:
 
 ~~~css
-.component:hover .component_child li a:hover {}
+.component:hover .component_child ul li a:hover {}
 /* What the heck is this?! */
 ~~~
 
@@ -375,16 +377,18 @@ With a max nesting limit set to 3, Stylelint would prompt the project manager to
   box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
 
   .component__child {
-    li {
-      a:hover {
-        text-decoration: underline;
+    ul {
+      li {
+        a:hover {
+          text-decoration: underline;
+        }
       }
     }
   }  
 }
 ~~~
 
-This refactored version is more readable, but still unacceptable. There is still absolutely no need for any of this nesting! The linter knows this and forces the project manager to rethink their implementation in order to fix the build.
+This refactored version is a little more readable, but still unacceptable. There is still absolutely no need for any of this selector nesting! The linter knows this and forces the project manager to rethink their implementation in order to fix the build.
 
 ~~~sass
 .component:hover {
@@ -398,14 +402,16 @@ This refactored version is more readable, but still unacceptable. There is still
 }  
 ~~~
 
-Now they're getting somewhere! This would now be accepted by the linter, and the build would pass. The code above isn't bad, but it could always be better! If you wanted to be *really* strict, you could turn all nesting---excluding @ rules---off completely. This would really force members of the codebase---including the project manager---to think very carefully about what they're writing.
+Now they're getting somewhere! This would now be accepted by the linter, and the build would pass. The code above isn't bad, but it could always be better! If you wanted to be *really* strict, you could turn all nesting---excluding `@ rules`---off completely. This would really force members of the codebase---including the project manager---to think very carefully about what they're writing.
 
 ~~~sass
 .component:hover {
   box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
-.component__link:hover {}
+.component__link:hover {
+  text-decoration: underline;
+}
 ~~~
 
 Lovely! Without the build pipeline linting our stylesheets, and prompting for a refactor, this type of lazy coding would never have been caught, and the codebase would gradually degrade in quality.
