@@ -1,13 +1,14 @@
-<?xml version="1.0"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xsl:stylesheet [<!ENTITY mdash "&#x2014;">]>
+<feed xmlns="http://www.w3.org/2005/Atom">
   <channel>
     <title></title>
     <link>http://www.creativenightly.com</link>
-    <atom:link href="http://www.creativenightly.com/feed.xml" rel="self" type="application/rss+xml" />
+    <link type="application/atom+xml" href="http://www.creativenightly.com/feed.xml" rel="self"/>
     <description></description>
     <language>en-gb</language>
-    <pubDate>Fri, 12 Feb 2016 21:11:19 +0000</pubDate>
-    <lastBuildDate>Fri, 12 Feb 2016 21:11:19 +0000</lastBuildDate>
+    <pubDate>Sat, 13 Feb 2016 11:02:34 +0000</pubDate>
+    <lastBuildDate>Sat, 13 Feb 2016 11:02:34 +0000</lastBuildDate>
 
     
     
@@ -1934,4 +1935,4 @@ NameVirtualHost *:80
     
 
   </channel>
-</rss>
+</feed>
