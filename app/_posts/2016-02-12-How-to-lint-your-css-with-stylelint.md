@@ -384,7 +384,7 @@ With a max nesting limit set to 3, Stylelint would prompt the project manager to
 }
 ~~~
 
-This refactored version is much more readable, but still unacceptable. There is still absolutely no need for any of this nesting! The linter knows this and forces the project manager to rethink their implementation in order to fix the build.
+This refactored version is more readable, but still unacceptable. There is still absolutely no need for any of this nesting! The linter knows this and forces the project manager to rethink their implementation in order to fix the build.
 
 ~~~sass
 .component:hover {
@@ -398,7 +398,7 @@ This refactored version is much more readable, but still unacceptable. There is 
 }  
 ~~~
 
-Now they're getting somewhere! With a max nesting limit set to 3, this would now be accepted by the linter, and the build would pass. The code above isn't bad, but it could always be better! If we set the max nesting limit to 2, the project manager would be forced to think even harder, and add a class to the anchor tag to remove even more nesting.
+Now they're getting somewhere! This would now be accepted by the linter, and the build would pass. The code above isn't bad, but it could always be better! If you wanted to be *really* strict, you could turn all nesting---excluding @ rules---off completely. This would really force members of the codebase---including the project manager---to think very carefully about what they're writing.
 
 ~~~sass
 .component:hover {
