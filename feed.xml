@@ -5,10 +5,12 @@
     <title></title>
     <link>http://www.creativenightly.com</link>
     <link type="application/atom+xml" href="http://www.creativenightly.com/feed.xml" rel="self"/>
+    <link type="text/html" href="http://www.creativenightly.com" rel="alternate"/>
     <description></description>
     <language>en-gb</language>
-    <pubDate>Sat, 13 Feb 2016 11:02:34 +0000</pubDate>
-    <lastBuildDate>Sat, 13 Feb 2016 11:02:34 +0000</lastBuildDate>
+    <pubDate>Sat, 13 Feb 2016 14:40:02 +0000</pubDate>
+    <lastBuildDate>Sat, 13 Feb 2016 14:40:02 +0000</lastBuildDate>
+    <updated>2016-02-13T14:40:02+00:00</updated>
 
     
     
@@ -413,7 +415,7 @@
 </code></pre>
 </div>
 
-<p>This refactored version is much more readable, but still unacceptable. There is still absolutely no need for any of this nesting! The linter knows this and forces the project manager to rethink their implementation in order to fix the build.</p>
+<p>This refactored version is more readable, but still unacceptable. There is still absolutely no need for any of this nesting! The linter knows this and forces the project manager to rethink their implementation in order to fix the build.</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="nc">.component</span><span class="nd">:hover</span> <span class="err">{</span>
   <span class="nl">box-shadow</span><span class="p">:</span> <span class="m">1px</span> <span class="m">1px</span> <span class="m">5px</span> <span class="m">0px</span> <span class="nf">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="mi">.75</span><span class="p">)</span><span class="err">;</span>
@@ -427,7 +429,7 @@
 </code></pre>
 </div>
 
-<p>Now they’re getting somewhere! With a max nesting limit set to 3, this would now be accepted by the linter, and the build would pass. The code above isn’t bad, but it could always be better! If we set the max nesting limit to 2, the project manager would be forced to think even harder, and add a class to the anchor tag to remove even more nesting.</p>
+<p>Now they’re getting somewhere! This would now be accepted by the linter, and the build would pass. The code above isn’t bad, but it could always be better! If you wanted to be <em>really</em> strict, you could turn all nesting—excluding @ rules—off completely. This would really force members of the codebase—including the project manager—to think very carefully about what they’re writing.</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="nc">.component</span><span class="nd">:hover</span> <span class="err">{</span>
   <span class="nl">box-shadow</span><span class="p">:</span> <span class="m">1px</span> <span class="m">1px</span> <span class="m">5px</span> <span class="m">0px</span> <span class="nf">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="mi">.75</span><span class="p">)</span><span class="err">;</span>
