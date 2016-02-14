@@ -145,60 +145,7 @@ npm install gulp-postcss postcss-reporter stylelint --save-dev
 
 And this is the gulpfile to wire it all together:
 
-~~~javascript
-var gulp        = require('gulp');
-
-var postcss     = require('gulp-postcss');
-var reporter    = require('postcss-reporter');
-var stylelint   = require('stylelint');
-
-gulp.task("css-lint", function() {
-
-  // Stylelint config rules
-  var stylelintConfig = {
-    "rules": {
-      "block-no-empty": true,
-      "color-no-invalid-hex": true,
-      "declaration-colon-space-after": "always",
-      "declaration-colon-space-before": "never",
-      "function-comma-space-after": "always",
-      "function-url-quotes": "double",
-      "media-feature-colon-space-after": "always",
-      "media-feature-colon-space-before": "never",
-      "media-feature-name-no-vendor-prefix": true,
-      "max-empty-lines": 5,
-      "number-leading-zero": "never",
-      "number-no-trailing-zeros": true,
-      "property-no-vendor-prefix": true,
-      "rule-no-duplicate-properties": true,
-      "declaration-block-no-single-line": true,
-      "rule-trailing-semicolon": "always",
-      "selector-list-comma-newline-after": "always-multi-line",
-      "selector-no-id": true,
-      "string-quotes": "double",
-      "value-no-vendor-prefix": true
-    }
-  }
-
-  var processors = [
-    stylelint(stylelintConfig),
-    // Pretty reporting config
-    reporter({
-      clearMessages: true,
-      throwError: true
-    })
-  ];
-
-  return gulp.src(
-      // Stylesheet source:
-      ['app/assets/css/**/*.css',
-      // Ignore linting vendor assets:
-      // (Useful if you have bower components)
-      '!app/assets/css/vendor/**/*.css']
-    )
-    .pipe(postcss(processors));
-});
-~~~
+{% gist 21d6fc030174cd41b2e4 %}
 
 How easy was that?! I make that 50 lines of code---including linting rules and imports. Make sure to update the source locations to match the ones in your project!
 
@@ -219,7 +166,7 @@ npm install postcss-scss --save-dev
       ['app/assets/css/**/*.css',
       '!app/assets/css/vendor/**/*.css']
     )
-    .pipe(postcss(processors), {syntax: syntax_scss});
+    .pipe(postcss(processors), {syntax: syntax_scss}); ⬅
 });
 ~~~
 
@@ -229,61 +176,11 @@ Here's the gulpfile in full for linting Sass files:
 npm install gulp-postcss postcss-reporter stylelint postcss-scss --save-dev
 ~~~
 
-~~~javascript
-var gulp        = require('gulp');
-
-var postcss     = require('gulp-postcss');
-var reporter    = require('postcss-reporter');
-var syntax_scss = require('postcss-scss');
-var stylelint   = require('stylelint');
-
-gulp.task("scss-lint", function() {
-
-  // Stylelint config rules
-  var stylelintConfig = {
-    "rules": {
-      "block-no-empty": true,
-      "color-no-invalid-hex": true,
-      "declaration-colon-space-after": "always",
-      "declaration-colon-space-before": "never",
-      "function-comma-space-after": "always",
-      "function-url-quotes": "double",
-      "media-feature-colon-space-after": "always",
-      "media-feature-colon-space-before": "never",
-      "media-feature-name-no-vendor-prefix": true,
-      "max-empty-lines": 5,
-      "number-leading-zero": "never",
-      "number-no-trailing-zeros": true,
-      "property-no-vendor-prefix": true,
-      "rule-no-duplicate-properties": true,
-      "declaration-block-no-single-line": true,
-      "rule-trailing-semicolon": "always",
-      "selector-list-comma-newline-after": "always-multi-line",
-      "selector-no-id": true,
-      "string-quotes": "double",
-      "value-no-vendor-prefix": true
-    }
-  }
-
-  var processors = [
-    stylelint(stylelintConfig),
-    reporter({
-      clearMessages: true,
-      throwError: true
-    })
-  ];
-
-  return gulp.src(
-      ['app/assets/css/**/*.css',
-      // Ignore linting vendor assets
-      // Useful if you have bower components
-      '!app/assets/css/vendor/**/*.css']
-    )
-    .pipe(postcss(processors), {syntax: syntax_scss});
-});
-~~~
+{% gist fa4aab7852dd30feb573 %}
 
 So, *so* easy! And that's it! You can now lint both CSS and Sass files!
+
+Keep on reading if you want to know about extending Stylelint with plugins, and *why* you'd want to do that, by going through a case study.
 
 ##Extending Stylelint with plugins
 
