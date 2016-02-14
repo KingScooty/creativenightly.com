@@ -8,9 +8,9 @@
     <link type="text/html" href="http://www.creativenightly.com" rel="alternate"/>
     <description></description>
     <language>en-gb</language>
-    <pubDate>Sat, 13 Feb 2016 14:44:14 +0000</pubDate>
-    <lastBuildDate>Sat, 13 Feb 2016 14:44:14 +0000</lastBuildDate>
-    <updated>2016-02-13T14:44:14+00:00</updated>
+    <pubDate>Sun, 14 Feb 2016 21:11:48 +0000</pubDate>
+    <lastBuildDate>Sun, 14 Feb 2016 21:11:48 +0000</lastBuildDate>
+    <updated>2016-02-14T21:11:48+00:00</updated>
 
     
     
@@ -176,60 +176,9 @@
 
 <p>And this is the gulpfile to wire it all together:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">gulp</span>        <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gulp'</span><span class="p">);</span>
-
-<span class="kd">var</span> <span class="nx">postcss</span>     <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gulp-postcss'</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">reporter</span>    <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'postcss-reporter'</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">stylelint</span>   <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'stylelint'</span><span class="p">);</span>
-
-<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s2">"css-lint"</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-
-  <span class="c1">// Stylelint config rules</span>
-  <span class="kd">var</span> <span class="nx">stylelintConfig</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">"rules"</span><span class="p">:</span> <span class="p">{</span>
-      <span class="s2">"block-no-empty"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="s2">"color-no-invalid-hex"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="s2">"declaration-colon-space-after"</span><span class="p">:</span> <span class="s2">"always"</span><span class="p">,</span>
-      <span class="s2">"declaration-colon-space-before"</span><span class="p">:</span> <span class="s2">"never"</span><span class="p">,</span>
-      <span class="s2">"function-comma-space-after"</span><span class="p">:</span> <span class="s2">"always"</span><span class="p">,</span>
-      <span class="s2">"function-url-quotes"</span><span class="p">:</span> <span class="s2">"double"</span><span class="p">,</span>
-      <span class="s2">"media-feature-colon-space-after"</span><span class="p">:</span> <span class="s2">"always"</span><span class="p">,</span>
-      <span class="s2">"media-feature-colon-space-before"</span><span class="p">:</span> <span class="s2">"never"</span><span class="p">,</span>
-      <span class="s2">"media-feature-name-no-vendor-prefix"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="s2">"max-empty-lines"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-      <span class="s2">"number-leading-zero"</span><span class="p">:</span> <span class="s2">"never"</span><span class="p">,</span>
-      <span class="s2">"number-no-trailing-zeros"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="s2">"property-no-vendor-prefix"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="s2">"rule-no-duplicate-properties"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="s2">"declaration-block-no-single-line"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="s2">"rule-trailing-semicolon"</span><span class="p">:</span> <span class="s2">"always"</span><span class="p">,</span>
-      <span class="s2">"selector-list-comma-newline-after"</span><span class="p">:</span> <span class="s2">"always-multi-line"</span><span class="p">,</span>
-      <span class="s2">"selector-no-id"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="s2">"string-quotes"</span><span class="p">:</span> <span class="s2">"double"</span><span class="p">,</span>
-      <span class="s2">"value-no-vendor-prefix"</span><span class="p">:</span> <span class="kc">true</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-
-  <span class="kd">var</span> <span class="nx">processors</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="nx">stylelint</span><span class="p">(</span><span class="nx">stylelintConfig</span><span class="p">),</span>
-    <span class="c1">// Pretty reporting config</span>
-    <span class="nx">reporter</span><span class="p">({</span>
-      <span class="na">clearMessages</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="na">throwError</span><span class="p">:</span> <span class="kc">true</span>
-    <span class="p">})</span>
-  <span class="p">];</span>
-
-  <span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span>
-      <span class="c1">// Stylesheet source:</span>
-      <span class="p">[</span><span class="s1">'app/assets/css/**/*.css'</span><span class="p">,</span>
-      <span class="c1">// Ignore linting vendor assets:</span>
-      <span class="c1">// (Useful if you have bower components)</span>
-      <span class="s1">'!app/assets/css/vendor/**/*.css'</span><span class="p">]</span>
-    <span class="p">)</span>
-    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">postcss</span><span class="p">(</span><span class="nx">processors</span><span class="p">));</span>
-<span class="p">});</span>
-</code></pre>
-</div>
+<noscript><pre>400: Invalid request
+</pre></noscript>
+<script src="https://gist.github.com/21d6fc030174cd41b2e4.js"> </script>
 
 <p>How easy was that?! I make that 50 lines of code—including linting rules and imports. Make sure to update the source locations to match the ones in your project!</p>
 
@@ -249,7 +198,7 @@
       <span class="p">[</span><span class="s1">'app/assets/css/**/*.css'</span><span class="p">,</span>
       <span class="s1">'!app/assets/css/vendor/**/*.css'</span><span class="p">]</span>
     <span class="p">)</span>
-    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">postcss</span><span class="p">(</span><span class="nx">processors</span><span class="p">),</span> <span class="p">{</span><span class="na">syntax</span><span class="p">:</span> <span class="nx">syntax_scss</span><span class="p">});</span>
+    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">postcss</span><span class="p">(</span><span class="nx">processors</span><span class="p">),</span> <span class="p">{</span><span class="na">syntax</span><span class="p">:</span> <span class="nx">syntax_scss</span><span class="p">});</span> <span class="err">⬅</span>
 <span class="p">});</span>
 </code></pre>
 </div>
@@ -260,61 +209,13 @@
 </code></pre>
 </div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">gulp</span>        <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gulp'</span><span class="p">);</span>
-
-<span class="kd">var</span> <span class="nx">postcss</span>     <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gulp-postcss'</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">reporter</span>    <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'postcss-reporter'</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">syntax_scss</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'postcss-scss'</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">stylelint</span>   <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'stylelint'</span><span class="p">);</span>
-
-<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s2">"scss-lint"</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-
-  <span class="c1">// Stylelint config rules</span>
-  <span class="kd">var</span> <span class="nx">stylelintConfig</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">"rules"</span><span class="p">:</span> <span class="p">{</span>
-      <span class="s2">"block-no-empty"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="s2">"color-no-invalid-hex"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="s2">"declaration-colon-space-after"</span><span class="p">:</span> <span class="s2">"always"</span><span class="p">,</span>
-      <span class="s2">"declaration-colon-space-before"</span><span class="p">:</span> <span class="s2">"never"</span><span class="p">,</span>
-      <span class="s2">"function-comma-space-after"</span><span class="p">:</span> <span class="s2">"always"</span><span class="p">,</span>
-      <span class="s2">"function-url-quotes"</span><span class="p">:</span> <span class="s2">"double"</span><span class="p">,</span>
-      <span class="s2">"media-feature-colon-space-after"</span><span class="p">:</span> <span class="s2">"always"</span><span class="p">,</span>
-      <span class="s2">"media-feature-colon-space-before"</span><span class="p">:</span> <span class="s2">"never"</span><span class="p">,</span>
-      <span class="s2">"media-feature-name-no-vendor-prefix"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="s2">"max-empty-lines"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-      <span class="s2">"number-leading-zero"</span><span class="p">:</span> <span class="s2">"never"</span><span class="p">,</span>
-      <span class="s2">"number-no-trailing-zeros"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="s2">"property-no-vendor-prefix"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="s2">"rule-no-duplicate-properties"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="s2">"declaration-block-no-single-line"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="s2">"rule-trailing-semicolon"</span><span class="p">:</span> <span class="s2">"always"</span><span class="p">,</span>
-      <span class="s2">"selector-list-comma-newline-after"</span><span class="p">:</span> <span class="s2">"always-multi-line"</span><span class="p">,</span>
-      <span class="s2">"selector-no-id"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="s2">"string-quotes"</span><span class="p">:</span> <span class="s2">"double"</span><span class="p">,</span>
-      <span class="s2">"value-no-vendor-prefix"</span><span class="p">:</span> <span class="kc">true</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-
-  <span class="kd">var</span> <span class="nx">processors</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="nx">stylelint</span><span class="p">(</span><span class="nx">stylelintConfig</span><span class="p">),</span>
-    <span class="nx">reporter</span><span class="p">({</span>
-      <span class="na">clearMessages</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="na">throwError</span><span class="p">:</span> <span class="kc">true</span>
-    <span class="p">})</span>
-  <span class="p">];</span>
-
-  <span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span>
-      <span class="p">[</span><span class="s1">'app/assets/css/**/*.css'</span><span class="p">,</span>
-      <span class="c1">// Ignore linting vendor assets</span>
-      <span class="c1">// Useful if you have bower components</span>
-      <span class="s1">'!app/assets/css/vendor/**/*.css'</span><span class="p">]</span>
-    <span class="p">)</span>
-    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">postcss</span><span class="p">(</span><span class="nx">processors</span><span class="p">),</span> <span class="p">{</span><span class="na">syntax</span><span class="p">:</span> <span class="nx">syntax_scss</span><span class="p">});</span>
-<span class="p">});</span>
-</code></pre>
-</div>
+<noscript><pre>400: Invalid request
+</pre></noscript>
+<script src="https://gist.github.com/fa4aab7852dd30feb573.js"> </script>
 
 <p>So, <em>so</em> easy! And that’s it! You can now lint both CSS and Sass files!</p>
+
+<p>Keep on reading if you want to know about extending Stylelint with plugins, and <em>why</em> you’d want to do that, by going through a case study.</p>
 
 <h2 id="extending-stylelint-with-plugins">Extending Stylelint with plugins</h2>
 
