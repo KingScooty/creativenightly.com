@@ -126,7 +126,8 @@ It looks something like this:
   "rule-no-duplicate-properties": true,
   "declaration-block-no-single-line": true,
   "rule-trailing-semicolon": "always",
-  "selector-list-comma-newline-after": "always-multi-line",
+  "selector-list-comma-space-before": "never",
+  "selector-list-comma-newline-after": "always",
   "selector-no-id": true,
   "string-quotes": "double",
   "value-no-vendor-prefix": true
