@@ -2,6 +2,8 @@
 title: Shopify for Designers - A Workshop by Keir Whitaker
 subtitle: Notes i took down from attending the Shopify for Designers workshop presented by Keir Whitaker.
 lastmod: 2013-02-10
+
+hide: true
 ---
 
 

@@ -8,6 +8,8 @@ tags: software
 
 excerpt:
   <p>A guide on how to setup and secure a VPS on a clean install of Ubuntu 13.10 x64</p>
+
+hide: true
 ---
 
 ***This is a work in progress post, as i'm short on time to dabble with security. I'll add to it as i get time to set up my VPS***

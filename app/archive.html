@@ -28,11 +28,13 @@ sitemap:
       <ul class="list-short">
 
       {% for post in site.posts %}
+      {% unless post.hide %}
       {% unless post.path contains '_posts/archive' %}
         <li class="list-short__item">
             <time class="post__date" datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%d %B, %Y" }}</time>
             <h3 class="post__title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
         </li>
+      {% endunless %}
       {% endunless %}
       {% endfor %}
 
@@ -45,12 +47,14 @@ sitemap:
       <ul class="list-short">
 
       {% for post in site.posts %}
+      {% unless post.hide %}
       {% if  post.path contains '_posts/archive' %}
         <li class="list-short__item">
             <time class="post__date" datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%d %B, %Y" }}</time>
             <h4 class="post__title"><a href="{{ post.url }}">{{ post.title }}</a></h4>
         </li>
       {% endif %}
+      {% endunless %}
       {% endfor %}
       </ul>
     </section>

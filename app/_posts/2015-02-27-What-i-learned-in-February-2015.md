@@ -4,6 +4,8 @@ subtitle: "The monthly retrospective that looks back on the month for better or 
 
 excerpt:
   <p>The monthly retrospective that looks back on the month for better or for worse.</p>
+
+hide: true
 ---
 
 

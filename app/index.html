@@ -30,6 +30,7 @@ sitemap:
 <article class="container container--2col shift-down">
 
 {% for post in paginator.posts %}
+  {% unless post.hide %}
 
     <section class="index-item section">
       <!-- {% if post.author.image %}<img src="/images/{{ post.author.image }}" class="avatar">{% endif %}-->
@@ -57,8 +58,8 @@ sitemap:
       <hr>
     </section>
 
-
-    {% endfor %}
+    {% endunless %}
+  {% endfor %}
 </article>
 
 <div class="container">
