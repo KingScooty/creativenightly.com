@@ -8,9 +8,9 @@
     <link type="text/html" href="http://www.creativenightly.com" rel="alternate"/>
     <description></description>
     <language>en-gb</language>
-    <pubDate>Mon, 15 Feb 2016 10:51:40 +0000</pubDate>
-    <lastBuildDate>Mon, 15 Feb 2016 10:51:40 +0000</lastBuildDate>
-    <updated>2016-02-15T10:51:40+00:00</updated>
+    <pubDate>Mon, 15 Feb 2016 10:58:21 +0000</pubDate>
+    <lastBuildDate>Mon, 15 Feb 2016 10:58:21 +0000</lastBuildDate>
+    <updated>2016-02-15T10:58:21+00:00</updated>
 
     
     
@@ -131,7 +131,7 @@
 
 <h3 id="stylelint-config-files">Stylelint config files</h3>
 
-<p>The beauty of Stylelint is how unopinionated it is. You build your own ruleset from the ground up, so it can be as opinionated or unopinionated as you choose—you don’t have to</p>
+<p>The beauty of Stylelint is how unopinionated it is. You build your own ruleset from the ground up, so it can be as opinionated or unopinionated as you choose—you don’t have to spend time disabling rules you don’t want in order to get started.</p>
 
 <p>The <a href="https://github.com/stylelint/stylelint/blob/master/docs/user-guide/rules.md" target="\_blank">Stylelint rule documentation</a> is a good primer for getting started. They also provide a <a href="https://github.com/stylelint/stylelint-config-standard/blob/master/index.js" target="\_blank">stylelint standard config file</a> for you to use in your projects that is rather well thought out.</p>
 
