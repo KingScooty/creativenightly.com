@@ -20,4 +20,4 @@ My name is <a target="\_blank" href="http://twitter.com/kingscooty">Scotty Verno
 At the end of 2014, [I set myself a goal to write more](/2014/12/Farewell-2014-hello-2015/). Creative Nightly is the by-product of that goal. A platform for which I can record and share development notes, and share awesome things I've discovered in the world of tech. (Essentially, Creative Nightly is a log of my crusade to stay on top of the ever expanding / advancing web tech industry).
 
 ##Contact
-I hope you find the notes and articles on here are interesting. Feel free to <a target="_blank" href="http://twitter.com/kingscooty">follow me</a>.
+I hope you find the notes and articles on here are interesting. Feel free to <a target="_blank" href="http://twitter.com/kingscooty">follow, or contact me via Twitter</a>.
