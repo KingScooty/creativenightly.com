@@ -1,5 +1,7 @@
-<p class="follow"><a href="https://twitter.com/KingScooty"
-  {% if jekyll.environment == 'production' %}
-    onclick="_gs('event', 'Clicked Follow button in {{include.location}}')"
-  {% endif %}
-   class="twitter-follow-button" data-show-count="false" data-size="large">Follow @KingScooty</a></p>
+<p class="follow"
+{% if jekyll.environment == 'production' %}
+  onclick="_gs('event', 'Clicked Follow button in {{include.location}}')"
+{% endif %}
+><a href="https://twitter.com/KingScooty"
+   class="twitter-follow-button" data-show-count="false" data-size="large">Follow @KingScooty</a>
+</p>
