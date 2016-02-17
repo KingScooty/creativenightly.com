@@ -8,9 +8,9 @@
     <link type="text/html" href="http://www.creativenightly.com" rel="alternate"/>
     <description></description>
     <language>en-gb</language>
-    <pubDate>Wed, 17 Feb 2016 09:19:43 +0000</pubDate>
-    <lastBuildDate>Wed, 17 Feb 2016 09:19:43 +0000</lastBuildDate>
-    <updated>2016-02-17T09:19:43+00:00</updated>
+    <pubDate>Wed, 17 Feb 2016 12:56:38 +0000</pubDate>
+    <lastBuildDate>Wed, 17 Feb 2016 12:56:38 +0000</lastBuildDate>
+    <updated>2016-02-17T12:56:38+00:00</updated>
 
     
     
@@ -204,7 +204,7 @@
 </code></pre>
 </div>
 
-<p>Here’s the gulpfile in full for linting Sass files:</p>
+<p>Here’s the gulpfile in full for linting Sass files, and all the tools you need to install:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>npm install gulp-postcss postcss-reporter stylelint postcss-scss --save-dev
 </code></pre>
@@ -264,7 +264,7 @@
 
 <h4 id="selector-nesting-in-sass-is-bad---use-a-linter">Selector nesting in Sass is bad—use a linter!</h4>
 
-<p>Selector nesting is a necessary evil when developing using Sass; it’s really useful when used properly, and a one way trip to <a href="https://css-tricks.com/specifics-on-css-specificity/" target="\_blank">specificity</a> hell if abused. Nesting is normally the result of lazy coding—and lazy coding results in code that is hard to read, and poorly written. The first <code class="highlighter-rouge">&amp;:hover{...}</code> rule could be 10 lines below the parent component definition, making it really hard to decipher what it belongs to. However, more importantly, there nesting here is completely unnecessary.</p>
+<p>Selector nesting is a necessary evil when developing using Sass; it’s really useful when used properly, and a one way trip to <a href="https://css-tricks.com/specifics-on-css-specificity/" target="\_blank">specificity</a> hell if abused. Nesting is normally the result of lazy coding—and lazy coding results in code that is hard to read, and poorly written. The first <code class="highlighter-rouge">&amp;:hover{...}</code> rule could be 10 lines below the parent component definition, making it really hard to decipher what it belongs to. However, more importantly, the nesting here is completely unnecessary.</p>
 
 <p>This the CSS that the above rule compiles to:</p>
 
