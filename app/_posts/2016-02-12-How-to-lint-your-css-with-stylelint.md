@@ -100,7 +100,7 @@ PostCSS and Stylelint are what we'll be using to lint our stylesheets in the nex
 
 ###Stylelint config files
 
-The beauty of Stylelint is how unopinionated it is. You build your own ruleset from the ground up, so it can be as opinionated or unopinionated as you choose---you don't have to
+The beauty of Stylelint is how unopinionated it is. You build your own ruleset from the ground up, so it can be as opinionated or unopinionated as you choose---you don't have to spend time disabling rules you don't want in order to get started.
 
 The [Stylelint rule documentation](https://github.com/stylelint/stylelint/blob/master/docs/user-guide/rules.md){:target="\_blank"} is a good primer for getting started. They also provide a [stylelint standard config file](https://github.com/stylelint/stylelint-config-standard/blob/master/index.js){:target="\_blank"} for you to use in your projects that is rather well thought out.
 
@@ -126,7 +126,8 @@ It looks something like this:
   "rule-no-duplicate-properties": true,
   "declaration-block-no-single-line": true,
   "rule-trailing-semicolon": "always",
-  "selector-list-comma-newline-after": "always-multi-line",
+  "selector-list-comma-space-before": "never",
+  "selector-list-comma-newline-after": "always",
   "selector-no-id": true,
   "string-quotes": "double",
   "value-no-vendor-prefix": true
