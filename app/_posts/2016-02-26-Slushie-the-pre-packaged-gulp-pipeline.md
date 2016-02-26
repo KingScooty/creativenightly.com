@@ -63,7 +63,7 @@ slushie(water);
 
 This is still an early concept, and for that reason, only Sass related tasks are bundled for now, but I'd really like whoever reads this to give it a go, and provide feedback in the comments, and on the [github issues](https://github.com/kingscooty/slushie/issues){:target="\_blank"} page. Feature requests and pull requests are definitely welcome too!
 
-Slushie might be a silly idea, as I haven't come across any open source solutions to this issue. We have a few solutions internally on different teams that tackle this issue, but as far as I know, nothing like this exists in the open. I know Slushie will save me a lot of time getting a simple pipeline setup without having to toy with boilerplate, and I'm sure there's a lot of you out there that feel the same!
+Slushie might be a silly idea, but I think there's definitely a place for tools like this. We have similar tools internally that handle the full pipeline in one neat package, but there doesn't seem to be anything like this in the open source world---or at least, not that I've seen. I know Slushie will save me a lot of time getting a simple pipeline setup without having to toy with boilerplate, and I'm sure there's a lot of you out there that feel the same!
 
 <!--
 The idea is to create a re-packaged pipeline that requires very little config and setting up by the end user to get going. No boilerplate, no nothing. Npm install, add 3 lines to a file, and boom! You're off!
