@@ -8,9 +8,9 @@
     <link type="text/html" href="http://www.creativenightly.com" rel="alternate"/>
     <description></description>
     <language>en-gb</language>
-    <pubDate>Fri, 26 Feb 2016 15:36:41 +0000</pubDate>
-    <lastBuildDate>Fri, 26 Feb 2016 15:36:41 +0000</lastBuildDate>
-    <updated>2016-02-26T15:36:41+00:00</updated>
+    <pubDate>Fri, 26 Feb 2016 15:39:00 +0000</pubDate>
+    <lastBuildDate>Fri, 26 Feb 2016 15:39:00 +0000</lastBuildDate>
+    <updated>2016-02-26T15:39:00+00:00</updated>
 
     
     
@@ -69,7 +69,7 @@ npm install slushie --save-dev
   </li>
 </ul>
 
-<p>You should now be able to run <code class="highlighter-rouge">gulp</code>, <code class="highlighter-rouge">gulp watch</code>, <code class="highlighter-rouge">gulp build:production</code>, and the tasks will automagically run! By default these tasks will look for any <code class="highlighter-rouge">.scss</code> files in the project, and output them into <code class="highlighter-rouge">/public</code>. The default config can be found <a href="https://github.com/KingScooty/slushie/blob/master/defaults.js" target="\_blank">here</a>, and can be overridden by simply making changes to the <code class="highlighter-rouge">water</code> <em>(config)</em> object in your <code class="highlighter-rouge">gulpfile</code>;</p>
+<p>You should now be able to run <code class="highlighter-rouge">gulp</code>, <code class="highlighter-rouge">gulp watch</code>, <code class="highlighter-rouge">gulp sass:lint</code>, <code class="highlighter-rouge">gulp build:production</code>, and the tasks will automagically run! By default these tasks will look for any <code class="highlighter-rouge">.scss</code> files in the project, and output them into <code class="highlighter-rouge">/public</code>. The default config can be found <a href="https://github.com/KingScooty/slushie/blob/master/defaults.js" target="\_blank">here</a>, and can be overridden by simply making changes to the <code class="highlighter-rouge">water</code> <em>(config)</em> object in your <code class="highlighter-rouge">gulpfile</code>;</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">slushie</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'slushie'</span><span class="p">);</span>
 <span class="c1">// Override defaults here. It's as easy as just adding a drop of water!</span>
