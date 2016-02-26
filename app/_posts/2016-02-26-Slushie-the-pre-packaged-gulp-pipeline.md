@@ -28,7 +28,7 @@ Create a `gulpfile.js` file in the base of your project, and add the following:
 
 ~~~js
 var slushie = require('slushie');
-slushie(water);
+slushie();
 ~~~
 
 You should now be able to run `gulp`, `gulp watch`, `gulp build:production`, and the tasks will automagically run! By default these tasks will look for any `.scss` files in the project, and output them into `/public`. The default config can be found [here](https://github.com/KingScooty/slushie/blob/master/defaults.js){:target="\_blank"}, and can be overridden by simply making changes to the `water` *(config)* object in your `gulpfile`;
