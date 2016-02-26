@@ -8,10 +8,94 @@
     <link type="text/html" href="http://www.creativenightly.com" rel="alternate"/>
     <description></description>
     <language>en-gb</language>
-    <pubDate>Fri, 26 Feb 2016 14:55:35 +0000</pubDate>
-    <lastBuildDate>Fri, 26 Feb 2016 14:55:35 +0000</lastBuildDate>
-    <updated>2016-02-26T14:55:35+00:00</updated>
+    <pubDate>Fri, 26 Feb 2016 14:58:48 +0000</pubDate>
+    <lastBuildDate>Fri, 26 Feb 2016 14:58:48 +0000</lastBuildDate>
+    <updated>2016-02-26T14:58:48+00:00</updated>
 
+    
+    
+    <item>
+      <title>Slushie, the pre-packaged gulp pipeline that just works</title>
+      <link>http://www.creativenightly.com/2016/02/Slushie-the-pre-packaged-gulp-pipeline/</link>
+      <pubDate>Fri, 26 Feb 2016 00:00:00 +0000</pubDate>
+      <author></author>
+      <guid>http://www.creativenightly.com/2016/02/Slushie-the-pre-packaged-gulp-pipeline</guid>
+      <description><p>Today I was working on a development pipeline tool for the Live team at BBC Sport. A tool that will essentially hook into their existing development pipeline, and provide a <em>pre-opinionated</em> workflow for processing <code class="highlighter-rouge">Sass</code> files. It’s a fairly simple concept, but one that would hopefully give the front-end architects a chance to define a set of rules in one place, and iterate on it, that the rest of the developers can leverage without having to worry about any finer details.</p>
+
+<!--more-->
+
+<p>We have a lot of developers on the team that don’t want to have to worry about setting up a pipeline for handling Sass files for each and every component that is created—it’s a detail that the championing front-end developers should take care of.</p>
+
+<p>I have a tendency to write my pipeline tasks as simple functions, import them into a main file and <em>then</em> apply the gulp magic. It’s a lot cleaner than faffing around with importing gulp tasks and sharing objects across files. It’s also something I realised that not a lot of people are aware is possible. I’ve seen countless articles online of people trying to split their gulpfiles up, but doing it in the messiest of ways, and using plugins in order to try and achieve it. <strong><em>Plugins!</em></strong> Just to split a file up! It’s just JavaScript! Bonkers!</p>
+
+<p>Then it hit me.</p>
+
+<p>I could package up an entire gulp build pipeline in a similar way, that anyone could install it with npm, create a <strong><em>very</em></strong> barebones gulpfile, and leverage all the commands in the package for free! Absolutely free!</p>
+
+<p>The config could be overridden wherever necessary to fit the needs, and boom! No need to setup a project or clone a boilerplate project/gulpfile down each time you setup. Just add a spot of water, and you’re ready to go!</p>
+
+<p>This is where <a href="https://github.com/kingscooty/slushie" target="\_blank">Slushie</a> was born!</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>npm install -g gulp
+npm install slushie --save-dev
+</code></pre>
+</div>
+
+<p>Create a <code class="highlighter-rouge">gulpfile.js</code> file in the base of your project, and add the following:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">slushie</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'slushie'</span><span class="p">);</span>
+<span class="nx">slushie</span><span class="p">(</span><span class="nx">water</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<p>You should now be able to run <code class="highlighter-rouge">gulp</code>, <code class="highlighter-rouge">gulp watch</code>, <code class="highlighter-rouge">gulp build:production</code>, and the tasks will automagically run! By default these tasks will look for any <code class="highlighter-rouge">.scss</code> files in the project, and output them into <code class="highlighter-rouge">/public</code>. The default config can be found <a href="https://github.com/KingScooty/slushie/blob/master/defaults.js" target="\_blank">here</a>, and can be overridden by simply making changes to the <code class="highlighter-rouge">water</code> <em>(config)</em> object in your <code class="highlighter-rouge">gulpfile</code>;</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">slushie</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'slushie'</span><span class="p">);</span>
+<span class="c1">// Override defaults here. It's as easy as just adding a drop of water!</span>
+<span class="kd">var</span> <span class="nx">water</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">sass_development</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">source</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s1">'app/assets/scss/**/*.scss'</span><span class="p">,</span>
+      <span class="s1">'!app/assets/scss/**/_*.scss'</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="na">destination</span><span class="p">:</span> <span class="s1">'./app/assets/css'</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+<span class="nx">slushie</span><span class="p">(</span><span class="nx">water</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<p>It’s still an early concept, and for that reason, only Sass related tasks are bundled for now. However, these Sass related tasks cover the entire workflow of development and output for production. The tasks include:</p>
+
+<ul>
+  <li>Development
+    <ul>
+      <li>Linting</li>
+      <li>Sourcemaps</li>
+      <li>Autoprefixing</li>
+      <li>Watch</li>
+    </ul>
+  </li>
+  <li>Production
+    <ul>
+      <li>Linting</li>
+      <li>Autoprefixing</li>
+      <li>Optimisation <em>(Sorting, removing duplicates etc.)</em></li>
+      <li>Minification</li>
+    </ul>
+  </li>
+</ul>
+
+<p>I’m keen to give it a test drive, and I’d really like whoever reads this to give it a go, and provide feedback in the comments, and on the <a href="https://github.com/kingscooty/slushie/issues" target="\_blank">github issues</a> page. Feature requests and pull requests are definitely welcome too!</p>
+
+<p>It might be a silly idea, but I’ve not seen this done before, and I know it will save me a lot of time getting a simple pipeline setup without having to toy with boilerplate. I’m sure there’s a lot of you out there that feel the same!</p>
+
+<!--
+The idea is to create a re-packaged pipeline that requires very little config and setting up by the end user to get going. No boilerplate, no nothing. Npm install, add 3 lines to a file, and boom! You're off!
+-->
+</description>
+    </item>
+    
     
     
     <item>
