@@ -8,9 +8,9 @@
     <link type="text/html" href="http://www.creativenightly.com" rel="alternate"/>
     <description></description>
     <language>en-gb</language>
-    <pubDate>Fri, 26 Feb 2016 15:07:47 +0000</pubDate>
-    <lastBuildDate>Fri, 26 Feb 2016 15:07:47 +0000</lastBuildDate>
-    <updated>2016-02-26T15:07:47+00:00</updated>
+    <pubDate>Fri, 26 Feb 2016 15:24:13 +0000</pubDate>
+    <lastBuildDate>Fri, 26 Feb 2016 15:24:13 +0000</lastBuildDate>
+    <updated>2016-02-26T15:24:13+00:00</updated>
 
     
     
@@ -44,7 +44,7 @@ npm install slushie --save-dev
 <p>Create a <code class="highlighter-rouge">gulpfile.js</code> file in the base of your project, and add the following:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">slushie</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'slushie'</span><span class="p">);</span>
-<span class="nx">slushie</span><span class="p">(</span><span class="nx">water</span><span class="p">);</span>
+<span class="nx">slushie</span><span class="p">();</span>
 </code></pre>
 </div>
 
