@@ -167,7 +167,7 @@ npm install postcss-scss --save-dev
       ['app/assets/css/**/*.scss',
       '!app/assets/css/vendor/**/*.scss']
     )
-    .pipe(postcss(processors), {syntax: syntax_scss}); ⬅
+    .pipe(postcss(processors, {syntax: syntax_scss})); ⬅
 });
 ~~~
 
