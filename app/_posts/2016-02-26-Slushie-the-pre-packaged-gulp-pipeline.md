@@ -31,6 +31,19 @@ var slushie = require('slushie');
 slushie();
 ~~~
 
+Slushie currently provides the following Sass related tasks to cover the entire workflow of development and output for production of stylesheets. The tasks include:
+
+- Development
+  - Linting
+  - Sourcemaps
+  - Autoprefixing
+  - Watch
+- Production
+  - Linting
+  - Autoprefixing
+  - Optimisation *(Sorting, removing duplicates etc.)*
+  - Minification
+
 You should now be able to run `gulp`, `gulp watch`, `gulp build:production`, and the tasks will automagically run! By default these tasks will look for any `.scss` files in the project, and output them into `/public`. The default config can be found [here](https://github.com/KingScooty/slushie/blob/master/defaults.js){:target="\_blank"}, and can be overridden by simply making changes to the `water` *(config)* object in your `gulpfile`;
 
 ~~~js
@@ -48,21 +61,7 @@ var water = {
 slushie(water);
 ~~~
 
-It's still an early concept, and for that reason, only Sass related tasks are bundled for now. However, these Sass related tasks cover the entire workflow of development and output for production. The tasks include:
-
-- Development
-  - Linting
-  - Sourcemaps
-  - Autoprefixing
-  - Watch
-- Production
-  - Linting
-  - Autoprefixing
-  - Optimisation *(Sorting, removing duplicates etc.)*
-  - Minification
-
-
-I'm keen to give it a test drive, and I'd really like whoever reads this to give it a go, and provide feedback in the comments, and on the [github issues](https://github.com/kingscooty/slushie/issues){:target="\_blank"} page. Feature requests and pull requests are definitely welcome too!
+This is still an early concept, and for that reason, only Sass related tasks are bundled for now, but I'd really like whoever reads this to give it a go, and provide feedback in the comments, and on the [github issues](https://github.com/kingscooty/slushie/issues){:target="\_blank"} page. Feature requests and pull requests are definitely welcome too!
 
 Slushie might be a silly idea, but I've not seen this done before, and I know it will save me a lot of time getting a simple pipeline setup without having to toy with boilerplate, and I'm sure there's a lot of you out there that feel the same!
 
