@@ -8,9 +8,9 @@
     <link type="text/html" href="http://www.creativenightly.com" rel="alternate"/>
     <description></description>
     <language>en-gb</language>
-    <pubDate>Fri, 26 Feb 2016 15:24:13 +0000</pubDate>
-    <lastBuildDate>Fri, 26 Feb 2016 15:24:13 +0000</lastBuildDate>
-    <updated>2016-02-26T15:24:13+00:00</updated>
+    <pubDate>Fri, 26 Feb 2016 15:36:41 +0000</pubDate>
+    <lastBuildDate>Fri, 26 Feb 2016 15:36:41 +0000</lastBuildDate>
+    <updated>2016-02-26T15:36:41+00:00</updated>
 
     
     
@@ -48,24 +48,7 @@ npm install slushie --save-dev
 </code></pre>
 </div>
 
-<p>You should now be able to run <code class="highlighter-rouge">gulp</code>, <code class="highlighter-rouge">gulp watch</code>, <code class="highlighter-rouge">gulp build:production</code>, and the tasks will automagically run! By default these tasks will look for any <code class="highlighter-rouge">.scss</code> files in the project, and output them into <code class="highlighter-rouge">/public</code>. The default config can be found <a href="https://github.com/KingScooty/slushie/blob/master/defaults.js" target="\_blank">here</a>, and can be overridden by simply making changes to the <code class="highlighter-rouge">water</code> <em>(config)</em> object in your <code class="highlighter-rouge">gulpfile</code>;</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">slushie</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'slushie'</span><span class="p">);</span>
-<span class="c1">// Override defaults here. It's as easy as just adding a drop of water!</span>
-<span class="kd">var</span> <span class="nx">water</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">sass_development</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">source</span><span class="p">:</span> <span class="p">[</span>
-      <span class="s1">'app/assets/scss/**/*.scss'</span><span class="p">,</span>
-      <span class="s1">'!app/assets/scss/**/_*.scss'</span><span class="p">,</span>
-    <span class="p">},</span>
-    <span class="na">destination</span><span class="p">:</span> <span class="s1">'./app/assets/css'</span>
-  <span class="p">}</span>
-<span class="p">};</span>
-<span class="nx">slushie</span><span class="p">(</span><span class="nx">water</span><span class="p">);</span>
-</code></pre>
-</div>
-
-<p>It’s still an early concept, and for that reason, only Sass related tasks are bundled for now. However, these Sass related tasks cover the entire workflow of development and output for production. The tasks include:</p>
+<p>Slushie currently provides the following Sass related tasks to cover the entire workflow of development and output for production of stylesheets. The tasks include:</p>
 
 <ul>
   <li>Development
@@ -86,7 +69,24 @@ npm install slushie --save-dev
   </li>
 </ul>
 
-<p>I’m keen to give it a test drive, and I’d really like whoever reads this to give it a go, and provide feedback in the comments, and on the <a href="https://github.com/kingscooty/slushie/issues" target="\_blank">github issues</a> page. Feature requests and pull requests are definitely welcome too!</p>
+<p>You should now be able to run <code class="highlighter-rouge">gulp</code>, <code class="highlighter-rouge">gulp watch</code>, <code class="highlighter-rouge">gulp build:production</code>, and the tasks will automagically run! By default these tasks will look for any <code class="highlighter-rouge">.scss</code> files in the project, and output them into <code class="highlighter-rouge">/public</code>. The default config can be found <a href="https://github.com/KingScooty/slushie/blob/master/defaults.js" target="\_blank">here</a>, and can be overridden by simply making changes to the <code class="highlighter-rouge">water</code> <em>(config)</em> object in your <code class="highlighter-rouge">gulpfile</code>;</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">slushie</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'slushie'</span><span class="p">);</span>
+<span class="c1">// Override defaults here. It's as easy as just adding a drop of water!</span>
+<span class="kd">var</span> <span class="nx">water</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">sass_development</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">source</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s1">'app/assets/scss/**/*.scss'</span><span class="p">,</span>
+      <span class="s1">'!app/assets/scss/**/_*.scss'</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="na">destination</span><span class="p">:</span> <span class="s1">'./app/assets/css'</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+<span class="nx">slushie</span><span class="p">(</span><span class="nx">water</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<p>This is still an early concept, and for that reason, only Sass related tasks are bundled for now, but I’d really like whoever reads this to give it a go, and provide feedback in the comments, and on the <a href="https://github.com/kingscooty/slushie/issues" target="\_blank">github issues</a> page. Feature requests and pull requests are definitely welcome too!</p>
 
 <p>Slushie might be a silly idea, but I’ve not seen this done before, and I know it will save me a lot of time getting a simple pipeline setup without having to toy with boilerplate, and I’m sure there’s a lot of you out there that feel the same!</p>
 
