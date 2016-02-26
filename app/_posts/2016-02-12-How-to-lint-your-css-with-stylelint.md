@@ -164,8 +164,8 @@ npm install postcss-scss --save-dev
   //[...]
 
   return gulp.src(
-      ['app/assets/css/**/*.css',
-      '!app/assets/css/vendor/**/*.css']
+      ['app/assets/css/**/*.scss',
+      '!app/assets/css/vendor/**/*.scss']
     )
     .pipe(postcss(processors), {syntax: syntax_scss}); ⬅
 });
