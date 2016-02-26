@@ -63,7 +63,7 @@ slushie(water);
 
 This is still an early concept, and for that reason, only Sass related tasks are bundled for now, but I'd really like whoever reads this to give it a go, and provide feedback in the comments, and on the [github issues](https://github.com/kingscooty/slushie/issues){:target="\_blank"} page. Feature requests and pull requests are definitely welcome too!
 
-Slushie might be a silly idea, but I think there's definitely a place for tools like this. We have tools internally that handle the full pipeline (develop, build, test, deploy) in a neat one-click install package---The BBC Homepage team have a *beast* of a package written by [@minutz](https://twitter.com/mintuz){:target="\_blank"}, who I'm going to try and get on board for this project---but there doesn't seem to be anything like this in the open source world *(or at least, not that I've seen)*.
+Slushie might be a silly idea, but I think there's definitely a place for tools like this. We have tools internally that handle the full pipeline (develop, build, test, deploy) in a neat one-click install package---The BBC Homepage team have a *beast* of a package written by [@mintuz](https://twitter.com/mintuz){:target="\_blank"}, who I'm going to try and get on board for this project---but there doesn't seem to be anything like this in the open source world *(or at least, not that I've seen)*.
 
 I know Slushie will save me a lot of time getting a simple pipeline setup without having to toy with boilerplate, and I'm sure there's a lot of you out there that feel the same!
 
