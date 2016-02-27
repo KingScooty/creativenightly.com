@@ -1,6 +1,7 @@
 ---
 title: How to lint your Sass/CSS properly with Stylelint
 subtitle: What is linting? Why should we lint our stylesheets? Linting helps reduce silly errors in codebases, and improves coding quality by enforcing good coding rules, and practices.
+lastmod: 2016-02-27
 ---
 
 Stylesheet linting. Not many people do it. Many more people should---especially diverse teams that have a lot of hands touching the codebase.
@@ -20,6 +21,8 @@ Table of contents:
     2. [How to lint your Sass](#how-to-lint-your-sass)
 3. [Extending Stylelint with plugins](#extending-stylelint-with-plugins)
     1. [Case study: Linting in practice](#case-study-linting-in-practice)
+4. [Afterword](#afterword)
+    1. [A one click install gulp build pipeline for Sass](#a-one-click-install-gulp-build-pipeline-for-sass)
 
 -----
 
@@ -319,3 +322,11 @@ Hopefully by now I've convinced you that linting your stylesheets is a worthwhil
 Now go, my developer and designer friends!
 
 Henceforth and lint!
+
+##Afterword
+
+###A one-click install gulp build pipeline for Sass
+
+How would you like to harness the power of Sass linting, along with an entire gulp Sass build pipeline for free, by just installing a small package with npm?
+
+I thought so. I've since open sourced a package called [Slushie](https://github.com/kingscooty/slushie){:target="\_blank"}, you can read about it in a [blog post here](/2016/02/Slushie-the-pre-packaged-gulp-pipeline/).
