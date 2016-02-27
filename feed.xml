@@ -8,9 +8,9 @@
     <link type="text/html" href="http://www.creativenightly.com" rel="alternate"/>
     <description></description>
     <language>en-gb</language>
-    <pubDate>Fri, 26 Feb 2016 19:24:40 +0000</pubDate>
-    <lastBuildDate>Fri, 26 Feb 2016 19:24:40 +0000</lastBuildDate>
-    <updated>2016-02-26T19:24:40+00:00</updated>
+    <pubDate>Sat, 27 Feb 2016 13:47:22 +0000</pubDate>
+    <lastBuildDate>Sat, 27 Feb 2016 13:47:22 +0000</lastBuildDate>
+    <updated>2016-02-27T13:47:22+00:00</updated>
 
     
     
@@ -131,6 +131,11 @@ The idea is to create a re-packaged pipeline that requires very little config an
   <li><a href="#extending-stylelint-with-plugins">Extending Stylelint with plugins</a>
     <ol>
       <li><a href="#case-study-linting-in-practice">Case study: Linting in practice</a></li>
+    </ol>
+  </li>
+  <li><a href="#afterword">Afterword</a>
+    <ol>
+      <li><a href="#a-one-click-install-gulp-build-pipeline-for-sass">A one click install gulp build pipeline for Sass</a></li>
     </ol>
   </li>
 </ol>
@@ -440,6 +445,14 @@ The idea is to create a re-packaged pipeline that requires very little config an
 <p>Now go, my developer and designer friends!</p>
 
 <p>Henceforth and lint!</p>
+
+<h2 id="afterword">Afterword</h2>
+
+<h3 id="a-one-click-install-gulp-build-pipeline-for-sass">A one-click install gulp build pipeline for Sass</h3>
+
+<p>How would you like to harness the power of Sass linting, along with an entire gulp Sass build pipeline for free, by just installing a small package with npm?</p>
+
+<p>I thought so. I’ve since open sourced a package called <a href="https://github.com/kingscooty/slushie" target="\_blank">Slushie</a>, you can read about it in a <a href="/2016/02/Slushie-the-pre-packaged-gulp-pipeline/">blog post here</a>.</p>
 </description>
     </item>
     
